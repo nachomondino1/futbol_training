@@ -106,7 +106,7 @@ export function renderHeader(activa) {
     h("div", { class: "cabecera-in" },
       h("a", { class: "marca", href: "index.html" }, h("span", { class: "marca-texto" }, "Entrenamiento")),
       h("nav", { class: "nav", "aria-label": "Principal" },
-        link("glosario.html", "Glosario", "glosario"),
+        link("glosario.html", "Ejercicios", "glosario"),
         link("circuitos.html", "Circuitos", "circuitos"),
         link("sesiones.html", "Sesiones", "sesiones")),
       SELECTOR_PERSONAS

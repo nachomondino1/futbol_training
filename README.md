@@ -1,6 +1,14 @@
 # Entrenamiento de fútbol
 
-Web estática, de solo lectura, para usar desde el celu en la cancha. HTML + CSS + JS plano, sin backend. Los datos están en dos JSON y cada ejercicio se explica una sola vez (en el glosario); las sesiones solo lo referencian por id.
+Web estática, de solo lectura, para usar desde el celu en la cancha. HTML + CSS + JS plano, sin backend. Los datos están en dos JSON y cada ejercicio se explica una sola vez (en la página Ejercicios); los circuitos combinan ejercicios y las sesiones combinan bloques, que pueden ser un circuito o un solo ejercicio (correr 30 minutos, HIIT).
+
+## Cómo se organiza
+
+1. **Ejercicios** (`exercises.json`): lo más chico. Se explica una sola vez, con su músculo, variantes, imagen y video.
+2. **Circuitos** (`circuits.json`): dos o más ejercicios en orden (con sus vueltas y descansos), o una plantilla donde se elige una opción por parte.
+3. **Sesiones** (`sessions.json`): una lista de bloques con sus minutos. Cada bloque tiene una o más opciones, y cada opción es un circuito o directamente un ejercicio (por ejemplo "trote continuo, 30 min" o "HIIT 10/10").
+
+Los archivos se siguen llamando `glosario.html` y `glosario.js` para no romper links: la página se muestra como "Ejercicios".
 
 ## Correr local
 
@@ -41,6 +49,7 @@ En `docs/data/exercises.json`, dentro de `ejercicios`:
 
 - `id`: minúsculas con guiones, único. Es el link `glosario.html#sentadilla-salto`.
 - `categoria`: alguna de las de `categorias`.
+- `aporta`: qué se gana con el ejercicio, con ids de `docs/data/objetivos.json` (velocidad, aeróbico, fuerza, potencia, control, precisión de tiro, coordinación, movilidad). Obligatorio. La sesión usa esto para armar "Qué vas a ganar".
 - `trabaja`: `{ "principal": "cuadriceps", "secundarios": ["gluteo-mayor"] }`, con ids de `docs/data/muscles.json` (ahí se escribe para qué sirve cada músculo). Es obligatorio.
 - Si depende de cuántos son, poné `"requiere_variantes": true` y cargá `"2"`, `"3"`, `"4"` y `"8"` en `variantes`.
 - Si propusiste una variante que todavía no validaste, agregá `"pendiente_validar": ["4"]`.
@@ -79,13 +88,13 @@ En `docs/data/sessions.json`, dentro de `sesiones`:
 - La duración de la sesión es la suma de `min` de los bloques: no se escribe a mano.
 - Un bloque sin alternativas tiene una sola opción y sin `label`. Con 2 o más opciones, todas necesitan `label`.
 - En cada item, `ex` es el id del ejercicio. `dosis` y `nota` son opcionales y específicos de esa sesión.
-- Un item puede traer su propio `variantes` (con las claves `"2"`, `"3"`, `"4"`, `"8"`) si en esa sesión el ejercicio se hace distinto al glosario.
+- Un item puede traer su propio `variantes` (con las claves `"2"`, `"3"`, `"4"`, `"8"`) si en esa sesión el ejercicio se hace distinto a como figura en Ejercicios.
 
 Las explicaciones que no son un ejercicio (por ejemplo cómo rotar las estaciones de un circuito) van en `sessions.json` > `guias` y se enlazan con `"guia"` en la opción.
 
 ## Agregar un circuito
 
-Un circuito es un conjunto de ejercicios del glosario, en orden. Se define una vez en `docs/data/circuits.json` y las sesiones lo referencian:
+Un circuito es un conjunto de ejercicios, en orden. Se define una vez en `docs/data/circuits.json` y las sesiones lo referencian:
 
 ```json
 {
@@ -110,8 +119,24 @@ Un circuito es un conjunto de ejercicios del glosario, en orden. Se define una v
 ```
 
   El `items` de arriba es la versión original; cada variación lo reemplaza, y su `estructura` solo pisa lo que nombra (acá, el descanso).
+- Si es una plantilla donde elegís una opción por parte (fuerza, coordinación, pelota), usá `partes` en lugar de `items`. Las opciones se escriben una sola vez en `bancos` y las partes los referencian:
+
+```json
+"bancos": {
+  "fuerza": { "nombre": "Fuerza", "opciones": [{ "ex": "sentadilla" }, { "ex": "zancada-estatica" }] },
+  "pelota": { "nombre": "Pelota", "opciones": [{ "ex": "zigzag" }] }
+},
+"circuitos": [
+  { "id": "fuerza-coordinacion-pelota", "nombre": "Fuerza, coordinación, pelota",
+    "partes": [{ "banco": "fuerza" }, { "banco": "coordinacion" }, { "banco": "pelota" }] }
+]
+```
+
+  Una opción puede traer `nombre` (lo que se ve en el botón) y `nota`. Para otra combinación (por ejemplo fuerza, coordinación, aeróbico) solo hay que armar otro circuito con otros bancos.
 - En una sesión, la opción lo usa así: `{ "label": "Corto", "circuito": "circuito-fuerza", "variacion": "corto" }` (sin `variacion`, usa la original). Lo que la opción defina por su cuenta (por ejemplo otra `estructura`) pisa lo del circuito.
 - Un circuito que ninguna sesión usa es error, salvo que le pongas `"huerfano_ok": true`. Sus ejercicios cuentan como usados.
+
+Cada sesión lleva un `objetivo` (una frase). Debajo, la página calcula "Qué vas a ganar": reparte los minutos de cada bloque, con la opción elegida, entre lo que aporta cada ejercicio, y muestra lo principal.
 
 ### Vueltas, trabajo y descanso
 

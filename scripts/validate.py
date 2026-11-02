@@ -26,6 +26,8 @@ def dupes(ids: list[str]) -> list[str]:
 
 def aplicar_variacion(c: dict, vid: str | None) -> dict | None:
     """El circuito con los items (y ajustes de estructura) de una variación; None si la variación no existe."""
+    if "items" not in c and c.get("partes"):  # plantilla: por defecto, la primera opción de cada parte
+        c = {**c, "items": [p["opciones"][0] for p in c["partes"]]}
     if not vid:
         return c
     v = next((x for x in c.get("variaciones", []) if x["id"] == vid), None)
@@ -117,7 +119,22 @@ def main() -> int:
     for d in dupes(grupo_ids):
         errors.append(f"grupo muscular duplicado: {d}")
 
+    objetivos = json.loads((DATA / "objetivos.json").read_text(encoding="utf-8"))["objetivos"]
+    objetivo_ids = [o["id"] for o in objetivos]
+    for d in dupes(objetivo_ids):
+        errors.append(f"objetivo duplicado: {d}")
+    aportados: set[str] = set()
+
     circ_data = json.loads((DATA / "circuits.json").read_text(encoding="utf-8"))["circuitos"]
+    bancos = json.loads((DATA / "circuits.json").read_text(encoding="utf-8")).get("bancos", {})
+    for c in circ_data:
+        for pi, parte in enumerate(c.get("partes", []), 1):
+            if parte.get("banco"):
+                if parte["banco"] not in bancos:
+                    errors.append(f"circuito {c['id']}: la parte {pi} usa un banco inexistente '{parte['banco']}'")
+                else:  # se resuelve acá y el resto de las reglas ve las opciones como si fueran propias
+                    parte["opciones"] = bancos[parte["banco"]]["opciones"]
+                    parte.setdefault("nombre", bancos[parte["banco"]]["nombre"])
     circuitos = {c["id"]: c for c in circ_data}
     for d in dupes([c["id"] for c in circ_data]):
         errors.append(f"circuito duplicado: {d}")
@@ -160,6 +177,14 @@ def main() -> int:
         for ruta in rutas:
             if not (WEB / ruta).is_file():
                 errors.append(f"{eid}: la imagen '{ruta}' no existe en docs/")
+        ap = e.get("aporta")
+        if not ap:
+            errors.append(f"{eid}: falta 'aporta' (qué se gana con el ejercicio)")
+        else:
+            for k in ap:
+                if k not in objetivo_ids:
+                    errors.append(f"{eid}: objetivo inexistente '{k}'")
+            aportados.update(ap)
         t = e.get("trabaja")
         if not t:
             errors.append(f"{eid}: falta 'trabaja' (músculo principal)")
@@ -176,6 +201,13 @@ def main() -> int:
     for g in grupo_ids:
         if g not in principales:
             warnings.append(f"grupo '{g}': ningún ejercicio lo tiene como principal")
+
+    for o in objetivo_ids:
+        if o not in aportados:
+            warnings.append(f"objetivo '{o}': ningún ejercicio lo aporta")
+    for s in ses_data["sesiones"]:
+        if not s.get("objetivo"):
+            errors.append(f"sesión {s['id']}: falta 'objetivo' (qué se gana con la sesión)")
 
     usados: set[str] = set()
     usados_circ: set[str] = set()
@@ -215,6 +247,19 @@ def main() -> int:
 
     for c in circ_data:
         where = f"circuito {c['id']}"
+        partes = c.get("partes")
+        if partes:
+            if len(partes) < 2:
+                errors.append(f"{where}: una plantilla necesita al menos 2 partes")
+            for pi, parte in enumerate(partes, 1):
+                if not parte.get("opciones"):
+                    errors.append(f"{where}: la parte {pi} no tiene opciones")
+                for o in parte.get("opciones", []):
+                    usados.add(o["ex"])
+                    if o["ex"] not in ids:
+                        errors.append(f"{where}: parte {pi}: ex inexistente '{o['ex']}'")
+            if partes and all(p.get("opciones") for p in partes):
+                c = aplicar_variacion(c, None)
         if not c.get("items"):
             errors.append(f"{where}: sin items")
             continue

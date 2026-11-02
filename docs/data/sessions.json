@@ -4,6 +4,7 @@
       "id": "martes-fisico",
       "nombre": "Físico: aeróbico + piernas",
       "dia": "martes",
+      "objetivo": "Volumen aeróbico (con posesión de pelota, trote o HIIT) combinado con un circuito para activar las piernas.",
       "etiquetas": [
         "aeróbico",
         "piernas"
@@ -123,6 +124,7 @@
       "id": "jueves-pelota",
       "nombre": "Pelota + físico liviano",
       "dia": "jueves",
+      "objetivo": "Más pelota y un poco de físico, para llegar bien al sábado.",
       "etiquetas": [
         "pelota",
         "físico liviano"
@@ -215,6 +217,7 @@
       "id": "velocidad-aceleracion",
       "nombre": "Velocidad y aceleración",
       "dia": null,
+      "objetivo": "Desarrollar aceleración progresiva, técnica de carrera y cambios de ritmo, priorizando la técnica sobre la velocidad máxima.",
       "etiquetas": [
         "velocidad",
         "técnica de carrera"
@@ -300,6 +303,7 @@
       "id": "fuerza-control",
       "nombre": "Fuerza y control",
       "dia": null,
+      "objetivo": "Priorizar fuerza controlada y técnica de pelota de baja intensidad, con poca carga aeróbica.",
       "etiquetas": [
         "fuerza",
         "pelota suave"
@@ -376,6 +380,7 @@
       "id": "dia-previo",
       "nombre": "Día previo al partido",
       "dia": null,
+      "objetivo": "Activar sin generar fatiga ni estímulo nuevo. Sin circuito de fuerza ni 4v4 competitivo.",
       "etiquetas": [
         "activación",
         "sin fatiga"

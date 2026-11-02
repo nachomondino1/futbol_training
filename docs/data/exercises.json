@@ -50,7 +50,10 @@
       "trabaja": {
         "principal": "movilidad",
         "secundarios": []
-      }
+      },
+      "aporta": [
+        "movilidad"
+      ]
     },
     {
       "id": "escalera",
@@ -67,7 +70,10 @@
         "secundarios": [
           "gemelos"
         ]
-      }
+      },
+      "aporta": [
+        "coordinacion"
+      ]
     },
     {
       "id": "sentadilla",
@@ -85,7 +91,10 @@
           "gluteo-mayor",
           "isquiotibiales"
         ]
-      }
+      },
+      "aporta": [
+        "fuerza"
+      ]
     },
     {
       "id": "zancada-estatica",
@@ -105,7 +114,10 @@
           "gluteo-mayor",
           "isquiotibiales"
         ]
-      }
+      },
+      "aporta": [
+        "fuerza"
+      ]
     },
     {
       "id": "wall-sit",
@@ -124,7 +136,10 @@
         "secundarios": [
           "gluteo-mayor"
         ]
-      }
+      },
+      "aporta": [
+        "fuerza"
+      ]
     },
     {
       "id": "puente-gluteo",
@@ -141,7 +156,10 @@
         "secundarios": [
           "isquiotibiales"
         ]
-      }
+      },
+      "aporta": [
+        "fuerza"
+      ]
     },
     {
       "id": "abduccion-cadera",
@@ -156,7 +174,10 @@
       "trabaja": {
         "principal": "gluteo-medio",
         "secundarios": []
-      }
+      },
+      "aporta": [
+        "fuerza"
+      ]
     },
     {
       "id": "elevacion-talones",
@@ -171,7 +192,10 @@
       "trabaja": {
         "principal": "gemelos",
         "secundarios": []
-      }
+      },
+      "aporta": [
+        "fuerza"
+      ]
     },
     {
       "id": "plancha-frontal",
@@ -186,7 +210,10 @@
       "trabaja": {
         "principal": "core",
         "secundarios": []
-      }
+      },
+      "aporta": [
+        "fuerza"
+      ]
     },
     {
       "id": "plancha-lateral",
@@ -203,7 +230,10 @@
         "secundarios": [
           "gluteo-medio"
         ]
-      }
+      },
+      "aporta": [
+        "fuerza"
+      ]
     },
     {
       "id": "trote-continuo",
@@ -221,7 +251,10 @@
       "trabaja": {
         "principal": "aerobica",
         "secundarios": []
-      }
+      },
+      "aporta": [
+        "aerobico"
+      ]
     },
     {
       "id": "hiit-10-10",
@@ -238,7 +271,10 @@
       "trabaja": {
         "principal": "aerobica",
         "secundarios": []
-      }
+      },
+      "aporta": [
+        "aerobico"
+      ]
     },
     {
       "id": "rondo",
@@ -272,7 +308,11 @@
         "secundarios": [
           "coordinacion"
         ]
-      }
+      },
+      "aporta": [
+        "control",
+        "aerobico"
+      ]
     },
     {
       "id": "pases-control-orientado",
@@ -302,7 +342,10 @@
       "trabaja": {
         "principal": "coordinacion",
         "secundarios": []
-      }
+      },
+      "aporta": [
+        "control"
+      ]
     },
     {
       "id": "pase-control-definicion",
@@ -334,7 +377,11 @@
       "trabaja": {
         "principal": "coordinacion",
         "secundarios": []
-      }
+      },
+      "aporta": [
+        "definicion",
+        "control"
+      ]
     },
     {
       "id": "circuito-pases-combinados",
@@ -364,7 +411,10 @@
       "trabaja": {
         "principal": "coordinacion",
         "secundarios": []
-      }
+      },
+      "aporta": [
+        "control"
+      ]
     },
     {
       "id": "conduccion-ritmo-variable",
@@ -392,7 +442,10 @@
         "secundarios": [
           "aerobica"
         ]
-      }
+      },
+      "aporta": [
+        "control"
+      ]
     },
     {
       "id": "tecnica-carrera",
@@ -411,7 +464,11 @@
           "cuadriceps",
           "isquiotibiales"
         ]
-      }
+      },
+      "aporta": [
+        "velocidad",
+        "coordinacion"
+      ]
     },
     {
       "id": "progresion-aceleracion",
@@ -441,7 +498,10 @@
           "cuadriceps",
           "gemelos"
         ]
-      }
+      },
+      "aporta": [
+        "velocidad"
+      ]
     },
     {
       "id": "cambios-ritmo-conos",
@@ -459,7 +519,10 @@
           "gluteo-mayor",
           "gemelos"
         ]
-      }
+      },
+      "aporta": [
+        "velocidad"
+      ]
     },
     {
       "id": "activacion-neuromuscular",
@@ -476,7 +539,11 @@
         "secundarios": [
           "cuadriceps"
         ]
-      }
+      },
+      "aporta": [
+        "velocidad",
+        "movilidad"
+      ]
     },
     {
       "id": "estiramiento-estatico",
@@ -498,7 +565,10 @@
           "isquiotibiales",
           "gemelos"
         ]
-      }
+      },
+      "aporta": [
+        "movilidad"
+      ]
     },
     {
       "id": "bulgarian-split-squat",
@@ -517,7 +587,10 @@
           "gluteo-mayor",
           "core"
         ]
-      }
+      },
+      "aporta": [
+        "fuerza"
+      ]
     },
     {
       "id": "trap-bar-deadlift",
@@ -539,7 +612,10 @@
           "core",
           "cuadriceps"
         ]
-      }
+      },
+      "aporta": [
+        "fuerza"
+      ]
     },
     {
       "id": "step-up-unilateral",
@@ -557,7 +633,10 @@
         "secundarios": [
           "gluteo-mayor"
         ]
-      }
+      },
+      "aporta": [
+        "fuerza"
+      ]
     },
     {
       "id": "sentadilla-explosiva",
@@ -576,7 +655,11 @@
         "secundarios": [
           "gluteo-mayor"
         ]
-      }
+      },
+      "aporta": [
+        "potencia",
+        "fuerza"
+      ]
     },
     {
       "id": "box-jump",
@@ -595,7 +678,10 @@
           "gluteo-mayor",
           "gemelos"
         ]
-      }
+      },
+      "aporta": [
+        "potencia"
+      ]
     },
     {
       "id": "broad-jump",
@@ -616,7 +702,11 @@
           "isquiotibiales",
           "cuadriceps"
         ]
-      }
+      },
+      "aporta": [
+        "potencia",
+        "velocidad"
+      ]
     },
     {
       "id": "med-ball-slam",
@@ -634,7 +724,10 @@
         "secundarios": [
           "tren-superior"
         ]
-      }
+      },
+      "aporta": [
+        "potencia"
+      ]
     },
     {
       "id": "leg-hop",
@@ -654,7 +747,11 @@
           "cuadriceps",
           "gluteo-medio"
         ]
-      }
+      },
+      "aporta": [
+        "potencia",
+        "coordinacion"
+      ]
     },
     {
       "id": "flying-sprint",
@@ -673,7 +770,10 @@
           "gluteo-mayor",
           "gemelos"
         ]
-      }
+      },
+      "aporta": [
+        "velocidad"
+      ]
     },
     {
       "id": "t-drill",
@@ -692,7 +792,11 @@
           "aductores",
           "cuadriceps"
         ]
-      }
+      },
+      "aporta": [
+        "velocidad",
+        "coordinacion"
+      ]
     },
     {
       "id": "bounding",
@@ -711,7 +815,11 @@
           "isquiotibiales",
           "gemelos"
         ]
-      }
+      },
+      "aporta": [
+        "potencia",
+        "velocidad"
+      ]
     },
     {
       "id": "sprint-5-10-5",
@@ -730,7 +838,10 @@
           "gluteo-mayor",
           "aductores"
         ]
-      }
+      },
+      "aporta": [
+        "velocidad"
+      ]
     },
     {
       "id": "hill-sprint",
@@ -749,7 +860,11 @@
           "cuadriceps",
           "gemelos"
         ]
-      }
+      },
+      "aporta": [
+        "velocidad",
+        "fuerza"
+      ]
     },
     {
       "id": "sled-push",
@@ -768,7 +883,11 @@
           "gluteo-mayor",
           "gemelos"
         ]
-      }
+      },
+      "aporta": [
+        "velocidad",
+        "fuerza"
+      ]
     },
     {
       "id": "reactive-sprint",
@@ -786,7 +905,11 @@
         "secundarios": [
           "cuadriceps"
         ]
-      }
+      },
+      "aporta": [
+        "velocidad",
+        "coordinacion"
+      ]
     },
     {
       "id": "hiit-15-15",
@@ -802,7 +925,10 @@
       "trabaja": {
         "principal": "aerobica",
         "secundarios": []
-      }
+      },
+      "aporta": [
+        "aerobico"
+      ]
     },
     {
       "id": "intervalo-4x4",
@@ -818,7 +944,10 @@
       "trabaja": {
         "principal": "aerobica",
         "secundarios": []
-      }
+      },
+      "aporta": [
+        "aerobico"
+      ]
     },
     {
       "id": "reducido",
@@ -836,7 +965,11 @@
         "secundarios": [
           "coordinacion"
         ]
-      }
+      },
+      "aporta": [
+        "aerobico",
+        "control"
+      ]
     },
     {
       "id": "pase-presion-arcos-l",
@@ -861,6 +994,10 @@
       "pendiente_validar": [
         "2",
         "3"
+      ],
+      "aporta": [
+        "control",
+        "velocidad"
       ]
     },
     {
@@ -879,7 +1016,11 @@
       "trabaja": {
         "principal": "coordinacion",
         "secundarios": []
-      }
+      },
+      "aporta": [
+        "control",
+        "coordinacion"
+      ]
     },
     {
       "id": "zigzag",
@@ -895,7 +1036,10 @@
       "trabaja": {
         "principal": "coordinacion",
         "secundarios": []
-      }
+      },
+      "aporta": [
+        "control"
+      ]
     },
     {
       "id": "v-push-cut",
@@ -911,7 +1055,10 @@
       "trabaja": {
         "principal": "coordinacion",
         "secundarios": []
-      }
+      },
+      "aporta": [
+        "control"
+      ]
     },
     {
       "id": "light-touches",
@@ -927,7 +1074,10 @@
       "trabaja": {
         "principal": "coordinacion",
         "secundarios": []
-      }
+      },
+      "aporta": [
+        "control"
+      ]
     },
     {
       "id": "sprint-control-pase",
@@ -943,7 +1093,11 @@
       "trabaja": {
         "principal": "coordinacion",
         "secundarios": []
-      }
+      },
+      "aporta": [
+        "control",
+        "velocidad"
+      ]
     },
     {
       "id": "uno-contra-uno-tiro",
@@ -959,7 +1113,10 @@
       "trabaja": {
         "principal": "coordinacion",
         "secundarios": []
-      }
+      },
+      "aporta": [
+        "definicion"
+      ]
     },
     {
       "id": "pivote-9-definicion",
@@ -975,7 +1132,10 @@
       "trabaja": {
         "principal": "coordinacion",
         "secundarios": []
-      }
+      },
+      "aporta": [
+        "definicion"
+      ]
     },
     {
       "id": "centro-vertice-area",
@@ -991,7 +1151,10 @@
       "trabaja": {
         "principal": "coordinacion",
         "secundarios": []
-      }
+      },
+      "aporta": [
+        "definicion"
+      ]
     },
     {
       "id": "activacion-dinamica",
@@ -1007,7 +1170,10 @@
       "trabaja": {
         "principal": "movilidad",
         "secundarios": []
-      }
+      },
+      "aporta": [
+        "movilidad"
+      ]
     },
     {
       "id": "carrera-v-devolucion",
@@ -1026,7 +1192,11 @@
           "cuadriceps",
           "gluteo-mayor"
         ]
-      }
+      },
+      "aporta": [
+        "control",
+        "velocidad"
+      ]
     },
     {
       "id": "conduccion-v-suela",
@@ -1045,7 +1215,10 @@
           "cuadriceps",
           "gemelos"
         ]
-      }
+      },
+      "aporta": [
+        "control"
+      ]
     },
     {
       "id": "un-toque-cono-central",
@@ -1065,7 +1238,11 @@
           "gemelos",
           "coordinacion"
         ]
-      }
+      },
+      "aporta": [
+        "velocidad",
+        "control"
+      ]
     },
     {
       "id": "pase-cono-lateral-control",
@@ -1085,7 +1262,11 @@
           "isquiotibiales",
           "cuadriceps"
         ]
-      }
+      },
+      "aporta": [
+        "control",
+        "velocidad"
+      ]
     },
     {
       "id": "velocidad-maxima-cono",
@@ -1104,7 +1285,32 @@
           "gluteo-mayor",
           "gemelos"
         ]
-      }
+      },
+      "aporta": [
+        "velocidad"
+      ]
+    },
+    {
+      "id": "aceleracion-conos-zigzag",
+      "nombre": "Aceleración a cada cono en zigzag",
+      "alias": [],
+      "categoria": "velocidad",
+      "descripcion": "Corrés en zigzag y acelerás hacia cada cono. Sale de la \"Parte 2\" de los circuitos del Doc.",
+      "dosis": null,
+      "variantes": {},
+      "imagen": null,
+      "video": null,
+      "huerfano_ok": true,
+      "trabaja": {
+        "principal": "gluteo-mayor",
+        "secundarios": [
+          "cuadriceps",
+          "gemelos"
+        ]
+      },
+      "aporta": [
+        "velocidad"
+      ]
     }
   ]
 }

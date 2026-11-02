@@ -121,7 +121,7 @@ function seccionMusculos() {
 
 function armarPagina() {
   app.replaceChildren(
-    h("h1", {}, "Glosario"),
+    h("h1", {}, "Ejercicios"),
     h("p", { class: "intro" }, h("a", { href: "#musculos" }, "Músculos y para qué sirve cada uno ↓")),
     h("div", { class: "controles" },
       h("input", { class: "buscar", type: "search", id: "buscar", placeholder: "Buscar ejercicio",

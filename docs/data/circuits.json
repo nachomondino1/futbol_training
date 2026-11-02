@@ -1,4 +1,178 @@
 {
+  "bancos": {
+    "fuerza": {
+      "nombre": "Fuerza",
+      "opciones": [
+        {
+          "ex": "sentadilla"
+        },
+        {
+          "ex": "sentadilla-explosiva"
+        },
+        {
+          "ex": "zancada-estatica"
+        },
+        {
+          "ex": "bulgarian-split-squat"
+        },
+        {
+          "ex": "step-up-unilateral"
+        },
+        {
+          "ex": "leg-hop",
+          "nombre": "Salto lateral y equilibrio",
+          "nota": "Saltos a una pierna de lado a lado, quedándote un momento en equilibrio."
+        },
+        {
+          "ex": "wall-sit"
+        },
+        {
+          "ex": "puente-gluteo"
+        },
+        {
+          "ex": "plancha-frontal"
+        },
+        {
+          "ex": "plancha-lateral"
+        },
+        {
+          "ex": "abduccion-cadera"
+        },
+        {
+          "ex": "elevacion-talones"
+        },
+        {
+          "ex": "box-jump"
+        },
+        {
+          "ex": "broad-jump"
+        }
+      ]
+    },
+    "coordinacion": {
+      "nombre": "Coordinación",
+      "opciones": [
+        {
+          "ex": "escalera",
+          "nombre": "Escalera: pie-pie",
+          "nota": "Un apoyo por cuadrado."
+        },
+        {
+          "ex": "escalera",
+          "nombre": "Escalera: in-in-out-out",
+          "nota": "Adentro, adentro, afuera, afuera."
+        },
+        {
+          "ex": "escalera",
+          "nombre": "Escalera: lateral",
+          "nota": "De costado."
+        },
+        {
+          "ex": "escalera",
+          "nombre": "Escalera: los 3 patrones",
+          "nota": "Pie-pie, in-in-out-out y lateral, 2 pasadas por patrón."
+        },
+        {
+          "ex": "tecnica-carrera",
+          "nombre": "Skipping bajo",
+          "nota": "Pasos cortos y rápidos con poca elevación de rodilla."
+        },
+        {
+          "ex": "tecnica-carrera",
+          "nombre": "Taloneo",
+          "nota": "Talón hacia la cola, trotando."
+        },
+        {
+          "ex": "tecnica-carrera",
+          "nombre": "Rodillas altas",
+          "nota": "Elevación de rodilla marcada, trotando."
+        },
+        {
+          "ex": "aceleracion-conos-zigzag"
+        }
+      ]
+    },
+    "pelota": {
+      "nombre": "Pelota",
+      "opciones": [
+        {
+          "ex": "zigzag"
+        },
+        {
+          "ex": "v-push-cut"
+        },
+        {
+          "ex": "light-touches"
+        },
+        {
+          "ex": "sole-push-acceleration"
+        },
+        {
+          "ex": "conduccion-ritmo-variable"
+        },
+        {
+          "ex": "sprint-control-pase"
+        },
+        {
+          "ex": "carrera-v-devolucion"
+        },
+        {
+          "ex": "conduccion-v-suela"
+        },
+        {
+          "ex": "un-toque-cono-central"
+        },
+        {
+          "ex": "pase-cono-lateral-control"
+        },
+        {
+          "ex": "pase-presion-arcos-l"
+        }
+      ]
+    },
+    "aerobico": {
+      "nombre": "Aeróbico",
+      "opciones": [
+        {
+          "ex": "trote-continuo",
+          "nombre": "Trote continuo",
+          "nota": "A ritmo conversacional."
+        },
+        {
+          "ex": "hiit-10-10"
+        },
+        {
+          "ex": "hiit-15-15"
+        },
+        {
+          "ex": "intervalo-4x4"
+        },
+        {
+          "ex": "reducido"
+        },
+        {
+          "ex": "rondo"
+        }
+      ]
+    },
+    "velocidad": {
+      "nombre": "Velocidad máxima",
+      "opciones": [
+        {
+          "ex": "velocidad-maxima-cono"
+        },
+        {
+          "ex": "flying-sprint"
+        },
+        {
+          "ex": "sprint-5-10-5"
+        },
+        {
+          "ex": "reactive-sprint"
+        }
+      ]
+    }
+  },
   "circuitos": [
     {
       "id": "circuito-fuerza",
@@ -143,62 +317,67 @@
       ]
     },
     {
-      "id": "circuito-combinado",
-      "nombre": "Circuito combinado de 3 ejercicios",
-      "descripcion": "Tres ejercicios combinados, uno detrás del otro. No siempre empieza con fuerza: el orden y el tipo de cada parte se pueden cambiar (fuerza, coordinación, pelota o velocidad máxima hasta el cono).",
+      "id": "fuerza-coordinacion-pelota",
+      "nombre": "Fuerza, coordinación, pelota",
+      "descripcion": "Plantilla de tres partes, una detrás de la otra: elegís una opción de cada una según el día. La última parte es un ejercicio con pelota.",
       "etiquetas": [
         "combinado",
-        "técnica",
         "pelota"
       ],
-      "base_nombre": "Fuerza, coordinación y pelota",
-      "items": [
+      "huerfano_ok": true,
+      "partes": [
         {
-          "ex": "leg-hop",
-          "nota": "Salto de lado a lado, quedándote un momento en equilibrio."
+          "banco": "fuerza"
         },
         {
-          "ex": "escalera"
+          "banco": "coordinacion"
         },
         {
-          "ex": "zigzag"
+          "banco": "pelota"
         }
+      ]
+    },
+    {
+      "id": "fuerza-coordinacion-aerobico",
+      "nombre": "Fuerza, coordinación, aeróbico",
+      "descripcion": "Plantilla de tres partes, una detrás de la otra: elegís una opción de cada una según el día. La última parte es trabajo aeróbico.",
+      "etiquetas": [
+        "combinado",
+        "aeróbico"
       ],
-      "variaciones": [
+      "huerfano_ok": true,
+      "partes": [
         {
-          "id": "fuerza-coordinacion-velocidad",
-          "nombre": "Fuerza, coordinación y velocidad máxima",
-          "nota": "En lugar de la pelota, la última parte es correr a máxima velocidad hasta el cono.",
-          "items": [
-            {
-              "ex": "sentadilla"
-            },
-            {
-              "ex": "escalera"
-            },
-            {
-              "ex": "velocidad-maxima-cono"
-            }
-          ]
+          "banco": "fuerza"
         },
         {
-          "id": "tecnica-coordinacion-pelota",
-          "nombre": "Técnica, coordinación y pelota (sin fuerza)",
-          "nota": "Empieza con la V con la pelota, no con fuerza.",
-          "items": [
-            {
-              "ex": "v-push-cut"
-            },
-            {
-              "ex": "escalera"
-            },
-            {
-              "ex": "zigzag"
-            }
-          ]
+          "banco": "coordinacion"
+        },
+        {
+          "banco": "aerobico"
         }
+      ]
+    },
+    {
+      "id": "fuerza-coordinacion-velocidad",
+      "nombre": "Fuerza, coordinación, velocidad máxima",
+      "descripcion": "Plantilla de tres partes, una detrás de la otra: elegís una opción de cada una según el día. La última parte es salir corriendo a máxima velocidad.",
+      "etiquetas": [
+        "combinado",
+        "velocidad"
       ],
-      "huerfano_ok": true
+      "huerfano_ok": true,
+      "partes": [
+        {
+          "banco": "fuerza"
+        },
+        {
+          "banco": "coordinacion"
+        },
+        {
+          "banco": "velocidad"
+        }
+      ]
     }
   ]
 }

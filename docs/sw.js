@@ -7,7 +7,7 @@ const CACHE = "entrenamiento-v2"; // subirlo si se borra o renombra un archivo, 
 const BASICOS = [
   "./", "index.html", "glosario.html", "circuitos.html", "sesiones.html",
   "css/style.css", "js/common.js", "js/glosario.js", "js/sesiones.js", "js/circuitos.js", "js/estructura.js",
-  "data/exercises.json", "data/sessions.json", "data/muscles.json", "data/circuits.json",
+  "data/exercises.json", "data/sessions.json", "data/muscles.json", "data/circuits.json", "data/objetivos.json",
   "manifest.webmanifest", "img/icon-180.png", "img/icon-192.png", "img/icon-512.png",
 ];
 

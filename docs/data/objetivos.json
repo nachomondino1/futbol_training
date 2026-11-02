@@ -1,0 +1,44 @@
+{
+  "objetivos": [
+    {
+      "id": "velocidad",
+      "nombre": "Velocidad y aceleración",
+      "para_que": "Llegar antes a la pelota y ganar el primer paso."
+    },
+    {
+      "id": "aerobico",
+      "nombre": "Resistencia aeróbica",
+      "para_que": "Aguantar el partido y recuperarte más rápido entre sprints."
+    },
+    {
+      "id": "fuerza",
+      "nombre": "Fuerza",
+      "para_que": "Piernas y core más fuertes para frenar, cambiar de dirección y cuidarte de lesiones."
+    },
+    {
+      "id": "potencia",
+      "nombre": "Potencia y salto",
+      "para_que": "Más explosividad en el primer paso y en el salto."
+    },
+    {
+      "id": "control",
+      "nombre": "Control y técnica con pelota",
+      "para_que": "Dominar, pasar y conducir la pelota con más seguridad."
+    },
+    {
+      "id": "definicion",
+      "nombre": "Precisión de tiro",
+      "para_que": "Definir mejor frente al arco: pase, control y remate."
+    },
+    {
+      "id": "coordinacion",
+      "nombre": "Coordinación y agilidad",
+      "para_que": "Pies más rápidos y coordinados, para cambiar de ritmo y de dirección."
+    },
+    {
+      "id": "movilidad",
+      "nombre": "Movilidad y prevención",
+      "para_que": "Entrenar y jugar con buen rango de movimiento y menos riesgo de lesión."
+    }
+  ]
+}

@@ -73,3 +73,23 @@ El Doc solo decía el grupo muscular de sentadilla y estocada (cuádriceps, glú
 - Ya estaba en el glosario con el montaje del Doc. Lo reescribí con tu explicación (delantero, defensor que sale a máxima, pasador detrás del defensor, arquitos mirando al delantero) y agregué las variantes de 2 y 3 personas, que salen de que "el defensor puede actuar como pasador con 2". Están marcadas sin validar.
 - Sin variantes para 4 y 8 personas: no dijiste cómo se hace con más.
 - Cambió un detalle respecto del Doc: antes el pasador estaba "detrás y a un costado del defensor"; ahora dice "detrás del defensor", como contaste.
+
+## Plantillas de circuito: fuerza, coordinación y una tercera parte (2026-11-02)
+
+- Hay tres plantillas: **fuerza, coordinación, pelota**; **fuerza, coordinación, aeróbico**; y **fuerza, coordinación, velocidad máxima** (esta salía de la idea de "salir corriendo"; borrala si no la usás). Comparten los bancos de opciones: 14 de fuerza, 8 de coordinación, 11 de pelota, 6 de aeróbico y 4 de velocidad. Las armé yo con lo que había en Ejercicios y lo que mencionaste: sacá o agregá lo que no te sirva (`circuits.json` > `bancos`).
+- **Aeróbico:** trote continuo, HIIT 10/10, HIIT 15/15, intervalo 4×4, reducido y rondo. Es una lista mía; confirmá cuáles entran como tercera parte de un circuito.
+- **Coordinación:** como solo existe la escalera (con sus 3 patrones) y la técnica de carrera (skipping, taloneo, rodillas altas), las separé en opciones. "Aceleración a cada cono en zigzag" es un ejercicio nuevo que sale de la "Parte 2" del Doc y no tiene más descripción que esa.
+- La elección se hace en la página Circuitos y no se guarda. **Las sesiones todavía no usan las plantillas.**
+- Ninguna plantilla tiene vueltas ni tiempos: no los dijiste.
+
+## Nombres (2026-11-02)
+
+- "Glosario" pasó a llamarse **Ejercicios** en lo que se ve (menú, títulos, textos). Los archivos siguen llamándose `glosario.html` y `glosario.js` para no romper links ni lo que guarda la versión sin señal.
+
+## "Qué vas a ganar" en las sesiones (2026-11-02)
+
+- Hay 8 cosas que se pueden ganar (`objetivos.json`): velocidad y aceleración, resistencia aeróbica, fuerza, potencia y salto, control y técnica con pelota, precisión de tiro, coordinación y agilidad, movilidad y prevención. Los nombres y las frases son míos; solo la de resistencia aeróbica sale del Doc.
+- **Qué aporta cada ejercicio** (`aporta` en `exercises.json`): lo asigné yo, uno o dos por ejercicio. Los más discutibles: rondo (control y aeróbico), pase con presión y arcos (control y velocidad), activación neuromuscular (velocidad y movilidad) y sprints con trineo o cuesta (velocidad y fuerza).
+- **El cálculo es aproximado:** reparte los minutos del bloque en partes iguales entre sus ejercicios, y si un ejercicio aporta dos cosas, mitad y mitad. Por eso dice "unos N min". Para algo más fino habría que poner minutos por ejercicio.
+- **El objetivo de cada sesión** sale de las frases del Doc ("Objetivo:" de cada día) para velocidad, fuerza y día previo; para el martes y el jueves lo escribí con lo que me contaste. Las otras sesiones del Doc (Días 4 y 6) no tienen sesión propia.
+- Como el martes tiene "movilidad y prevención" en segundo lugar (activación + vuelta a la calma suman 20 min), puede parecer más importante de lo que querés. Si preferís que solo cuente lo que sea entrenamiento, se puede excluir esos bloques del cálculo.

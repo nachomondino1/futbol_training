@@ -1,5 +1,5 @@
 import { h, renderHeader, cargarJSON, mostrarError } from "./common.js";
-import { aplicarVariacion, estructuraNodo, guiaDetalle } from "./estructura.js";
+import { aplicarVariacion, estructuraNodo, guiaDetalle, normalizarCircuitos } from "./estructura.js";
 
 const app = document.getElementById("app");
 renderHeader("circuitos");
@@ -9,7 +9,9 @@ let categorias = new Map();
 let circuitos = [];
 let sesiones = [];
 let guias = {};
-const estado = { filtro: null, variacion: {} }; // variacion: id de circuito -> id de variación (sin valor = el original)
+const estado = { filtro: null, variacion: {}, partes: {} };
+// variacion: id de circuito -> id de variación (sin valor = el original)
+// partes: id de plantilla -> [índice de la opción elegida en cada parte]
 
 const etiquetas = () => [...new Set(circuitos.flatMap((c) => c.etiquetas || []))].sort((a, b) => a.localeCompare(b, "es"));
 const visibles = () => circuitos.filter((c) => !estado.filtro || (c.etiquetas || []).includes(estado.filtro));
@@ -31,11 +33,55 @@ function indice(lista) {
         onclick: () => document.getElementById(c.id).scrollIntoView({ block: "start" }) },
         h("span", { class: "bloque-n" }, String(i + 1)),
         h("span", { class: "resumen-nombre" }, c.nombre),
-        h("span", { class: "resumen-min" }, n ? `${n + 1} versiones` : `${c.items.length} ejercicios`)));
+        h("span", { class: "resumen-min" }, n ? `${n + 1} versiones` : c.partes ? `${c.partes.length} partes` : `${c.items.length} ejercicios`)));
     })));
 }
 
+// Plantilla: tres (o más) partes y, de cada una, las opciones posibles. Se elige una por parte.
+function tarjetaPlantilla(c) {
+  const elegidas = estado.partes[c.id] ||= c.partes.map(() => 0);
+  const usos = sesiones.filter((s) => s.bloques.some((b) => b.opciones.some((o) => o.circuito === c.id)));
+  const nombreOpcion = (o) => o.nombre || ejercicios.get(o.ex).nombre;
+
+  const hoy = h("div", { class: "hoy" },
+    h("h3", {}, "Tu circuito de hoy"),
+    h("ol", { class: "circuito-lista" }, c.partes.map((p, pi) => {
+      const o = p.opciones[elegidas[pi]];
+      return h("li", {},
+        h("span", { class: "est-num" }, String(pi + 1)),
+        h("a", { href: `glosario.html#${o.ex}` }, nombreOpcion(o)),
+        h("span", { class: "etiqueta" }, p.nombre),
+        o.nota ? h("span", { class: "item-dosis" }, o.nota) : null);
+    })));
+
+  const parte = (p, pi) => {
+    const grupos = [...new Set(p.opciones.map((o) => o.grupo || ""))];
+    return h("div", { class: "parte" },
+      h("h3", {}, `Parte ${pi + 1}: ${p.nombre}`, h("span", { class: "parte-elegida" }, nombreOpcion(p.opciones[elegidas[pi]]))),
+      grupos.flatMap((g) => [
+        g ? h("p", { class: "grupo-opciones" }, g) : null,
+        h("div", { class: "opciones", role: "group", "aria-label": `${p.nombre}${g ? ": " + g : ""}` },
+          p.opciones.map((o, oi) => (o.grupo || "") === g
+            ? h("button", { type: "button", class: "chip", "aria-pressed": String(elegidas[pi] === oi),
+                onclick: () => { elegidas[pi] = oi; pintar(); } }, nombreOpcion(o))
+            : null))]));
+  };
+
+  return h("section", { class: "musculo circuito", id: c.id },
+    h("h2", {}, c.nombre),
+    c.etiquetas?.length ? h("p", { class: "card-meta" }, c.etiquetas.map((e) => h("span", { class: "etiqueta" }, e))) : null,
+    h("p", { class: "musculo-para" }, c.descripcion),
+    hoy,
+    h("p", { class: "vis-titulo" }, "Elegí una opción de cada parte:"),
+    c.partes.map(parte),
+    usos.length
+      ? h("p", { class: "usado-en" }, "Se usa en: ",
+          usos.flatMap((s, i) => [i ? ", " : "", h("a", { href: `sesiones.html#${s.id}` }, s.nombre)]))
+      : null);
+}
+
 function tarjeta(c) {
+  if (c.partes) return tarjetaPlantilla(c);
   const vid = estado.variacion[c.id] || null;
   const ef = aplicarVariacion(c, vid);
   const guia = c.guia ? guiaDetalle(guias[c.guia]) : null;
@@ -81,7 +127,7 @@ function pintar() {
   const lista = visibles();
   app.replaceChildren(
     h("h1", {}, "Circuitos"),
-    h("p", { class: "intro" }, "Un circuito es un conjunto de ejercicios del glosario, hechos en orden. Cada uno puede tener versiones: misma estructura, otros ejercicios."),
+    h("p", { class: "intro" }, "Un circuito es un conjunto de ejercicios, hechos en orden. Puede tener versiones (misma estructura, otros ejercicios) o ser una plantilla donde elegís una opción por parte."),
     filtros(),
     indice(lista),
     ...lista.map(tarjeta));
@@ -93,7 +139,7 @@ try {
     cargarJSON("data/exercises.json"), cargarJSON("data/circuits.json"), cargarJSON("data/sessions.json")]);
   ejercicios = new Map(ex.ejercicios.map((e) => [e.id, e]));
   categorias = new Map(ex.categorias.map((c) => [c.id, c.nombre]));
-  circuitos = cir.circuitos;
+  circuitos = normalizarCircuitos(cir);
   sesiones = ses.sesiones;
   guias = ses.guias;
   pintar();

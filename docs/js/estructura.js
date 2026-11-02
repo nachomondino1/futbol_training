@@ -39,8 +39,24 @@ export function guiaDetalle(g, { abierto = false, alAlternar = null } = {}) {
 
 // El circuito con los items (y ajustes de estructura) de una variación; sin variación, el circuito base.
 export function aplicarVariacion(c, id) {
+  if (!c.items && c.partes) c = { ...c, items: itemsDePartes(c) }; // plantilla: por defecto, la primera opción de cada parte
   const v = id ? (c.variaciones || []).find((x) => x.id === id) : null;
   if (!v) return c;
   const estructura = c.estructura || v.estructura ? { ...c.estructura, ...v.estructura } : undefined;
   return { ...c, items: v.items, estructura, variacion: v };
+}
+
+// Plantilla de circuito: una opción por parte. `elegidas` es { índice de parte: índice de opción }.
+export function itemsDePartes(c, elegidas = {}) {
+  return c.partes.map((p, i) => p.opciones[elegidas[i] ?? 0]);
+}
+
+// Cada parte de una plantilla puede traer sus opciones o apuntar a un banco (circuits.json > bancos), así
+// la lista de ejercicios de fuerza, de coordinación, etc. se escribe una sola vez y la comparten varias plantillas.
+export function normalizarCircuitos({ bancos = {}, circuitos }) {
+  return circuitos.map((c) => c.partes
+    ? { ...c, partes: c.partes.map((p) => p.banco
+        ? { ...p, nombre: p.nombre || bancos[p.banco].nombre, opciones: bancos[p.banco].opciones }
+        : p) }
+    : c);
 }
