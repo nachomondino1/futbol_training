@@ -1,18 +1,42 @@
 {
   "categorias": [
-    { "id": "calentamiento", "nombre": "Calentamiento" },
-    { "id": "coordinacion", "nombre": "Coordinación" },
-    { "id": "fuerza", "nombre": "Fuerza" },
-    { "id": "aerobico", "nombre": "Aeróbico" },
-    { "id": "velocidad", "nombre": "Velocidad" },
-    { "id": "pelota", "nombre": "Pelota" },
-    { "id": "vuelta-calma", "nombre": "Vuelta a la calma" }
+    {
+      "id": "calentamiento",
+      "nombre": "Calentamiento"
+    },
+    {
+      "id": "coordinacion",
+      "nombre": "Coordinación"
+    },
+    {
+      "id": "fuerza",
+      "nombre": "Fuerza"
+    },
+    {
+      "id": "aerobico",
+      "nombre": "Aeróbico"
+    },
+    {
+      "id": "velocidad",
+      "nombre": "Velocidad"
+    },
+    {
+      "id": "pelota",
+      "nombre": "Pelota"
+    },
+    {
+      "id": "vuelta-calma",
+      "nombre": "Vuelta a la calma"
+    }
   ],
   "ejercicios": [
     {
       "id": "movilidad-articular",
       "nombre": "Movilidad articular",
-      "alias": ["movilidad suave", "movilidad dinámica"],
+      "alias": [
+        "movilidad suave",
+        "movilidad dinámica"
+      ],
       "categoria": "calentamiento",
       "descripcion": "Círculos de tobillo, rodillas altas caminando, talones a la cola, apertura y cierre de cadera.",
       "dosis": "1 min cada uno",
@@ -45,7 +69,9 @@
         "4": "Los cuatro hacen la misma estación al mismo tiempo y pasan juntos a la siguiente.",
         "8": "Dos grupos de 4. Cada grupo arranca en una estación distinta y rotan juntos al terminar el tiempo."
       },
-      "pendiente_validar": ["4"],
+      "pendiente_validar": [
+        "4"
+      ],
       "imagen": null,
       "video": null
     },
@@ -63,7 +89,9 @@
     {
       "id": "zancada-estatica",
       "nombre": "Zancada estática",
-      "alias": ["Estocada"],
+      "alias": [
+        "Estocada"
+      ],
       "categoria": "fuerza",
       "descripcion": "Un pie adelante y uno atrás. Bajás flexionando ambas rodillas hasta casi tocar el piso con la de atrás. Subís sin desplazarte.",
       "dosis": null,
@@ -74,7 +102,9 @@
     {
       "id": "wall-sit",
       "nombre": "Wall sit",
-      "alias": ["Sentadilla isométrica contra pared"],
+      "alias": [
+        "Sentadilla isométrica contra pared"
+      ],
       "categoria": "fuerza",
       "descripcion": "Espalda apoyada en la pared. Bajás hasta que las rodillas queden a 90° y sostenés la posición sin moverte.",
       "dosis": null,
@@ -140,7 +170,10 @@
     {
       "id": "trote-continuo",
       "nombre": "Trote continuo (zona 2)",
-      "alias": ["Resistencia continua", "Trote a ritmo conversacional"],
+      "alias": [
+        "Resistencia continua",
+        "Trote a ritmo conversacional"
+      ],
       "categoria": "aerobico",
       "descripcion": "Correr a ritmo conversacional (60-70% de la FC máx.): tenés que poder hablar sin ahogarte. Es la base aeróbica que mejora la recuperación entre sprints y sostiene la intensidad en el segundo tiempo. Si alguno no llega a los 30 min corridos, alterna trote y caminata rápida en vez de forzar.",
       "dosis": null,
@@ -151,7 +184,9 @@
     {
       "id": "hiit-10-10",
       "nombre": "HIIT 10\"/10\"",
-      "alias": ["HIIT 10/10"],
+      "alias": [
+        "HIIT 10/10"
+      ],
       "categoria": "aerobico",
       "descripcion": "10 segundos corriendo fuerte y 10 segundos de descanso, repetido en varios sets.",
       "dosis": null,
@@ -163,7 +198,9 @@
     {
       "id": "rondo",
       "nombre": "Rondo / posesión reducida",
-      "alias": ["Posesión"],
+      "alias": [
+        "Posesión"
+      ],
       "categoria": "pelota",
       "descripcion": "Juego reducido de posesión con conos marcando el límite del espacio.",
       "dosis": null,
@@ -174,9 +211,17 @@
         "4": "Rondo 3v1: 3 tocan y 1 presiona en el medio. Rotan roles cada 2-3 min.",
         "8": "Rondo 6v2 (6 tocan, 2 presionan en el medio, rotan cada 2-3 min) o 4v4 en cuadrado si prefieren competir."
       },
-      "pendiente_validar": ["4"],
+      "pendiente_validar": [
+        "4"
+      ],
       "imagen": null,
-      "video": null
+      "video": null,
+      "imagenes": {
+        "2": "img/rondo-2.svg",
+        "3": "img/rondo-3.svg",
+        "4": "img/rondo-4.svg",
+        "8": "img/rondo-8.svg"
+      }
     },
     {
       "id": "pases-control-orientado",
@@ -192,14 +237,24 @@
         "4": "Dos parejas, cada una hace el ejercicio de 2 en su propio espacio, en simultáneo.",
         "8": "Cuatro parejas, cada una hace el ejercicio de 2 en su propio espacio, en simultáneo."
       },
-      "pendiente_validar": ["4"],
+      "pendiente_validar": [
+        "4"
+      ],
       "imagen": null,
-      "video": null
+      "video": null,
+      "imagenes": {
+        "2": "img/pases-control-orientado-2.svg",
+        "3": "img/pases-control-orientado-3.svg",
+        "4": "img/pases-control-orientado-4.svg",
+        "8": "img/pases-control-orientado-8.svg"
+      }
     },
     {
       "id": "pase-control-definicion",
       "nombre": "Pase, control y definición",
-      "alias": ["Tiro al arco"],
+      "alias": [
+        "Tiro al arco"
+      ],
       "categoria": "pelota",
       "descripcion": "Ejercicio base de finalización, sin oposición real. Para sumar presión, uno puede hacer de defensor pasivo: solo estira un brazo o se mueve lateralmente, sin salir a robar.",
       "dosis": null,
@@ -210,9 +265,17 @@
         "4": "Dos pasan en pared, uno define y el cuarto hace de defensor pasivo. Rotan los cuatro roles cada 3-4 tiros.",
         "8": "Fila con la pelota, 1-2 tiros por jugador rotando rápido. Con 2 arcos, dividen el grupo y achican la espera."
       },
-      "pendiente_validar": ["4"],
+      "pendiente_validar": [
+        "4"
+      ],
       "imagen": null,
-      "video": null
+      "video": null,
+      "imagenes": {
+        "2": "img/pase-control-definicion-2.svg",
+        "3": "img/pase-control-definicion-3.svg",
+        "4": "img/pase-control-definicion-4.svg",
+        "8": "img/pase-control-definicion-8.svg"
+      }
     },
     {
       "id": "circuito-pases-combinados",
@@ -228,9 +291,17 @@
         "4": "Dos parejas, cada una hace el ejercicio de 2 en su propio espacio, en simultáneo.",
         "8": "Formación en línea o en rombo, con control orientado y algún pase largo ocasional."
       },
-      "pendiente_validar": ["4"],
+      "pendiente_validar": [
+        "4"
+      ],
       "imagen": null,
-      "video": null
+      "video": null,
+      "imagenes": {
+        "2": "img/circuito-pases-combinados-2.svg",
+        "3": "img/circuito-pases-combinados-3.svg",
+        "4": "img/circuito-pases-combinados-4.svg",
+        "8": "img/circuito-pases-combinados-8.svg"
+      }
     },
     {
       "id": "conduccion-ritmo-variable",
@@ -246,7 +317,11 @@
         "4": "Cada uno con su pelota, o repartidos en dos parejas con una pelota cada una.",
         "8": "Repartirse en parejas o grupos chicos si hay más de una pelota."
       },
-      "pendiente_validar": ["2", "3", "4"],
+      "pendiente_validar": [
+        "2",
+        "3",
+        "4"
+      ],
       "imagen": null,
       "video": null
     },
@@ -275,7 +350,11 @@
         "4": "Salen de a dos, en dos tandas.",
         "8": "Trabajar en parejas o tandas de 2-3 para no esperar turno."
       },
-      "pendiente_validar": ["2", "3", "4"],
+      "pendiente_validar": [
+        "2",
+        "3",
+        "4"
+      ],
       "imagen": null,
       "video": null
     },
@@ -304,7 +383,9 @@
     {
       "id": "estiramiento-estatico",
       "nombre": "Estiramiento estático y vuelta a la calma",
-      "alias": ["Vuelta a la calma"],
+      "alias": [
+        "Vuelta a la calma"
+      ],
       "categoria": "vuelta-calma",
       "descripcion": "Caminata y estiramiento estático de cuádriceps, isquios, gemelos y cadera. Sin forzar el rango.",
       "dosis": null,

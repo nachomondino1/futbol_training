@@ -10,7 +10,8 @@ import sys
 from collections import Counter
 from pathlib import Path
 
-DATA = Path(__file__).resolve().parent.parent / "docs" / "data"
+WEB = Path(__file__).resolve().parent.parent / "docs"
+DATA = WEB / "data"
 PERSONAS = ["2", "3", "4", "8"]
 
 errors: list[str] = []
@@ -51,6 +52,14 @@ def main() -> int:
                     errors.append(f"{eid}: falta variante para {p} personas")
         for p in e.get("pendiente_validar", []):
             warnings.append(f"{eid}: variante de {p} personas propuesta, sin validar")
+        rutas = [e["imagen"]] if e.get("imagen") else []
+        for k, ruta in e.get("imagenes", {}).items():
+            if k not in PERSONAS:
+                errors.append(f"{eid}: imagenes con clave inválida '{k}'")
+            rutas.append(ruta)
+        for ruta in rutas:
+            if not (WEB / ruta).is_file():
+                errors.append(f"{eid}: la imagen '{ruta}' no existe en docs/")
         if e.get("pendiente_dosis"):
             warnings.append(f"{eid}: dosis pendiente ({e['pendiente_dosis']})")
 

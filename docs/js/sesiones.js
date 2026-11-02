@@ -1,4 +1,4 @@
-import { getPersonas, h, renderHeader, cargarJSON, mostrarError } from "./common.js";
+import { getPersonas, h, imagenPara, renderHeader, cargarJSON, mostrarError } from "./common.js";
 
 const app = document.getElementById("app");
 let ejercicios = new Map(); // id -> ejercicio (como un dict de Python)
@@ -37,7 +37,8 @@ function itemNodo(item, bi) {
   const variante = varianteDe(item, ej, n);
   const dosis = item.dosis || ej.dosis;
   const medios = [];
-  if (ej.imagen) medios.push(h("img", { src: ej.imagen, alt: ej.nombre, loading: "lazy" }));
+  const img = imagenPara(ej, n);
+  if (img) medios.push(img);
   if (ej.video) medios.push(h("a", { class: "btn", href: ej.video, target: "_blank", rel: "noopener" }, "Ver video"));
 
   return h("details", {

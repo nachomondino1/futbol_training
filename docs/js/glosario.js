@@ -1,4 +1,4 @@
-import { PERSONAS, getPersonas, h, normalizar, renderHeader, cargarJSON, mostrarError } from "./common.js";
+import { PERSONAS, getPersonas, h, imagenPara, normalizar, renderHeader, cargarJSON, mostrarError } from "./common.js";
 
 const app = document.getElementById("app");
 const estado = { cat: null, q: "" };
@@ -26,7 +26,8 @@ function celdaVariantes(ej) {
 
 function celdaMedios(ej) {
   const items = [];
-  if (ej.imagen) items.push(h("img", { src: ej.imagen, alt: ej.nombre, loading: "lazy" }));
+  const img = imagenPara(ej, getPersonas());
+  if (img) items.push(img);
   if (ej.video) items.push(h("a", { class: "btn", href: ej.video, target: "_blank", rel: "noopener" }, "Ver video"));
   return items.length ? h("div", { class: "medios" }, items) : null;
 }

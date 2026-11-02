@@ -34,6 +34,15 @@ export function h(tag, attrs = {}, ...hijos) {
   return el;
 }
 
+// Imagen del ejercicio para N personas: la de esa cantidad si existe, si no la general, si no nada.
+// Devuelve un <img> o null (así no queda ningún placeholder roto).
+export function imagenPara(ej, n) {
+  const src = (ej.imagenes || {})[String(n)] || ej.imagen;
+  if (!src) return null;
+  const alt = (ej.imagenes || {})[String(n)] ? `${ej.nombre}, con ${n}` : ej.nombre;
+  return h("img", { src, alt, loading: "lazy", width: 640, height: 400 });
+}
+
 // Minúsculas y sin tildes, para que "estocada" y "Estócada" matcheen igual.
 export function normalizar(s) {
   return s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
