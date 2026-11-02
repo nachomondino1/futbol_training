@@ -78,14 +78,28 @@ function itemNodo(item, bi, numero = null, conEstructura = false) {
       h("a", { class: "link-glosario", href: `glosario.html#${ej.id}` }, "Ver en el glosario")));
 }
 
+// Índice de la sesión: cuántos bloques hay y cuánto dura cada uno, de un vistazo.
+function resumenNodo(s) {
+  return h("nav", { class: "resumen", "aria-label": "Bloques de la sesión" },
+    h("p", { class: "resumen-tit" }, `${s.bloques.length} bloques · ${duracion(s)} min`),
+    h("ol", {}, s.bloques.map((b, i) => h("li", {},
+      h("button", { type: "button", class: "resumen-fila",
+        onclick: () => document.getElementById(`bloque-${i}`).scrollIntoView({ block: "start" }) },
+        h("span", { class: "bloque-n" }, String(i + 1)),
+        h("span", { class: "resumen-nombre" }, b.titulo),
+        h("span", { class: "resumen-min" }, `${b.min} min`))))));
+}
+
 function bloqueNodo(b, bi) {
   const idx = Math.min(elegidas[bi] ?? 0, b.opciones.length - 1);
   const opcion = b.opciones[idx];
   const varias = b.opciones.length > 1;
-  return h("section", { class: "bloque", "aria-labelledby": `b${bi}` },
+  return h("section", { class: "bloque", id: `bloque-${bi}`, "aria-labelledby": `b${bi}` },
     h("header", { class: "bloque-cab" },
+      h("span", { class: "bloque-n" }, String(bi + 1)),
       h("h2", { id: `b${bi}` }, b.titulo),
       h("span", { class: "bloque-min" }, String(b.min), h("small", {}, " min"))),
+    h("div", { class: "bloque-cuerpo" },
     varias
       ? h("div", { class: "opciones", role: "group", "aria-label": `Opciones de ${b.titulo}` },
           b.opciones.map((o, oi) => h("button", {
@@ -95,7 +109,7 @@ function bloqueNodo(b, bi) {
     opcion.estructura ? estructuraNodo(opcion) : null,
     h("div", { class: "items" },
       opcion.guia ? itemNodo({ ex: opcion.guia }, bi) : null,
-      opcion.items.map((it, i) => itemNodo(it, bi, opcion.estructura?.modo === "circuito" ? i + 1 : null, !!opcion.estructura))));
+      opcion.items.map((it, i) => itemNodo(it, bi, opcion.estructura?.modo === "circuito" ? i + 1 : null, !!opcion.estructura)))));
 }
 
 function precauciones() {
@@ -119,8 +133,8 @@ function detalle(s, conservar = false) {
   app.replaceChildren(
     h("a", { class: "volver", href: "#" }, "Todas las sesiones"),
     h("h1", {}, s.nombre),
-    h("p", { class: "detalle-meta" },
-      `${duracion(s)} min`, s.dia ? ` · ${s.dia}` : ""),
+    s.dia ? h("p", { class: "detalle-meta" }, s.dia) : null,
+    resumenNodo(s),
     ...s.bloques.map(bloqueNodo),
     precauciones());
   if (conservar) window.scrollTo(0, y);
