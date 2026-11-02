@@ -53,7 +53,7 @@
       "dosis": "2 pasadas por patrón",
       "variantes": {},
       "imagen": null,
-      "video": null
+      "video": "https://www.youtube.com/watch?v=5h7JL8bDgeU"
     },
     {
       "id": "circuito-estaciones",
@@ -84,7 +84,7 @@
       "dosis": null,
       "variantes": {},
       "imagen": null,
-      "video": null
+      "video": "https://www.youtube.com/watch?v=qsAkuNORgmk"
     },
     {
       "id": "zancada-estatica",
@@ -97,7 +97,7 @@
       "dosis": null,
       "variantes": {},
       "imagen": null,
-      "video": null
+      "video": "https://www.youtube.com/watch?v=G9DenYUVPjc"
     },
     {
       "id": "wall-sit",
@@ -110,7 +110,7 @@
       "dosis": null,
       "variantes": {},
       "imagen": null,
-      "video": null
+      "video": "https://www.youtube.com/watch?v=mGTJtgmYgRw"
     },
     {
       "id": "puente-gluteo",
@@ -121,7 +121,7 @@
       "dosis": null,
       "variantes": {},
       "imagen": null,
-      "video": null
+      "video": "https://www.youtube.com/watch?v=v_9dS-l3GWU"
     },
     {
       "id": "abduccion-cadera",
@@ -132,7 +132,7 @@
       "dosis": null,
       "variantes": {},
       "imagen": null,
-      "video": null
+      "video": "https://www.youtube.com/watch?v=3Ow-96KqthE"
     },
     {
       "id": "elevacion-talones",
@@ -143,7 +143,7 @@
       "dosis": null,
       "variantes": {},
       "imagen": null,
-      "video": null
+      "video": "https://www.youtube.com/watch?v=JDfWLEipMOc"
     },
     {
       "id": "plancha-frontal",
@@ -154,7 +154,7 @@
       "dosis": null,
       "variantes": {},
       "imagen": null,
-      "video": null
+      "video": "https://www.youtube.com/watch?v=sG5SaIAz9wk"
     },
     {
       "id": "plancha-lateral",
@@ -165,7 +165,7 @@
       "dosis": null,
       "variantes": {},
       "imagen": null,
-      "video": null
+      "video": "https://www.youtube.com/watch?v=bRivOELQVOs"
     },
     {
       "id": "trote-continuo",
@@ -188,9 +188,8 @@
         "HIIT 10/10"
       ],
       "categoria": "aerobico",
-      "descripcion": "10 segundos corriendo fuerte y 10 segundos de descanso, repetido en varios sets.",
-      "dosis": null,
-      "pendiente_dosis": "Cuántos sets y cuánto descanso entre sets: lo define Nacho.",
+      "descripcion": "Corrés fuerte 10 segundos y descansás 10: eso es un set. Hacés 15 sets seguidos, descansás 2 minutos y repetís los 15 sets.",
+      "dosis": "15 sets de 10 s / 10 s, 2 vueltas",
       "variantes": {},
       "imagen": null,
       "video": null
@@ -334,7 +333,7 @@
       "dosis": "15-20 m por serie",
       "variantes": {},
       "imagen": null,
-      "video": null
+      "video": "https://www.youtube.com/watch?v=uRuV40jNgB0"
     },
     {
       "id": "progresion-aceleracion",

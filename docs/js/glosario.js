@@ -1,4 +1,4 @@
-import { PERSONAS, getPersonas, h, imagenPara, normalizar, renderHeader, cargarJSON, mostrarError } from "./common.js";
+import { getPersonas, h, imagenesNodos, variantesNodo, normalizar, renderHeader, cargarJSON, mostrarError } from "./common.js";
 
 const app = document.getElementById("app");
 const estado = { cat: null, q: "" };
@@ -7,27 +7,12 @@ let datos = null;
 renderHeader("glosario");
 
 function celdaVariantes(ej) {
-  const n = getPersonas();
-  const vars = ej.variantes || {};
-  if (!Object.keys(vars).length) return "—";
-  const propia = vars[String(n)];
-  const otras = PERSONAS.filter((p) => p !== n && vars[String(p)]);
-  return [
-    propia
-      ? h("div", {}, h("span", { class: "variante-label" }, `Con ${n}: `), propia)
-      : h("div", {}, `Sin variante para ${n}.`),
-    otras.length
-      ? h("details", { class: "otras" },
-          h("summary", {}, "Otras cantidades"),
-          h("ul", {}, otras.map((p) => h("li", {}, h("strong", {}, `${p}: `), vars[String(p)]))))
-      : null,
-  ];
+  return variantesNodo(ej.variantes || {}, getPersonas()) || "—";
 }
 
 function celdaMedios(ej) {
   const items = [];
-  const img = imagenPara(ej, getPersonas());
-  if (img) items.push(img);
+  items.push(...imagenesNodos(ej, getPersonas()));
   if (ej.video) items.push(h("a", { class: "btn", href: ej.video, target: "_blank", rel: "noopener" }, "Ver video"));
   return items.length ? h("div", { class: "medios" }, items) : null;
 }

@@ -18,7 +18,8 @@ Todo lo de acá lo propuse yo: no está en el Doc. Cuando lo valides, borrá la 
 
 ## Dosis que faltan en el Doc
 
-- **HIIT 10"/10"**: cuántos sets y cuánto descanso entre sets.
+- **Pausa entre vueltas de los circuitos**: cargué 2 min (120 s) en los 4 circuitos por tu indicación; el Doc no la dice. Ajustala por circuito si hace falta.
+
 - **Estiramiento estático**: cuánto sostener cada uno.
 - Circuitos de fuerza: el Doc da tiempos (40/20 o 40/30, 3 vueltas) pero no repeticiones ni dosis por ejercicio; quedaron en `null`.
 

@@ -80,6 +80,25 @@ En `docs/data/sessions.json`, dentro de `sesiones`:
 - En cada item, `ex` es el id del ejercicio. `dosis` y `nota` son opcionales y específicos de esa sesión.
 - Un item puede traer su propio `variantes` (con las claves `"2"`, `"3"`, `"4"`, `"8"`) si en esa sesión el ejercicio se hace distinto al glosario.
 
+### Vueltas, trabajo y descanso
+
+Una opción puede traer `estructura` para que la sesión diga cuántas vueltas hacer y cuánto trabajar y descansar:
+
+```json
+{
+  "label": "Piernas",
+  "guia": "circuito-estaciones",
+  "estructura": { "modo": "circuito", "vueltas": 3, "trabajo_s": 40, "descanso_s": 20, "pausa_vuelta_s": 120 },
+  "items": [{ "ex": "sentadilla" }, { "ex": "zancada-estatica" }]
+}
+```
+
+- `modo: "circuito"`: cada item es una estación, numeradas en orden. En cada una se hace `trabajo_s` + `descanso_s`; al terminar todas se descansa `pausa_vuelta_s` y se repite. `guia` es el ejercicio que explica cómo rotar (se muestra arriba).
+- `modo: "series"`: un solo item que se repite `vueltas` veces con `trabajo_s` / `descanso_s` (por ejemplo el rondo: 5 vueltas de 4 min con 1 min 30 s de `descanso_nombre: "pausa activa"`).
+- En `series` se puede agregar `sets`: cuántos sets seguidos van dentro de cada vuelta (HIIT: 15 sets de 10 s / 10 s, 2 vueltas, 2 min entre vueltas).
+- Todos los tiempos van en segundos. La web calcula el tiempo total; el validador avisa si no entra en el `min` del bloque.
+- Si falta `pausa_vuelta_s` en un circuito de más de una vuelta, el validador avisa y la web muestra "a definir".
+
 ## Deploy en GitHub Pages
 
 1. Subí el repo a GitHub (rama `main`).
@@ -98,4 +117,5 @@ docs/             la web (lo que sirve GitHub Pages)
 scripts/validate.py
 fuente/           Doc original exportado (solo referencia)
 PENDIENTES.md     lo que propuse yo y falta validar
+PLAN_CANTIDAD_JUGADORES.md   plan en stand-by: filtrar ejercicios según cuántos somos
 ```

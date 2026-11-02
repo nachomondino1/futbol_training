@@ -22,6 +22,42 @@ def dupes(ids: list[str]) -> list[str]:
     return [i for i, n in Counter(ids).items() if n > 1]
 
 
+def validar_estructura(sid: str, b: dict, o: dict, ids: list[str], usados: set[str]) -> None:
+    """Vueltas / trabajo / descanso de una opción (circuito por estaciones o series repetidas)."""
+    where = f"{sid}/{b['titulo']}" + (f"/{o['label']}" if o.get("label") else "")
+    if o.get("guia"):
+        usados.add(o["guia"])
+        if o["guia"] not in ids:
+            errors.append(f"{where}: guia inexistente '{o['guia']}'")
+    e = o.get("estructura")
+    if not e:
+        return
+    modo = e.get("modo")
+    if modo not in ("circuito", "series"):
+        errors.append(f"{where}: estructura.modo inválido '{modo}'")
+        return
+    for k in ("vueltas", "trabajo_s", "descanso_s"):
+        if not isinstance(e.get(k), int) or e[k] < 0 or (k != "descanso_s" and e[k] == 0):
+            errors.append(f"{where}: estructura.{k} debe ser un entero positivo")
+            return
+    n = len(o["items"])
+    if modo == "circuito" and n < 2:
+        errors.append(f"{where}: un circuito necesita al menos 2 estaciones")
+    if modo == "series" and n != 1:
+        errors.append(f"{where}: 'series' lleva exactamente 1 ejercicio")
+    pausa = e.get("pausa_vuelta_s") or 0
+    if modo == "circuito" and e["vueltas"] > 1 and e.get("pausa_vuelta_s") is None:
+        warnings.append(f"{where}: falta la pausa entre vueltas (pausa_vuelta_s)")
+    sets = e.get("sets", 1)
+    if "sets" in e and (modo != "series" or not isinstance(sets, int) or sets < 1):
+        errors.append(f"{where}: 'sets' solo va en modo series y debe ser un entero positivo")
+        return
+    est = n if modo == "circuito" else sets
+    total_min = (e["vueltas"] * est * (e["trabajo_s"] + e["descanso_s"]) + (e["vueltas"] - 1) * pausa) / 60
+    if total_min > b["min"]:
+        errors.append(f"{where}: la estructura dura {total_min:.1f} min y el bloque {b['min']}")
+
+
 def main() -> int:
     ex_data = json.loads((DATA / "exercises.json").read_text(encoding="utf-8"))
     ses_data = json.loads((DATA / "sessions.json").read_text(encoding="utf-8"))
@@ -72,6 +108,7 @@ def main() -> int:
             if len(b["opciones"]) > 1 and not all(o.get("label") for o in b["opciones"]):
                 errors.append(f"{s['id']}/{b['titulo']}: opciones múltiples sin label")
             for o in b["opciones"]:
+                validar_estructura(s["id"], b, o, ids, usados)
                 for it in o["items"]:
                     usados.add(it["ex"])
                     if it["ex"] not in ids:

@@ -3,6 +3,10 @@
 
 export const PERSONAS = [2, 3, 4, 8];
 
+// El selector "Somos N" está en stand-by (ver PLAN_CANTIDAD_JUGADORES.md).
+// Con false: no se dibuja en el header y cada ejercicio muestra todas sus variantes.
+export const SELECTOR_PERSONAS = false;
+
 // localStorage puede tirar excepción (modo privado, datos bloqueados): siempre con try/except (acá try/catch).
 export function getPersonas() {
   try {
@@ -43,6 +47,31 @@ export function imagenPara(ej, n) {
   return h("img", { src, alt, loading: "lazy", width: 640, height: 400 });
 }
 
+// Variantes por cantidad: con selector, la de N; sin selector, todas en una lista.
+export function variantesNodo(vars, n) {
+  const claves = PERSONAS.filter((p) => vars[String(p)]);
+  if (!claves.length) return null;
+  if (SELECTOR_PERSONAS) {
+    const v = vars[String(n)];
+    return v ? h("p", { class: "variante" }, h("strong", {}, `Con ${n}: `), v) : null;
+  }
+  return h("ul", { class: "variantes-lista" },
+    claves.map((p) => h("li", {}, h("strong", {}, `Con ${p}: `), vars[String(p)])));
+}
+
+// Imágenes del ejercicio: con selector la de N; sin selector, todas con su epígrafe.
+export function imagenesNodos(ej, n) {
+  if (SELECTOR_PERSONAS) { const i = imagenPara(ej, n); return i ? [i] : []; }
+  const porCantidad = ej.imagenes || {};
+  const claves = PERSONAS.filter((p) => porCantidad[String(p)]);
+  if (claves.length) {
+    return claves.map((p) => h("figure", { class: "fig" },
+      h("img", { src: porCantidad[String(p)], alt: `${ej.nombre}, con ${p}`, loading: "lazy", width: 640, height: 400 }),
+      h("figcaption", {}, `Con ${p}`)));
+  }
+  return ej.imagen ? [imagenPara(ej, n)] : [];
+}
+
 // Minúsculas y sin tildes, para que "estocada" y "Estócada" matcheen igual.
 export function normalizar(s) {
   return s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();
@@ -62,11 +91,13 @@ export function renderHeader(activa) {
     h("div", { class: "cabecera-in" },
       h("a", { class: "marca", href: "index.html" }, "Entrenamiento"),
       h("nav", { class: "nav", "aria-label": "Principal" },
-        link("sesiones.html", "Sesiones", "sesiones"),
-        link("glosario.html", "Glosario", "glosario")),
-      h("fieldset", { class: "personas" },
-        h("legend", {}, "Somos"),
-        h("div", { class: "personas-botones" }, radios))));
+        link("glosario.html", "Glosario", "glosario"),
+        link("sesiones.html", "Sesiones", "sesiones")),
+      SELECTOR_PERSONAS
+        ? h("fieldset", { class: "personas" },
+            h("legend", {}, "Somos"),
+            h("div", { class: "personas-botones" }, radios))
+        : null));
   document.body.prepend(header);
 }
 
