@@ -48,7 +48,7 @@ En `docs/data/exercises.json`, dentro de `ejercicios`:
 ```
 
 - `id`: minúsculas con guiones, único. Es el link `glosario.html#sentadilla-salto`.
-- `categoria`: alguna de las de `categorias`.
+- `categoria`: alguna de las de `categorias`. Los que se hacen con pelota usan `"pelota"` (se muestra "Con pelota") y además llevan `subcategorias`: una o más de `subcategorias` (tiro al arco, pase corto, pase largo, control orientado, conducción, posesión, con oposición, pelota parada). Es obligatorio y es lo que usan los filtros de la página Ejercicios.
 - `aporta`: qué se gana con el ejercicio, con ids de `docs/data/objetivos.json` (velocidad, aeróbico, fuerza, potencia, control, precisión de tiro, coordinación, movilidad). Obligatorio. La sesión usa esto para armar "Qué vas a ganar".
 - `trabaja`: `{ "principal": "cuadriceps", "secundarios": ["gluteo-mayor"] }`, con ids de `docs/data/muscles.json` (ahí se escribe para qué sirve cada músculo). Es obligatorio.
 - Si depende de cuántos son, poné `"requiere_variantes": true` y cargá `"2"`, `"3"`, `"4"` y `"8"` en `variantes`.

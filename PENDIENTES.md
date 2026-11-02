@@ -109,3 +109,10 @@ El Doc solo decía el grupo muscular de sentadilla y estocada (cuádriceps, glú
 - Antes, "Fuerza y control" arrancaba con trote suave de **3 min**; ahora usa el circuito de 3-4 min como las demás.
 - **Las sesiones ya reutilizan** ejercicios y circuitos por id. Lo que siguen definiendo por su cuenta es lo propio de cada una: dosis y notas, la estructura de vueltas del HIIT y del rondo del martes, y las variantes del rondo y del tiro suave en el día previo. Si querés mover la estructura del HIIT al ejercicio, se puede.
 - **"Qué vas a ganar"** arranca plegado, con las etiquetas visibles en la línea cerrada. Si lo abrís, queda abierto al cambiar de sesión.
+
+## Con pelota y sin pelota, y subcategorías (2026-11-02)
+
+- La página Ejercicios filtra primero **Con pelota / Sin pelota**. En "Con pelota" aparecen las subcategorías: tiro al arco, pase corto, pase largo, control orientado, conducción y regate, posesión y rondo, con oposición (1v1, 2v1) y pelota parada. En "Sin pelota", las categorías de siempre.
+- Las subcategorías de pelota las definí yo a partir de las que dijiste (tiro al arco, pase largo, pase corto, control orientado) más las que hacían falta para los otros ejercicios. Qué subcategorías lleva cada uno (uno a tres) también es mío: revisalo.
+- **"Reducido" pasó de Aeróbico a Con pelota** (sigue aportando aeróbico).
+- La categoría "Pelota" ahora se llama "Con pelota".

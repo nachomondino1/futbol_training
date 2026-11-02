@@ -26,11 +26,45 @@
     },
     {
       "id": "pelota",
-      "nombre": "Pelota"
+      "nombre": "Con pelota"
     },
     {
       "id": "vuelta-calma",
       "nombre": "Vuelta a la calma"
+    }
+  ],
+  "subcategorias": [
+    {
+      "id": "tiro",
+      "nombre": "Tiro al arco"
+    },
+    {
+      "id": "pase-corto",
+      "nombre": "Pase corto"
+    },
+    {
+      "id": "pase-largo",
+      "nombre": "Pase largo"
+    },
+    {
+      "id": "control-orientado",
+      "nombre": "Control orientado"
+    },
+    {
+      "id": "conduccion",
+      "nombre": "Conducción y regate"
+    },
+    {
+      "id": "posesion",
+      "nombre": "Posesión y rondo"
+    },
+    {
+      "id": "oposicion",
+      "nombre": "Con oposición (1v1, 2v1)"
+    },
+    {
+      "id": "pelota-parada",
+      "nombre": "Pelota parada"
     }
   ],
   "ejercicios": [
@@ -312,6 +346,10 @@
       "aporta": [
         "control",
         "aerobico"
+      ],
+      "subcategorias": [
+        "posesion",
+        "pase-corto"
       ]
     },
     {
@@ -345,6 +383,11 @@
       },
       "aporta": [
         "control"
+      ],
+      "subcategorias": [
+        "pase-corto",
+        "pase-largo",
+        "control-orientado"
       ]
     },
     {
@@ -381,6 +424,11 @@
       "aporta": [
         "definicion",
         "control"
+      ],
+      "subcategorias": [
+        "tiro",
+        "control-orientado",
+        "pase-corto"
       ]
     },
     {
@@ -414,6 +462,11 @@
       },
       "aporta": [
         "control"
+      ],
+      "subcategorias": [
+        "pase-largo",
+        "pase-corto",
+        "control-orientado"
       ]
     },
     {
@@ -445,6 +498,9 @@
       },
       "aporta": [
         "control"
+      ],
+      "subcategorias": [
+        "conduccion"
       ]
     },
     {
@@ -953,7 +1009,7 @@
       "id": "reducido",
       "nombre": "Reducido",
       "alias": [],
-      "categoria": "aerobico",
+      "categoria": "pelota",
       "descripcion": "Juego en espacio chico. Con conos marcando el límite, 2 tocan y 1 presiona en el medio (con 3 personas) y rotan roles. O partidos en espacios pequeños (5v5) a alta intensidad en bloques de 3-8 min: aeróbico específico con pelota, con la misma carga cardíaca que correr al 93% de la FC máx.",
       "dosis": null,
       "variantes": {},
@@ -969,6 +1025,10 @@
       "aporta": [
         "aerobico",
         "control"
+      ],
+      "subcategorias": [
+        "posesion",
+        "oposicion"
       ]
     },
     {
@@ -998,6 +1058,11 @@
       "aporta": [
         "control",
         "velocidad"
+      ],
+      "subcategorias": [
+        "oposicion",
+        "control-orientado",
+        "conduccion"
       ]
     },
     {
@@ -1020,6 +1085,9 @@
       "aporta": [
         "control",
         "coordinacion"
+      ],
+      "subcategorias": [
+        "conduccion"
       ]
     },
     {
@@ -1039,6 +1107,9 @@
       },
       "aporta": [
         "control"
+      ],
+      "subcategorias": [
+        "conduccion"
       ]
     },
     {
@@ -1058,6 +1129,9 @@
       },
       "aporta": [
         "control"
+      ],
+      "subcategorias": [
+        "conduccion"
       ]
     },
     {
@@ -1077,6 +1151,9 @@
       },
       "aporta": [
         "control"
+      ],
+      "subcategorias": [
+        "conduccion"
       ]
     },
     {
@@ -1097,6 +1174,10 @@
       "aporta": [
         "control",
         "velocidad"
+      ],
+      "subcategorias": [
+        "control-orientado",
+        "pase-corto"
       ]
     },
     {
@@ -1116,6 +1197,10 @@
       },
       "aporta": [
         "definicion"
+      ],
+      "subcategorias": [
+        "tiro",
+        "oposicion"
       ]
     },
     {
@@ -1135,6 +1220,10 @@
       },
       "aporta": [
         "definicion"
+      ],
+      "subcategorias": [
+        "tiro",
+        "pase-corto"
       ]
     },
     {
@@ -1154,6 +1243,10 @@
       },
       "aporta": [
         "definicion"
+      ],
+      "subcategorias": [
+        "pelota-parada",
+        "tiro"
       ]
     },
     {
@@ -1196,6 +1289,10 @@
       "aporta": [
         "control",
         "velocidad"
+      ],
+      "subcategorias": [
+        "control-orientado",
+        "pase-corto"
       ]
     },
     {
@@ -1218,6 +1315,9 @@
       },
       "aporta": [
         "control"
+      ],
+      "subcategorias": [
+        "conduccion"
       ]
     },
     {
@@ -1242,6 +1342,9 @@
       "aporta": [
         "velocidad",
         "control"
+      ],
+      "subcategorias": [
+        "pase-corto"
       ]
     },
     {
@@ -1266,6 +1369,11 @@
       "aporta": [
         "control",
         "velocidad"
+      ],
+      "subcategorias": [
+        "control-orientado",
+        "pase-corto",
+        "conduccion"
       ]
     },
     {

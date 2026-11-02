@@ -1,7 +1,8 @@
 import { h, imagenesNodos, variantesNodo, normalizar, renderHeader, cargarJSON, mostrarError } from "./common.js";
 
 const app = document.getElementById("app");
-const estado = { cat: null, q: "" };
+// tipo: null | "con" | "sin" (pelota); sub: subcategoría de pelota (si tipo es "con") o categoría (si es "sin")
+const estado = { tipo: null, sub: null, q: "" };
 let datos = null;
 let grupos = new Map(); // id -> grupo muscular o capacidad
 
@@ -32,6 +33,13 @@ function trabajaNodo(ej) {
       : null);
 }
 
+// Los ejercicios con pelota dicen qué trabajan: tiro al arco, pase corto, control orientado...
+function subcategoriasNodo(ej) {
+  if (!ej.subcategorias?.length) return null;
+  const nombre = (id) => datos.subcategorias.find((x) => x.id === id).nombre;
+  return h("p", { class: "card-meta" }, ej.subcategorias.map((id) => h("span", { class: "etiqueta" }, nombre(id))));
+}
+
 function fila(ej) {
   const cat = datos.categorias.find((c) => c.id === ej.categoria);
   return h("tr", { id: ej.id },
@@ -40,6 +48,7 @@ function fila(ej) {
       ej.alias?.length ? h("span", { class: "alias" }, `También: ${ej.alias.join(", ")}`) : null),
     h("td", { "data-label": "Categoría" },
       h("span", { class: "cat" }, cat ? cat.nombre : ej.categoria),
+      subcategoriasNodo(ej),
       trabajaNodo(ej)),
     h("td", { "data-label": "Cómo se hace" }, ej.descripcion),
     h("td", { "data-label": "Variantes" }, celdaVariantes(ej)),
@@ -50,7 +59,12 @@ function fila(ej) {
 function visibles() {
   const q = normalizar(estado.q.trim());
   return datos.ejercicios.filter((e) => {
-    if (estado.cat && e.categoria !== estado.cat) return false;
+    if (estado.tipo === "con" && e.categoria !== "pelota") return false;
+    if (estado.tipo === "sin" && e.categoria === "pelota") return false;
+    if (estado.sub) {
+      const cumple = estado.tipo === "con" ? (e.subcategorias || []).includes(estado.sub) : e.categoria === estado.sub;
+      if (!cumple) return false;
+    }
     if (!q) return true;
     return [e.nombre, ...(e.alias || []), grupos.get(e.trabaja.principal).nombre].some((t) => normalizar(t).includes(q));
   });
@@ -82,12 +96,21 @@ function resaltarHash() {
   el.scrollIntoView({ block: "center" });
 }
 
+function chip(nombre, activo, alClick) {
+  return h("button", { class: "chip", type: "button", "aria-pressed": String(activo), onclick: alClick }, nombre);
+}
+
+// Primera fila: con pelota o sin pelota. Segunda fila: las subcategorías de pelota o, sin pelota, las categorías.
 function renderChips() {
-  const chips = document.getElementById("chips");
-  const todas = [{ id: null, nombre: "Todas" }, ...datos.categorias];
-  chips.replaceChildren(...todas.map((c) =>
-    h("button", { class: "chip", type: "button", "aria-pressed": String(estado.cat === c.id),
-      onclick: () => { estado.cat = c.id; renderChips(); renderLista(); } }, c.nombre)));
+  const eleg = (tipo, sub = null) => { estado.tipo = tipo; estado.sub = sub; renderChips(); renderLista(); };
+  document.getElementById("chips").replaceChildren(
+    chip("Todos", !estado.tipo, () => eleg(null)),
+    chip("Con pelota", estado.tipo === "con", () => eleg("con")),
+    chip("Sin pelota", estado.tipo === "sin", () => eleg("sin")));
+  const segunda = estado.tipo === "con" ? datos.subcategorias : estado.tipo === "sin" ? datos.categorias.filter((c) => c.id !== "pelota") : [];
+  document.getElementById("chips-sub").replaceChildren(...(segunda.length
+    ? [chip("Todas", !estado.sub, () => eleg(estado.tipo)), ...segunda.map((c) => chip(c.nombre, estado.sub === c.id, () => eleg(estado.tipo, c.id)))]
+    : []));
 }
 
 // Músculo o capacidad: qué ejercicios lo trabajan (como principal o secundario) y para qué sirve.
@@ -127,7 +150,8 @@ function armarPagina() {
       h("input", { class: "buscar", type: "search", id: "buscar", placeholder: "Buscar ejercicio",
         "aria-label": "Buscar ejercicio", autocomplete: "off",
         oninput: (e) => { estado.q = e.target.value; renderLista(); } }),
-      h("div", { class: "chips", id: "chips", role: "group", "aria-label": "Filtrar por categoría" })),
+      h("div", { class: "chips", id: "chips", role: "group", "aria-label": "Con pelota o sin pelota" }),
+      h("div", { class: "chips", id: "chips-sub", role: "group", "aria-label": "Filtrar por subcategoría" })),
     h("p", { class: "conteo", id: "conteo", "aria-live": "polite" }),
     h("div", { id: "lista" }),
     seccionMusculos());
@@ -141,7 +165,8 @@ function irAHash() {
   if (esMusculo(id)) {
     document.getElementById(id)?.scrollIntoView({ block: "start" });
   } else if (id && !visibles().some((e) => e.id === id)) {
-    estado.cat = null;
+    estado.tipo = null;
+    estado.sub = null;
     estado.q = "";
     const b = document.getElementById("buscar");
     if (b) b.value = "";

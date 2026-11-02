@@ -108,6 +108,8 @@ def main() -> int:
     ses_data = json.loads((DATA / "sessions.json").read_text(encoding="utf-8"))
 
     cats = [c["id"] for c in ex_data["categorias"]]
+    subcats = [c["id"] for c in ex_data.get("subcategorias", [])]
+    usadas_sub: set[str] = set()
     ejercicios = ex_data["ejercicios"]
     ids = [e["id"] for e in ejercicios]
     sesion_ids = [s["id"] for s in ses_data["sesiones"]]
@@ -180,6 +182,15 @@ def main() -> int:
         for ruta in rutas:
             if not (WEB / ruta).is_file():
                 errors.append(f"{eid}: la imagen '{ruta}' no existe en docs/")
+        subs = e.get("subcategorias", [])
+        if e["categoria"] == "pelota" and not subs:
+            errors.append(f"{eid}: un ejercicio con pelota necesita 'subcategorias' (tiro, pase corto, control orientado...)")
+        if e["categoria"] != "pelota" and subs:
+            errors.append(f"{eid}: 'subcategorias' es solo para ejercicios con pelota")
+        for k in subs:
+            if k not in subcats:
+                errors.append(f"{eid}: subcategoría inexistente '{k}'")
+        usadas_sub.update(subs)
         ap = e.get("aporta")
         if not ap:
             errors.append(f"{eid}: falta 'aporta' (qué se gana con el ejercicio)")
@@ -201,6 +212,9 @@ def main() -> int:
         if e.get("pendiente_dosis"):
             warnings.append(f"{eid}: dosis pendiente ({e['pendiente_dosis']})")
 
+    for k in subcats:
+        if k not in usadas_sub:
+            warnings.append(f"subcategoría '{k}': ningún ejercicio la usa")
     for g in grupo_ids:
         if g not in principales:
             warnings.append(f"grupo '{g}': ningún ejercicio lo tiene como principal")
