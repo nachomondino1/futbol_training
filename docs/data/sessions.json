@@ -88,6 +88,40 @@
           "min": 25,
           "opciones": [
             {
+              "label": "Fuerza (6 estaciones)",
+              "guia": "circuito-estaciones",
+              "estructura": {
+                "modo": "circuito",
+                "vueltas": 3,
+                "trabajo_s": 40,
+                "descanso_s": 20,
+                "pausa_vuelta_s": 120
+              },
+              "items": [
+                {
+                  "ex": "sentadilla-explosiva"
+                },
+                {
+                  "ex": "zancada-estatica"
+                },
+                {
+                  "ex": "leg-hop",
+                  "nota": "Salto a una pierna."
+                },
+                {
+                  "ex": "plancha-frontal"
+                },
+                {
+                  "ex": "puente-gluteo",
+                  "nota": "Glúteo."
+                },
+                {
+                  "ex": "elevacion-talones",
+                  "nota": "Elevación de gemelo."
+                }
+              ]
+            },
+            {
               "label": "Piernas",
               "items": [
                 {

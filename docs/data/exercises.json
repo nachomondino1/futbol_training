@@ -17,6 +17,10 @@
       "nombre": "Aeróbico"
     },
     {
+      "id": "potencia",
+      "nombre": "Potencia"
+    },
+    {
       "id": "velocidad",
       "nombre": "Velocidad"
     },
@@ -52,7 +56,7 @@
       "descripcion": "Tres patrones: pie-pie (un apoyo por cuadrado), in-in-out-out (adentro, adentro, afuera, afuera) y lateral (de costado). Volvés caminando entre pasadas.",
       "dosis": "2 pasadas por patrón",
       "variantes": {},
-      "imagen": null,
+      "imagen": "img/ejercicios/escalera.png",
       "video": "https://www.youtube.com/watch?v=5h7JL8bDgeU"
     },
     {
@@ -83,7 +87,7 @@
       "descripcion": "Parado, pies al ancho de hombros. Bajás flexionando cadera y rodilla como si te sentaras, pecho arriba. Subís apretando glúteo.",
       "dosis": null,
       "variantes": {},
-      "imagen": null,
+      "imagen": "img/ejercicios/sentadilla.png",
       "video": "https://www.youtube.com/watch?v=qsAkuNORgmk"
     },
     {
@@ -96,7 +100,7 @@
       "descripcion": "Un pie adelante y uno atrás. Bajás flexionando ambas rodillas hasta casi tocar el piso con la de atrás. Subís sin desplazarte.",
       "dosis": null,
       "variantes": {},
-      "imagen": null,
+      "imagen": "img/ejercicios/zancada-estatica.png",
       "video": "https://www.youtube.com/watch?v=G9DenYUVPjc"
     },
     {
@@ -109,7 +113,7 @@
       "descripcion": "Espalda apoyada en la pared. Bajás hasta que las rodillas queden a 90° y sostenés la posición sin moverte.",
       "dosis": null,
       "variantes": {},
-      "imagen": null,
+      "imagen": "img/ejercicios/wall-sit.png",
       "video": "https://www.youtube.com/watch?v=mGTJtgmYgRw"
     },
     {
@@ -120,7 +124,7 @@
       "descripcion": "Doble pierna: acostado boca arriba, rodillas flexionadas y pies apoyados. Empujás con los talones y subís la cadera hasta línea recta hombro-rodilla. Apretás arriba y bajás controlado. A una pierna: igual, con una pierna estirada en el aire, alternando lados. Con pausa: como el doble pierna, sosteniendo 2-3 s arriba apretando el glúteo antes de bajar.",
       "dosis": null,
       "variantes": {},
-      "imagen": null,
+      "imagen": "img/ejercicios/puente-gluteo.png",
       "video": "https://www.youtube.com/watch?v=v_9dS-l3GWU"
     },
     {
@@ -131,7 +135,7 @@
       "descripcion": "Acostado de costado, piernas estiradas una sobre la otra. Levantás la pierna de arriba hacia el techo sin girar la cadera hacia atrás y bajás controlado.",
       "dosis": null,
       "variantes": {},
-      "imagen": null,
+      "imagen": "img/ejercicios/abduccion-cadera.png",
       "video": "https://www.youtube.com/watch?v=3Ow-96KqthE"
     },
     {
@@ -142,7 +146,7 @@
       "descripcion": "Parado, subís en punta de pie lo más alto posible y bajás controlado. Podés apoyarte en algo para el equilibrio.",
       "dosis": null,
       "variantes": {},
-      "imagen": null,
+      "imagen": "img/ejercicios/elevacion-talones.png",
       "video": "https://www.youtube.com/watch?v=JDfWLEipMOc"
     },
     {
@@ -153,7 +157,7 @@
       "descripcion": "Apoyado en antebrazos y puntas de pie, cuerpo en línea recta de cabeza a talón. Sostenés sin moverte.",
       "dosis": null,
       "variantes": {},
-      "imagen": null,
+      "imagen": "img/ejercicios/plancha-frontal.png",
       "video": "https://www.youtube.com/watch?v=sG5SaIAz9wk"
     },
     {
@@ -164,7 +168,7 @@
       "descripcion": "Apoyado en un antebrazo, cuerpo de costado en línea recta y cadera levantada del piso. Sostenés y después cambiás de lado.",
       "dosis": null,
       "variantes": {},
-      "imagen": null,
+      "imagen": "img/ejercicios/plancha-lateral.png",
       "video": "https://www.youtube.com/watch?v=bRivOELQVOs"
     },
     {
@@ -175,10 +179,10 @@
         "Trote a ritmo conversacional"
       ],
       "categoria": "aerobico",
-      "descripcion": "Correr a ritmo conversacional (60-70% de la FC máx.): tenés que poder hablar sin ahogarte. Es la base aeróbica que mejora la recuperación entre sprints y sostiene la intensidad en el segundo tiempo. Si alguno no llega a los 30 min corridos, alterna trote y caminata rápida en vez de forzar.",
+      "descripcion": "Correr a ritmo conversacional (60-70% de la FC máx.): tenés que poder hablar sin ahogarte. Es la base aeróbica que mejora la recuperación entre sprints y sostiene la intensidad en el segundo tiempo. Si alguno no llega a los 30 min corridos, alterna trote y caminata rápida en vez de forzar. En la biblioteca del Doc figura de 45 min; en el día de resistencia se hace de 30.",
       "dosis": null,
       "variantes": {},
-      "imagen": null,
+      "imagen": "img/ejercicios/trote-continuo.png",
       "video": null
     },
     {
@@ -188,10 +192,10 @@
         "HIIT 10/10"
       ],
       "categoria": "aerobico",
-      "descripcion": "Corrés fuerte 10 segundos y descansás 10: eso es un set. Hacés 15 sets seguidos, descansás 2 minutos y repetís los 15 sets.",
+      "descripcion": "Corrés fuerte 10 segundos y descansás 10: eso es un set. Hacés 15 sets seguidos, descansás 2 minutos y repetís los 15 sets. Con la app Interval Timer: preparación 10 s, 15 sets de 10 s de trabajo y 10 s de descanso, y cool down de 30 s (5:30 en total).",
       "dosis": "15 sets de 10 s / 10 s, 2 vueltas",
       "variantes": {},
-      "imagen": null,
+      "imagen": "img/ejercicios/hiit-10-10.jpg",
       "video": null
     },
     {
@@ -392,6 +396,350 @@
       "variantes": {},
       "imagen": null,
       "video": null
+    },
+    {
+      "id": "bulgarian-split-squat",
+      "nombre": "Bulgarian split squat",
+      "alias": [],
+      "categoria": "fuerza",
+      "descripcion": "Con el pie de atrás apoyado en un banco, bajás en una sola pierna. Aísla la fuerza de cada pierna, detecta asimetrías y protege las rodillas.",
+      "dosis": "3 series × 8 reps por pierna",
+      "variantes": {},
+      "imagen": "img/ejercicios/bulgarian-split-squat.png",
+      "video": null,
+      "huerfano_ok": true
+    },
+    {
+      "id": "trap-bar-deadlift",
+      "nombre": "Peso muerto con barra hexagonal",
+      "alias": [
+        "Trap bar deadlift"
+      ],
+      "categoria": "fuerza",
+      "descripcion": "Barra hexagonal y postura neutral. Trabaja todo el cuerpo con menos estrés lumbar que el peso muerto convencional. Objetivo: levantar 2× tu peso corporal.",
+      "dosis": "4-5 series × 6-8 reps",
+      "variantes": {},
+      "imagen": "img/ejercicios/trap-bar-deadlift.png",
+      "video": null,
+      "huerfano_ok": true
+    },
+    {
+      "id": "step-up-unilateral",
+      "nombre": "Step-up unilateral",
+      "alias": [],
+      "categoria": "fuerza",
+      "descripcion": "Subís al cajón empujando solo con la pierna de adelante. Fuerza, equilibrio y potencia en un movimiento funcional.",
+      "dosis": "3 series × 10 reps",
+      "variantes": {},
+      "imagen": "img/ejercicios/step-up-unilateral.png",
+      "video": null,
+      "huerfano_ok": true
+    },
+    {
+      "id": "sentadilla-explosiva",
+      "nombre": "Sentadilla explosiva",
+      "alias": [
+        "Speed squat"
+      ],
+      "categoria": "potencia",
+      "descripcion": "Sentadilla con poco peso y foco en la velocidad de subida. Convierte la fuerza en potencia y prepara el sistema nervioso.",
+      "dosis": "4 series × 5 reps",
+      "variantes": {},
+      "imagen": "img/ejercicios/sentadilla-explosiva.png",
+      "video": null
+    },
+    {
+      "id": "box-jump",
+      "nombre": "Box jump",
+      "alias": [],
+      "categoria": "potencia",
+      "descripcion": "Salto explosivo a un cajón con aterrizaje suave. Desarrolla potencia vertical y entrena las fibras rápidas.",
+      "dosis": "4 series × 5 reps",
+      "variantes": {},
+      "imagen": "img/ejercicios/box-jump.png",
+      "video": null,
+      "huerfano_ok": true
+    },
+    {
+      "id": "broad-jump",
+      "nombre": "Salto horizontal (broad jump)",
+      "alias": [
+        "Broad jump"
+      ],
+      "categoria": "potencia",
+      "descripcion": "Desde parado, saltás lo más lejos posible y mantenés el aterrizaje. Entrena potencia horizontal, que se transfiere directo al primer paso.",
+      "dosis": "4 × 5 reps",
+      "variantes": {},
+      "imagen": "img/ejercicios/broad-jump.png",
+      "video": null,
+      "huerfano_ok": true
+    },
+    {
+      "id": "med-ball-slam",
+      "nombre": "Med ball slam",
+      "alias": [],
+      "categoria": "potencia",
+      "descripcion": "Con la pelota medicinal sobre la cabeza, la tirás al suelo con toda la fuerza. Potencia de tren superior y core en un movimiento completo.",
+      "dosis": "3 × 8 reps",
+      "variantes": {},
+      "imagen": "img/ejercicios/med-ball-slam.png",
+      "video": null,
+      "huerfano_ok": true
+    },
+    {
+      "id": "leg-hop",
+      "nombre": "Leg hop",
+      "alias": [
+        "Salto a una pierna"
+      ],
+      "categoria": "potencia",
+      "descripcion": "Saltos a una pierna de lado a lado, para sentirte liviano en los pies. Es una de las cinco cosas del reel para desarrollar la conducción.",
+      "dosis": null,
+      "variantes": {},
+      "imagen": null,
+      "video": "https://www.instagram.com/reels/DXT_q2ACBXm/"
+    },
+    {
+      "id": "flying-sprint",
+      "nombre": "Flying sprint (30 m)",
+      "alias": [],
+      "categoria": "velocidad",
+      "descripcion": "Tomás velocidad en 15 m y \"volás\" los siguientes 15 m a máxima intensidad. Desarrolla la velocidad máxima y la mecánica de sprint.",
+      "dosis": "4-6 reps",
+      "variantes": {},
+      "imagen": "img/ejercicios/flying-sprint.png",
+      "video": null,
+      "huerfano_ok": true
+    },
+    {
+      "id": "t-drill",
+      "nombre": "T-drill (conos en T)",
+      "alias": [],
+      "categoria": "velocidad",
+      "descripcion": "Sprint hacia adelante, shuffle lateral y backpedal, con los conos en forma de T. Combina velocidad en las 3 direcciones del fútbol. Variante: cada cono es de un color; gritás tres colores y el otro tiene que ir rápido a tocarlos y volver al cono rojo.",
+      "dosis": "4-6 reps con recuperación total",
+      "variantes": {},
+      "imagen": "img/ejercicios/t-drill.png",
+      "video": null,
+      "huerfano_ok": true
+    },
+    {
+      "id": "bounding",
+      "nombre": "Bounding (zancadas exageradas)",
+      "alias": [],
+      "categoria": "velocidad",
+      "descripcion": "Carrera con zancadas máximas, rodilla arriba e impulsándote fuerte. Desarrolla el ciclo de zancada y la potencia de cada paso.",
+      "dosis": "4 × 20 m",
+      "variantes": {},
+      "imagen": "img/ejercicios/bounding.png",
+      "video": null,
+      "huerfano_ok": true
+    },
+    {
+      "id": "sprint-5-10-5",
+      "nombre": "Sprint corto con cono (5-10-5)",
+      "alias": [],
+      "categoria": "velocidad",
+      "descripcion": "3 conos en línea separados 5 m. Sprint al cono del medio, pivoteás y volvés, y sprint al cono final. Aceleración y primer paso explosivo.",
+      "dosis": "4 series, 30 s de descanso",
+      "variantes": {},
+      "imagen": "img/ejercicios/sprint-5-10-5.png",
+      "video": null,
+      "huerfano_ok": true
+    },
+    {
+      "id": "hill-sprint",
+      "nombre": "Hill sprint (cuesta arriba)",
+      "alias": [],
+      "categoria": "velocidad",
+      "descripcion": "Sprints de 10-20 m en una subida leve. La inclinación fuerza la postura óptima de aceleración y desarrolla fuerza de empuje.",
+      "dosis": "6-8 reps con recuperación total",
+      "variantes": {},
+      "imagen": "img/ejercicios/hill-sprint.png",
+      "video": null,
+      "huerfano_ok": true
+    },
+    {
+      "id": "sled-push",
+      "nombre": "Empuje de trineo (sled push)",
+      "alias": [],
+      "categoria": "velocidad",
+      "descripcion": "Empujás un trineo con carga leve 10-20 m a máxima velocidad. Trabaja la fase de aceleración sin carga en la zancada y desarrolla potencia horizontal. En lugar del trineo se pueden usar bandas elásticas.",
+      "dosis": "4-5 series",
+      "variantes": {},
+      "imagen": "img/ejercicios/sled-push.png",
+      "video": null,
+      "huerfano_ok": true
+    },
+    {
+      "id": "reactive-sprint",
+      "nombre": "Reactive sprint (señal visual)",
+      "alias": [],
+      "categoria": "velocidad",
+      "descripcion": "Un compañero a 5-10 m señala una dirección y sprintás hacia ahí. Entrena la aceleración reactiva, la más parecida al juego real. Material: 3 conos de colores (o izquierda, centro y derecha).",
+      "dosis": "3 series × 8 reps",
+      "variantes": {},
+      "imagen": "img/ejercicios/reactive-sprint.png",
+      "video": null,
+      "huerfano_ok": true
+    },
+    {
+      "id": "hiit-15-15",
+      "nombre": "HIIT 15/15",
+      "alias": [],
+      "categoria": "aerobico",
+      "descripcion": "15 segundos de carrera intensa y 15 de recuperación, en series de 4-6 minutos. Es el más validado para fútbol amateur.",
+      "dosis": "varias series de 4-6 min",
+      "variantes": {},
+      "imagen": "img/ejercicios/hiit-15-15.png",
+      "video": null,
+      "huerfano_ok": true
+    },
+    {
+      "id": "intervalo-4x4",
+      "nombre": "Intervalo 4×4 minutos",
+      "alias": [],
+      "categoria": "aerobico",
+      "descripcion": "4 series de 4 min al 90-95% de la FC máx., con 3 min de trote entre series. Es el protocolo noruego más estudiado para mejorar el VO2max en fútbol.",
+      "dosis": null,
+      "variantes": {},
+      "imagen": null,
+      "video": null,
+      "huerfano_ok": true
+    },
+    {
+      "id": "reducido",
+      "nombre": "Reducido",
+      "alias": [],
+      "categoria": "aerobico",
+      "descripcion": "Juego en espacio chico. Con conos marcando el límite, 2 tocan y 1 presiona en el medio (con 3 personas) y rotan roles. O partidos en espacios pequeños (5v5) a alta intensidad en bloques de 3-8 min: aeróbico específico con pelota, con la misma carga cardíaca que correr al 93% de la FC máx.",
+      "dosis": null,
+      "variantes": {},
+      "imagen": "img/ejercicios/reducido.png",
+      "video": null,
+      "huerfano_ok": true
+    },
+    {
+      "id": "pase-presion-arcos-l",
+      "nombre": "Pase con presión inmediata y arcos en L",
+      "alias": [],
+      "categoria": "pelota",
+      "descripcion": "Para 2 o 3 personas. Armás un cuadrado de 5×5 m. En un par de vértices opuestos ponés un cono y en los otros dos, dos arquitos que miran hacia uno de esos conos. El receptor se para en un vértice con cono y el defensor en el vértice opuesto, donde está el otro cono. El pasador (que también puede ser el defensor si son 2) se pone detrás y a un costado del defensor. Secuencia: 1) el pasador le da el pase al receptor; 2) apenas sale el pase, el defensor arranca a presionar y robar, y su objetivo es que el receptor no pase por los arcos con la pelota dominada; 3) el receptor controla orientado hacia el lado más alejado del defensor, para sacárselo de encima, y trata de cruzar por cualquiera de los dos arquitos con la pelota dominada. Es un 2v1 que arranca en desventaja para el defensor, con doble salida gracias a los arcos en L.",
+      "dosis": null,
+      "variantes": {},
+      "imagen": "img/ejercicios/pase-presion-arcos-l.png",
+      "video": null,
+      "huerfano_ok": true
+    },
+    {
+      "id": "sole-push-acceleration",
+      "nombre": "Sole + push + acceleration",
+      "alias": [
+        "Sole push accelerate"
+      ],
+      "categoria": "pelota",
+      "descripcion": "Individual. Sole (pisarla hacia atrás), push (toque hacia adelante) y accelerate (correr un poco). Combina coordinación y control.",
+      "dosis": null,
+      "variantes": {},
+      "imagen": null,
+      "video": "https://www.instagram.com/reels/DXT_q2ACBXm/",
+      "huerfano_ok": true
+    },
+    {
+      "id": "zigzag",
+      "nombre": "Zigzag con pelota",
+      "alias": [],
+      "categoria": "pelota",
+      "descripcion": "Individual. Zigzag alternando un control con el borde interno y uno con el externo.",
+      "dosis": null,
+      "variantes": {},
+      "imagen": null,
+      "video": "https://www.instagram.com/reels/DXT_q2ACBXm/",
+      "huerfano_ok": true
+    },
+    {
+      "id": "v-push-cut",
+      "nombre": "V push & cut",
+      "alias": [],
+      "categoria": "pelota",
+      "descripcion": "Individual. Pisás la pelota hacia adelante haciendo una L. Mejora el cambio de dirección con balón.",
+      "dosis": null,
+      "variantes": {},
+      "imagen": null,
+      "video": "https://www.instagram.com/reels/DXT_q2ACBXm/",
+      "huerfano_ok": true
+    },
+    {
+      "id": "light-touches",
+      "nombre": "Light touches (toques suaves)",
+      "alias": [],
+      "categoria": "pelota",
+      "descripcion": "Individual. Conducción con el borde externo, con muchos toques y cambios de ritmo. Desarrolla la sensación de pelota y la capacidad de acelerar y frenar con el balón controlado.",
+      "dosis": null,
+      "variantes": {},
+      "imagen": null,
+      "video": "https://www.instagram.com/reels/DXT_q2ACBXm/",
+      "huerfano_ok": true
+    },
+    {
+      "id": "sprint-control-pase",
+      "nombre": "Sprint + control + pase",
+      "alias": [],
+      "categoria": "pelota",
+      "descripcion": "Sprint de 15 m hasta una pelota parada, la controlás de un toque y pasás a un objetivo. Conecta velocidad con control en una situación de juego real.",
+      "dosis": "5 repeticiones",
+      "variantes": {},
+      "imagen": "img/ejercicios/sprint-control-pase.png",
+      "video": null,
+      "huerfano_ok": true
+    },
+    {
+      "id": "uno-contra-uno-tiro",
+      "nombre": "Uno defiende, otro ataca",
+      "alias": [],
+      "categoria": "pelota",
+      "descripcion": "El defensor (o el arquero) le da el pase al que ataca y se arma una situación de partido.",
+      "dosis": null,
+      "variantes": {},
+      "imagen": null,
+      "video": null,
+      "huerfano_ok": true
+    },
+    {
+      "id": "pivote-9-definicion",
+      "nombre": "Pivote de 9 y definición",
+      "alias": [],
+      "categoria": "pelota",
+      "descripcion": "Un jugador se pone de frente al arco y el otro de pivote de 9. El delantero le pasa al pivote, que se la deja de primera para que pegue al arco. Variante: en vez de pegarle, se la devuelve al pie y hacen un mano a mano contra el defensor. Podés sumar 3 o 4 conos para que el delantero haga zigzag y practique el control antes del pase al pivote.",
+      "dosis": null,
+      "variantes": {},
+      "imagen": null,
+      "video": null,
+      "huerfano_ok": true
+    },
+    {
+      "id": "centro-vertice-area",
+      "nombre": "Centro al vértice del área grande y tiro",
+      "alias": [],
+      "categoria": "pelota",
+      "descripcion": "Jugada preparada de pelota parada: centro al vértice del área grande y tiro, entrando en velocidad. Se puede practicar con las barreras puestas como defensores en el área (en Albanueva).",
+      "dosis": null,
+      "variantes": {},
+      "imagen": null,
+      "video": null,
+      "huerfano_ok": true
+    },
+    {
+      "id": "activacion-dinamica",
+      "nombre": "Activación dinámica completa",
+      "alias": [],
+      "categoria": "calentamiento",
+      "descripcion": "Tren superior: circunducción de brazos hacia adelante, hacia atrás y hacia arriba y abajo; movimiento de cadera, con y sin piernas; tocarte con la mano la espalda superior (1 y 1). Tren inferior: skipping (cuádriceps); palomita y talones a la cola (isquios); campana, balanceo lateral hacia adentro (aductor); abducción de pierna, balanceo lateral hacia afuera (abductores); saltos con una pierna (gemelos); movimientos laterales con el centro de gravedad bajo, de frente y de espalda (glúteo); elevar el talón hacia adelante y bajar la mano para tocarlo. Velocidad: 2 series de skipping intenso, zancada larga, ¾ de velocidad y máxima velocidad. Con pelota: loco y 4v4 en reducido.",
+      "dosis": null,
+      "variantes": {},
+      "imagen": null,
+      "video": null,
+      "huerfano_ok": true
     }
   ]
 }
