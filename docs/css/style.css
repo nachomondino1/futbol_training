@@ -99,6 +99,8 @@ a { color: inherit; }
 .personas input:checked + label { background: var(--acento); color: var(--acento-ink); border-color: var(--acento); }
 .personas input:focus-visible + label { outline: 3px solid #fff; outline-offset: 2px; }
 
+}
+
 main { max-width: 1100px; margin: 0 auto; padding: 20px 16px 48px; }
 
 h1 { font-size: 1.9rem; line-height: 1.15; margin: 8px 0 16px; }
@@ -310,3 +312,39 @@ details.otras ul { margin: 6px 0 0; padding-left: 20px; }
 .ficha dt { color: var(--ink-soft); font-weight: 600; }
 .ficha dd { margin: 0; font-weight: 800; font-size: 1.1rem; text-align: right; }
 .est-total { margin: 8px 0 0; color: var(--ink-soft); font-weight: 600; }
+
+/* Músculos y "trabaja" en el glosario */
+.trabaja { margin-top: 6px; font-size: .9rem; }
+.trabaja a { color: inherit; }
+.trabaja-sec { color: var(--ink-soft); }
+.intro { color: var(--ink-soft); margin-top: -8px; }
+.subtitulo { margin-top: 36px; font-size: 1.5rem; }
+.musculo { background: var(--surface); border-radius: 14px; padding: 14px 16px 10px; margin-top: 16px; scroll-margin-top: 12px; }
+.musculo h3 { margin: 0; font-size: 1.4rem; line-height: 1.2; }
+.musculo h4 { margin: 12px 0 4px; font-size: 1rem; color: var(--ink-soft); }
+.musculo-zona { margin: 2px 0 8px; color: var(--ink-soft); font-weight: 600; }
+.musculo-para { margin: 0; border-left: 6px solid var(--acento); padding-left: 10px; }
+.musculo-lista { margin: 0; padding-left: 20px; }
+.musculo-lista li { padding: 4px 0; }
+.musculo-lista a { font-weight: 600; }
+.musculo-sec summary { min-height: var(--tap); display: flex; align-items: center; cursor: pointer; font-weight: 700; }
+.estructura .guia { border: 0; margin-top: 6px; }
+.estructura .guia summary { padding: 8px 0; }
+.estructura .guia .item-cuerpo { padding: 0 0 8px; }
+.estructura .guia[open] { background: transparent; }
+@media (min-width: 761px) { .accesos { grid-template-columns: repeat(3, 1fr); } }
+
+/* Circuitos */
+.circuito-lista { list-style: none; margin: 0; padding: 0; }
+.circuito-lista li { display: flex; align-items: center; gap: 4px 12px; flex-wrap: wrap; min-height: var(--tap); border-bottom: 1px solid var(--line); padding: 4px 0; }
+.circuito-lista li:last-child { border-bottom: 0; }
+.circuito-lista .est-num { margin: 0; }
+.circuito-lista a { font-weight: 700; }
+.circuito .card-meta { margin: 4px 0 8px; }
+.usado-en { margin: 10px 0 4px; color: var(--ink-soft); font-weight: 600; }
+.usado-en a { color: inherit; }
+@media (min-width: 761px) { .accesos { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); } }
+.nav { flex-wrap: wrap; }
+@media (max-width: 420px) { .nav { gap: 0; } .nav a { padding: 0 9px; font-size: .95rem; } }
+.circuito .opciones { margin: 12px 0 8px; }
+.circuito .chips { margin-bottom: 4px; }

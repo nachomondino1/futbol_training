@@ -41,6 +41,7 @@ En `docs/data/exercises.json`, dentro de `ejercicios`:
 
 - `id`: minúsculas con guiones, único. Es el link `glosario.html#sentadilla-salto`.
 - `categoria`: alguna de las de `categorias`.
+- `trabaja`: `{ "principal": "cuadriceps", "secundarios": ["gluteo-mayor"] }`, con ids de `docs/data/muscles.json` (ahí se escribe para qué sirve cada músculo). Es obligatorio.
 - Si depende de cuántos son, poné `"requiere_variantes": true` y cargá `"2"`, `"3"`, `"4"` y `"8"` en `variantes`.
 - Si propusiste una variante que todavía no validaste, agregá `"pendiente_validar": ["4"]`.
 - Un ejercicio que ninguna sesión usa es error, salvo que le pongas `"huerfano_ok": true`.
@@ -80,6 +81,38 @@ En `docs/data/sessions.json`, dentro de `sesiones`:
 - En cada item, `ex` es el id del ejercicio. `dosis` y `nota` son opcionales y específicos de esa sesión.
 - Un item puede traer su propio `variantes` (con las claves `"2"`, `"3"`, `"4"`, `"8"`) si en esa sesión el ejercicio se hace distinto al glosario.
 
+Las explicaciones que no son un ejercicio (por ejemplo cómo rotar las estaciones de un circuito) van en `sessions.json` > `guias` y se enlazan con `"guia"` en la opción.
+
+## Agregar un circuito
+
+Un circuito es un conjunto de ejercicios del glosario, en orden. Se define una vez en `docs/data/circuits.json` y las sesiones lo referencian:
+
+```json
+{
+  "id": "fuerza-corto",
+  "nombre": "Fuerza corto",
+  "descripcion": "Circuito corto de fuerza.",
+  "etiquetas": ["fuerza"],
+  "guia": "circuito-estaciones",
+  "estructura": { "modo": "circuito", "vueltas": 3, "trabajo_s": 40, "descanso_s": 30, "pausa_vuelta_s": 120 },
+  "items": [{ "ex": "sentadilla" }, { "ex": "plancha-frontal", "nota": "Sin apoyar las rodillas." }]
+}
+```
+
+- `estructura` y `guia` son opcionales: un circuito de técnica con pelota puede ser solo la lista de ejercicios, sin tiempos (ver "Vueltas, trabajo y descanso" más abajo).
+- Si es el mismo circuito pero con otros ejercicios, no hagas otro circuito: agregá una `variaciones` (misma estructura, otra lista de ejercicios):
+
+```json
+"variaciones": [
+  { "id": "corto", "nombre": "Corto (5 estaciones)", "nota": "Sin wall sit.",
+    "estructura": { "descanso_s": 30 }, "items": [{ "ex": "sentadilla" }, { "ex": "plancha-frontal" }] }
+]
+```
+
+  El `items` de arriba es la versión original; cada variación lo reemplaza, y su `estructura` solo pisa lo que nombra (acá, el descanso).
+- En una sesión, la opción lo usa así: `{ "label": "Corto", "circuito": "circuito-fuerza", "variacion": "corto" }` (sin `variacion`, usa la original). Lo que la opción defina por su cuenta (por ejemplo otra `estructura`) pisa lo del circuito.
+- Un circuito que ninguna sesión usa es error, salvo que le pongas `"huerfano_ok": true`. Sus ejercicios cuentan como usados.
+
 ### Vueltas, trabajo y descanso
 
 Una opción puede traer `estructura` para que la sesión diga cuántas vueltas hacer y cuánto trabajar y descansar:
@@ -109,11 +142,11 @@ Una opción puede traer `estructura` para que la sesión diga cuántas vueltas h
 
 ```
 docs/             la web (lo que sirve GitHub Pages)
-  index.html · glosario.html · sesiones.html
+  index.html · glosario.html · circuitos.html · sesiones.html
   css/style.css
   js/common.js      header, selector de personas, utilidades
   js/glosario.js · js/sesiones.js
-  data/exercises.json · data/sessions.json
+  data/exercises.json · data/circuits.json · data/sessions.json · data/muscles.json
 scripts/validate.py
 fuente/           Doc original exportado (solo referencia)
 PENDIENTES.md     lo que propuse yo y falta validar

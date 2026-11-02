@@ -46,7 +46,11 @@
       "dosis": "1 min cada uno",
       "variantes": {},
       "imagen": null,
-      "video": null
+      "video": null,
+      "trabaja": {
+        "principal": "movilidad",
+        "secundarios": []
+      }
     },
     {
       "id": "escalera",
@@ -57,27 +61,13 @@
       "dosis": "2 pasadas por patrón",
       "variantes": {},
       "imagen": "img/ejercicios/escalera.png",
-      "video": "https://www.youtube.com/watch?v=5h7JL8bDgeU"
-    },
-    {
-      "id": "circuito-estaciones",
-      "nombre": "Circuito por estaciones (cómo rotar)",
-      "alias": [],
-      "categoria": "fuerza",
-      "descripcion": "Cada estación es un ejercicio de fuerza. Se trabaja el tiempo indicado, se descansa y se pasa a la siguiente. Al terminar todas las estaciones es una vuelta.",
-      "dosis": null,
-      "requiere_variantes": true,
-      "variantes": {
-        "2": "Los dos hacen la misma estación al mismo tiempo y pasan juntos a la siguiente.",
-        "3": "Los tres hacen la misma estación al mismo tiempo y pasan juntos a la siguiente.",
-        "4": "Los cuatro hacen la misma estación al mismo tiempo y pasan juntos a la siguiente.",
-        "8": "Dos grupos de 4. Cada grupo arranca en una estación distinta y rotan juntos al terminar el tiempo."
-      },
-      "pendiente_validar": [
-        "4"
-      ],
-      "imagen": null,
-      "video": null
+      "video": "https://www.youtube.com/watch?v=5h7JL8bDgeU",
+      "trabaja": {
+        "principal": "coordinacion",
+        "secundarios": [
+          "gemelos"
+        ]
+      }
     },
     {
       "id": "sentadilla",
@@ -88,7 +78,14 @@
       "dosis": null,
       "variantes": {},
       "imagen": "img/ejercicios/sentadilla.png",
-      "video": "https://www.youtube.com/watch?v=qsAkuNORgmk"
+      "video": "https://www.youtube.com/watch?v=qsAkuNORgmk",
+      "trabaja": {
+        "principal": "cuadriceps",
+        "secundarios": [
+          "gluteo-mayor",
+          "isquiotibiales"
+        ]
+      }
     },
     {
       "id": "zancada-estatica",
@@ -101,7 +98,14 @@
       "dosis": null,
       "variantes": {},
       "imagen": "img/ejercicios/zancada-estatica.png",
-      "video": "https://www.youtube.com/watch?v=G9DenYUVPjc"
+      "video": "https://www.youtube.com/watch?v=G9DenYUVPjc",
+      "trabaja": {
+        "principal": "cuadriceps",
+        "secundarios": [
+          "gluteo-mayor",
+          "isquiotibiales"
+        ]
+      }
     },
     {
       "id": "wall-sit",
@@ -114,7 +118,13 @@
       "dosis": null,
       "variantes": {},
       "imagen": "img/ejercicios/wall-sit.png",
-      "video": "https://www.youtube.com/watch?v=mGTJtgmYgRw"
+      "video": "https://www.youtube.com/watch?v=mGTJtgmYgRw",
+      "trabaja": {
+        "principal": "cuadriceps",
+        "secundarios": [
+          "gluteo-mayor"
+        ]
+      }
     },
     {
       "id": "puente-gluteo",
@@ -125,7 +135,13 @@
       "dosis": null,
       "variantes": {},
       "imagen": "img/ejercicios/puente-gluteo.png",
-      "video": "https://www.youtube.com/watch?v=v_9dS-l3GWU"
+      "video": "https://www.youtube.com/watch?v=v_9dS-l3GWU",
+      "trabaja": {
+        "principal": "gluteo-mayor",
+        "secundarios": [
+          "isquiotibiales"
+        ]
+      }
     },
     {
       "id": "abduccion-cadera",
@@ -136,7 +152,11 @@
       "dosis": null,
       "variantes": {},
       "imagen": "img/ejercicios/abduccion-cadera.png",
-      "video": "https://www.youtube.com/watch?v=3Ow-96KqthE"
+      "video": "https://www.youtube.com/watch?v=3Ow-96KqthE",
+      "trabaja": {
+        "principal": "gluteo-medio",
+        "secundarios": []
+      }
     },
     {
       "id": "elevacion-talones",
@@ -147,7 +167,11 @@
       "dosis": null,
       "variantes": {},
       "imagen": "img/ejercicios/elevacion-talones.png",
-      "video": "https://www.youtube.com/watch?v=JDfWLEipMOc"
+      "video": "https://www.youtube.com/watch?v=JDfWLEipMOc",
+      "trabaja": {
+        "principal": "gemelos",
+        "secundarios": []
+      }
     },
     {
       "id": "plancha-frontal",
@@ -158,7 +182,11 @@
       "dosis": null,
       "variantes": {},
       "imagen": "img/ejercicios/plancha-frontal.png",
-      "video": "https://www.youtube.com/watch?v=sG5SaIAz9wk"
+      "video": "https://www.youtube.com/watch?v=sG5SaIAz9wk",
+      "trabaja": {
+        "principal": "core",
+        "secundarios": []
+      }
     },
     {
       "id": "plancha-lateral",
@@ -169,7 +197,13 @@
       "dosis": null,
       "variantes": {},
       "imagen": "img/ejercicios/plancha-lateral.png",
-      "video": "https://www.youtube.com/watch?v=bRivOELQVOs"
+      "video": "https://www.youtube.com/watch?v=bRivOELQVOs",
+      "trabaja": {
+        "principal": "core",
+        "secundarios": [
+          "gluteo-medio"
+        ]
+      }
     },
     {
       "id": "trote-continuo",
@@ -183,7 +217,11 @@
       "dosis": null,
       "variantes": {},
       "imagen": "img/ejercicios/trote-continuo.png",
-      "video": null
+      "video": null,
+      "trabaja": {
+        "principal": "aerobica",
+        "secundarios": []
+      }
     },
     {
       "id": "hiit-10-10",
@@ -196,7 +234,11 @@
       "dosis": "15 sets de 10 s / 10 s, 2 vueltas",
       "variantes": {},
       "imagen": "img/ejercicios/hiit-10-10.jpg",
-      "video": null
+      "video": null,
+      "trabaja": {
+        "principal": "aerobica",
+        "secundarios": []
+      }
     },
     {
       "id": "rondo",
@@ -224,6 +266,12 @@
         "3": "img/rondo-3.svg",
         "4": "img/rondo-4.svg",
         "8": "img/rondo-8.svg"
+      },
+      "trabaja": {
+        "principal": "aerobica",
+        "secundarios": [
+          "coordinacion"
+        ]
       }
     },
     {
@@ -250,6 +298,10 @@
         "3": "img/pases-control-orientado-3.svg",
         "4": "img/pases-control-orientado-4.svg",
         "8": "img/pases-control-orientado-8.svg"
+      },
+      "trabaja": {
+        "principal": "coordinacion",
+        "secundarios": []
       }
     },
     {
@@ -278,6 +330,10 @@
         "3": "img/pase-control-definicion-3.svg",
         "4": "img/pase-control-definicion-4.svg",
         "8": "img/pase-control-definicion-8.svg"
+      },
+      "trabaja": {
+        "principal": "coordinacion",
+        "secundarios": []
       }
     },
     {
@@ -304,6 +360,10 @@
         "3": "img/circuito-pases-combinados-3.svg",
         "4": "img/circuito-pases-combinados-4.svg",
         "8": "img/circuito-pases-combinados-8.svg"
+      },
+      "trabaja": {
+        "principal": "coordinacion",
+        "secundarios": []
       }
     },
     {
@@ -326,7 +386,13 @@
         "4"
       ],
       "imagen": null,
-      "video": null
+      "video": null,
+      "trabaja": {
+        "principal": "coordinacion",
+        "secundarios": [
+          "aerobica"
+        ]
+      }
     },
     {
       "id": "tecnica-carrera",
@@ -337,7 +403,15 @@
       "dosis": "15-20 m por serie",
       "variantes": {},
       "imagen": null,
-      "video": "https://www.youtube.com/watch?v=uRuV40jNgB0"
+      "video": "https://www.youtube.com/watch?v=uRuV40jNgB0",
+      "trabaja": {
+        "principal": "coordinacion",
+        "secundarios": [
+          "gemelos",
+          "cuadriceps",
+          "isquiotibiales"
+        ]
+      }
     },
     {
       "id": "progresion-aceleracion",
@@ -359,7 +433,15 @@
         "4"
       ],
       "imagen": null,
-      "video": null
+      "video": null,
+      "trabaja": {
+        "principal": "gluteo-mayor",
+        "secundarios": [
+          "isquiotibiales",
+          "cuadriceps",
+          "gemelos"
+        ]
+      }
     },
     {
       "id": "cambios-ritmo-conos",
@@ -370,7 +452,14 @@
       "dosis": null,
       "variantes": {},
       "imagen": null,
-      "video": null
+      "video": null,
+      "trabaja": {
+        "principal": "cuadriceps",
+        "secundarios": [
+          "gluteo-mayor",
+          "gemelos"
+        ]
+      }
     },
     {
       "id": "activacion-neuromuscular",
@@ -381,7 +470,13 @@
       "dosis": null,
       "variantes": {},
       "imagen": null,
-      "video": null
+      "video": null,
+      "trabaja": {
+        "principal": "isquiotibiales",
+        "secundarios": [
+          "cuadriceps"
+        ]
+      }
     },
     {
       "id": "estiramiento-estatico",
@@ -395,7 +490,15 @@
       "pendiente_dosis": "Cuánto tiempo sostener cada estiramiento: no está en el Doc.",
       "variantes": {},
       "imagen": null,
-      "video": null
+      "video": null,
+      "trabaja": {
+        "principal": "movilidad",
+        "secundarios": [
+          "cuadriceps",
+          "isquiotibiales",
+          "gemelos"
+        ]
+      }
     },
     {
       "id": "bulgarian-split-squat",
@@ -407,7 +510,14 @@
       "variantes": {},
       "imagen": "img/ejercicios/bulgarian-split-squat.png",
       "video": null,
-      "huerfano_ok": true
+      "huerfano_ok": true,
+      "trabaja": {
+        "principal": "cuadriceps",
+        "secundarios": [
+          "gluteo-mayor",
+          "core"
+        ]
+      }
     },
     {
       "id": "trap-bar-deadlift",
@@ -421,7 +531,15 @@
       "variantes": {},
       "imagen": "img/ejercicios/trap-bar-deadlift.png",
       "video": null,
-      "huerfano_ok": true
+      "huerfano_ok": true,
+      "trabaja": {
+        "principal": "gluteo-mayor",
+        "secundarios": [
+          "isquiotibiales",
+          "core",
+          "cuadriceps"
+        ]
+      }
     },
     {
       "id": "step-up-unilateral",
@@ -433,7 +551,13 @@
       "variantes": {},
       "imagen": "img/ejercicios/step-up-unilateral.png",
       "video": null,
-      "huerfano_ok": true
+      "huerfano_ok": true,
+      "trabaja": {
+        "principal": "cuadriceps",
+        "secundarios": [
+          "gluteo-mayor"
+        ]
+      }
     },
     {
       "id": "sentadilla-explosiva",
@@ -446,7 +570,13 @@
       "dosis": "4 series × 5 reps",
       "variantes": {},
       "imagen": "img/ejercicios/sentadilla-explosiva.png",
-      "video": null
+      "video": null,
+      "trabaja": {
+        "principal": "cuadriceps",
+        "secundarios": [
+          "gluteo-mayor"
+        ]
+      }
     },
     {
       "id": "box-jump",
@@ -458,7 +588,14 @@
       "variantes": {},
       "imagen": "img/ejercicios/box-jump.png",
       "video": null,
-      "huerfano_ok": true
+      "huerfano_ok": true,
+      "trabaja": {
+        "principal": "cuadriceps",
+        "secundarios": [
+          "gluteo-mayor",
+          "gemelos"
+        ]
+      }
     },
     {
       "id": "broad-jump",
@@ -472,7 +609,14 @@
       "variantes": {},
       "imagen": "img/ejercicios/broad-jump.png",
       "video": null,
-      "huerfano_ok": true
+      "huerfano_ok": true,
+      "trabaja": {
+        "principal": "gluteo-mayor",
+        "secundarios": [
+          "isquiotibiales",
+          "cuadriceps"
+        ]
+      }
     },
     {
       "id": "med-ball-slam",
@@ -484,7 +628,13 @@
       "variantes": {},
       "imagen": "img/ejercicios/med-ball-slam.png",
       "video": null,
-      "huerfano_ok": true
+      "huerfano_ok": true,
+      "trabaja": {
+        "principal": "core",
+        "secundarios": [
+          "tren-superior"
+        ]
+      }
     },
     {
       "id": "leg-hop",
@@ -497,7 +647,14 @@
       "dosis": null,
       "variantes": {},
       "imagen": null,
-      "video": "https://www.instagram.com/reels/DXT_q2ACBXm/"
+      "video": "https://www.instagram.com/reels/DXT_q2ACBXm/",
+      "trabaja": {
+        "principal": "gemelos",
+        "secundarios": [
+          "cuadriceps",
+          "gluteo-medio"
+        ]
+      }
     },
     {
       "id": "flying-sprint",
@@ -509,7 +666,14 @@
       "variantes": {},
       "imagen": "img/ejercicios/flying-sprint.png",
       "video": null,
-      "huerfano_ok": true
+      "huerfano_ok": true,
+      "trabaja": {
+        "principal": "isquiotibiales",
+        "secundarios": [
+          "gluteo-mayor",
+          "gemelos"
+        ]
+      }
     },
     {
       "id": "t-drill",
@@ -521,7 +685,14 @@
       "variantes": {},
       "imagen": "img/ejercicios/t-drill.png",
       "video": null,
-      "huerfano_ok": true
+      "huerfano_ok": true,
+      "trabaja": {
+        "principal": "gluteo-medio",
+        "secundarios": [
+          "aductores",
+          "cuadriceps"
+        ]
+      }
     },
     {
       "id": "bounding",
@@ -533,7 +704,14 @@
       "variantes": {},
       "imagen": "img/ejercicios/bounding.png",
       "video": null,
-      "huerfano_ok": true
+      "huerfano_ok": true,
+      "trabaja": {
+        "principal": "gluteo-mayor",
+        "secundarios": [
+          "isquiotibiales",
+          "gemelos"
+        ]
+      }
     },
     {
       "id": "sprint-5-10-5",
@@ -545,7 +723,14 @@
       "variantes": {},
       "imagen": "img/ejercicios/sprint-5-10-5.png",
       "video": null,
-      "huerfano_ok": true
+      "huerfano_ok": true,
+      "trabaja": {
+        "principal": "cuadriceps",
+        "secundarios": [
+          "gluteo-mayor",
+          "aductores"
+        ]
+      }
     },
     {
       "id": "hill-sprint",
@@ -557,7 +742,14 @@
       "variantes": {},
       "imagen": "img/ejercicios/hill-sprint.png",
       "video": null,
-      "huerfano_ok": true
+      "huerfano_ok": true,
+      "trabaja": {
+        "principal": "gluteo-mayor",
+        "secundarios": [
+          "cuadriceps",
+          "gemelos"
+        ]
+      }
     },
     {
       "id": "sled-push",
@@ -569,7 +761,14 @@
       "variantes": {},
       "imagen": "img/ejercicios/sled-push.png",
       "video": null,
-      "huerfano_ok": true
+      "huerfano_ok": true,
+      "trabaja": {
+        "principal": "cuadriceps",
+        "secundarios": [
+          "gluteo-mayor",
+          "gemelos"
+        ]
+      }
     },
     {
       "id": "reactive-sprint",
@@ -581,7 +780,13 @@
       "variantes": {},
       "imagen": "img/ejercicios/reactive-sprint.png",
       "video": null,
-      "huerfano_ok": true
+      "huerfano_ok": true,
+      "trabaja": {
+        "principal": "coordinacion",
+        "secundarios": [
+          "cuadriceps"
+        ]
+      }
     },
     {
       "id": "hiit-15-15",
@@ -593,7 +798,11 @@
       "variantes": {},
       "imagen": "img/ejercicios/hiit-15-15.png",
       "video": null,
-      "huerfano_ok": true
+      "huerfano_ok": true,
+      "trabaja": {
+        "principal": "aerobica",
+        "secundarios": []
+      }
     },
     {
       "id": "intervalo-4x4",
@@ -605,7 +814,11 @@
       "variantes": {},
       "imagen": null,
       "video": null,
-      "huerfano_ok": true
+      "huerfano_ok": true,
+      "trabaja": {
+        "principal": "aerobica",
+        "secundarios": []
+      }
     },
     {
       "id": "reducido",
@@ -617,7 +830,13 @@
       "variantes": {},
       "imagen": "img/ejercicios/reducido.png",
       "video": null,
-      "huerfano_ok": true
+      "huerfano_ok": true,
+      "trabaja": {
+        "principal": "aerobica",
+        "secundarios": [
+          "coordinacion"
+        ]
+      }
     },
     {
       "id": "pase-presion-arcos-l",
@@ -629,7 +848,11 @@
       "variantes": {},
       "imagen": "img/ejercicios/pase-presion-arcos-l.png",
       "video": null,
-      "huerfano_ok": true
+      "huerfano_ok": true,
+      "trabaja": {
+        "principal": "coordinacion",
+        "secundarios": []
+      }
     },
     {
       "id": "sole-push-acceleration",
@@ -643,7 +866,11 @@
       "variantes": {},
       "imagen": null,
       "video": "https://www.instagram.com/reels/DXT_q2ACBXm/",
-      "huerfano_ok": true
+      "huerfano_ok": true,
+      "trabaja": {
+        "principal": "coordinacion",
+        "secundarios": []
+      }
     },
     {
       "id": "zigzag",
@@ -655,7 +882,11 @@
       "variantes": {},
       "imagen": null,
       "video": "https://www.instagram.com/reels/DXT_q2ACBXm/",
-      "huerfano_ok": true
+      "huerfano_ok": true,
+      "trabaja": {
+        "principal": "coordinacion",
+        "secundarios": []
+      }
     },
     {
       "id": "v-push-cut",
@@ -667,7 +898,11 @@
       "variantes": {},
       "imagen": null,
       "video": "https://www.instagram.com/reels/DXT_q2ACBXm/",
-      "huerfano_ok": true
+      "huerfano_ok": true,
+      "trabaja": {
+        "principal": "coordinacion",
+        "secundarios": []
+      }
     },
     {
       "id": "light-touches",
@@ -679,7 +914,11 @@
       "variantes": {},
       "imagen": null,
       "video": "https://www.instagram.com/reels/DXT_q2ACBXm/",
-      "huerfano_ok": true
+      "huerfano_ok": true,
+      "trabaja": {
+        "principal": "coordinacion",
+        "secundarios": []
+      }
     },
     {
       "id": "sprint-control-pase",
@@ -691,7 +930,11 @@
       "variantes": {},
       "imagen": "img/ejercicios/sprint-control-pase.png",
       "video": null,
-      "huerfano_ok": true
+      "huerfano_ok": true,
+      "trabaja": {
+        "principal": "coordinacion",
+        "secundarios": []
+      }
     },
     {
       "id": "uno-contra-uno-tiro",
@@ -703,7 +946,11 @@
       "variantes": {},
       "imagen": null,
       "video": null,
-      "huerfano_ok": true
+      "huerfano_ok": true,
+      "trabaja": {
+        "principal": "coordinacion",
+        "secundarios": []
+      }
     },
     {
       "id": "pivote-9-definicion",
@@ -715,7 +962,11 @@
       "variantes": {},
       "imagen": null,
       "video": null,
-      "huerfano_ok": true
+      "huerfano_ok": true,
+      "trabaja": {
+        "principal": "coordinacion",
+        "secundarios": []
+      }
     },
     {
       "id": "centro-vertice-area",
@@ -727,7 +978,11 @@
       "variantes": {},
       "imagen": null,
       "video": null,
-      "huerfano_ok": true
+      "huerfano_ok": true,
+      "trabaja": {
+        "principal": "coordinacion",
+        "secundarios": []
+      }
     },
     {
       "id": "activacion-dinamica",
@@ -739,7 +994,11 @@
       "variantes": {},
       "imagen": null,
       "video": null,
-      "huerfano_ok": true
+      "huerfano_ok": true,
+      "trabaja": {
+        "principal": "movilidad",
+        "secundarios": []
+      }
     }
   ]
 }

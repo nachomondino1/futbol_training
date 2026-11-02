@@ -92,6 +92,7 @@ export function renderHeader(activa) {
       h("a", { class: "marca", href: "index.html" }, "Entrenamiento"),
       h("nav", { class: "nav", "aria-label": "Principal" },
         link("glosario.html", "Glosario", "glosario"),
+        link("circuitos.html", "Circuitos", "circuitos"),
         link("sesiones.html", "Sesiones", "sesiones")),
       SELECTOR_PERSONAS
         ? h("fieldset", { class: "personas" },

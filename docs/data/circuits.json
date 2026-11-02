@@ -1,0 +1,167 @@
+{
+  "circuitos": [
+    {
+      "id": "circuito-fuerza",
+      "nombre": "Circuito de fuerza",
+      "descripcion": "Un solo circuito de fuerza, siempre con la misma estructura: lo que cambia de un día a otro es cuáles ejercicios se hacen (5 o 6 estaciones).",
+      "etiquetas": [
+        "fuerza",
+        "piernas",
+        "core"
+      ],
+      "base_nombre": "Original (6 estaciones)",
+      "guia": "circuito-estaciones",
+      "estructura": {
+        "modo": "circuito",
+        "vueltas": 3,
+        "trabajo_s": 40,
+        "descanso_s": 20,
+        "pausa_vuelta_s": 120
+      },
+      "items": [
+        {
+          "ex": "sentadilla-explosiva"
+        },
+        {
+          "ex": "zancada-estatica"
+        },
+        {
+          "ex": "leg-hop",
+          "nota": "Salto a una pierna."
+        },
+        {
+          "ex": "plancha-frontal"
+        },
+        {
+          "ex": "puente-gluteo",
+          "nota": "Glúteo."
+        },
+        {
+          "ex": "elevacion-talones",
+          "nota": "Elevación de gemelo."
+        }
+      ],
+      "variaciones": [
+        {
+          "id": "piernas",
+          "nombre": "Piernas (5 estaciones)",
+          "nota": "Sin salto ni plancha: sentadilla, zancada, puente, wall sit y talones.",
+          "items": [
+            {
+              "ex": "sentadilla"
+            },
+            {
+              "ex": "zancada-estatica"
+            },
+            {
+              "ex": "puente-gluteo"
+            },
+            {
+              "ex": "wall-sit"
+            },
+            {
+              "ex": "elevacion-talones"
+            }
+          ]
+        },
+        {
+          "id": "gluteo-y-core",
+          "nombre": "Glúteo y core (bajo impacto)",
+          "nota": "Cambia un poco: en lugar de las sentadillas, la zancada y el wall sit hace abducción de cadera y plancha lateral, para no cargar las piernas.",
+          "items": [
+            {
+              "ex": "puente-gluteo"
+            },
+            {
+              "ex": "abduccion-cadera"
+            },
+            {
+              "ex": "plancha-frontal"
+            },
+            {
+              "ex": "plancha-lateral"
+            },
+            {
+              "ex": "elevacion-talones"
+            }
+          ]
+        },
+        {
+          "id": "fuerza-y-control",
+          "nombre": "Fuerza y control (6 estaciones)",
+          "nota": "Con wall sit y puente a una pierna. Descansa 30 s en cada estación.",
+          "estructura": {
+            "descanso_s": 30
+          },
+          "items": [
+            {
+              "ex": "sentadilla"
+            },
+            {
+              "ex": "zancada-estatica"
+            },
+            {
+              "ex": "puente-gluteo",
+              "nota": "A una pierna."
+            },
+            {
+              "ex": "wall-sit"
+            },
+            {
+              "ex": "plancha-frontal"
+            },
+            {
+              "ex": "elevacion-talones"
+            }
+          ]
+        },
+        {
+          "id": "corto",
+          "nombre": "Corto (5 estaciones)",
+          "nota": "Sentadilla, zancada, puente, plancha frontal y talones. Descansa 30 s en cada estación.",
+          "estructura": {
+            "descanso_s": 30
+          },
+          "items": [
+            {
+              "ex": "sentadilla"
+            },
+            {
+              "ex": "zancada-estatica"
+            },
+            {
+              "ex": "puente-gluteo"
+            },
+            {
+              "ex": "plancha-frontal"
+            },
+            {
+              "ex": "elevacion-talones"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "tecnica-v-coordinacion-zigzag",
+      "nombre": "Técnica con pelota: V, coordinación y zigzag",
+      "descripcion": "Primero V push & cut con la pelota, después coordinación en la escalera y después zigzag con pelota.",
+      "etiquetas": [
+        "técnica",
+        "pelota"
+      ],
+      "huerfano_ok": true,
+      "items": [
+        {
+          "ex": "v-push-cut"
+        },
+        {
+          "ex": "escalera"
+        },
+        {
+          "ex": "zigzag"
+        }
+      ]
+    }
+  ]
+}

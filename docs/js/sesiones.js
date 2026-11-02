@@ -1,8 +1,10 @@
 import { getPersonas, h, imagenesNodos, variantesNodo, renderHeader, cargarJSON, mostrarError } from "./common.js";
+import { aplicarVariacion, estructuraNodo, guiaDetalle } from "./estructura.js";
 
 const app = document.getElementById("app");
 let ejercicios = new Map(); // id -> ejercicio (como un dict de Python)
 let datos = null;
+let circuitos = new Map(); // id -> circuito (docs/data/circuits.json)
 
 // Estado de la vista de detalle. Vive en memoria mientras la página esté abierta.
 const abiertos = new Set();   // "bloque:ex" de los ítems expandidos; sobrevive al cambio de opción/personas
@@ -23,34 +25,6 @@ function grilla() {
         h("span", { class: "card-meta" },
           s.dia ? h("span", { class: "dia" }, s.dia) : null,
           s.etiquetas.map((e) => h("span", { class: "etiqueta" }, e)))))));
-}
-
-// 40 -> "40 s", 90 -> "1 min 30 s", 240 -> "4 min"
-function tiempo(seg) {
-  const m = Math.floor(seg / 60), s = seg % 60;
-  if (!m) return `${s} s`;
-  return s ? `${m} min ${s} s` : `${m} min`;
-}
-
-// Ficha con los números de una opción: vueltas, estaciones o sets, trabajo, descanso, pausa.
-function estructuraNodo(op) {
-  const e = op.estructura;
-  const circuito = e.modo === "circuito";
-  const unidades = circuito ? op.items.length : (e.sets || 1);
-  const pausa = e.pausa_vuelta_s || 0;
-  const totalMin = Math.round((e.vueltas * unidades * (e.trabajo_s + e.descanso_s) + (e.vueltas - 1) * pausa) / 60);
-  const nombreDesc = e.descanso_nombre ? e.descanso_nombre[0].toUpperCase() + e.descanso_nombre.slice(1) : "Descanso";
-  const porUnidad = circuito ? "por estación" : e.sets ? "por set" : "";
-
-  const filas = [["Vueltas", String(e.vueltas)]];
-  if (circuito) filas.push(["Estaciones", String(unidades)]);
-  else if (e.sets) filas.push(["Sets por vuelta", String(e.sets)]);
-  filas.push([`Trabajo ${porUnidad}`.trim(), tiempo(e.trabajo_s)], [`${nombreDesc} ${porUnidad}`.trim(), tiempo(e.descanso_s)]);
-  if (e.vueltas > 1 && (circuito || pausa)) filas.push(["Pausa entre vueltas", pausa ? tiempo(pausa) : "a definir"]);
-
-  return h("div", { class: "estructura" },
-    h("dl", { class: "ficha" }, filas.map(([k, v]) => h("div", {}, h("dt", {}, k), h("dd", {}, v)))),
-    h("p", { class: "est-total" }, `Total: unos ${totalMin} min${circuito && !pausa && e.vueltas > 1 ? " sin contar las pausas" : ""}.`));
 }
 
 function itemNodo(item, bi, numero = null, conEstructura = false) {
@@ -90,9 +64,25 @@ function resumenNodo(s) {
         h("span", { class: "resumen-min" }, `${b.min} min`))))));
 }
 
+function guiaNodo(id, bi) {
+  const clave = `${bi}:guia:${id}`;
+  return guiaDetalle(datos.guias[id], {
+    abierto: abiertos.has(clave),
+    alAlternar: (e) => { e.target.open ? abiertos.add(clave) : abiertos.delete(clave); } });
+}
+
+// Una opción puede referenciar un circuito del glosario de circuitos: hereda sus items, estructura y guía.
+function resolver(o) {
+  const c = circuitos.get(o.circuito);
+  if (!c) return o;
+  const base = aplicarVariacion(c, o.variacion);
+  const estructura = base.estructura || o.estructura ? { ...base.estructura, ...o.estructura } : undefined;
+  return { ...base, ...o, items: base.items, estructura, numerado: true };
+}
+
 function bloqueNodo(b, bi) {
   const idx = Math.min(elegidas[bi] ?? 0, b.opciones.length - 1);
-  const opcion = b.opciones[idx];
+  const opcion = resolver(b.opciones[idx]);
   const varias = b.opciones.length > 1;
   return h("section", { class: "bloque", id: `bloque-${bi}`, "aria-labelledby": `b${bi}` },
     h("header", { class: "bloque-cab" },
@@ -106,10 +96,9 @@ function bloqueNodo(b, bi) {
             type: "button", class: "chip", "aria-pressed": String(oi === idx),
             onclick: () => { elegidas[bi] = oi; detalle(sesionActual, true); } }, o.label)))
       : null,
-    opcion.estructura ? estructuraNodo(opcion) : null,
+    opcion.estructura ? estructuraNodo(opcion, opcion.guia ? guiaNodo(opcion.guia, bi) : null) : null,
     h("div", { class: "items" },
-      opcion.guia ? itemNodo({ ex: opcion.guia }, bi) : null,
-      opcion.items.map((it, i) => itemNodo(it, bi, opcion.estructura?.modo === "circuito" ? i + 1 : null, !!opcion.estructura)))));
+      opcion.items.map((it, i) => itemNodo(it, bi, opcion.numerado || opcion.estructura?.modo === "circuito" ? i + 1 : null, !!opcion.estructura)))));
 }
 
 function precauciones() {
@@ -149,8 +138,9 @@ function ruta() {
 }
 
 try {
-  const [ex, ses] = await Promise.all([cargarJSON("data/exercises.json"), cargarJSON("data/sessions.json")]);
+  const [ex, ses, cir] = await Promise.all([cargarJSON("data/exercises.json"), cargarJSON("data/sessions.json"), cargarJSON("data/circuits.json")]);
   ejercicios = new Map(ex.ejercicios.map((e) => [e.id, e]));
+  circuitos = new Map(cir.circuitos.map((c) => [c.id, c]));
   datos = ses;
   ruta();
   window.addEventListener("hashchange", ruta);

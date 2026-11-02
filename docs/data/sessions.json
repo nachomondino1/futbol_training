@@ -89,93 +89,17 @@
           "opciones": [
             {
               "label": "Fuerza (6 estaciones)",
-              "guia": "circuito-estaciones",
-              "estructura": {
-                "modo": "circuito",
-                "vueltas": 3,
-                "trabajo_s": 40,
-                "descanso_s": 20,
-                "pausa_vuelta_s": 120
-              },
-              "items": [
-                {
-                  "ex": "sentadilla-explosiva"
-                },
-                {
-                  "ex": "zancada-estatica"
-                },
-                {
-                  "ex": "leg-hop",
-                  "nota": "Salto a una pierna."
-                },
-                {
-                  "ex": "plancha-frontal"
-                },
-                {
-                  "ex": "puente-gluteo",
-                  "nota": "Glúteo."
-                },
-                {
-                  "ex": "elevacion-talones",
-                  "nota": "Elevación de gemelo."
-                }
-              ]
+              "circuito": "circuito-fuerza"
             },
             {
               "label": "Piernas",
-              "items": [
-                {
-                  "ex": "sentadilla"
-                },
-                {
-                  "ex": "zancada-estatica"
-                },
-                {
-                  "ex": "puente-gluteo"
-                },
-                {
-                  "ex": "wall-sit"
-                },
-                {
-                  "ex": "elevacion-talones"
-                }
-              ],
-              "guia": "circuito-estaciones",
-              "estructura": {
-                "modo": "circuito",
-                "vueltas": 3,
-                "trabajo_s": 40,
-                "descanso_s": 20,
-                "pausa_vuelta_s": 120
-              }
+              "circuito": "circuito-fuerza",
+              "variacion": "piernas"
             },
             {
               "label": "Glúteo y core (bajo impacto)",
-              "items": [
-                {
-                  "ex": "puente-gluteo"
-                },
-                {
-                  "ex": "abduccion-cadera"
-                },
-                {
-                  "ex": "plancha-frontal"
-                },
-                {
-                  "ex": "plancha-lateral"
-                },
-                {
-                  "ex": "elevacion-talones"
-                }
-              ],
-              "guia": "circuito-estaciones",
-              "estructura": {
-                "modo": "circuito",
-                "vueltas": 3,
-                "trabajo_s": 40,
-                "descanso_s": 20,
-                "pausa_vuelta_s": 120
-              }
+              "circuito": "circuito-fuerza",
+              "variacion": "gluteo-y-core"
             }
           ]
         },
@@ -253,31 +177,8 @@
           "min": 22,
           "opciones": [
             {
-              "items": [
-                {
-                  "ex": "sentadilla"
-                },
-                {
-                  "ex": "zancada-estatica"
-                },
-                {
-                  "ex": "puente-gluteo"
-                },
-                {
-                  "ex": "plancha-frontal"
-                },
-                {
-                  "ex": "elevacion-talones"
-                }
-              ],
-              "guia": "circuito-estaciones",
-              "estructura": {
-                "modo": "circuito",
-                "vueltas": 3,
-                "trabajo_s": 40,
-                "descanso_s": 30,
-                "pausa_vuelta_s": 120
-              }
+              "circuito": "circuito-fuerza",
+              "variacion": "corto"
             }
           ]
         },
@@ -437,35 +338,8 @@
           "min": 35,
           "opciones": [
             {
-              "items": [
-                {
-                  "ex": "sentadilla"
-                },
-                {
-                  "ex": "zancada-estatica"
-                },
-                {
-                  "ex": "puente-gluteo",
-                  "nota": "A una pierna."
-                },
-                {
-                  "ex": "wall-sit"
-                },
-                {
-                  "ex": "plancha-frontal"
-                },
-                {
-                  "ex": "elevacion-talones"
-                }
-              ],
-              "guia": "circuito-estaciones",
-              "estructura": {
-                "modo": "circuito",
-                "vueltas": 3,
-                "trabajo_s": 40,
-                "descanso_s": 30,
-                "pausa_vuelta_s": 120
-              }
+              "circuito": "circuito-fuerza",
+              "variacion": "fuerza-y-control"
             }
           ]
         },
@@ -621,5 +495,20 @@
       "evitar": "Superficies irregulares, apoyos bruscos en la escalera y cambios de dirección.",
       "alternativa": "Bajar el ritmo en esos bloques y priorizar el apoyo controlado por sobre la velocidad."
     }
-  ]
+  ],
+  "guias": {
+    "circuito-estaciones": {
+      "titulo": "Cómo rotar las estaciones",
+      "descripcion": "Cada estación es un ejercicio. Se trabaja el tiempo indicado, se descansa y se pasa a la siguiente. Al terminar todas las estaciones es una vuelta.",
+      "variantes": {
+        "2": "Los dos hacen la misma estación al mismo tiempo y pasan juntos a la siguiente.",
+        "3": "Los tres hacen la misma estación al mismo tiempo y pasan juntos a la siguiente.",
+        "4": "Los cuatro hacen la misma estación al mismo tiempo y pasan juntos a la siguiente.",
+        "8": "Dos grupos de 4. Cada grupo arranca en una estación distinta y rotan juntos al terminar el tiempo."
+      },
+      "pendiente_validar": [
+        "4"
+      ]
+    }
+  }
 }

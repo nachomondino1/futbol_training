@@ -1,0 +1,81 @@
+{
+  "grupos": [
+    {
+      "id": "cuadriceps",
+      "nombre": "Cuádriceps",
+      "tipo": "musculo",
+      "zona": "Frente del muslo",
+      "para_que": "Extiende la rodilla. En la cancha: pegarle a la pelota, saltar, y sobre todo frenar y cambiar de dirección, porque absorbe el impacto cada vez que frenás."
+    },
+    {
+      "id": "isquiotibiales",
+      "nombre": "Isquiotibiales",
+      "tipo": "musculo",
+      "zona": "Parte de atrás del muslo",
+      "para_que": "Flexionan la rodilla y ayudan a extender la cadera. En la cancha: empujan en cada zancada al correr rápido y frenan la pierna al final del sprint. Son de los que más se desgarran en velocidad."
+    },
+    {
+      "id": "gluteo-mayor",
+      "nombre": "Glúteo mayor",
+      "tipo": "musculo",
+      "zona": "Glúteo",
+      "para_que": "Extiende la cadera. En la cancha: es la potencia para arrancar, acelerar y saltar, y ayuda a mantener la pelvis estable al correr."
+    },
+    {
+      "id": "gluteo-medio",
+      "nombre": "Glúteo medio y abductores",
+      "tipo": "musculo",
+      "zona": "Costado de la cadera",
+      "para_que": "Estabilizan la cadera y la rodilla de lado. En la cancha: te dejan apoyarte en una pierna al patear o cambiar de dirección sin que la rodilla se te cierre."
+    },
+    {
+      "id": "aductores",
+      "nombre": "Aductores",
+      "tipo": "musculo",
+      "zona": "Parte interna del muslo",
+      "para_que": "Juntan las piernas y estabilizan la cadera. En la cancha: pasar y controlar con el borde interno, los movimientos laterales y frenar con las piernas abiertas."
+    },
+    {
+      "id": "gemelos",
+      "nombre": "Gemelos y sóleo",
+      "tipo": "musculo",
+      "zona": "Pantorrilla",
+      "para_que": "Empujan el pie contra el piso. En la cancha: son el último impulso de cada paso al correr y saltar, y amortiguan el tobillo al frenar."
+    },
+    {
+      "id": "core",
+      "nombre": "Core (abdomen, oblicuos y lumbares)",
+      "tipo": "musculo",
+      "zona": "Zona media del tronco",
+      "para_que": "Une el tronco con la cadera. En la cancha: pasa la fuerza de las piernas al resto del cuerpo, te da equilibrio al patear y disputar, y protege la espalda."
+    },
+    {
+      "id": "tren-superior",
+      "nombre": "Tren superior (hombros, pecho y espalda)",
+      "tipo": "musculo",
+      "zona": "Parte de arriba del cuerpo",
+      "para_que": "En la cancha: proteger la pelota con el cuerpo, ganar los cuerpo a cuerpo y mantener el equilibrio al correr y saltar."
+    },
+    {
+      "id": "aerobica",
+      "nombre": "Resistencia aeróbica",
+      "tipo": "capacidad",
+      "zona": "Corazón y pulmones",
+      "para_que": "Mejora la recuperación entre sprints y sostiene la intensidad en el segundo tiempo."
+    },
+    {
+      "id": "coordinacion",
+      "nombre": "Coordinación y control",
+      "tipo": "capacidad",
+      "zona": "Sistema nervioso: la conexión entre el cerebro y los pies",
+      "para_que": "En la cancha: controlar, pasar y definir con precisión, cambiar de ritmo y reaccionar rápido a lo que pasa."
+    },
+    {
+      "id": "movilidad",
+      "nombre": "Movilidad",
+      "tipo": "capacidad",
+      "zona": "Articulaciones: tobillo, cadera y rodilla",
+      "para_que": "Llegar a cada movimiento con buen rango y sin sobrecargar las articulaciones. Es la base para entrenar y jugar sin lesionarte."
+    }
+  ]
+}
