@@ -841,18 +841,27 @@
     {
       "id": "pase-presion-arcos-l",
       "nombre": "Pase con presión inmediata y arcos en L",
-      "alias": [],
+      "alias": [
+        "Delantero contra defensor con arquitos"
+      ],
       "categoria": "pelota",
-      "descripcion": "Para 2 o 3 personas. Armás un cuadrado de 5×5 m. En un par de vértices opuestos ponés un cono y en los otros dos, dos arquitos que miran hacia uno de esos conos. El receptor se para en un vértice con cono y el defensor en el vértice opuesto, donde está el otro cono. El pasador (que también puede ser el defensor si son 2) se pone detrás y a un costado del defensor. Secuencia: 1) el pasador le da el pase al receptor; 2) apenas sale el pase, el defensor arranca a presionar y robar, y su objetivo es que el receptor no pase por los arcos con la pelota dominada; 3) el receptor controla orientado hacia el lado más alejado del defensor, para sacárselo de encima, y trata de cruzar por cualquiera de los dos arquitos con la pelota dominada. Es un 2v1 que arranca en desventaja para el defensor, con doble salida gracias a los arcos en L.",
+      "descripcion": "Armás un cuadrado de unos 5×5 m con conos. El delantero se para en un vértice y el defensor en el vértice opuesto. Detrás del defensor va el pasador. En los otros dos vértices ponés un mini arco cada uno, mirando al delantero. Mecánica: 1) el pasador le da el pase al delantero; 2) apenas sale el pase, el defensor sale corriendo a máxima velocidad para robarle la pelota; 3) el delantero controla orientado para amagar al defensor y sacárselo de encima, y tiene que pasar conduciendo la pelota por uno de los dos arquitos. Es un 2v1 que arranca en desventaja para el defensor, con doble salida gracias a los arcos en L.",
       "dosis": null,
-      "variantes": {},
+      "variantes": {
+        "2": "El defensor también hace de pasador: le da el pase al delantero y sale a presionar.",
+        "3": "Delantero, defensor y un pasador que se para detrás del defensor. Rotan los roles."
+      },
       "imagen": "img/ejercicios/pase-presion-arcos-l.png",
       "video": null,
       "huerfano_ok": true,
       "trabaja": {
         "principal": "coordinacion",
         "secundarios": []
-      }
+      },
+      "pendiente_validar": [
+        "2",
+        "3"
+      ]
     },
     {
       "id": "sole-push-acceleration",
