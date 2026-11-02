@@ -1,26 +1,16 @@
 {
   "sesiones": [
     {
-      "id": "martes-fisico",
+      "id": "fisico-aerobico-piernas",
       "nombre": "Físico: aeróbico + piernas",
-      "dia": "martes",
       "objetivo": "Volumen aeróbico (con posesión de pelota, trote o HIIT) combinado con un circuito para activar las piernas.",
-      "etiquetas": [
-        "aeróbico",
-        "piernas"
-      ],
       "bloques": [
         {
           "titulo": "Activación",
           "min": 10,
           "opciones": [
             {
-              "items": [
-                {
-                  "ex": "movilidad-articular",
-                  "nota": "Antes, trote suave 3-4 min."
-                }
-              ]
+              "circuito": "activacion"
             }
           ]
         },
@@ -85,22 +75,11 @@
           ]
         },
         {
-          "titulo": "Circuito",
+          "titulo": "Circuito de fuerza",
           "min": 25,
           "opciones": [
             {
-              "label": "Fuerza (6 estaciones)",
               "circuito": "circuito-fuerza"
-            },
-            {
-              "label": "Piernas",
-              "circuito": "circuito-fuerza",
-              "variacion": "piernas"
-            },
-            {
-              "label": "Glúteo y core (bajo impacto)",
-              "circuito": "circuito-fuerza",
-              "variacion": "gluteo-y-core"
             }
           ]
         },
@@ -121,26 +100,16 @@
       ]
     },
     {
-      "id": "jueves-pelota",
+      "id": "pelota-fisico-liviano",
       "nombre": "Pelota + físico liviano",
-      "dia": "jueves",
-      "objetivo": "Más pelota y un poco de físico, para llegar bien al sábado.",
-      "etiquetas": [
-        "pelota",
-        "físico liviano"
-      ],
+      "objetivo": "Más pelota y un poco de físico, para llegar bien al partido.",
       "bloques": [
         {
           "titulo": "Activación",
           "min": 10,
           "opciones": [
             {
-              "items": [
-                {
-                  "ex": "movilidad-articular",
-                  "nota": "Antes, trote suave 3-4 min."
-                }
-              ]
+              "circuito": "activacion"
             }
           ]
         },
@@ -175,12 +144,14 @@
           ]
         },
         {
-          "titulo": "Circuito corto",
-          "min": 22,
+          "titulo": "Circuito de fuerza",
+          "min": 25,
           "opciones": [
             {
               "circuito": "circuito-fuerza",
-              "variacion": "corto"
+              "estructura": {
+                "descanso_s": 30
+              }
             }
           ]
         },
@@ -216,28 +187,14 @@
     {
       "id": "velocidad-aceleracion",
       "nombre": "Velocidad y aceleración",
-      "dia": null,
       "objetivo": "Desarrollar aceleración progresiva, técnica de carrera y cambios de ritmo, priorizando la técnica sobre la velocidad máxima.",
-      "etiquetas": [
-        "velocidad",
-        "técnica de carrera"
-      ],
       "bloques": [
         {
           "titulo": "Activación extendida",
           "min": 20,
           "opciones": [
             {
-              "items": [
-                {
-                  "ex": "movilidad-articular",
-                  "nota": "Trote progresivo + movilidad dinámica."
-                },
-                {
-                  "ex": "tecnica-carrera",
-                  "dosis": "3 series cortas de cada una, 15-20 m, volviendo caminando"
-                }
-              ]
+              "circuito": "activacion-velocidad"
             }
           ]
         },
@@ -302,24 +259,14 @@
     {
       "id": "fuerza-control",
       "nombre": "Fuerza y control",
-      "dia": null,
       "objetivo": "Priorizar fuerza controlada y técnica de pelota de baja intensidad, con poca carga aeróbica.",
-      "etiquetas": [
-        "fuerza",
-        "pelota suave"
-      ],
       "bloques": [
         {
           "titulo": "Activación",
           "min": 10,
           "opciones": [
             {
-              "items": [
-                {
-                  "ex": "movilidad-articular",
-                  "nota": "Antes, trote suave 3 min."
-                }
-              ]
+              "circuito": "activacion"
             }
           ]
         },
@@ -343,7 +290,9 @@
           "opciones": [
             {
               "circuito": "circuito-fuerza",
-              "variacion": "fuerza-y-control"
+              "estructura": {
+                "descanso_s": 30
+              }
             }
           ]
         },
@@ -379,24 +328,15 @@
     {
       "id": "dia-previo",
       "nombre": "Día previo al partido",
-      "dia": null,
       "objetivo": "Activar sin generar fatiga ni estímulo nuevo. Sin circuito de fuerza ni 4v4 competitivo.",
-      "etiquetas": [
-        "activación",
-        "sin fatiga"
-      ],
       "bloques": [
         {
           "titulo": "Movilidad suave",
           "min": 8,
           "opciones": [
             {
-              "items": [
-                {
-                  "ex": "movilidad-articular",
-                  "nota": "Sin pelota."
-                }
-              ]
+              "circuito": "activacion",
+              "nota": "Muy suave: trote a ritmo de charla y movilidad, sin pelota."
             }
           ]
         },

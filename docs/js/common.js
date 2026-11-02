@@ -3,25 +3,6 @@
 
 export const PERSONAS = [2, 3, 4, 8];
 
-// El selector "Somos N" está en stand-by (ver PLAN_CANTIDAD_JUGADORES.md).
-// Con false: no se dibuja en el header y cada ejercicio muestra todas sus variantes.
-export const SELECTOR_PERSONAS = false;
-
-// localStorage puede tirar excepción (modo privado, datos bloqueados): siempre con try/except (acá try/catch).
-export function getPersonas() {
-  try {
-    const v = Number(localStorage.getItem("personas"));
-    if (PERSONAS.includes(v)) return v;
-  } catch (e) { /* sin storage: valor por defecto */ }
-  return 2;
-}
-
-function setPersonas(n) {
-  try { localStorage.setItem("personas", String(n)); } catch (e) { /* idem */ }
-  // CustomEvent: como un callback registrado; las páginas escuchan "personas-change".
-  document.dispatchEvent(new CustomEvent("personas-change", { detail: n }));
-}
-
 // Instalable y sin señal: el service worker (sw.js) guarda la web en el celu.
 // En local no se registra, porque mostraría versiones viejas mientras se edita (y se limpia uno
 // que haya quedado de una prueba). Para probarlo en local: abrir la página con ?sw.
@@ -53,30 +34,17 @@ export function h(tag, attrs = {}, ...hijos) {
   return el;
 }
 
-// Imagen del ejercicio para N personas: la de esa cantidad si existe, si no la general, si no nada.
-// Devuelve un <img> o null (así no queda ningún placeholder roto).
-export function imagenPara(ej, n) {
-  const src = (ej.imagenes || {})[String(n)] || ej.imagen;
-  if (!src) return null;
-  const alt = (ej.imagenes || {})[String(n)] ? `${ej.nombre}, con ${n}` : ej.nombre;
-  return h("img", { src, alt, loading: "lazy", width: 640, height: 400 });
-}
-
-// Variantes por cantidad: con selector, la de N; sin selector, todas en una lista.
-export function variantesNodo(vars, n) {
+// Variantes por cantidad de personas, todas en una lista.
+export function variantesNodo(vars) {
   const claves = PERSONAS.filter((p) => vars[String(p)]);
   if (!claves.length) return null;
-  if (SELECTOR_PERSONAS) {
-    const v = vars[String(n)];
-    return v ? h("p", { class: "variante" }, h("strong", {}, `Con ${n}: `), v) : null;
-  }
   return h("ul", { class: "variantes-lista" },
     claves.map((p) => h("li", {}, h("strong", {}, `Con ${p}: `), vars[String(p)])));
 }
 
-// Imágenes del ejercicio: con selector la de N; sin selector, todas con su epígrafe.
-export function imagenesNodos(ej, n) {
-  if (SELECTOR_PERSONAS) { const i = imagenPara(ej, n); return i ? [i] : []; }
+// Imágenes del ejercicio: una por cantidad de personas (con su epígrafe) o, si no hay, la general.
+// Sin imagen devuelve [] (así no queda ningún placeholder roto).
+export function imagenesNodos(ej) {
   const porCantidad = ej.imagenes || {};
   const claves = PERSONAS.filter((p) => porCantidad[String(p)]);
   if (claves.length) {
@@ -84,7 +52,7 @@ export function imagenesNodos(ej, n) {
       h("img", { src: porCantidad[String(p)], alt: `${ej.nombre}, con ${p}`, loading: "lazy", width: 640, height: 400 }),
       h("figcaption", {}, `Con ${p}`)));
   }
-  return ej.imagen ? [imagenPara(ej, n)] : [];
+  return ej.imagen ? [h("img", { src: ej.imagen, alt: ej.nombre, loading: "lazy", width: 640, height: 400 })] : [];
 }
 
 // Minúsculas y sin tildes, para que "estocada" y "Estócada" matcheen igual.
@@ -93,12 +61,6 @@ export function normalizar(s) {
 }
 
 export function renderHeader(activa) {
-  const actual = getPersonas();
-  const radios = PERSONAS.flatMap((n) => [
-    h("input", { type: "radio", name: "personas", id: `p${n}`, value: n, checked: n === actual,
-      onchange: () => setPersonas(n) }),
-    h("label", { for: `p${n}`, "aria-label": `${n} personas` }, String(n)),
-  ]);
   const link = (href, texto, id) =>
     h("a", { href, "aria-current": activa === id ? "page" : null }, texto);
 
@@ -108,12 +70,7 @@ export function renderHeader(activa) {
       h("nav", { class: "nav", "aria-label": "Principal" },
         link("glosario.html", "Ejercicios", "glosario"),
         link("circuitos.html", "Circuitos", "circuitos"),
-        link("sesiones.html", "Sesiones", "sesiones")),
-      SELECTOR_PERSONAS
-        ? h("fieldset", { class: "personas" },
-            h("legend", {}, "Somos"),
-            h("div", { class: "personas-botones" }, radios))
-        : null));
+        link("sesiones.html", "Sesiones", "sesiones"))));
   document.body.prepend(header);
 }
 

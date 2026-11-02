@@ -1,4 +1,4 @@
-import { getPersonas, h, imagenesNodos, variantesNodo, normalizar, renderHeader, cargarJSON, mostrarError } from "./common.js";
+import { h, imagenesNodos, variantesNodo, normalizar, renderHeader, cargarJSON, mostrarError } from "./common.js";
 
 const app = document.getElementById("app");
 const estado = { cat: null, q: "" };
@@ -8,12 +8,12 @@ let grupos = new Map(); // id -> grupo muscular o capacidad
 renderHeader("glosario");
 
 function celdaVariantes(ej) {
-  return variantesNodo(ej.variantes || {}, getPersonas()) || "—";
+  return variantesNodo(ej.variantes || {}) || "—";
 }
 
 function celdaMedios(ej) {
   const items = [];
-  items.push(...imagenesNodos(ej, getPersonas()));
+  items.push(...imagenesNodos(ej));
   if (ej.video) items.push(h("a", { class: "btn", href: ej.video, target: "_blank", rel: "noopener" }, "Ver video"));
   return items.length ? h("div", { class: "medios" }, items) : null;
 }
@@ -159,7 +159,6 @@ try {
   armarPagina();
   irAHash();
   window.addEventListener("hashchange", irAHash);
-  document.addEventListener("personas-change", renderLista);
 } catch (err) {
   mostrarError(app, err);
 }

@@ -1311,6 +1311,26 @@
       "aporta": [
         "velocidad"
       ]
+    },
+    {
+      "id": "trote-suave",
+      "nombre": "Trote suave",
+      "alias": [
+        "Trote progresivo"
+      ],
+      "categoria": "calentamiento",
+      "descripcion": "Trote a ritmo bajo para entrar en calor. Para ir subiendo de a poco se hace progresivo: cada vez un poco más rápido.",
+      "dosis": "3-4 min",
+      "variantes": {},
+      "imagen": null,
+      "video": null,
+      "trabaja": {
+        "principal": "aerobica",
+        "secundarios": []
+      },
+      "aporta": [
+        "movilidad"
+      ]
     }
   ]
 }

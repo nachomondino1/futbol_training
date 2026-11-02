@@ -38,7 +38,8 @@
     {
       "id": "movilidad",
       "nombre": "Movilidad y prevención",
-      "para_que": "Entrenar y jugar con buen rango de movimiento y menos riesgo de lesión."
+      "para_que": "Entrenar y jugar con buen rango de movimiento y menos riesgo de lesión.",
+      "solo_detalle": true
     }
   ]
 }

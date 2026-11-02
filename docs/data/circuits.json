@@ -175,24 +175,45 @@
   },
   "circuitos": [
     {
+      "id": "activacion",
+      "nombre": "Activación",
+      "descripcion": "El circuito para entrar en calor antes de entrenar: trote suave y movilidad articular. Se usa al arrancar casi todas las sesiones.",
+      "items": [
+        {
+          "ex": "trote-suave",
+          "dosis": "3-4 min"
+        },
+        {
+          "ex": "movilidad-articular"
+        }
+      ]
+    },
+    {
+      "id": "activacion-velocidad",
+      "nombre": "Activación extendida (velocidad)",
+      "descripcion": "Calentamiento más largo para el día de velocidad: trote progresivo, movilidad dinámica y técnica de carrera.",
+      "items": [
+        {
+          "ex": "trote-suave",
+          "nota": "Trote progresivo, cada vez más rápido."
+        },
+        {
+          "ex": "movilidad-articular",
+          "nota": "Movilidad dinámica."
+        },
+        {
+          "ex": "tecnica-carrera",
+          "dosis": "3 series cortas de cada una, 15-20 m, volviendo caminando"
+        }
+      ]
+    },
+    {
       "id": "circuito-fuerza",
       "nombre": "Circuito de fuerza",
-      "descripcion": "Un solo circuito de fuerza, siempre con la misma estructura: lo que cambia de un día a otro es cuáles ejercicios se hacen (5 o 6 estaciones).",
-      "etiquetas": [
-        "fuerza",
-        "piernas",
-        "core"
-      ],
-      "base_nombre": "Original (6 estaciones)",
-      "guia": "circuito-estaciones",
-      "estructura": {
-        "modo": "circuito",
-        "vueltas": 3,
-        "trabajo_s": 40,
-        "descanso_s": 20,
-        "pausa_vuelta_s": 120
-      },
-      "items": [
+      "descripcion": "Una lista de ejercicios de fuerza posibles: cada día elegís 6 (o los que quieras). Abajo hay un orden propuesto, el que se hace hoy, por si no querés pensarlo.",
+      "banco": "fuerza",
+      "elegir": 6,
+      "propuesta": [
         {
           "ex": "sentadilla-explosiva"
         },
@@ -215,115 +236,19 @@
           "nota": "Elevación de gemelo."
         }
       ],
-      "variaciones": [
-        {
-          "id": "piernas",
-          "nombre": "Piernas (5 estaciones)",
-          "nota": "Sin salto ni plancha: sentadilla, zancada, puente, wall sit y talones.",
-          "items": [
-            {
-              "ex": "sentadilla"
-            },
-            {
-              "ex": "zancada-estatica"
-            },
-            {
-              "ex": "puente-gluteo"
-            },
-            {
-              "ex": "wall-sit"
-            },
-            {
-              "ex": "elevacion-talones"
-            }
-          ]
-        },
-        {
-          "id": "gluteo-y-core",
-          "nombre": "Glúteo y core (bajo impacto)",
-          "nota": "Cambia un poco: en lugar de las sentadillas, la zancada y el wall sit hace abducción de cadera y plancha lateral, para no cargar las piernas.",
-          "items": [
-            {
-              "ex": "puente-gluteo"
-            },
-            {
-              "ex": "abduccion-cadera"
-            },
-            {
-              "ex": "plancha-frontal"
-            },
-            {
-              "ex": "plancha-lateral"
-            },
-            {
-              "ex": "elevacion-talones"
-            }
-          ]
-        },
-        {
-          "id": "fuerza-y-control",
-          "nombre": "Fuerza y control (6 estaciones)",
-          "nota": "Con wall sit y puente a una pierna. Descansa 30 s en cada estación.",
-          "estructura": {
-            "descanso_s": 30
-          },
-          "items": [
-            {
-              "ex": "sentadilla"
-            },
-            {
-              "ex": "zancada-estatica"
-            },
-            {
-              "ex": "puente-gluteo",
-              "nota": "A una pierna."
-            },
-            {
-              "ex": "wall-sit"
-            },
-            {
-              "ex": "plancha-frontal"
-            },
-            {
-              "ex": "elevacion-talones"
-            }
-          ]
-        },
-        {
-          "id": "corto",
-          "nombre": "Corto (5 estaciones)",
-          "nota": "Sentadilla, zancada, puente, plancha frontal y talones. Descansa 30 s en cada estación.",
-          "estructura": {
-            "descanso_s": 30
-          },
-          "items": [
-            {
-              "ex": "sentadilla"
-            },
-            {
-              "ex": "zancada-estatica"
-            },
-            {
-              "ex": "puente-gluteo"
-            },
-            {
-              "ex": "plancha-frontal"
-            },
-            {
-              "ex": "elevacion-talones"
-            }
-          ]
-        }
-      ]
+      "guia": "circuito-estaciones",
+      "estructura": {
+        "modo": "circuito",
+        "vueltas": 3,
+        "trabajo_s": 40,
+        "descanso_s": 20,
+        "pausa_vuelta_s": 120
+      }
     },
     {
       "id": "fuerza-coordinacion-pelota",
       "nombre": "Fuerza, coordinación, pelota",
       "descripcion": "Plantilla de tres partes, una detrás de la otra: elegís una opción de cada una según el día. La última parte es un ejercicio con pelota.",
-      "etiquetas": [
-        "combinado",
-        "pelota"
-      ],
       "huerfano_ok": true,
       "partes": [
         {
@@ -341,10 +266,6 @@
       "id": "fuerza-coordinacion-aerobico",
       "nombre": "Fuerza, coordinación, aeróbico",
       "descripcion": "Plantilla de tres partes, una detrás de la otra: elegís una opción de cada una según el día. La última parte es trabajo aeróbico.",
-      "etiquetas": [
-        "combinado",
-        "aeróbico"
-      ],
       "huerfano_ok": true,
       "partes": [
         {
@@ -362,10 +283,6 @@
       "id": "fuerza-coordinacion-velocidad",
       "nombre": "Fuerza, coordinación, velocidad máxima",
       "descripcion": "Plantilla de tres partes, una detrás de la otra: elegís una opción de cada una según el día. La última parte es salir corriendo a máxima velocidad.",
-      "etiquetas": [
-        "combinado",
-        "velocidad"
-      ],
       "huerfano_ok": true,
       "partes": [
         {

@@ -93,3 +93,19 @@ El Doc solo decía el grupo muscular de sentadilla y estocada (cuádriceps, glú
 - **El cálculo es aproximado:** reparte los minutos del bloque en partes iguales entre sus ejercicios, y si un ejercicio aporta dos cosas, mitad y mitad. Por eso dice "unos N min". Para algo más fino habría que poner minutos por ejercicio.
 - **El objetivo de cada sesión** sale de las frases del Doc ("Objetivo:" de cada día) para velocidad, fuerza y día previo; para el martes y el jueves lo escribí con lo que me contaste. Las otras sesiones del Doc (Días 4 y 6) no tienen sesión propia.
 - Como el martes tiene "movilidad y prevención" en segundo lugar (activación + vuelta a la calma suman 20 min), puede parecer más importante de lo que querés. Si preferís que solo cuente lo que sea entrenamiento, se puede excluir esos bloques del cálculo.
+
+## Sin días, etiquetas de lo que se gana y circuito de fuerza sin versiones (2026-11-02)
+
+- **Se sacaron "martes" y "jueves"** de las sesiones y de sus nombres internos (ahora `fisico-aerobico-piernas` y `pelota-fisico-liviano`). El objetivo de la segunda ya no dice "sábado" sino "partido".
+- **Las etiquetas** de sesiones y circuitos dicen qué se gana (aeróbico, velocidad, pelota...), se calculan solas y no se escriben a mano. "Movilidad y prevención" no aparece como etiqueta porque está en todas las sesiones; sí en el detalle.
+- **Circuito de fuerza:** ya no tiene versiones (piernas, glúteo y core, corto, fuerza y control). Es la lista de 14 ejercicios posibles y la propuesta de 6 que se hace hoy. Se pierde la idea de "glúteo y core, bajo impacto" como versión: queda como una combinación posible dentro de la lista (abducción de cadera, plancha lateral, puente...).
+- **Descanso de 30 s:** las sesiones "Pelota + físico liviano" y "Fuerza y control" lo usan, como en el Doc; el resto, 20 s.
+- **El bloque de circuito de "Pelota + físico liviano" pasó de 22 a 25 min** (ahora son 6 estaciones y no 5); la sesión pasa de 87 a 90 min, como el Día 6 del Doc.
+- **En la sesión no se eligen los ejercicios**: se ve la propuesta y el resto como lista, con un link a la página Circuitos para elegir los del día.
+
+## Activación como circuito y "Qué vas a ganar" plegado (2026-11-02)
+
+- **La activación es un circuito** (`activacion`: trote suave 3-4 min + movilidad articular) que usan 4 sesiones, y hay otro para el día de velocidad (`activacion-velocidad`: trote progresivo, movilidad dinámica y técnica de carrera). El día previo reutiliza `activacion` con una nota ("muy suave, sin pelota"). Agregué el ejercicio **Trote suave**, que salía del Doc ("trote suave 3-4 min + movilidad articular").
+- Antes, "Fuerza y control" arrancaba con trote suave de **3 min**; ahora usa el circuito de 3-4 min como las demás.
+- **Las sesiones ya reutilizan** ejercicios y circuitos por id. Lo que siguen definiendo por su cuenta es lo propio de cada una: dosis y notas, la estructura de vueltas del HIIT y del rondo del martes, y las variantes del rondo y del tiro suave en el día previo. Si querés mover la estructura del HIIT al ejercicio, se puede.
+- **"Qué vas a ganar"** arranca plegado, con las etiquetas visibles en la línea cerrada. Si lo abrís, queda abierto al cambiar de sesión.

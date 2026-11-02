@@ -68,10 +68,9 @@ En `docs/data/sessions.json`, dentro de `sesiones`:
 
 ```json
 {
-  "id": "sabado-suave",
-  "nombre": "Sábado suave",
-  "dia": null,
-  "etiquetas": ["pelota"],
+  "id": "pelota-suave",
+  "nombre": "Pelota suave",
+  "objetivo": "Trabajo aeróbico con pelota, sin exigir demasiado.",
   "bloques": [
     {
       "titulo": "Aeróbico",
@@ -86,6 +85,7 @@ En `docs/data/sessions.json`, dentro de `sesiones`:
 ```
 
 - La duración de la sesión es la suma de `min` de los bloques: no se escribe a mano.
+- No hay días ni etiquetas: lo que se muestra como etiquetas (aeróbico, velocidad, pelota...) se calcula solo con lo que aporta cada ejercicio (`aporta`).
 - Un bloque sin alternativas tiene una sola opción y sin `label`. Con 2 o más opciones, todas necesitan `label`.
 - En cada item, `ex` es el id del ejercicio. `dosis` y `nota` son opcionales y específicos de esa sesión.
 - Un item puede traer su propio `variantes` (con las claves `"2"`, `"3"`, `"4"`, `"8"`) si en esa sesión el ejercicio se hace distinto a como figura en Ejercicios.
@@ -98,27 +98,24 @@ Un circuito es un conjunto de ejercicios, en orden. Se define una vez en `docs/d
 
 ```json
 {
-  "id": "fuerza-corto",
-  "nombre": "Fuerza corto",
-  "descripcion": "Circuito corto de fuerza.",
-  "etiquetas": ["fuerza"],
+  "id": "tecnica-v-zigzag",
+  "nombre": "Técnica: V y zigzag",
+  "descripcion": "Primero V con la pelota y después zigzag.",
   "guia": "circuito-estaciones",
   "estructura": { "modo": "circuito", "vueltas": 3, "trabajo_s": 40, "descanso_s": 30, "pausa_vuelta_s": 120 },
-  "items": [{ "ex": "sentadilla" }, { "ex": "plancha-frontal", "nota": "Sin apoyar las rodillas." }]
+  "items": [{ "ex": "v-push-cut" }, { "ex": "zigzag", "nota": "Con el borde externo." }]
 }
 ```
 
-- `estructura` y `guia` son opcionales: un circuito de técnica con pelota puede ser solo la lista de ejercicios, sin tiempos (ver "Vueltas, trabajo y descanso" más abajo).
-- Si es el mismo circuito pero con otros ejercicios, no hagas otro circuito: agregá una `variaciones` (misma estructura, otra lista de ejercicios):
+- `estructura` y `guia` son opcionales: un circuito puede ser solo la lista de ejercicios, sin tiempos (ver "Vueltas, trabajo y descanso" más abajo).
+- Si lo que importa es **qué ejercicios se pueden meter** y no un orden fijo (el circuito de fuerza), usá un banco y una propuesta en lugar de `items`: `banco` es la lista de ejercicios posibles, `elegir` cuántos se hacen y `propuesta` el orden que se sugiere. En la página Circuitos se eligen los del día; en la sesión se ve la propuesta y el resto como "otros ejercicios que podés usar":
 
 ```json
-"variaciones": [
-  { "id": "corto", "nombre": "Corto (5 estaciones)", "nota": "Sin wall sit.",
-    "estructura": { "descanso_s": 30 }, "items": [{ "ex": "sentadilla" }, { "ex": "plancha-frontal" }] }
-]
+{ "id": "circuito-fuerza", "nombre": "Circuito de fuerza", "banco": "fuerza", "elegir": 6,
+  "propuesta": [{ "ex": "sentadilla" }, { "ex": "zancada-estatica" }],
+  "estructura": { "modo": "circuito", "vueltas": 3, "trabajo_s": 40, "descanso_s": 20, "pausa_vuelta_s": 120 } }
 ```
 
-  El `items` de arriba es la versión original; cada variación lo reemplaza, y su `estructura` solo pisa lo que nombra (acá, el descanso).
 - Si es una plantilla donde elegís una opción por parte (fuerza, coordinación, pelota), usá `partes` en lugar de `items`. Las opciones se escriben una sola vez en `bancos` y las partes los referencian:
 
 ```json
@@ -132,9 +129,11 @@ Un circuito es un conjunto de ejercicios, en orden. Se define una vez en `docs/d
 ]
 ```
 
-  Una opción puede traer `nombre` (lo que se ve en el botón) y `nota`. Para otra combinación (por ejemplo fuerza, coordinación, aeróbico) solo hay que armar otro circuito con otros bancos.
-- En una sesión, la opción lo usa así: `{ "label": "Corto", "circuito": "circuito-fuerza", "variacion": "corto" }` (sin `variacion`, usa la original). Lo que la opción defina por su cuenta (por ejemplo otra `estructura`) pisa lo del circuito.
+  Una opción puede traer `nombre` (lo que se ve en el botón) y `nota`. Para otra combinación (por ejemplo fuerza, coordinación, aeróbico) solo hay que armar otro circuito con otros bancos. Los bancos son los mismos que usa el circuito de fuerza.
+- En una sesión, la opción lo usa así: `{ "circuito": "circuito-fuerza", "estructura": { "descanso_s": 30 } }`. Lo que la opción defina por su cuenta (acá, el descanso) pisa lo del circuito.
 - Un circuito que ninguna sesión usa es error, salvo que le pongas `"huerfano_ok": true`. Sus ejercicios cuentan como usados.
+
+La activación también es un circuito (`activacion`: trote suave y movilidad articular), así que todas las sesiones lo reutilizan en vez de repetir los ejercicios. Una sesión puede agregarle una `nota` propia a la opción (por ejemplo "muy suave, sin pelota").
 
 Cada sesión lleva un `objetivo` (una frase). Debajo, la página calcula "Qué vas a ganar": reparte los minutos de cada bloque, con la opción elegida, entre lo que aporta cada ejercicio, y muestra lo principal.
 
@@ -181,7 +180,7 @@ docs/             la web (lo que sirve GitHub Pages)
   sw.js · manifest.webmanifest   instalable y sin señal
   index.html · glosario.html · sesiones.html
   css/style.css
-  js/common.js      header, selector de personas, utilidades
+  js/common.js      header, utilidades compartidas
   js/glosario.js · js/sesiones.js
   data/exercises.json · data/circuits.json · data/sessions.json · data/muscles.json
 scripts/validate.py · scripts/gen_iconos.py

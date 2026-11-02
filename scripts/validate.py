@@ -24,17 +24,15 @@ def dupes(ids: list[str]) -> list[str]:
     return [i for i, n in Counter(ids).items() if n > 1]
 
 
-def aplicar_variacion(c: dict, vid: str | None) -> dict | None:
-    """El circuito con los items (y ajustes de estructura) de una variación; None si la variación no existe."""
-    if "items" not in c and c.get("partes"):  # plantilla: por defecto, la primera opción de cada parte
-        c = {**c, "items": [p["opciones"][0] for p in c["partes"]]}
-    if not vid:
+def completar_items(c: dict) -> dict:
+    """El circuito con su lista de ejercicios: la propia, la primera opción de cada parte o la propuesta."""
+    if "items" in c:
         return c
-    v = next((x for x in c.get("variaciones", []) if x["id"] == vid), None)
-    if not v:
-        return None
-    est = {**(c.get("estructura") or {}), **(v.get("estructura") or {})} or None
-    return {**c, "items": v["items"], "estructura": est}
+    if c.get("partes"):
+        return {**c, "items": [p["opciones"][0] for p in c["partes"]]}
+    if c.get("propuesta"):
+        return {**c, "items": c["propuesta"]}
+    return c
 
 
 def resolver(o: dict, circuitos: dict) -> dict:
@@ -42,7 +40,7 @@ def resolver(o: dict, circuitos: dict) -> dict:
     c = circuitos.get(o.get("circuito"))
     if not c:
         return o
-    base = aplicar_variacion(c, o.get("variacion")) or c
+    base = completar_items(c)
     est = {**(base.get("estructura") or {}), **(o.get("estructura") or {})} or None
     return {**base, **o, "items": base["items"], "estructura": est}
 
@@ -128,6 +126,11 @@ def main() -> int:
     circ_data = json.loads((DATA / "circuits.json").read_text(encoding="utf-8"))["circuitos"]
     bancos = json.loads((DATA / "circuits.json").read_text(encoding="utf-8")).get("bancos", {})
     for c in circ_data:
+        if c.get("banco"):
+            if c["banco"] not in bancos:
+                errors.append(f"circuito {c['id']}: usa un banco inexistente '{c['banco']}'")
+            else:
+                c["opciones"] = bancos[c["banco"]]["opciones"]
         for pi, parte in enumerate(c.get("partes", []), 1):
             if parte.get("banco"):
                 if parte["banco"] not in bancos:
@@ -225,9 +228,6 @@ def main() -> int:
                         errors.append(f"{where}: circuito inexistente '{o_raw['circuito']}'")
                         continue
                     usados_circ.add(o_raw["circuito"])
-                    if o_raw.get("variacion") and aplicar_variacion(circuitos[o_raw["circuito"]], o_raw["variacion"]) is None:
-                        errors.append(f"{where}: variación inexistente '{o_raw['variacion']}' en {o_raw['circuito']}")
-                        continue
                     if o_raw.get("items"):
                         errors.append(f"{where}: una opción con 'circuito' no lleva 'items' propios")
                 o = resolver(o_raw, circuitos)
@@ -258,8 +258,24 @@ def main() -> int:
                     usados.add(o["ex"])
                     if o["ex"] not in ids:
                         errors.append(f"{where}: parte {pi}: ex inexistente '{o['ex']}'")
-            if partes and all(p.get("opciones") for p in partes):
-                c = aplicar_variacion(c, None)
+            if all(p.get("opciones") for p in partes):
+                c = completar_items(c)
+        elif c.get("opciones"):  # lista de ejercicios posibles + orden propuesto
+            pool = {o["ex"] for o in c["opciones"]}
+            for o in c["opciones"]:
+                usados.add(o["ex"])
+                if o["ex"] not in ids:
+                    errors.append(f"{where}: ex inexistente en el banco '{o['ex']}'")
+            if not c.get("propuesta"):
+                errors.append(f"{where}: falta 'propuesta' (el orden propuesto)")
+            for it in c.get("propuesta", []):
+                if it["ex"] not in pool:
+                    errors.append(f"{where}: la propuesta incluye '{it['ex']}', que no está entre los posibles")
+            if not isinstance(c.get("elegir"), int) or c.get("elegir", 0) < 1:
+                errors.append(f"{where}: 'elegir' debe ser un entero positivo")
+            elif len(c.get("propuesta", [])) != c["elegir"]:
+                warnings.append(f"{where}: la propuesta tiene {len(c.get('propuesta', []))} ejercicios y 'elegir' dice {c['elegir']}")
+            c = completar_items(c)
         if not c.get("items"):
             errors.append(f"{where}: sin items")
             continue
@@ -268,18 +284,6 @@ def main() -> int:
             if it["ex"] not in ids:
                 errors.append(f"{where}: ex inexistente '{it['ex']}'")
         validar_estructura(where, c, guias, None)
-        for d in dupes([v["id"] for v in c.get("variaciones", [])]):
-            errors.append(f"{where}: variación duplicada '{d}'")
-        for v in c.get("variaciones", []):
-            wv = f"{where}/{v['id']}"
-            if not v.get("items"):
-                errors.append(f"{wv}: variación sin items")
-                continue
-            for it in v["items"]:
-                usados.add(it["ex"])
-                if it["ex"] not in ids:
-                    errors.append(f"{wv}: ex inexistente '{it['ex']}'")
-            validar_estructura(wv, aplicar_variacion(c, v["id"]), guias, None)
         if c["id"] not in usados_circ and not c.get("huerfano_ok"):
             errors.append(f"circuito huérfano: {c['id']} (ninguna sesión lo usa)")
 

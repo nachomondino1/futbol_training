@@ -1,5 +1,5 @@
-import { getPersonas, h, imagenesNodos, variantesNodo, renderHeader, cargarJSON, mostrarError } from "./common.js";
-import { aplicarVariacion, estructuraNodo, guiaDetalle, normalizarCircuitos } from "./estructura.js";
+import { h, imagenesNodos, variantesNodo, renderHeader, cargarJSON, mostrarError } from "./common.js";
+import { completarItems, estructuraNodo, guiaDetalle, masGanado, normalizarCircuitos, repartirMinutos } from "./estructura.js";
 
 const app = document.getElementById("app");
 let ejercicios = new Map(); // id -> ejercicio (como un dict de Python)
@@ -8,9 +8,10 @@ let objetivos = []; // qué se gana (docs/data/objetivos.json)
 let circuitos = new Map(); // id -> circuito (docs/data/circuits.json)
 
 // Estado de la vista de detalle. Vive en memoria mientras la página esté abierta.
-const abiertos = new Set();   // "bloque:ex" de los ítems expandidos; sobrevive al cambio de opción/personas
+const abiertos = new Set();   // "bloque:ex" de los ítems expandidos; sobrevive al cambio de opción
 let elegidas = {};            // índice de bloque -> índice de opción elegida
 let sesionActual = null;
+let ganasAbierto = false;     // "Qué vas a ganar" arranca plegado y recuerda si lo abriste
 
 renderHeader("sesiones");
 
@@ -24,18 +25,16 @@ function grilla() {
         h("span", { class: "card-min" }, String(duracion(s)), h("small", {}, " min")),
         h("span", { class: "card-nombre" }, s.nombre),
         h("span", { class: "card-meta" },
-          s.dia ? h("span", { class: "dia" }, s.dia) : null,
-          s.etiquetas.map((e) => h("span", { class: "etiqueta" }, e)))))));
+          masGanado(minutosGanados(s), objetivos, { max: 3, etiquetas: true }).map((g) => h("span", { class: "etiqueta" }, g.nombre)))))));
 }
 
 function itemNodo(item, bi, numero = null, conEstructura = false) {
   const ej = ejercicios.get(item.ex);
-  const n = getPersonas();
   const clave = `${bi}:${item.ex}`;
   const vars = item.variantes || ej.variantes || {};
   const dosis = item.dosis || (conEstructura ? null : ej.dosis);
   const medios = [];
-  medios.push(...imagenesNodos(ej, n));
+  medios.push(...imagenesNodos(ej));
   if (ej.video) medios.push(h("a", { class: "btn", href: ej.video, target: "_blank", rel: "noopener" }, "Ver video"));
 
   return h("details", {
@@ -48,7 +47,7 @@ function itemNodo(item, bi, numero = null, conEstructura = false) {
     h("div", { class: "item-cuerpo" },
       item.nota ? h("p", { class: "nota" }, item.nota) : null,
       h("p", {}, ej.descripcion),
-      variantesNodo(vars, n),
+      variantesNodo(vars),
       medios.length ? h("div", { class: "medios" }, medios) : null,
       h("a", { class: "link-glosario", href: `glosario.html#${ej.id}` }, "Ver el ejercicio")));
 }
@@ -76,9 +75,23 @@ function guiaNodo(id, bi) {
 function resolver(o) {
   const c = circuitos.get(o.circuito);
   if (!c) return o;
-  const base = aplicarVariacion(c, o.variacion);
+  const base = completarItems(c);
   const estructura = base.estructura || o.estructura ? { ...base.estructura, ...o.estructura } : undefined;
   return { ...base, ...o, items: base.items, estructura, numerado: true };
+}
+
+// Si el circuito es una lista de ejercicios posibles, la sesión muestra la propuesta y deja ver el resto.
+function posiblesNodo(opcion) {
+  const usados = new Set(opcion.items.map((it) => it.ex));
+  const otros = opcion.opciones.filter((o) => !usados.has(o.ex));
+  return h("div", { class: "posibles" },
+    otros.length
+      ? h("details", { class: "musculo-sec" },
+          h("summary", {}, `Otros ejercicios que podés usar (${otros.length})`),
+          h("ul", { class: "musculo-lista" }, otros.map((o) =>
+            h("li", {}, h("a", { href: `glosario.html#${o.ex}` }, o.nombre || ejercicios.get(o.ex).nombre)))))
+      : null,
+    h("a", { class: "link-glosario", href: `circuitos.html#${opcion.id}` }, "Elegir los ejercicios de hoy"));
 }
 
 function bloqueNodo(b, bi) {
@@ -97,9 +110,11 @@ function bloqueNodo(b, bi) {
             type: "button", class: "chip", "aria-pressed": String(oi === idx),
             onclick: () => { elegidas[bi] = oi; detalle(sesionActual, true); } }, o.label)))
       : null,
+    opcion.nota ? h("p", { class: "nota" }, opcion.nota) : null,
     opcion.estructura ? estructuraNodo(opcion, opcion.guia ? guiaNodo(opcion.guia, bi) : null) : null,
     h("div", { class: "items" },
-      opcion.items.map((it, i) => itemNodo(it, bi, opcion.numerado || opcion.estructura?.modo === "circuito" ? i + 1 : null, !!opcion.estructura)))));
+      opcion.items.map((it, i) => itemNodo(it, bi, opcion.numerado || opcion.estructura?.modo === "circuito" ? i + 1 : null, !!opcion.estructura))),
+    opcion.opciones ? posiblesNodo(opcion) : null));
 }
 
 function precauciones() {
@@ -113,34 +128,33 @@ function precauciones() {
         h("td", { "data-label": "Alternativa" }, p.alternativa))))));
 }
 
-// conservar = true cuando solo cambia una opción o la cantidad: no se tocan elegidas ni abiertos
-// Qué vas a ganar: reparte los minutos de cada bloque (con la opción elegida) entre lo que aporta cada ejercicio.
-function ganancias(s) {
-  const min = new Map();
+// Qué se gana con la sesión: reparte los minutos de cada bloque (con la opción elegida) entre lo que aporta cada ejercicio.
+function minutosGanados(s, elegidasBloque = {}) {
+  const minutos = new Map();
   s.bloques.forEach((b, bi) => {
-    const opcion = resolver(b.opciones[Math.min(elegidas[bi] ?? 0, b.opciones.length - 1)]);
-    const por = b.min / opcion.items.length;
-    for (const it of opcion.items) {
-      const aporta = ejercicios.get(it.ex).aporta;
-      for (const id of aporta) min.set(id, (min.get(id) || 0) + por / aporta.length);
-    }
+    const opcion = resolver(b.opciones[Math.min(elegidasBloque[bi] ?? 0, b.opciones.length - 1)]);
+    repartirMinutos(opcion.items, b.min, ejercicios, minutos);
   });
-  return objetivos.map((o) => ({ ...o, min: min.get(o.id) || 0 })).filter((o) => o.min > 0).sort((a, b) => b.min - a.min);
+  return minutos;
 }
 
 function gananciasNodo(s) {
-  const todas = ganancias(s);
-  const fuertes = todas.filter((g) => g.min >= 5).slice(0, 4);
-  const poco = todas.filter((g) => !fuertes.includes(g));
-  return h("section", { class: "ganas", "aria-labelledby": "ganas-tit" },
-    h("h2", { id: "ganas-tit" }, "Qué vas a ganar"),
-    s.objetivo ? h("p", { class: "ganas-objetivo" }, s.objetivo) : null,
-    h("ul", { class: "ganas-lista" }, fuertes.map((g) => h("li", {},
-      h("span", { class: "ganas-nombre" }, g.nombre),
-      h("span", { class: "ganas-min" }, `unos ${Math.round(g.min)} min`),
-      h("span", { class: "ganas-para" }, g.para_que)))),
-    poco.length ? h("p", { class: "ganas-poco" }, `Un poco de: ${poco.map((g) => g.nombre.toLowerCase()).join(", ")}.`) : null,
-    h("p", { class: "ganas-nota" }, "Se calcula con las opciones que tengas elegidas en cada bloque."));
+  const minutos = minutosGanados(s, elegidas);
+  const fuertes = masGanado(minutos, objetivos);
+  const poco = objetivos.filter((o) => minutos.get(o.id) > 0 && !fuertes.some((g) => g.id === o.id));
+  const etiquetas = masGanado(minutos, objetivos, { max: 3, etiquetas: true });
+  return h("details", { class: "ganas", open: ganasAbierto, ontoggle: (e) => { ganasAbierto = e.target.open; } },
+    h("summary", {},
+      h("h2", {}, "Qué vas a ganar"),
+      etiquetas.map((g) => h("span", { class: "etiqueta" }, g.nombre))),
+    h("div", { class: "ganas-cuerpo" },
+      s.objetivo ? h("p", { class: "ganas-objetivo" }, s.objetivo) : null,
+      h("ul", { class: "ganas-lista" }, fuertes.map((g) => h("li", {},
+        h("span", { class: "ganas-nombre" }, g.nombre),
+        h("span", { class: "ganas-min" }, `unos ${Math.round(g.min)} min`),
+        h("span", { class: "ganas-para" }, g.para_que)))),
+      poco.length ? h("p", { class: "ganas-poco" }, `Un poco de: ${poco.map((o) => o.nombre.toLowerCase()).join(", ")}.`) : null,
+      h("p", { class: "ganas-nota" }, "Se calcula con las opciones que tengas elegidas en cada bloque.")));
 }
 
 function detalle(s, conservar = false) {
@@ -152,7 +166,6 @@ function detalle(s, conservar = false) {
   app.replaceChildren(
     h("a", { class: "volver", href: "#" }, "Todas las sesiones"),
     h("h1", {}, s.nombre),
-    s.dia ? h("p", { class: "detalle-meta" }, s.dia) : null,
     gananciasNodo(s),
     resumenNodo(s),
     ...s.bloques.map(bloqueNodo),
@@ -176,7 +189,6 @@ try {
   datos = ses;
   ruta();
   window.addEventListener("hashchange", ruta);
-  document.addEventListener("personas-change", () => { if (sesionActual) detalle(sesionActual, true); });
 } catch (err) {
   mostrarError(app, err);
 }

@@ -81,23 +81,6 @@ a { color: inherit; }
 }
 .nav a[aria-current="page"] { background: #fff; color: #10231a; }
 
-.personas { border: 0; margin: 0; padding: 0; display: flex; align-items: center; gap: 10px; }
-.personas legend { float: left; padding: 0; margin-right: 10px; font-weight: 600; }
-.personas-botones { display: flex; gap: 6px; }
-.personas input { position: absolute; opacity: 0; pointer-events: none; }
-.personas label {
-  min-width: var(--tap);
-  min-height: var(--tap);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 2px solid #fff;
-  border-radius: var(--radio);
-  font-weight: 800;
-  cursor: pointer;
-}
-.personas input:checked + label { background: var(--acento); color: var(--acento-ink); border-color: var(--acento); }
-.personas input:focus-visible + label { outline: 3px solid #fff; outline-offset: 2px; }
 
 /* Celu angosto: la marca queda solo como el círculo de la cancha (el texto sigue para lectores de
    pantalla) y marca + links entran en una sola fila: de ~132 px a ~64 px de alto. */
@@ -130,7 +113,7 @@ h1 { font-size: 1.9rem; line-height: 1.15; margin: 8px 0 16px; }
 .aviso code { background: var(--resalte); padding: 2px 6px; border-radius: 4px; }
 
 /* Inicio */
-.accesos { display: grid; gap: 16px; margin-top: 24px; }
+.accesos { display: grid; gap: 16px; margin-top: 24px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
 .acceso {
   display: block;
   text-decoration: none;
@@ -184,10 +167,6 @@ h1 { font-size: 1.9rem; line-height: 1.15; margin: 8px 0 16px; }
 @media (prefers-color-scheme: dark) {
   :root:not([data-theme="light"]) .cat { color: #7fd9a8; }
 }
-.variante-label { font-weight: 800; }
-details.otras { margin-top: 8px; }
-details.otras summary { min-height: 36px; cursor: pointer; font-weight: 600; }
-details.otras ul { margin: 6px 0 0; padding-left: 20px; }
 .medios { display: flex; flex-direction: column; gap: 8px; align-items: flex-start; }
 .medios img { max-width: 100%; height: auto; border-radius: 6px; }
 .btn {
@@ -223,7 +202,6 @@ details.otras ul { margin: 6px 0 0; padding-left: 20px; }
 .card-min small, .bloque-min small { font-size: .9rem; font-weight: 700; }
 .card-nombre { font-weight: 800; font-size: 1.15rem; line-height: 1.2; }
 .card-meta { display: flex; flex-wrap: wrap; gap: 6px; grid-column: 2; }
-.dia { background: var(--acento); color: var(--acento-ink); font-weight: 800; font-size: .85rem; padding: 2px 10px; border-radius: 999px; text-transform: capitalize; }
 .etiqueta { border: 1.5px solid var(--ink-soft); color: var(--ink-soft); font-size: .85rem; padding: 1px 10px; border-radius: 999px; }
 
 /* Sesiones: detalle */
@@ -270,7 +248,6 @@ details.otras ul { margin: 6px 0 0; padding-left: 20px; }
 .item-cuerpo { padding: 0 4px 14px; }
 .item-cuerpo p { margin: 8px 0; }
 .nota { font-weight: 700; background: var(--resalte); padding: 6px 10px; border-radius: 6px; }
-.variante { border-left: 6px solid var(--acento); padding-left: 10px; }
 .link-glosario { display: inline-flex; align-items: center; min-height: var(--tap); font-weight: 700; }
 .precauciones { margin-top: 28px; background: var(--surface); border-radius: 14px; padding: 0 14px 8px; }
 .precauciones summary { min-height: var(--tap); display: flex; align-items: center; font-weight: 800; font-size: 1.2rem; cursor: pointer; }
@@ -294,11 +271,9 @@ details.otras ul { margin: 6px 0 0; padding-left: 20px; }
   }
   .tabla td:empty { display: none; }
   .td-nombre { font-size: 1.25rem; }
-  .accesos { grid-template-columns: 1fr; }
 }
 
 @media (min-width: 761px) {
-  .accesos { grid-template-columns: 1fr 1fr; }
   .tabla { border: 2px solid var(--ink); }
 }
 
@@ -348,7 +323,6 @@ details.otras ul { margin: 6px 0 0; padding-left: 20px; }
 .estructura .guia summary { padding: 8px 0; }
 .estructura .guia .item-cuerpo { padding: 0 0 8px; }
 .estructura .guia[open] { background: transparent; }
-@media (min-width: 761px) { .accesos { grid-template-columns: repeat(3, 1fr); } }
 
 /* Circuitos */
 .circuito-lista { list-style: none; margin: 0; padding: 0; }
@@ -359,15 +333,14 @@ details.otras ul { margin: 6px 0 0; padding-left: 20px; }
 .circuito .card-meta { margin: 4px 0 8px; }
 .usado-en { margin: 10px 0 4px; color: var(--ink-soft); font-weight: 600; }
 .usado-en a { color: inherit; }
-@media (min-width: 761px) { .accesos { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); } }
 .nav { flex-wrap: wrap; }
 @media (max-width: 420px) { .nav { gap: 0; } .nav a { padding: 0 9px; font-size: .95rem; } }
 .circuito .opciones { margin: 12px 0 8px; }
-.circuito .chips { margin-bottom: 4px; }
 
 /* Plantilla de circuito: elegir una opción por parte */
 .hoy { background: var(--bg); border-radius: 10px; padding: 8px 14px 10px; margin: 12px 0; }
 .hoy h3 { margin: 4px 0; color: var(--ink); font-size: 1.1rem; }
+.parte-ayuda { margin: 14px 0 0; font-weight: 700; color: var(--ink-soft); }
 .parte { margin-top: 18px; }
 .parte h3 { margin: 0 0 6px; font-size: 1.1rem; color: var(--ink); display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 10px; }
 .parte-elegida { font-weight: 600; color: var(--ink-soft); font-size: .95rem; }
@@ -376,7 +349,9 @@ details.otras ul { margin: 6px 0 0; padding-left: 20px; }
 
 /* Qué vas a ganar (hoja de sesión) */
 .ganas { background: var(--surface); border-radius: 14px; border-left: 8px solid var(--acento); padding: 12px 16px 12px; margin: 8px 0 12px; }
-.ganas h2 { margin: 0 0 6px; font-size: 1.3rem; }
+.ganas summary { min-height: var(--tap); display: flex; flex-wrap: wrap; align-items: center; gap: 6px 10px; cursor: pointer; }
+.ganas h2 { margin: 0 4px 0 0; font-size: 1.3rem; }
+.ganas-cuerpo { padding-top: 4px; }
 .ganas-objetivo { margin: 0 0 8px; font-weight: 600; }
 .ganas-lista { list-style: none; margin: 0; padding: 0; }
 .ganas-lista li { display: grid; grid-template-columns: 1fr auto; gap: 0 12px; padding: 8px 0; border-top: 1px solid var(--line); }
