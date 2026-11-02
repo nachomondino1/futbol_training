@@ -1,11 +1,13 @@
 """Valida data/exercises.json contra data/sessions.json.
 
 ERROR (exit 1): referencias rotas, ids duplicados, huérfanos, categorías o
-variantes inválidas. WARNING (no corta): variantes sin validar, dosis pendientes.
+variantes inválidas, archivos de sw.js o del manifest que no existen.
+WARNING (no corta): variantes sin validar, dosis pendientes.
 
 Correr desde la raíz del repo: python scripts/validate.py
 """
 import json
+import re
 import sys
 from collections import Counter
 from pathlib import Path
@@ -76,7 +78,32 @@ def validar_estructura(where: str, o: dict, guias: dict, minutos: int | None) ->
         errors.append(f"{where}: la estructura dura {total_min:.1f} min y el bloque {minutos}")
 
 
+def validar_offline() -> None:
+    """Si falta un archivo de BASICOS (sw.js), el service worker no se instala y la web no anda sin señal."""
+    sw = (WEB / "sw.js").read_text(encoding="utf-8")
+    bloque = re.search(r"const BASICOS = \[(.*?)\];", sw, re.S)
+    if not bloque:
+        errors.append("sw.js: no encuentro la lista BASICOS")
+        return
+    listados = set()
+    for ruta in re.findall(r'"([^"]+)"', bloque.group(1)):
+        listados.add("index.html" if ruta == "./" else ruta)
+        if not (WEB / ("index.html" if ruta == "./" else ruta)).is_file():
+            errors.append(f"sw.js: '{ruta}' (BASICOS) no existe en docs/")
+    # Lo inverso: una página, script o JSON nuevo que no está en BASICOS no se guarda para usar sin señal
+    for patron in ("*.html", "css/*.css", "js/*.js", "data/*.json"):
+        for archivo in sorted(WEB.glob(patron)):
+            ruta = archivo.relative_to(WEB).as_posix()
+            if ruta not in listados:
+                errors.append(f"sw.js: '{ruta}' falta en BASICOS (no andaría sin señal)")
+    manifest = json.loads((WEB / "manifest.webmanifest").read_text(encoding="utf-8"))
+    for icono in manifest["icons"]:
+        if not (WEB / icono["src"]).is_file():
+            errors.append(f"manifest.webmanifest: el ícono '{icono['src']}' no existe en docs/")
+
+
 def main() -> int:
+    validar_offline()
     ex_data = json.loads((DATA / "exercises.json").read_text(encoding="utf-8"))
     ses_data = json.loads((DATA / "sessions.json").read_text(encoding="utf-8"))
 

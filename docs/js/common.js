@@ -22,6 +22,21 @@ function setPersonas(n) {
   document.dispatchEvent(new CustomEvent("personas-change", { detail: n }));
 }
 
+// Instalable y sin señal: el service worker (sw.js) guarda la web en el celu.
+// En local no se registra, porque mostraría versiones viejas mientras se edita (y se limpia uno
+// que haya quedado de una prueba). Para probarlo en local: abrir la página con ?sw.
+function registrarServiceWorker() {
+  if (!("serviceWorker" in navigator) || location.protocol === "file:") return;
+  const local = ["localhost", "127.0.0.1", "[::1]"].includes(location.hostname);
+  if (local && !new URLSearchParams(location.search).has("sw")) {
+    navigator.serviceWorker.getRegistrations().then((rs) => rs.forEach((r) => r.unregister()));
+    caches.keys().then((ks) => ks.forEach((k) => caches.delete(k)));
+    return;
+  }
+  navigator.serviceWorker.register("sw.js").catch(() => { /* sin service worker la web anda igual, solo con señal */ });
+}
+registrarServiceWorker();
+
 // h("div", {class: "x"}, "texto", otroNodo) arma un nodo DOM sin pasar por innerHTML.
 export function h(tag, attrs = {}, ...hijos) {
   const el = document.createElement(tag);
@@ -89,7 +104,7 @@ export function renderHeader(activa) {
 
   const header = h("header", { class: "cabecera" },
     h("div", { class: "cabecera-in" },
-      h("a", { class: "marca", href: "index.html" }, "Entrenamiento"),
+      h("a", { class: "marca", href: "index.html" }, h("span", { class: "marca-texto" }, "Entrenamiento")),
       h("nav", { class: "nav", "aria-label": "Principal" },
         link("glosario.html", "Glosario", "glosario"),
         link("circuitos.html", "Circuitos", "circuitos"),
