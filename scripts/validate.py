@@ -10,7 +10,7 @@ import sys
 from collections import Counter
 from pathlib import Path
 
-DATA = Path(__file__).resolve().parent.parent / "data"
+DATA = Path(__file__).resolve().parent.parent / "docs" / "data"
 PERSONAS = ["2", "3", "4", "8"]
 
 errors: list[str] = []

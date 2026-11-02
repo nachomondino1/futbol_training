@@ -7,7 +7,7 @@ Web estática, de solo lectura, para usar desde el celu en la cancha. HTML + CSS
 `fetch` no funciona con `file://`, así que hace falta un servidor:
 
 ```bash
-python3 -m http.server 8000
+python3 -m http.server 8000 --directory docs
 ```
 
 Después abrí http://localhost:8000.
@@ -22,7 +22,7 @@ Corta (exit 1) si hay referencias rotas, ids duplicados, ejercicios huérfanos, 
 
 ## Agregar un ejercicio
 
-En `data/exercises.json`, dentro de `ejercicios`:
+En `docs/data/exercises.json`, dentro de `ejercicios`:
 
 ```json
 {
@@ -47,14 +47,14 @@ En `data/exercises.json`, dentro de `ejercicios`:
 
 ## Agregar una imagen o un video
 
-1. Copiá la imagen a `img/` (máx. ~800 px de ancho).
-2. En el ejercicio: `"imagen": "img/sentadilla.jpg"` (ruta relativa, sin `/` al principio) y/o `"video": "https://youtu.be/..."`.
+1. Copiá la imagen a `docs/img/` (máx. ~800 px de ancho).
+2. En el ejercicio: `"imagen": "img/sentadilla.jpg"` (ruta relativa a `docs/`, sin `/` al principio) y/o `"video": "https://youtu.be/..."`.
 
 No hay que tocar código. Sin imagen o video, no se muestra nada.
 
 ## Agregar una sesión
 
-En `data/sessions.json`, dentro de `sesiones`:
+En `docs/data/sessions.json`, dentro de `sesiones`:
 
 ```json
 {
@@ -83,17 +83,18 @@ En `data/sessions.json`, dentro de `sesiones`:
 ## Deploy en GitHub Pages
 
 1. Subí el repo a GitHub (rama `main`).
-2. En el repo: Settings → Pages → Source: "Deploy from a branch" → `main` / `(root)`.
+2. En el repo: Settings → Pages → Source: "Deploy from a branch" → `main` / `/docs`.
 3. Queda en `https://<usuario>.github.io/<repo>/`. Todas las rutas son relativas, así que funciona bajo ese subpath.
 
 ## Estructura
 
 ```
-index.html · glosario.html · sesiones.html
-css/style.css
-js/common.js      header, selector de personas, utilidades
-js/glosario.js · js/sesiones.js
-data/exercises.json · data/sessions.json
+docs/             la web (lo que sirve GitHub Pages)
+  index.html · glosario.html · sesiones.html
+  css/style.css
+  js/common.js      header, selector de personas, utilidades
+  js/glosario.js · js/sesiones.js
+  data/exercises.json · data/sessions.json
 scripts/validate.py
 fuente/           Doc original exportado (solo referencia)
 PENDIENTES.md     lo que propuse yo y falta validar
