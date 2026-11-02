@@ -1,0 +1,279 @@
+{
+  "sesiones": [
+    {
+      "id": "martes-fisico",
+      "nombre": "Físico: aeróbico + piernas",
+      "dia": "martes",
+      "etiquetas": ["aeróbico", "piernas"],
+      "bloques": [
+        {
+          "titulo": "Activación",
+          "min": 10,
+          "opciones": [{ "items": [{ "ex": "movilidad-articular", "nota": "Antes, trote suave 3-4 min." }] }]
+        },
+        {
+          "titulo": "Coordinación",
+          "min": 10,
+          "opciones": [{ "items": [{ "ex": "escalera", "dosis": "4-5 patrones x 2 pasadas" }] }]
+        },
+        {
+          "titulo": "Aeróbico",
+          "min": 30,
+          "opciones": [
+            { "label": "Trote continuo", "items": [{ "ex": "trote-continuo", "dosis": "30 min" }] },
+            { "label": "HIIT 10/10", "items": [{ "ex": "hiit-10-10" }] },
+            { "label": "Rondo", "items": [{ "ex": "rondo", "dosis": "4 min posesión / 1,5 min pausa activa, x5 vueltas" }] }
+          ]
+        },
+        {
+          "titulo": "Circuito",
+          "min": 25,
+          "opciones": [
+            {
+              "label": "Piernas",
+              "items": [
+                { "ex": "circuito-estaciones", "dosis": "40 s trabajo / 20 s descanso, 3 vueltas" },
+                { "ex": "sentadilla" },
+                { "ex": "zancada-estatica" },
+                { "ex": "puente-gluteo" },
+                { "ex": "wall-sit" },
+                { "ex": "elevacion-talones" }
+              ]
+            },
+            {
+              "label": "Glúteo y core (bajo impacto)",
+              "items": [
+                { "ex": "circuito-estaciones", "dosis": "40 s trabajo / 20 s descanso, 3 vueltas" },
+                { "ex": "puente-gluteo" },
+                { "ex": "abduccion-cadera" },
+                { "ex": "plancha-frontal" },
+                { "ex": "plancha-lateral" },
+                { "ex": "elevacion-talones" }
+              ]
+            }
+          ]
+        },
+        {
+          "titulo": "Vuelta a la calma",
+          "min": 10,
+          "opciones": [{ "items": [{ "ex": "estiramiento-estatico", "dosis": "10-15 min" }] }]
+        }
+      ]
+    },
+    {
+      "id": "jueves-pelota",
+      "nombre": "Pelota + físico liviano",
+      "dia": "jueves",
+      "etiquetas": ["pelota", "físico liviano"],
+      "bloques": [
+        {
+          "titulo": "Activación",
+          "min": 10,
+          "opciones": [{ "items": [{ "ex": "movilidad-articular", "nota": "Antes, trote suave 3-4 min." }] }]
+        },
+        {
+          "titulo": "Pelota",
+          "min": 30,
+          "opciones": [
+            { "label": "Rondo", "items": [{ "ex": "rondo" }] },
+            { "label": "Pase, control y definición", "items": [{ "ex": "pase-control-definicion" }] },
+            { "label": "Conducción a ritmo variable", "items": [{ "ex": "conduccion-ritmo-variable" }] }
+          ]
+        },
+        {
+          "titulo": "Circuito corto",
+          "min": 20,
+          "opciones": [
+            {
+              "items": [
+                { "ex": "circuito-estaciones", "dosis": "40 s trabajo / 30 s descanso, 3 vueltas" },
+                { "ex": "sentadilla" },
+                { "ex": "zancada-estatica" },
+                { "ex": "puente-gluteo" },
+                { "ex": "plancha-frontal" },
+                { "ex": "elevacion-talones" }
+              ]
+            }
+          ]
+        },
+        {
+          "titulo": "Técnica de pelota",
+          "min": 15,
+          "opciones": [{ "items": [{ "ex": "pases-control-orientado", "nota": "Parados o con desplazamiento mínimo, sin carrera." }] }]
+        },
+        {
+          "titulo": "Vuelta a la calma",
+          "min": 10,
+          "opciones": [{ "items": [{ "ex": "estiramiento-estatico" }] }]
+        }
+      ]
+    },
+    {
+      "id": "velocidad-aceleracion",
+      "nombre": "Velocidad y aceleración",
+      "dia": null,
+      "etiquetas": ["velocidad", "técnica de carrera"],
+      "bloques": [
+        {
+          "titulo": "Activación extendida",
+          "min": 20,
+          "opciones": [
+            {
+              "items": [
+                { "ex": "movilidad-articular", "nota": "Trote progresivo + movilidad dinámica." },
+                { "ex": "tecnica-carrera", "dosis": "3 series cortas de cada una, 15-20 m, volviendo caminando" }
+              ]
+            }
+          ]
+        },
+        {
+          "titulo": "Progresiones de aceleración",
+          "min": 20,
+          "opciones": [{ "items": [{ "ex": "progresion-aceleracion", "dosis": "6-8 repeticiones, 15-20 m al 60-70%" }] }]
+        },
+        {
+          "titulo": "Cambios de ritmo con conos",
+          "min": 25,
+          "opciones": [{ "items": [{ "ex": "cambios-ritmo-conos", "dosis": "4-5 pasadas, con pausa entre cada una" }] }]
+        },
+        {
+          "titulo": "Pelota a ritmo variable",
+          "min": 15,
+          "opciones": [{ "items": [{ "ex": "conduccion-ritmo-variable", "nota": "Sin robo ni presión de compañero." }] }]
+        },
+        {
+          "titulo": "Vuelta a la calma",
+          "min": 10,
+          "opciones": [{ "items": [{ "ex": "estiramiento-estatico", "nota": "Énfasis en cuádriceps e isquios." }] }]
+        }
+      ]
+    },
+    {
+      "id": "fuerza-control",
+      "nombre": "Fuerza y control",
+      "dia": null,
+      "etiquetas": ["fuerza", "pelota suave"],
+      "bloques": [
+        {
+          "titulo": "Activación",
+          "min": 10,
+          "opciones": [{ "items": [{ "ex": "movilidad-articular", "nota": "Antes, trote suave 3 min." }] }]
+        },
+        {
+          "titulo": "Coordinación",
+          "min": 15,
+          "opciones": [{ "items": [{ "ex": "escalera", "dosis": "5-6 patrones x 2 pasadas" }] }]
+        },
+        {
+          "titulo": "Circuito de fuerza",
+          "min": 35,
+          "opciones": [
+            {
+              "items": [
+                { "ex": "circuito-estaciones", "dosis": "40 s trabajo / 30 s descanso, 3 vueltas" },
+                { "ex": "sentadilla" },
+                { "ex": "zancada-estatica" },
+                { "ex": "puente-gluteo", "nota": "A una pierna." },
+                { "ex": "wall-sit" },
+                { "ex": "plancha-frontal" },
+                { "ex": "elevacion-talones" }
+              ]
+            }
+          ]
+        },
+        {
+          "titulo": "Técnica de pelota",
+          "min": 15,
+          "opciones": [{ "items": [{ "ex": "pases-control-orientado", "nota": "Baja intensidad, parados o con desplazamiento mínimo, sin carrera." }] }]
+        },
+        {
+          "titulo": "Vuelta a la calma",
+          "min": 10,
+          "opciones": [{ "items": [{ "ex": "estiramiento-estatico" }] }]
+        }
+      ]
+    },
+    {
+      "id": "dia-previo",
+      "nombre": "Día previo al partido",
+      "dia": null,
+      "etiquetas": ["activación", "sin fatiga"],
+      "bloques": [
+        {
+          "titulo": "Movilidad suave",
+          "min": 8,
+          "opciones": [{ "items": [{ "ex": "movilidad-articular", "nota": "Sin pelota." }] }]
+        },
+        {
+          "titulo": "Posesión de baja intensidad",
+          "min": 15,
+          "opciones": [
+            {
+              "items": [
+                {
+                  "ex": "rondo",
+                  "nota": "A ritmo de toque, bajo.",
+                  "variantes": {
+                    "2": "Posesión con movimiento controlado, caminando entre pases.",
+                    "3": "Rondo triangular al mismo ritmo bajo.",
+                    "4": "Rondo 3v1 al mismo ritmo bajo.",
+                    "8": "Rondo grande: 7 tocan y 1 presiona, a ritmo de toque."
+                  },
+                  "pendiente_validar": ["4"]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "titulo": "Circuito de pases combinados",
+          "min": 15,
+          "opciones": [{ "items": [{ "ex": "circuito-pases-combinados" }] }]
+        },
+        {
+          "titulo": "Tiro al arco suave",
+          "min": 7,
+          "opciones": [
+            {
+              "items": [
+                {
+                  "ex": "pase-control-definicion",
+                  "nota": "Suave, sin oposición.",
+                  "variantes": {
+                    "2": "Uno pasa, el otro controla y define. Alternan.",
+                    "3": "Pared simple, sin oposición.",
+                    "4": "Pared simple de a dos, los otros dos esperan y rotan. Sin oposición.",
+                    "8": "Fila corta, 1-2 tiros por jugador."
+                  },
+                  "pendiente_validar": ["4"]
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "titulo": "Activación neuromuscular",
+          "min": 4,
+          "opciones": [{ "items": [{ "ex": "activacion-neuromuscular" }] }]
+        },
+        {
+          "titulo": "Vuelta a la calma",
+          "min": 5,
+          "opciones": [{ "items": [{ "ex": "estiramiento-estatico", "nota": "Estiramiento suave, sin forzar rango." }] }]
+        }
+      ]
+    }
+  ],
+  "precauciones": [
+    {
+      "lesion": "Desgarro de cuádriceps",
+      "evitar": "Sentadilla, zancada, wall sit, sprints, cambios de dirección bruscos.",
+      "alternativa": "Reemplazar por puente de glúteo, abducción de cadera, plancha y elevación de talones (si no duele). En el día de velocidad, hacer solo el bloque de pelota a ritmo variable. El trote continuo es de lo más seguro de la rutina; si duele, se corta."
+    },
+    {
+      "lesion": "Tobillo",
+      "evitar": "Superficies irregulares, apoyos bruscos en la escalera y cambios de dirección.",
+      "alternativa": "Bajar el ritmo en esos bloques y priorizar el apoyo controlado por sobre la velocidad."
+    }
+  ]
+}

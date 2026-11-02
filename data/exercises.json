@@ -1,0 +1,317 @@
+{
+  "categorias": [
+    { "id": "calentamiento", "nombre": "Calentamiento" },
+    { "id": "coordinacion", "nombre": "Coordinación" },
+    { "id": "fuerza", "nombre": "Fuerza" },
+    { "id": "aerobico", "nombre": "Aeróbico" },
+    { "id": "velocidad", "nombre": "Velocidad" },
+    { "id": "pelota", "nombre": "Pelota" },
+    { "id": "vuelta-calma", "nombre": "Vuelta a la calma" }
+  ],
+  "ejercicios": [
+    {
+      "id": "movilidad-articular",
+      "nombre": "Movilidad articular",
+      "alias": ["movilidad suave", "movilidad dinámica"],
+      "categoria": "calentamiento",
+      "descripcion": "Círculos de tobillo, rodillas altas caminando, talones a la cola, apertura y cierre de cadera.",
+      "dosis": "1 min cada uno",
+      "variantes": {},
+      "imagen": null,
+      "video": null
+    },
+    {
+      "id": "escalera",
+      "nombre": "Escalera de coordinación",
+      "alias": [],
+      "categoria": "coordinacion",
+      "descripcion": "Tres patrones: pie-pie (un apoyo por cuadrado), in-in-out-out (adentro, adentro, afuera, afuera) y lateral (de costado). Volvés caminando entre pasadas.",
+      "dosis": "2 pasadas por patrón",
+      "variantes": {},
+      "imagen": null,
+      "video": null
+    },
+    {
+      "id": "circuito-estaciones",
+      "nombre": "Circuito por estaciones (cómo rotar)",
+      "alias": [],
+      "categoria": "fuerza",
+      "descripcion": "Cada estación es un ejercicio de fuerza. Se trabaja el tiempo indicado, se descansa y se pasa a la siguiente. Al terminar todas las estaciones es una vuelta.",
+      "dosis": null,
+      "requiere_variantes": true,
+      "variantes": {
+        "2": "Los dos hacen la misma estación al mismo tiempo y pasan juntos a la siguiente.",
+        "3": "Los tres hacen la misma estación al mismo tiempo y pasan juntos a la siguiente.",
+        "4": "Los cuatro hacen la misma estación al mismo tiempo y pasan juntos a la siguiente.",
+        "8": "Dos grupos de 4. Cada grupo arranca en una estación distinta y rotan juntos al terminar el tiempo."
+      },
+      "pendiente_validar": ["4"],
+      "imagen": null,
+      "video": null
+    },
+    {
+      "id": "sentadilla",
+      "nombre": "Sentadilla",
+      "alias": [],
+      "categoria": "fuerza",
+      "descripcion": "Parado, pies al ancho de hombros. Bajás flexionando cadera y rodilla como si te sentaras, pecho arriba. Subís apretando glúteo.",
+      "dosis": null,
+      "variantes": {},
+      "imagen": null,
+      "video": null
+    },
+    {
+      "id": "zancada-estatica",
+      "nombre": "Zancada estática",
+      "alias": ["Estocada"],
+      "categoria": "fuerza",
+      "descripcion": "Un pie adelante y uno atrás. Bajás flexionando ambas rodillas hasta casi tocar el piso con la de atrás. Subís sin desplazarte.",
+      "dosis": null,
+      "variantes": {},
+      "imagen": null,
+      "video": null
+    },
+    {
+      "id": "wall-sit",
+      "nombre": "Wall sit",
+      "alias": ["Sentadilla isométrica contra pared"],
+      "categoria": "fuerza",
+      "descripcion": "Espalda apoyada en la pared. Bajás hasta que las rodillas queden a 90° y sostenés la posición sin moverte.",
+      "dosis": null,
+      "variantes": {},
+      "imagen": null,
+      "video": null
+    },
+    {
+      "id": "puente-gluteo",
+      "nombre": "Puente de glúteo",
+      "alias": [],
+      "categoria": "fuerza",
+      "descripcion": "Doble pierna: acostado boca arriba, rodillas flexionadas y pies apoyados. Empujás con los talones y subís la cadera hasta línea recta hombro-rodilla. Apretás arriba y bajás controlado. A una pierna: igual, con una pierna estirada en el aire, alternando lados. Con pausa: como el doble pierna, sosteniendo 2-3 s arriba apretando el glúteo antes de bajar.",
+      "dosis": null,
+      "variantes": {},
+      "imagen": null,
+      "video": null
+    },
+    {
+      "id": "abduccion-cadera",
+      "nombre": "Abducción de cadera lateral",
+      "alias": [],
+      "categoria": "fuerza",
+      "descripcion": "Acostado de costado, piernas estiradas una sobre la otra. Levantás la pierna de arriba hacia el techo sin girar la cadera hacia atrás y bajás controlado.",
+      "dosis": null,
+      "variantes": {},
+      "imagen": null,
+      "video": null
+    },
+    {
+      "id": "elevacion-talones",
+      "nombre": "Elevación de talones",
+      "alias": [],
+      "categoria": "fuerza",
+      "descripcion": "Parado, subís en punta de pie lo más alto posible y bajás controlado. Podés apoyarte en algo para el equilibrio.",
+      "dosis": null,
+      "variantes": {},
+      "imagen": null,
+      "video": null
+    },
+    {
+      "id": "plancha-frontal",
+      "nombre": "Plancha frontal",
+      "alias": [],
+      "categoria": "fuerza",
+      "descripcion": "Apoyado en antebrazos y puntas de pie, cuerpo en línea recta de cabeza a talón. Sostenés sin moverte.",
+      "dosis": null,
+      "variantes": {},
+      "imagen": null,
+      "video": null
+    },
+    {
+      "id": "plancha-lateral",
+      "nombre": "Plancha lateral",
+      "alias": [],
+      "categoria": "fuerza",
+      "descripcion": "Apoyado en un antebrazo, cuerpo de costado en línea recta y cadera levantada del piso. Sostenés y después cambiás de lado.",
+      "dosis": null,
+      "variantes": {},
+      "imagen": null,
+      "video": null
+    },
+    {
+      "id": "trote-continuo",
+      "nombre": "Trote continuo (zona 2)",
+      "alias": ["Resistencia continua", "Trote a ritmo conversacional"],
+      "categoria": "aerobico",
+      "descripcion": "Correr a ritmo conversacional (60-70% de la FC máx.): tenés que poder hablar sin ahogarte. Es la base aeróbica que mejora la recuperación entre sprints y sostiene la intensidad en el segundo tiempo. Si alguno no llega a los 30 min corridos, alterna trote y caminata rápida en vez de forzar.",
+      "dosis": null,
+      "variantes": {},
+      "imagen": null,
+      "video": null
+    },
+    {
+      "id": "hiit-10-10",
+      "nombre": "HIIT 10\"/10\"",
+      "alias": ["HIIT 10/10"],
+      "categoria": "aerobico",
+      "descripcion": "10 segundos corriendo fuerte y 10 segundos de descanso, repetido en varios sets.",
+      "dosis": null,
+      "pendiente_dosis": "Cuántos sets y cuánto descanso entre sets: lo define Nacho.",
+      "variantes": {},
+      "imagen": null,
+      "video": null
+    },
+    {
+      "id": "rondo",
+      "nombre": "Rondo / posesión reducida",
+      "alias": ["Posesión"],
+      "categoria": "pelota",
+      "descripcion": "Juego reducido de posesión con conos marcando el límite del espacio.",
+      "dosis": null,
+      "requiere_variantes": true,
+      "variantes": {
+        "2": "Posesión con movimiento controlado: se pasan la pelota mientras se desplazan a conos objetivo marcados dentro del cuadrado, sin quedarse parados.",
+        "3": "Rondo triangular: 2 tocan y 1 presiona en el medio. Rotan roles cada 2-3 min.",
+        "4": "Rondo 3v1: 3 tocan y 1 presiona en el medio. Rotan roles cada 2-3 min.",
+        "8": "Rondo 6v2 (6 tocan, 2 presionan en el medio, rotan cada 2-3 min) o 4v4 en cuadrado si prefieren competir."
+      },
+      "pendiente_validar": ["4"],
+      "imagen": null,
+      "video": null
+    },
+    {
+      "id": "pases-control-orientado",
+      "nombre": "Pases cortos con control orientado",
+      "alias": [],
+      "categoria": "pelota",
+      "descripcion": "Pase al ras del piso y control con un toque orientado antes de devolver. Para dificultarlo: más distancia, alternar pie hábil y no hábil, cambiar la superficie de contacto.",
+      "dosis": null,
+      "requiere_variantes": true,
+      "variantes": {
+        "2": "Enfrentados a 10 m, cada uno parado en un cono. Se dan un pase, controlan con un toque orientado hacia el otro pie y dan el pase largo al compañero. Reciben de un lado del cono y pasan del otro.",
+        "3": "Separados 8-10 m, pase al ras del piso. El que recibe controla con un toque orientado hacia un costado antes de devolver.",
+        "4": "Dos parejas, cada una hace el ejercicio de 2 en su propio espacio, en simultáneo.",
+        "8": "Cuatro parejas, cada una hace el ejercicio de 2 en su propio espacio, en simultáneo."
+      },
+      "pendiente_validar": ["4"],
+      "imagen": null,
+      "video": null
+    },
+    {
+      "id": "pase-control-definicion",
+      "nombre": "Pase, control y definición",
+      "alias": ["Tiro al arco"],
+      "categoria": "pelota",
+      "descripcion": "Ejercicio base de finalización, sin oposición real. Para sumar presión, uno puede hacer de defensor pasivo: solo estira un brazo o se mueve lateralmente, sin salir a robar.",
+      "dosis": null,
+      "requiere_variantes": true,
+      "variantes": {
+        "2": "Uno pasa, el otro controla y define de primera o al segundo toque. Alternan.",
+        "3": "Dos pasan en pared y uno define. Rotan los tres roles cada 3-4 tiros.",
+        "4": "Dos pasan en pared, uno define y el cuarto hace de defensor pasivo. Rotan los cuatro roles cada 3-4 tiros.",
+        "8": "Fila con la pelota, 1-2 tiros por jugador rotando rápido. Con 2 arcos, dividen el grupo y achican la espera."
+      },
+      "pendiente_validar": ["4"],
+      "imagen": null,
+      "video": null
+    },
+    {
+      "id": "circuito-pases-combinados",
+      "nombre": "Circuito de pases combinados",
+      "alias": [],
+      "categoria": "pelota",
+      "descripcion": "Secuencia de pases con control orientado y pase largo. Es de baja intensidad.",
+      "dosis": null,
+      "requiere_variantes": true,
+      "variantes": {
+        "2": "Ejercicio de control orientado + pase largo (ver Pases cortos con control orientado, variante de 2).",
+        "3": "Control orientado corto + pase largo de 20-25 m.",
+        "4": "Dos parejas, cada una hace el ejercicio de 2 en su propio espacio, en simultáneo.",
+        "8": "Formación en línea o en rombo, con control orientado y algún pase largo ocasional."
+      },
+      "pendiente_validar": ["4"],
+      "imagen": null,
+      "video": null
+    },
+    {
+      "id": "conduccion-ritmo-variable",
+      "nombre": "Conducción de pelota a ritmo variable",
+      "alias": [],
+      "categoria": "pelota",
+      "descripcion": "Llevás la pelota controlada alternando tramos lentos y tramos de aceleración corta, sin presión de un compañero.",
+      "dosis": null,
+      "requiere_variantes": true,
+      "variantes": {
+        "2": "Cada uno con su pelota, o una pelota por turno.",
+        "3": "Cada uno con su pelota, o una pelota por turno.",
+        "4": "Cada uno con su pelota, o repartidos en dos parejas con una pelota cada una.",
+        "8": "Repartirse en parejas o grupos chicos si hay más de una pelota."
+      },
+      "pendiente_validar": ["2", "3", "4"],
+      "imagen": null,
+      "video": null
+    },
+    {
+      "id": "tecnica-carrera",
+      "nombre": "Técnica de carrera",
+      "alias": [],
+      "categoria": "velocidad",
+      "descripcion": "Skipping bajo (pasos cortos y rápidos con poca elevación de rodilla), taloneo (talón hacia la cola trotando) y rodillas altas (elevación marcada trotando).",
+      "dosis": "15-20 m por serie",
+      "variantes": {},
+      "imagen": null,
+      "video": null
+    },
+    {
+      "id": "progresion-aceleracion",
+      "nombre": "Progresión de aceleración",
+      "alias": [],
+      "categoria": "velocidad",
+      "descripcion": "Arranque progresivo, no explosivo desde el primer paso. Acelerás gradualmente hasta el 60-70% de la velocidad máxima en 15-20 m. Volvés caminando como descanso completo.",
+      "dosis": null,
+      "requiere_variantes": true,
+      "variantes": {
+        "2": "Salen juntos o por turnos.",
+        "3": "Salen por turnos o de a dos.",
+        "4": "Salen de a dos, en dos tandas.",
+        "8": "Trabajar en parejas o tandas de 2-3 para no esperar turno."
+      },
+      "pendiente_validar": ["2", "3", "4"],
+      "imagen": null,
+      "video": null
+    },
+    {
+      "id": "cambios-ritmo-conos",
+      "nombre": "Cambios de ritmo con conos",
+      "alias": [],
+      "categoria": "velocidad",
+      "descripcion": "Recorrido marcado con conos, alternando tramos de trote suave y tramos de aceleración corta. Sin cortes de dirección de 90°.",
+      "dosis": null,
+      "variantes": {},
+      "imagen": null,
+      "video": null
+    },
+    {
+      "id": "activacion-neuromuscular",
+      "nombre": "Activación neuromuscular",
+      "alias": [],
+      "categoria": "velocidad",
+      "descripcion": "Sin pelota, aceleraciones cortas de 10-15 m al 60-70%, en parejas. Es corto pero no se saca: es lo que más protege contra desgarros tempranos en el partido.",
+      "dosis": null,
+      "variantes": {},
+      "imagen": null,
+      "video": null
+    },
+    {
+      "id": "estiramiento-estatico",
+      "nombre": "Estiramiento estático y vuelta a la calma",
+      "alias": ["Vuelta a la calma"],
+      "categoria": "vuelta-calma",
+      "descripcion": "Caminata y estiramiento estático de cuádriceps, isquios, gemelos y cadera. Sin forzar el rango.",
+      "dosis": null,
+      "pendiente_dosis": "Cuánto tiempo sostener cada estiramiento: no está en el Doc.",
+      "variantes": {},
+      "imagen": null,
+      "video": null
+    }
+  ]
+}
