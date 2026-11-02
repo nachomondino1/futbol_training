@@ -5,6 +5,7 @@ const app = document.getElementById("app");
 renderHeader("circuitos");
 
 let ejercicios = new Map();
+let categorias = new Map();
 let circuitos = [];
 let sesiones = [];
 let guias = {};
@@ -60,6 +61,7 @@ function tarjeta(c) {
       return h("li", {},
         h("span", { class: "est-num" }, String(i + 1)),
         h("a", { href: `glosario.html#${ej.id}` }, ej.nombre),
+        h("span", { class: "etiqueta" }, categorias.get(ej.categoria)),
         detalle ? h("span", { class: "item-dosis" }, detalle) : null);
     })),
     posibles.length > ef.items.length || (c.variaciones || []).length
@@ -90,6 +92,7 @@ try {
   const [ex, cir, ses] = await Promise.all([
     cargarJSON("data/exercises.json"), cargarJSON("data/circuits.json"), cargarJSON("data/sessions.json")]);
   ejercicios = new Map(ex.ejercicios.map((e) => [e.id, e]));
+  categorias = new Map(ex.categorias.map((c) => [c.id, c.nombre]));
   circuitos = cir.circuitos;
   sesiones = ses.sesiones;
   guias = ses.guias;

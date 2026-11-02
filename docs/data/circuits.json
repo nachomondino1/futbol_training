@@ -143,17 +143,19 @@
       ]
     },
     {
-      "id": "tecnica-v-coordinacion-zigzag",
-      "nombre": "Técnica con pelota: V, coordinación y zigzag",
-      "descripcion": "Primero V push & cut con la pelota, después coordinación en la escalera y después zigzag con pelota.",
+      "id": "circuito-combinado",
+      "nombre": "Circuito combinado de 3 ejercicios",
+      "descripcion": "Tres ejercicios combinados, uno detrás del otro. No siempre empieza con fuerza: el orden y el tipo de cada parte se pueden cambiar (fuerza, coordinación, pelota o velocidad máxima hasta el cono).",
       "etiquetas": [
+        "combinado",
         "técnica",
         "pelota"
       ],
-      "huerfano_ok": true,
+      "base_nombre": "Fuerza, coordinación y pelota",
       "items": [
         {
-          "ex": "v-push-cut"
+          "ex": "leg-hop",
+          "nota": "Salto de lado a lado, quedándote un momento en equilibrio."
         },
         {
           "ex": "escalera"
@@ -161,7 +163,42 @@
         {
           "ex": "zigzag"
         }
-      ]
+      ],
+      "variaciones": [
+        {
+          "id": "fuerza-coordinacion-velocidad",
+          "nombre": "Fuerza, coordinación y velocidad máxima",
+          "nota": "En lugar de la pelota, la última parte es correr a máxima velocidad hasta el cono.",
+          "items": [
+            {
+              "ex": "sentadilla"
+            },
+            {
+              "ex": "escalera"
+            },
+            {
+              "ex": "velocidad-maxima-cono"
+            }
+          ]
+        },
+        {
+          "id": "tecnica-coordinacion-pelota",
+          "nombre": "Técnica, coordinación y pelota (sin fuerza)",
+          "nota": "Empieza con la V con la pelota, no con fuerza.",
+          "items": [
+            {
+              "ex": "v-push-cut"
+            },
+            {
+              "ex": "escalera"
+            },
+            {
+              "ex": "zigzag"
+            }
+          ]
+        }
+      ],
+      "huerfano_ok": true
     }
   ]
 }

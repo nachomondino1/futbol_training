@@ -999,6 +999,103 @@
         "principal": "movilidad",
         "secundarios": []
       }
+    },
+    {
+      "id": "carrera-v-devolucion",
+      "nombre": "Carrera en V con devolución",
+      "alias": [],
+      "categoria": "pelota",
+      "descripcion": "Tres conos formando una V corta. Un jugador se para en el vértice de abajo y corre de un extremo al otro. Cada vez que llega a un extremo, otra persona le tira una pelota y él se la devuelve. Se puede devolver de varias formas: rastrera; aérea, de cabeza; parándola de pecho y devolviéndola; de volea, con la pierna en el aire; o dejándola picar antes y devolviéndola.",
+      "dosis": null,
+      "variantes": {},
+      "imagen": null,
+      "video": null,
+      "huerfano_ok": true,
+      "trabaja": {
+        "principal": "coordinacion",
+        "secundarios": [
+          "cuadriceps",
+          "gluteo-mayor"
+        ]
+      }
+    },
+    {
+      "id": "conduccion-v-suela",
+      "nombre": "Conducción en V con suela",
+      "alias": [],
+      "categoria": "pelota",
+      "descripcion": "Con los tres conos en V: vas hacia un extremo conduciendo la pelota, la pisás con la suela y la llevás con la suela, yendo marcha atrás, hasta volver al lugar inicial. Después vas al otro extremo conduciendo y hacés lo mismo con la suela del otro pie, hasta volver al lugar inicial. Y así.",
+      "dosis": null,
+      "variantes": {},
+      "imagen": null,
+      "video": null,
+      "huerfano_ok": true,
+      "trabaja": {
+        "principal": "coordinacion",
+        "secundarios": [
+          "cuadriceps",
+          "gemelos"
+        ]
+      }
+    },
+    {
+      "id": "un-toque-cono-central",
+      "nombre": "Un toque desde el cono central",
+      "alias": [],
+      "categoria": "pelota",
+      "descripcion": "Se hace de a dos. Uno se para en un cono central y el otro corre alrededor, en una zona circular de unos 5 m de radio. El que corre le da la pelota al del cono, que la devuelve de un solo toque hacia algún lado. El que corre va hasta donde fue la pelota y se la devuelve al del cono. El del cono hace correr mucho al otro: trabaja la aceleración.",
+      "dosis": null,
+      "variantes": {},
+      "imagen": null,
+      "video": null,
+      "huerfano_ok": true,
+      "trabaja": {
+        "principal": "gluteo-mayor",
+        "secundarios": [
+          "cuadriceps",
+          "gemelos",
+          "coordinacion"
+        ]
+      }
+    },
+    {
+      "id": "pase-cono-lateral-control",
+      "nombre": "Pase al cono lateral y control a máxima velocidad",
+      "alias": [],
+      "categoria": "pelota",
+      "descripcion": "Se hace de a dos. Dos conos separados unos 8 m y un tercer cono más o menos a la mitad, corrido hacia un costado (no en la misma línea). Uno se para en ese cono del costado y el otro corre de cono a cono de la línea. En un extremo, el que corre le da el pase al del costado, que se la devuelve al espacio, casi llegando al otro cono, por donde viene corriendo por adentro. Tiene que controlar yendo a máxima velocidad y pegar la vueltita con la pelota por fuera del cono. Después vuelve corriendo hasta el primer cono, pega otra vez la vueltita y ahí le da el pase al del cono del costado, que se la tira de nuevo al espacio. Y así.",
+      "dosis": null,
+      "variantes": {},
+      "imagen": null,
+      "video": null,
+      "huerfano_ok": true,
+      "trabaja": {
+        "principal": "coordinacion",
+        "secundarios": [
+          "gluteo-mayor",
+          "isquiotibiales",
+          "cuadriceps"
+        ]
+      }
+    },
+    {
+      "id": "velocidad-maxima-cono",
+      "nombre": "Velocidad máxima hasta el cono",
+      "alias": [],
+      "categoria": "velocidad",
+      "descripcion": "Corrés sin pelota a máxima velocidad hasta el último cono. La vuelta puede ser también a máxima o caminando. Sirve como la parte de velocidad de un circuito combinado.",
+      "dosis": null,
+      "variantes": {},
+      "imagen": null,
+      "video": null,
+      "huerfano_ok": true,
+      "trabaja": {
+        "principal": "isquiotibiales",
+        "secundarios": [
+          "gluteo-mayor",
+          "gemelos"
+        ]
+      }
     }
   ]
 }
