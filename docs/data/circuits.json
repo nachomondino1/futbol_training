@@ -175,37 +175,6 @@
   },
   "circuitos": [
     {
-      "id": "activacion",
-      "nombre": "Entrada en calor antes del partido",
-      "descripcion": "Trote suave, movimiento del tren superior y después del inferior, aceleración y velocidad, y para terminar con pelota: posesión XvX en cuadrado (no puede faltar) y, si hay arco, tiro al arco.",
-      "items": [
-        {
-          "ex": "trote-suave",
-          "dosis": "3-4 min"
-        },
-        {
-          "ex": "activacion-dinamica",
-          "nota": "Primero el tren superior, después el inferior."
-        },
-        {
-          "ex": "progresion-aceleracion"
-        },
-        {
-          "ex": "flying-sprint",
-          "nota": "A máxima velocidad."
-        },
-        {
-          "ex": "posesion-cuadrado"
-        },
-        {
-          "ex": "pase-control-definicion",
-          "opcional": true,
-          "nota": "Si hay arco."
-        }
-      ],
-      "huerfano_ok": true
-    },
-    {
       "id": "circuito-fuerza",
       "nombre": "Circuito de fuerza",
       "descripcion": "Una lista de ejercicios de fuerza posibles: cada día elegís 6 (o los que quieras). Abajo hay un orden propuesto, el que se hace hoy, por si no querés pensarlo.",

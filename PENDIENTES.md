@@ -259,3 +259,7 @@ El Doc solo decía el grupo muscular de sentadilla y estocada (cuádriceps, glú
 ## Entrada en calor antes del partido (2026-11-03)
 
 - Convertí el circuito de activación en **"Entrada en calor antes del partido"** (mismo id `activacion`, ninguna sesión lo usa): trote suave, activación dinámica, progresión de aceleración, flying sprint, **posesión XvX en cuadrado** y, opcional, **tiro al arco** (pase, control y definición). Falta definir cuánto dura cada parte y el orden; el orden y que el tiro sea opcional los puse yo. Si preferís dos circuitos separados (activación y entrada en calor con pelota), lo divido.
+
+## Entrada en calor como sesión (2026-11-03)
+
+- El circuito de entrada en calor pasó a ser la **quinta sesión** ("Entrada en calor", unos 22 min): trote y activación dinámica (8), aceleración y velocidad (4), posesión XvX en cuadrado (6) y tiro al arco si hay arco (4). Se eliminó el circuito `activacion`. Con esto se supera el máximo de 4 sesiones que habías pedido (lo elegiste vos). Los minutos por bloque los puse yo; con menos de 4 jugadores la posesión no tiene opciones (el aviso sale solo).

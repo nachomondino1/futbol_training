@@ -136,7 +136,7 @@ Un circuito es un conjunto de ejercicios, en orden. Se define una vez en `docs/d
 - En una sesión, la opción lo usa así: `{ "circuito": "circuito-fuerza", "estructura": { "descanso_s": 30 } }`. Lo que la opción defina por su cuenta (acá, el descanso) pisa lo del circuito.
 - Un circuito que ninguna sesión usa es error, salvo que le pongas `"huerfano_ok": true`. Sus ejercicios cuentan como usados.
 
-La activación también es un circuito (`activacion`: trote suave y movilidad articular), así que todas las sesiones lo reutilizan en vez de repetir los ejercicios. Una sesión puede agregarle una `nota` propia a la opción (por ejemplo "muy suave, sin pelota").
+La entrada en calor antes del partido es una sesión más (`entrada-en-calor`), armada con los mismos ejercicios (trote suave, activación dinámica, aceleración, posesión XvX en cuadrado y tiro).
 
 Cada sesión lleva un `objetivo` (una frase). Debajo, la página calcula "Qué vas a ganar": reparte los minutos de cada bloque, con la opción elegida, entre lo que aporta cada ejercicio, y muestra lo principal.
 

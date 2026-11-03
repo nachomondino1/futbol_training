@@ -541,6 +541,79 @@
         }
       ],
       "cuando": "Sirve para el día previo al partido si la hacés corta y suave."
+    },
+    {
+      "id": "entrada-en-calor",
+      "nombre": "Entrada en calor",
+      "objetivo": "Entrar en calor antes del partido: trote, movimiento, aceleración y velocidad, y para terminar con pelota (posesión XvX en cuadrado y, si hay arco, tiro).",
+      "cuando": "El día del partido, antes de jugar.",
+      "bloques": [
+        {
+          "titulo": "Trote y activación dinámica",
+          "min": 8,
+          "opciones": [
+            {
+              "label": "Trote y activación dinámica",
+              "items": [
+                {
+                  "ex": "trote-suave",
+                  "dosis": "3-4 min"
+                },
+                {
+                  "ex": "activacion-dinamica",
+                  "nota": "Primero el tren superior, después el inferior."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "titulo": "Aceleración y velocidad",
+          "min": 4,
+          "opciones": [
+            {
+              "label": "Aceleración y velocidad",
+              "items": [
+                {
+                  "ex": "progresion-aceleracion"
+                },
+                {
+                  "ex": "flying-sprint",
+                  "nota": "A máxima velocidad."
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "titulo": "Posesión XvX en cuadrado",
+          "min": 6,
+          "opciones": [
+            {
+              "label": "Posesión XvX en cuadrado",
+              "items": [
+                {
+                  "ex": "posesion-cuadrado"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "titulo": "Tiro al arco (si hay arco)",
+          "min": 4,
+          "opciones": [
+            {
+              "label": "Pase, control y definición",
+              "items": [
+                {
+                  "ex": "pase-control-definicion"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     }
   ],
   "guias": {
