@@ -42,17 +42,34 @@ export function variantesNodo(vars) {
     claves.map((p) => h("li", {}, h("strong", {}, `Con ${p}: `), vars[String(p)])));
 }
 
+// Cuando hay muchas imágenes se muestran chicas (ver .medios en style.css); tocar una la agranda y muestra su explicación.
+function alternarFig(e) {
+  const fig = e.currentTarget;
+  fig.setAttribute("aria-expanded", String(fig.classList.toggle("fig--grande")));
+}
+const figAtributos = {
+  class: "fig", tabindex: "0", "aria-expanded": "false", onclick: alternarFig,
+  onkeydown: (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); alternarFig(e); } },
+};
+
 // Imágenes del ejercicio: una por cantidad de personas (con su epígrafe) o, si no hay, la general.
 // Sin imagen devuelve [] (así no queda ningún placeholder roto).
 export function imagenesNodos(ej) {
   const porCantidad = ej.imagenes || {};
   const claves = PERSONAS.filter((p) => porCantidad[String(p)]);
   if (claves.length) {
-    return claves.map((p) => h("figure", { class: "fig" },
+    return claves.map((p) => h("figure", figAtributos,
       h("img", { src: porCantidad[String(p)], alt: `${ej.nombre}, con ${p}`, loading: "lazy", width: 640, height: 400 }),
       h("figcaption", {}, `Con ${p}`)));
   }
   return ej.imagen ? [h("img", { src: ej.imagen, alt: ej.nombre, loading: "lazy", width: 640, height: 400 })] : [];
+}
+
+// Patrones de un ejercicio (por ejemplo, los de la escalera): un diagrama con su nombre y cómo se hace cada uno.
+export function patronesNodos(ej) {
+  return (ej.patrones || []).map((p) => h("figure", figAtributos,
+    h("img", { src: p.imagen, alt: `${ej.nombre}: ${p.nombre}`, loading: "lazy", width: 640, height: 400 }),
+    h("figcaption", {}, h("strong", {}, p.nombre), h("span", { class: "fig__desc" }, ` — ${p.descripcion}`))));
 }
 
 // Materiales de un ejercicio. Los que no tenemos (todo salvo lo de `disponibles`) van resaltados.

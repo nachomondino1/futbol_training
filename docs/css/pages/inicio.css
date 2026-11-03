@@ -67,9 +67,6 @@
 .seccion__titulo { margin: 0 0 4px; font-size: 1.6rem; line-height: 1.2; letter-spacing: -.01em; }
 .seccion__sub { margin: 0 0 20px; color: var(--ink-soft); }
 
-/* Tarjeta de sesión: lo que suma la inicio sobre style.css */
-.card-cuando { grid-column: 1 / -1; margin: 6px 0 0; color: var(--ink-soft); font-size: .9rem; }
-
 /* Cómo está armado */
 .pasos { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
 .paso {

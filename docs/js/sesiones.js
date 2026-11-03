@@ -1,4 +1,4 @@
-import { h, imagenesNodos, variantesNodo, avisoMateriales, renderHeader, cargarJSON, mostrarError } from "./common.js";
+import { h, imagenesNodos, patronesNodos, variantesNodo, avisoMateriales, renderHeader, cargarJSON, mostrarError } from "./common.js";
 import { completarItems, estructuraNodo, guiaDetalle, masGanado, normalizarCircuitos, repartirMinutos } from "./estructura.js";
 
 const app = document.getElementById("app");
@@ -25,7 +25,8 @@ function grilla() {
       h("a", { class: "card-sesion", href: `#${s.id}` },
         h("span", { class: "card-min" }, String(duracion(s)), h("small", {}, " min")),
         h("span", { class: "card-nombre" }, s.nombre),
-        h("ul", { class: "card-bloques" }, s.bloques.map((b) => h("li", {}, b.titulo)))))));
+        h("ul", { class: "card-bloques" }, s.bloques.map((b) => h("li", {}, b.titulo))),
+        s.cuando ? h("p", { class: "card-cuando" }, s.cuando) : null))));
 }
 
 function itemNodo(item, bi, numero = null, conEstructura = false) {
@@ -34,7 +35,7 @@ function itemNodo(item, bi, numero = null, conEstructura = false) {
   const vars = item.variantes || ej.variantes || {};
   const dosis = item.dosis || (conEstructura ? null : ej.dosis);
   const medios = [];
-  medios.push(...imagenesNodos(ej));
+  medios.push(...imagenesNodos(ej), ...patronesNodos(ej));
   if (ej.video) medios.push(h("a", { class: "btn", href: ej.video, target: "_blank", rel: "noopener" }, "Ver video"));
 
   return h("details", {

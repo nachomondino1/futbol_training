@@ -162,3 +162,9 @@ El Doc solo decía el grupo muscular de sentadilla y estocada (cuádriceps, glú
 
 - **Header en todas las páginas:** barra fija verde oscuro con vidrio esmerilado, ⚽ como logo, links como pastillas y la página actual en amarillo. Sacó las rayas del césped y la línea blanca gruesa. Los saltos a un bloque o ejercicio descuentan la barra (`--header-h`).
 - **Portada:** el hero ya no se funde con el fondo claro; termina con el borde inferior redondeado.
+
+## Patrones de la escalera de coordinación (2026-11-02)
+
+- La escalera ahora tiene **6 patrones con su diagrama**: un pie por cuadrado, dos pies por cuadrado, adentro-adentro-afuera-afuera, lateral, zig-zag y salto con un pie. Los dibujé yo (SVG propios, sin derechos de terceros): blanco = pie izquierdo, amarillo = derecho, los números son el orden de los apoyos.
+- **Hay que validar cada patrón.** Del Doc salían solo "pie-pie", "in-in-out-out" y "lateral" (y "zig-zag, in-out, lateral" en otra parte); cómo se hace cada uno exactamente (por ejemplo, el lateral y el zig-zag) lo definí yo. "Dos pies por cuadrado" y "Salto con un pie" los sumé yo por ser comunes.
+- Se regeneran con `python3 scripts/gen_diagramas.py`.

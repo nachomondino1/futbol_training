@@ -1,5 +1,5 @@
 import { completarItems, normalizarCircuitos } from "./estructura.js";
-import { h, imagenesNodos, variantesNodo, normalizar, renderHeader, cargarJSON, mostrarError } from "./common.js";
+import { h, imagenesNodos, patronesNodos, variantesNodo, normalizar, renderHeader, cargarJSON, mostrarError } from "./common.js";
 
 const app = document.getElementById("app");
 // tipo: null | "con" | "sin" (pelota); sub: subcategoría de pelota (si tipo es "con") o categoría (si es "sin")
@@ -16,7 +16,7 @@ function celdaVariantes(ej) {
 
 function celdaMedios(ej) {
   const items = [];
-  items.push(...imagenesNodos(ej));
+  items.push(...imagenesNodos(ej), ...patronesNodos(ej));
   if (ej.video) items.push(h("a", { class: "btn", href: ej.video, target: "_blank", rel: "noopener" }, "Ver video"));
   return items.length ? h("div", { class: "medios" }, items) : null;
 }

@@ -197,6 +197,7 @@ h1 { font-size: 1.9rem; line-height: 1.15; margin: 8px 0 16px; }
 .card-min { min-width: 3.6rem; font-size: 1.4rem; font-weight: 800; line-height: 1; color: var(--ink-soft); }
 .card-min small, .bloque-min small { font-size: .85rem; font-weight: 700; }
 .card-bloques { grid-column: 1 / -1; margin: 8px 0 0; padding: 8px 0 0 18px; border-top: 1px solid var(--line); color: var(--ink-soft); font-size: .95rem; line-height: 1.5; }
+.card-cuando { grid-column: 1 / -1; margin: 6px 0 0; color: var(--ink-soft); font-size: .9rem; }
 .card-nombre { font-weight: 800; font-size: 1.3rem; line-height: 1.2; }
 .card-meta { display: flex; flex-wrap: wrap; gap: 6px; grid-column: 2; }
 .etiqueta { border: 1.5px solid var(--ink-soft); color: var(--ink-soft); font-size: .85rem; padding: 1px 10px; border-radius: 999px; }
@@ -293,6 +294,15 @@ h1 { font-size: 1.9rem; line-height: 1.15; margin: 8px 0 16px; }
 .fig { margin: 0; max-width: 100%; }
 .fig img { display: block; }
 .fig figcaption { font-weight: 700; font-size: .9rem; color: var(--ink-soft); padding-top: 2px; }
+/* Con 3 o más imágenes: miniaturas en grilla. Tocar una la agranda (.fig--grande) y muestra su explicación. */
+.medios:has(.fig:nth-child(3)) { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 8px; align-items: start; width: 100%; }
+.medios:has(.fig:nth-child(3)) > img, .medios:has(.fig:nth-child(3)) > .btn { grid-column: 1 / -1; justify-self: start; }
+.medios:has(.fig:nth-child(3)) .fig { cursor: zoom-in; }
+.medios:has(.fig:nth-child(3)) .fig img { width: 100%; }
+.medios:has(.fig:nth-child(3)) .fig figcaption { font-size: .78rem; line-height: 1.25; }
+.medios:has(.fig:nth-child(3)) .fig:not(.fig--grande) .fig__desc { display: none; }
+.medios:has(.fig:nth-child(3)) .fig--grande { grid-column: 1 / -1; cursor: zoom-out; }
+.medios:has(.fig:nth-child(3)) .fig--grande figcaption { font-size: .95rem; }
 
 /* Ficha de vueltas / trabajo / descanso */
 .ficha { margin: 0; display: grid; }

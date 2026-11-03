@@ -96,7 +96,7 @@
       "nombre": "Escalera de coordinación",
       "alias": [],
       "categoria": "coordinacion",
-      "descripcion": "Tres patrones: pie-pie (un apoyo por cuadrado), in-in-out-out (adentro, adentro, afuera, afuera) y lateral (de costado). Volvés caminando entre pasadas.",
+      "descripcion": "Varios patrones de pies rápidos, uno detrás del otro: pie-pie (un apoyo por cuadrado), in-in-out-out (adentro, adentro, afuera, afuera), lateral (de costado) y otros que están en las imágenes de abajo. Volvés caminando entre pasadas.",
       "dosis": "2 pasadas por patrón",
       "variantes": {},
       "imagen": "img/ejercicios/escalera.png",
@@ -112,6 +112,44 @@
       ],
       "materiales": [
         "escalera"
+      ],
+      "patrones": [
+        {
+          "id": "un-pie",
+          "nombre": "Un pie por cuadrado",
+          "descripcion": "Pasada de carrera: un solo apoyo en cada cuadrado, alternando pie izquierdo y derecho. Rápido y con apoyos livianos.",
+          "imagen": "img/escalera-un-pie.svg"
+        },
+        {
+          "id": "dos-pies",
+          "nombre": "Dos pies por cuadrado",
+          "descripcion": "Saltitos con los dos pies juntos adentro de cada cuadrado, de a uno, avanzando por toda la escalera.",
+          "imagen": "img/escalera-dos-pies.svg"
+        },
+        {
+          "id": "in-in-out-out",
+          "nombre": "Adentro, adentro, afuera, afuera",
+          "descripcion": "Dos apoyos adentro de un cuadrado (izquierdo y derecho), y en el siguiente dos apoyos afuera, uno a cada lado. Se repite hasta el final.",
+          "imagen": "img/escalera-in-in-out-out.svg"
+        },
+        {
+          "id": "lateral",
+          "nombre": "Lateral (de costado)",
+          "descripcion": "De costado a la escalera, mirando hacia un lado. Entrás con el pie de adelante, juntás el otro en el mismo cuadrado y seguís al siguiente.",
+          "imagen": "img/escalera-lateral.svg"
+        },
+        {
+          "id": "zigzag",
+          "nombre": "Zig-zag",
+          "descripcion": "Un pie siempre adentro de los cuadrados y el otro apoya afuera, alternando: el cuerpo dibuja un zig-zag mientras avanzás.",
+          "imagen": "img/escalera-zigzag.svg"
+        },
+        {
+          "id": "salto-un-pie",
+          "nombre": "Salto con un pie",
+          "descripcion": "Saltitos a una pierna, un apoyo en cada cuadrado, avanzando. Después se repite con la otra pierna.",
+          "imagen": "img/escalera-salto-un-pie.svg"
+        }
       ]
     },
     {

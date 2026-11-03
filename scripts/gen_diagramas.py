@@ -192,6 +192,77 @@ def cpc_8():
     return cuerpo + texto(160, 105, "rombo", 12)
 
 
+# --- Escalera de coordinación: huellas numeradas sobre una escalera de 6 cuadrados ---
+# Se avanza de izquierda a derecha. Blanco = pie izquierdo, amarillo = pie derecho.
+X0, CELDA = 28, 44
+ZONA_Y = {"izq": 88, "der": 112, "med": 100, "afuera-izq": 50, "afuera-der": 150}
+
+
+def escalera_base():
+    celdas = "".join(f'<rect x="{X0 + i * CELDA}" y="74" width="{CELDA}" height="52" fill="none" '
+                     f'stroke="#fff" stroke-width="2.5"/>' for i in range(6))
+    return (celdas + arrow((60, 182), (260, 182), "mov", 2, 2) + texto(160, 176, "avanzás", 11)
+            )
+
+
+def huella(n, pie, celda, zona, dx=0):
+    x = X0 + celda * CELDA + CELDA / 2 + dx
+    kind = "d" if pie == "D" else "a"
+    return player(x, ZONA_Y[zona], n, kind).replace(f'r="{R}"', 'r="10"')
+
+
+def leyenda():
+    return (player(60, 20, "", "a") + texto(110, 25, "izquierdo", 11)
+            + player(190, 20, "", "d") + texto(238, 25, "derecho", 11))
+
+
+def esc_un_pie():
+    pasos = [("I", 0, "izq"), ("D", 1, "der"), ("I", 2, "izq"), ("D", 3, "der"), ("I", 4, "izq"), ("D", 5, "der")]
+    return escalera_base() + leyenda() + "".join(huella(i + 1, p, c, z) for i, (p, c, z) in enumerate(pasos))
+
+
+def esc_dos_pies():
+    return escalera_base() + leyenda() + "".join(
+        huella(c + 1, "I", c, "izq") + huella(c + 1, "D", c, "der") for c in range(6))
+
+
+def esc_in_in_out_out():
+    cuerpo, n = escalera_base() + leyenda(), 1
+    for c in range(6):
+        zi, zd = ("izq", "der") if c % 2 == 0 else ("afuera-izq", "afuera-der")
+        cuerpo += huella(n, "I", c, zi) + huella(n + 1, "D", c, zd)
+        n += 2
+    return cuerpo
+
+
+def esc_lateral():
+    cuerpo, n = escalera_base() + leyenda(), 1
+    for c in range(5):
+        cuerpo += huella(n, "D", c, "med", 11) + huella(n + 1, "I", c, "med", -11)
+        n += 2
+    return cuerpo + texto(160, 50, "de costado: mirás hacia arriba", 11)
+
+
+def esc_zigzag():
+    pasos = [("I", 0, "izq"), ("D", 1, "afuera-der"), ("I", 2, "izq"), ("D", 3, "afuera-der"),
+             ("I", 4, "izq"), ("D", 5, "afuera-der")]
+    return escalera_base() + leyenda() + "".join(huella(i + 1, p, c, z) for i, (p, c, z) in enumerate(pasos))
+
+
+def esc_un_pie_salto():
+    return escalera_base() + leyenda() + "".join(huella(c + 1, "D", c, "med") for c in range(6))
+
+
+ESCALERA = {
+    "un-pie": esc_un_pie,
+    "dos-pies": esc_dos_pies,
+    "in-in-out-out": esc_in_in_out_out,
+    "lateral": esc_lateral,
+    "zigzag": esc_zigzag,
+    "salto-un-pie": esc_un_pie_salto,
+}
+
+
 DIAGRAMAS = {
     "rondo": (rondo_2, rondo_3, rondo_4, rondo_8),
     "pases-control-orientado": (pases_2, pases_3, pases_4, pases_8),
@@ -205,7 +276,9 @@ def main():
     for ex, fns in DIAGRAMAS.items():
         for n, fn in zip((2, 3, 4, 8), fns):
             (OUT / f"{ex}-{n}.svg").write_text(svg(f"{ex} con {n}", fn()), encoding="utf-8")
-    print(f"{sum(len(f) for f in DIAGRAMAS.values())} diagramas en {OUT}")
+    for nombre, fn in ESCALERA.items():
+        (OUT / f"escalera-{nombre}.svg").write_text(svg(f"Escalera: {nombre}", fn()), encoding="utf-8")
+    print(f"{sum(len(f) for f in DIAGRAMAS.values()) + len(ESCALERA)} diagramas en {OUT}")
 
 
 if __name__ == "__main__":
