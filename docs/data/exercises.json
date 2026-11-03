@@ -88,7 +88,8 @@
       "aporta": [
         "movilidad"
       ],
-      "materiales": []
+      "materiales": [],
+      "huerfano_ok": true
     },
     {
       "id": "escalera",
@@ -668,7 +669,8 @@
       "aporta": [
         "movilidad"
       ],
-      "materiales": []
+      "materiales": [],
+      "huerfano_ok": true
     },
     {
       "id": "bulgarian-split-squat",
@@ -1588,6 +1590,34 @@
         "movilidad"
       ],
       "materiales": []
+    },
+    {
+      "id": "nordic-hamstring",
+      "nombre": "Nordic hamstring",
+      "alias": [
+        "Curl nórdico"
+      ],
+      "categoria": "fuerza",
+      "descripcion": "De rodillas sobre una colchoneta, con un compañero sosteniéndote los tobillos. Bajás el torso hacia adelante lo más lento que puedas, con el cuerpo recto de las rodillas a la cabeza, frenando la caída con los isquios. Al final te frenás con las manos y volvés a subir ayudándote con ellas. Es el ejercicio con más respaldo para prevenir lesiones de isquiotibiales.",
+      "dosis": "2-3 series de 4-6 repeticiones",
+      "pendiente_dosis": "Dosis propuesta por mí; empezar con pocas repeticiones y subir de a poco.",
+      "variantes": {},
+      "imagen": null,
+      "video": null,
+      "trabaja": {
+        "principal": "isquiotibiales",
+        "secundarios": [
+          "gluteo-mayor",
+          "core"
+        ]
+      },
+      "aporta": [
+        "fuerza"
+      ],
+      "materiales": [
+        "compañero para sostener los tobillos",
+        "colchoneta"
+      ]
     }
   ],
   "materiales_disponibles": [

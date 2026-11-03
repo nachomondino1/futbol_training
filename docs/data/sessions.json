@@ -6,17 +6,6 @@
       "objetivo": "Correr rápido y cambiar de dirección: aceleración, velocidad máxima, agilidad y pies rápidos, con descanso completo entre repeticiones.",
       "bloques": [
         {
-          "titulo": "Activación extendida",
-          "min": 15,
-          "opciones": [
-            {
-              "label": "Activación extendida",
-              "circuito": "activacion",
-              "nota": "Trote progresivo, cada vez más rápido, y no te saltees la técnica de carrera."
-            }
-          ]
-        },
-        {
           "titulo": "Pies",
           "min": 10,
           "opciones": [
@@ -170,66 +159,15 @@
               ]
             }
           ]
-        },
-        {
-          "titulo": "Vuelta a la calma",
-          "min": 10,
-          "opciones": [
-            {
-              "label": "Estiramiento estático y vuelta a la calma",
-              "items": [
-                {
-                  "ex": "estiramiento-estatico"
-                }
-              ]
-            }
-          ]
         }
-      ]
+      ],
+      "cuando": "Mejor dos días antes del partido, con pocos sprints cerca del máximo."
     },
     {
       "id": "fuerza-potencia",
       "nombre": "Fuerza y potencia",
       "objetivo": "Fuerza de piernas y core con técnica controlada, y un bloque de potencia (saltos y reactividad).",
       "bloques": [
-        {
-          "titulo": "Activación",
-          "min": 10,
-          "opciones": [
-            {
-              "label": "Activación",
-              "circuito": "activacion"
-            }
-          ]
-        },
-        {
-          "titulo": "Fuerza",
-          "min": 35,
-          "opciones": [
-            {
-              "label": "Circuito de fuerza",
-              "circuito": "circuito-fuerza",
-              "estructura": {
-                "descanso_s": 30
-              }
-            },
-            {
-              "label": "Series pesadas",
-              "items": [
-                {
-                  "ex": "trap-bar-deadlift"
-                },
-                {
-                  "ex": "bulgarian-split-squat"
-                },
-                {
-                  "ex": "step-up-unilateral"
-                }
-              ],
-              "nota": "Propuesta: 3-5 series de 6-10 repeticiones con descanso largo. Necesita barra, banco y cajón."
-            }
-          ]
-        },
         {
           "titulo": "Potencia",
           "min": 20,
@@ -275,6 +213,34 @@
           ]
         },
         {
+          "titulo": "Fuerza",
+          "min": 35,
+          "opciones": [
+            {
+              "label": "Circuito de fuerza",
+              "circuito": "circuito-fuerza",
+              "estructura": {
+                "descanso_s": 30
+              }
+            },
+            {
+              "label": "Series pesadas",
+              "items": [
+                {
+                  "ex": "trap-bar-deadlift"
+                },
+                {
+                  "ex": "bulgarian-split-squat"
+                },
+                {
+                  "ex": "step-up-unilateral"
+                }
+              ],
+              "nota": "Propuesta: 3-5 series de 6-10 repeticiones con descanso largo. Necesita barra, banco y cajón."
+            }
+          ]
+        },
+        {
           "titulo": "Técnica de pelota",
           "min": 15,
           "opciones": [
@@ -287,38 +253,15 @@
               ]
             }
           ]
-        },
-        {
-          "titulo": "Vuelta a la calma",
-          "min": 10,
-          "opciones": [
-            {
-              "label": "Estiramiento estático y vuelta a la calma",
-              "items": [
-                {
-                  "ex": "estiramiento-estatico"
-                }
-              ]
-            }
-          ]
         }
-      ]
+      ],
+      "cuando": "Al principio de la semana, lejos del partido."
     },
     {
       "id": "aerobico",
       "nombre": "Aeróbico",
       "objetivo": "Capacidad aeróbica: volumen o intervalos, con pelota o sin ella, y un circuito para activar las piernas.",
       "bloques": [
-        {
-          "titulo": "Activación",
-          "min": 10,
-          "opciones": [
-            {
-              "label": "Activación",
-              "circuito": "activacion"
-            }
-          ]
-        },
         {
           "titulo": "Coordinación",
           "min": 10,
@@ -335,7 +278,7 @@
         },
         {
           "titulo": "Aeróbico",
-          "min": 30,
+          "min": 35,
           "opciones": [
             {
               "label": "Trote continuo",
@@ -412,38 +355,15 @@
               "circuito": "circuito-fuerza"
             }
           ]
-        },
-        {
-          "titulo": "Vuelta a la calma",
-          "min": 10,
-          "opciones": [
-            {
-              "label": "Estiramiento estático y vuelta a la calma",
-              "items": [
-                {
-                  "ex": "estiramiento-estatico"
-                }
-              ]
-            }
-          ]
         }
-      ]
+      ],
+      "cuando": "Al principio de la semana, lejos del partido. Con una sesión intensa por semana alcanza."
     },
     {
       "id": "pelota",
       "nombre": "Pelota",
       "objetivo": "Técnica con pelota: conducción, pase, control y definición, con poca carga física.",
       "bloques": [
-        {
-          "titulo": "Activación",
-          "min": 10,
-          "opciones": [
-            {
-              "label": "Activación",
-              "circuito": "activacion"
-            }
-          ]
-        },
         {
           "titulo": "Pelota",
           "min": 20,
@@ -533,6 +453,14 @@
                   "ex": "un-toque-cono-central"
                 }
               ]
+            },
+            {
+              "label": "Pase con presión inmediata y arcos en L",
+              "items": [
+                {
+                  "ex": "pase-presion-arcos-l"
+                }
+              ]
             }
           ]
         },
@@ -565,14 +493,6 @@
               ]
             },
             {
-              "label": "Pase con presión inmediata y arcos en L",
-              "items": [
-                {
-                  "ex": "pase-presion-arcos-l"
-                }
-              ]
-            },
-            {
               "label": "Centro al vértice del área grande y tiro",
               "items": [
                 {
@@ -581,22 +501,9 @@
               ]
             }
           ]
-        },
-        {
-          "titulo": "Vuelta a la calma",
-          "min": 10,
-          "opciones": [
-            {
-              "label": "Estiramiento estático y vuelta a la calma",
-              "items": [
-                {
-                  "ex": "estiramiento-estatico"
-                }
-              ]
-            }
-          ]
         }
-      ]
+      ],
+      "cuando": "Sirve para el día previo al partido si la hacés corta y suave."
     }
   ],
   "precauciones": [

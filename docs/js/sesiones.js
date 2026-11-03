@@ -24,7 +24,8 @@ function grilla() {
     h("div", { class: "grid-sesiones" }, datos.sesiones.map((s) =>
       h("a", { class: "card-sesion", href: `#${s.id}` },
         h("span", { class: "card-min" }, String(duracion(s)), h("small", {}, " min")),
-        h("span", { class: "card-nombre" }, s.nombre)))));
+        h("span", { class: "card-nombre" }, s.nombre),
+        h("ul", { class: "card-bloques" }, s.bloques.map((b) => h("li", {}, b.titulo)))))));
 }
 
 function itemNodo(item, bi, numero = null, conEstructura = false) {
@@ -166,6 +167,7 @@ function detalle(s, conservar = false) {
   app.replaceChildren(
     h("a", { class: "volver", href: "#" }, "Todas las sesiones"),
     h("h1", {}, s.nombre),
+    s.cuando ? h("p", { class: "intro" }, `Cuándo: ${s.cuando}`) : null,
     gananciasNodo(s),
     resumenNodo(s),
     ...s.bloques.map(bloqueNodo),

@@ -1,0 +1,109 @@
+/* Página de inicio: hero a pantalla completa (DESIGN_PLAYBOOK_unificado §12) + sesiones + cómo está armado.
+   Clases en BEM (hero__titulo, paso__n). Las tarjetas de sesión reutilizan .card-sesion de css/style.css. */
+
+/* El hero va de borde a borde, fuera del <main> centrado */
+.hero {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: calc(100vh - var(--header-h));
+  min-height: calc(100svh - var(--header-h));
+  padding: 48px 20px 64px;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+  border-radius: 0 0 32px 32px;
+  /* brillo suave arriba, verde profundo abajo y rayas de césped apenas marcadas */
+  background:
+    radial-gradient(ellipse 70% 55% at 50% 28%, rgba(143, 227, 176, .20), transparent 70%),
+    repeating-linear-gradient(90deg, rgba(255, 255, 255, .035) 0 72px, transparent 72px 144px),
+    linear-gradient(180deg, #0f4a30 0%, #0a2b1d 100%);
+}
+/* círculo del medio de la cancha */
+.hero::before {
+  content: "";
+  position: absolute;
+  left: 50%; top: 46%;
+  width: min(420px, 84vw); aspect-ratio: 1;
+  transform: translate(-50%, -50%);
+  border: 3px solid rgba(255, 255, 255, .22);
+  border-radius: 50%;
+  pointer-events: none;
+}
+.hero__contenido { position: relative; max-width: 44rem; display: grid; justify-items: center; gap: 16px; }
+.hero__eyebrow {
+  margin: 0;
+  font-size: .78rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+  color: rgba(255, 255, 255, .82);
+}
+.hero__titulo {
+  margin: 0;
+  font-size: 2rem; font-size: clamp(2rem, 5vw, 3.2rem);
+  font-weight: 800; line-height: 1.12; letter-spacing: -.02em;
+}
+.hero__clave { font-style: normal; }
+.hero__clave--a { color: #f2c230; }
+.hero__clave--b { color: #8fe3b0; }
+.hero__texto { margin: 0; max-width: 34rem; font-size: 1.1rem; color: rgba(255, 255, 255, .92); }
+.hero__cta {
+  display: inline-flex; align-items: center;
+  min-height: var(--tap); padding: 0 28px;
+  background: var(--acento); color: var(--acento-ink);
+  font-weight: 700; font-size: 1.05rem; text-decoration: none;
+  border-radius: var(--radio);
+  transition: opacity .15s ease, transform .15s ease;
+}
+.hero__cta:hover { opacity: .9; }
+.hero__cta:active { transform: scale(.97); }
+.hero a:focus-visible { outline-color: #fff; } /* el azul de foco casi no se ve sobre verde */
+.hero__datos { list-style: none; margin: 8px 0 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; }
+.hero__datos li {
+  padding: 2px 12px; border: 1.5px solid rgba(255, 255, 255, .55); border-radius: 999px;
+  font-size: .85rem; color: rgba(255, 255, 255, .9);
+}
+
+/* Secciones de abajo */
+.seccion { margin-top: 8px; margin-bottom: 40px; }
+.seccion__titulo { margin: 0 0 4px; font-size: 1.6rem; line-height: 1.2; letter-spacing: -.01em; }
+.seccion__sub { margin: 0 0 20px; color: var(--ink-soft); }
+
+/* Tarjeta de sesión: lo que suma la inicio sobre style.css */
+.card-cuando { grid-column: 1 / -1; margin: 6px 0 0; color: var(--ink-soft); font-size: .9rem; }
+
+/* Cómo está armado */
+.pasos { display: grid; gap: 16px; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+.paso {
+  display: grid; gap: 4px; align-content: start;
+  padding: 18px 18px 20px;
+  text-decoration: none;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: var(--radio);
+  box-shadow: 0 1px 2px rgba(16, 35, 26, .06);
+  transition: background .15s ease, transform .15s ease, box-shadow .15s ease;
+}
+.paso:hover { background: var(--resalte); transform: translateY(-3px); box-shadow: 0 10px 22px -10px rgba(16, 35, 26, .35); }
+.paso__n { font-size: 2.4rem; font-weight: 800; line-height: 1; letter-spacing: -.02em; color: var(--pasto-1); font-variant-numeric: tabular-nums; }
+.paso__nombre { font-size: 1.25rem; }
+.paso__texto { color: var(--ink-soft); font-size: .98rem; }
+.nota-offline { color: var(--ink-soft); font-size: .92rem; margin: 0; }
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) .paso__n { color: #8fe3b0; }
+  :root:not([data-theme="light"]) .paso { box-shadow: 0 1px 2px rgba(0, 0, 0, .4); }
+}
+
+/* Carga: esqueleto con brillo que respeta prefers-reduced-motion; reserva alto para no mover el layout */
+.esqueleto {
+  min-height: 150px; border-radius: var(--radio);
+  background: linear-gradient(90deg, var(--surface) 0%, var(--resalte) 50%, var(--surface) 100%);
+  background-size: 200% 100%;
+  border: 2px solid var(--line);
+}
+@media (prefers-reduced-motion: no-preference) {
+  .esqueleto { animation: brillo 1.4s linear infinite; }
+  html { scroll-behavior: smooth; }
+}
+@keyframes brillo { to { background-position: -200% 0; } }
+
+@media (prefers-reduced-motion: reduce) { .paso, .hero__cta { transition: none; } .paso:hover { transform: none; } }

@@ -180,10 +180,11 @@ La web se puede instalar (Android/Chrome: menú ⋮ → "Instalar aplicación"; 
 ```
 docs/             la web (lo que sirve GitHub Pages)
   sw.js · manifest.webmanifest   instalable y sin señal
-  index.html · glosario.html · sesiones.html
-  css/style.css
+  index.html · glosario.html · circuitos.html · sesiones.html
+  css/style.css     estilos compartidos
+  css/pages/inicio.css   estilos propios de la página de inicio (hero, secciones)
   js/common.js      header, utilidades compartidas
-  js/glosario.js · js/sesiones.js
+  js/inicio.js · js/glosario.js · js/circuitos.js · js/sesiones.js
   data/exercises.json · data/circuits.json · data/sessions.json · data/muscles.json
 scripts/validate.py · scripts/gen_iconos.py
 fuente/           Doc original exportado (solo referencia)

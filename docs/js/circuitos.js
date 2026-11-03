@@ -21,10 +21,10 @@ function etiquetas(items) {
 
 function usadoEn(c) {
   const usos = sesiones.filter((s) => s.bloques.some((b) => b.opciones.some((o) => o.circuito === c.id)));
-  return usos.length
-    ? h("p", { class: "usado-en" }, "Se usa en: ",
-        usos.flatMap((s, i) => [i ? ", " : "", h("a", { href: `sesiones.html#${s.id}` }, s.nombre)]))
-    : null;
+  return h("p", { class: "usado-en" },
+    usos.length
+      ? ["Se usa en: ", ...usos.flatMap((s, i) => [i ? ", " : "", h("a", { href: `sesiones.html#${s.id}` }, s.nombre)])]
+      : "Ninguna sesión lo usa todavía.");
 }
 
 function indice(lista) {

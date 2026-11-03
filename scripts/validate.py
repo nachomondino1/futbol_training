@@ -91,7 +91,7 @@ def validar_offline() -> None:
         if not (WEB / ("index.html" if ruta == "./" else ruta)).is_file():
             errors.append(f"sw.js: '{ruta}' (BASICOS) no existe en docs/")
     # Lo inverso: una página, script o JSON nuevo que no está en BASICOS no se guarda para usar sin señal
-    for patron in ("*.html", "css/*.css", "js/*.js", "data/*.json"):
+    for patron in ("*.html", "css/*.css", "css/pages/*.css", "js/*.js", "data/*.json"):
         for archivo in sorted(WEB.glob(patron)):
             ruta = archivo.relative_to(WEB).as_posix()
             if ruta not in listados:

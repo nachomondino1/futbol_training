@@ -134,3 +134,31 @@ El Doc solo decía el grupo muscular de sentadilla y estocada (cuádriceps, glú
 - **Quedaron 4 sesiones** (antes 8): **Velocidad y agilidad** (85 min), **Fuerza y potencia** (90), **Aeróbico** (85) y **Pelota** (90, con conducción, pase y definición). Cada bloque conserva las opciones de las sesiones que se unieron.
 - **Movilidad y prevención ya no es sesión.** Se perdió el "día previo / día después". `activacion-neuromuscular` quedó sin sesión (`huerfano_ok`); sigue en Ejercicios.
 - Validar los minutos de los bloques nuevos y cuáles opciones quedan en cada uno. Los ejercicios que necesitan material que no tenemos (cajón, pelota medicinal, barra, trineo, cuesta) siguen marcados con ⚠ al abrirlos.
+
+## Sin activación ni vuelta a la calma en las sesiones (2026-11-02)
+
+- Se sacaron los bloques **Activación** y **Vuelta a la calma** de las 4 sesiones (duran ahora 60, 70, 65 y 70 min). El circuito `activacion` y el ejercicio de estiramiento siguen en Circuitos y Ejercicios, pero ninguna sesión los usa.
+- La nota de trote progresivo y la técnica de carrera del día de velocidad se perdieron; la técnica de carrera sigue como opción del bloque "Pies".
+
+## Activación como la hacés vos (2026-11-02)
+
+- El circuito `activacion` ahora es: trote suave (3-4 min), activación dinámica (primero tren superior, después inferior), progresión de aceleración y velocidad máxima hasta el cono. Reemplaza a "trote suave + movilidad articular + técnica de carrera". "Movilidad articular" quedó sin uso (sigue en Ejercicios). Falta definir dosis de la aceleración y la velocidad.
+
+## Cambios a partir de papers de fútbol (2026-11-02)
+
+- **Fuerza y potencia:** ahora primero Potencia (con el cuerpo fresco) y después Fuerza. Es criterio mío, sin paper directo.
+- **Nuevo ejercicio: Nordic hamstring**, en el banco del circuito de fuerza (como alternativa, no en la propuesta de 6). Necesita un compañero que sujete los tobillos y una colchoneta (⚠). La dosis (2-3 series de 4-6 repeticiones) la propuse yo. Respaldo: metaanálisis con hasta ~50% menos lesiones de isquios en fútbol, con pocos estudios.
+- **Aeróbico:** el bloque aeróbico pasó de 30 a 35 min (un 4×4 completo son unos 25 min más transiciones). La sesión dura 70.
+- **"Cuándo" en cada sesión:** una línea que sugiere en qué momento de la semana hacerla (velocidad dos días antes del partido, fuerza y aeróbico temprano, pelota suave el día previo). Es una inferencia a partir de estudios sobre la semana de partido; no encontré un paper que diga el reparto exacto.
+- Sigue sin haber ejercicio con **aductores** como músculo principal.
+
+## Página de inicio nueva (2026-11-02)
+
+- Rehecha de cero siguiendo `DESIGN_PLAYBOOK_unificado.md` §12 (landing): header angosto, hero a pantalla completa con degradé al fondo, título con dos palabras clave en color ("fútbol", "cancha"), un solo botón que baja a las sesiones, y abajo las sesiones (con sus bloques) y "Cómo está armado" (con los conteos reales de los datos).
+- **Sin foto de fondo:** el playbook sugiere una foto con licencia libre; como no hay una elegida, el hero usa las rayas del césped y el círculo de la cancha dibujados en CSS. Si querés foto, pasame palabras clave (cancha de noche, pelota, botines...) y la pruebo.
+- Los textos del hero y las frases de cada sección son míos: cambialos si no te suenan.
+
+## Header nuevo y portada sin degradé blanco (2026-11-02)
+
+- **Header en todas las páginas:** barra fija verde oscuro con vidrio esmerilado, ⚽ como logo, links como pastillas y la página actual en amarillo. Sacó las rayas del césped y la línea blanca gruesa. Los saltos a un bloque o ejercicio descuentan la barra (`--header-h`).
+- **Portada:** el hero ya no se funde con el fondo claro; termina con el borde inferior redondeado.

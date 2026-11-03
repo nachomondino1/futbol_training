@@ -4,28 +4,65 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="color-scheme" content="light dark">
-  <title>Entrenamiento</title>
-  <meta name="description" content="Ejercicios, circuitos y sesiones para entrenar en la cancha.">
+  <title>Entrenamiento de fútbol</title>
+  <meta name="description" content="Mirá qué incluye cada sesión de entrenamiento de fútbol y cómo se hace cada ejercicio. Para abrir en el celu en la cancha.">
   <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 32 32%27%3E%3Crect width=%2732%27 height=%2732%27 fill=%27%2314633f%27/%3E%3Ccircle cx=%2716%27 cy=%2716%27 r=%276%27 fill=%27none%27 stroke=%27white%27 stroke-width=%272%27/%3E%3C/svg%3E">
   <meta name="theme-color" content="#14633f" media="(prefers-color-scheme: light)">
   <meta name="theme-color" content="#0f4a30" media="(prefers-color-scheme: dark)">
   <link rel="manifest" href="manifest.webmanifest">
   <link rel="apple-touch-icon" href="img/icon-180.png">
   <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/pages/inicio.css">
 </head>
 <body>
-  <main id="app">
-    <h1>¿Qué toca hoy?</h1>
-    <div class="accesos">
-      <a class="acceso" href="glosario.html"><strong>Ejercicios</strong><span>Cómo se hace cada ejercicio, para 2, 3, 4 u 8.</span></a>
-      <a class="acceso" href="circuitos.html"><strong>Circuitos</strong><span>Conjuntos de ejercicios en orden, con sus vueltas y descansos.</span></a>
-      <a class="acceso" href="sesiones.html"><strong>Sesiones</strong><span>Armadas y listas para correr, con opciones por bloque.</span></a>
+  <!-- El header lo inyecta js/common.js (renderHeader) justo antes de este hero. -->
+  <section class="hero" aria-labelledby="hero-titulo">
+    <div class="hero__contenido">
+      <p class="hero__eyebrow">Entrenamiento de fútbol</p>
+      <h1 class="hero__titulo" id="hero-titulo">Los entrenamientos de <em class="hero__clave hero__clave--a">fútbol</em>, listos para la <em class="hero__clave hero__clave--b">cancha</em></h1>
+      <p class="hero__texto">Mirá qué incluye cada sesión, cómo se hace cada ejercicio y qué vas a ganar con ella. Está pensado para abrirlo en el celu mientras entrenás.</p>
+      <a class="hero__cta" href="#sesiones">Ver las sesiones</a>
+      <ul class="hero__datos" aria-label="Qué tiene la web">
+        <li>Para el celu</li>
+        <li>Funciona sin señal</li>
+        <li>Solo para mirar</li>
+      </ul>
     </div>
-    <p class="inicio-nota">Elegí arriba cuántos son: cada ejercicio te muestra su variante para esa cantidad.</p>
+  </section>
+
+  <main id="app">
+    <section class="seccion" id="sesiones" aria-labelledby="t-sesiones">
+      <h2 class="seccion__titulo" id="t-sesiones">Las sesiones</h2>
+      <p class="seccion__sub">Tocá una para ver sus bloques, con opciones para cada uno.</p>
+      <div class="grid-sesiones" id="lista-sesiones" aria-busy="true">
+        <div class="esqueleto"></div><div class="esqueleto"></div><div class="esqueleto"></div><div class="esqueleto"></div>
+      </div>
+    </section>
+
+    <section class="seccion" aria-labelledby="t-armado">
+      <h2 class="seccion__titulo" id="t-armado">Cómo está armado</h2>
+      <p class="seccion__sub">Cada ejercicio se explica una sola vez. Los circuitos los combinan y las sesiones reúnen todo en bloques.</p>
+      <div class="pasos">
+        <a class="paso" href="glosario.html">
+          <span class="paso__n" id="n-ejercicios">–</span>
+          <strong class="paso__nombre">Ejercicios</strong>
+          <span class="paso__texto">Cómo se hace cada uno, qué trabaja, qué material necesita y en qué sesiones aparece.</span>
+        </a>
+        <a class="paso" href="circuitos.html">
+          <span class="paso__n" id="n-circuitos">–</span>
+          <strong class="paso__nombre">Circuitos</strong>
+          <span class="paso__texto">Ejercicios en orden, con una propuesta y las alternativas que también sirven.</span>
+        </a>
+        <a class="paso" href="sesiones.html">
+          <span class="paso__n" id="n-sesiones">–</span>
+          <strong class="paso__nombre">Sesiones</strong>
+          <span class="paso__texto">Bloques con la propuesta del día y, en cada uno, otras opciones para elegir.</span>
+        </a>
+      </div>
+    </section>
+
+    <p class="nota-offline">Abrila una vez con señal: queda guardada en el celu y después se puede usar sin conexión. Los videos sí piden señal.</p>
   </main>
-  <script type="module">
-    import { renderHeader } from "./js/common.js";
-    renderHeader("inicio");
-  </script>
+  <script type="module" src="js/inicio.js"></script>
 </body>
 </html>

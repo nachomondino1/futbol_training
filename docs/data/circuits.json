@@ -46,6 +46,9 @@
         },
         {
           "ex": "broad-jump"
+        },
+        {
+          "ex": "nordic-hamstring"
         }
       ]
     },
@@ -177,21 +180,24 @@
     {
       "id": "activacion",
       "nombre": "Activación",
-      "descripcion": "El circuito para entrar en calor antes de entrenar: trote suave y movilidad articular. La técnica de carrera es opcional: se suma en los días de velocidad.",
+      "descripcion": "El circuito para entrar en calor: trote suave, movimiento del tren superior y después del inferior, y para terminar aceleración y velocidad.",
       "items": [
         {
           "ex": "trote-suave",
           "dosis": "3-4 min"
         },
         {
-          "ex": "movilidad-articular"
+          "ex": "activacion-dinamica",
+          "nota": "Primero el tren superior, después el inferior."
         },
         {
-          "ex": "tecnica-carrera",
-          "opcional": true,
-          "dosis": "3 series cortas de cada una, 15-20 m, volviendo caminando"
+          "ex": "progresion-aceleracion"
+        },
+        {
+          "ex": "velocidad-maxima-cono"
         }
-      ]
+      ],
+      "huerfano_ok": true
     },
     {
       "id": "circuito-fuerza",
