@@ -128,3 +128,9 @@ El Doc solo decía el grupo muscular de sentadilla y estocada (cuádriceps, glú
 - **Activación es un solo circuito:** trote suave, movilidad articular y técnica de carrera como **opcional** (se usa en los días de velocidad). Se eliminó `activacion-velocidad`; la sesión de Velocidad lo reutiliza con una nota.
 - **Las tres plantillas son una:** "Fuerza, coordinación y cierre". La última parte junta pelota, aeróbico y velocidad (20 alternativas, con el nombre del banco de cada una). Como propuesta queda el primer ejercicio de pelota: decime si preferís otro.
 - **Las sesiones muestran todo desplegado** (ejercicios y guías); "Qué vas a ganar" sigue plegado.
+
+## Cuatro sesiones (2026-11-02)
+
+- **Quedaron 4 sesiones** (antes 8): **Velocidad y agilidad** (85 min), **Fuerza y potencia** (90), **Aeróbico** (85) y **Pelota** (90, con conducción, pase y definición). Cada bloque conserva las opciones de las sesiones que se unieron.
+- **Movilidad y prevención ya no es sesión.** Se perdió el "día previo / día después". `activacion-neuromuscular` quedó sin sesión (`huerfano_ok`); sigue en Ejercicios.
+- Validar los minutos de los bloques nuevos y cuáles opciones quedan en cada uno. Los ejercicios que necesitan material que no tenemos (cajón, pelota medicinal, barra, trineo, cuesta) siguen marcados con ⚠ al abrirlos.

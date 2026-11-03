@@ -641,7 +641,8 @@
       ],
       "materiales": [
         "pelota"
-      ]
+      ],
+      "huerfano_ok": true
     },
     {
       "id": "estiramiento-estatico",

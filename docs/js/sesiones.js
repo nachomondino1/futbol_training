@@ -24,9 +24,7 @@ function grilla() {
     h("div", { class: "grid-sesiones" }, datos.sesiones.map((s) =>
       h("a", { class: "card-sesion", href: `#${s.id}` },
         h("span", { class: "card-min" }, String(duracion(s)), h("small", {}, " min")),
-        h("span", { class: "card-nombre" }, s.nombre),
-        h("span", { class: "card-meta" },
-          masGanado(minutosGanados(s), objetivos, { max: 3, etiquetas: true }).map((g) => h("span", { class: "etiqueta" }, g.nombre)))))));
+        h("span", { class: "card-nombre" }, s.nombre)))));
 }
 
 function itemNodo(item, bi, numero = null, conEstructura = false) {
