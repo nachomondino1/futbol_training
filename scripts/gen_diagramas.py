@@ -380,11 +380,11 @@ def esc_dos_pies():
 
 
 def esc_in_in_out_out():
-    cuerpo, n = escalera_base() + leyenda(), 1
-    for c in range(6):
-        zi, zd = ("izq", "der") if c % 2 == 0 else ("afuera-izq", "afuera-der")
-        cuerpo += huella(n, "I", c, zi) + huella(n + 1, "D", c, zd)
-        n += 2
+    cuerpo = escalera_base() + leyenda()
+    for c in range(4):
+        n = 4 * c + 1
+        cuerpo += (huella(n, "I", c, "izq") + huella(n + 1, "D", c, "der")
+                   + huella(n + 2, "I", c, "afuera-izq") + huella(n + 3, "D", c, "afuera-der"))
     return cuerpo
 
 
@@ -406,6 +406,42 @@ def esc_un_pie_salto():
     return escalera_base() + leyenda() + "".join(huella(c + 1, "D", c, "med") for c in range(6))
 
 
+def esc_cinco_saltos():
+    cuerpo = escalera_base() + leyenda()
+    for c in range(5):
+        cuerpo += huella(c + 1, "I", c, "izq") + huella(c + 1, "D", c, "der")
+    cuerpo += huella(6, "D", 5, "med")
+    return cuerpo + texto(160, 52, "5 saltos con los dos pies y después un apoyo por cuadrado", 10)
+
+
+def esc_abrir_cerrar():
+    cuerpo = escalera_base() + leyenda()
+    for c in range(6):
+        n = 2 * c + 1
+        cuerpo += (huella(n, "I", c, "izq") + huella(n, "D", c, "der")
+                   + huella(n + 1, "I", c, "afuera-izq") + huella(n + 1, "D", c, "afuera-der"))
+    return cuerpo
+
+
+def esc_adentro_afuera_costado():
+    cuerpo = escalera_base() + leyenda()
+    for c in range(4):
+        n = 4 * c + 1
+        cuerpo += (huella(n, "D", c, "med", 11) + huella(n + 1, "I", c, "med", -11)
+                   + huella(n + 2, "D", c, "afuera-der", 11) + huella(n + 3, "I", c, "afuera-der", -11))
+    return cuerpo + texto(160, 40, "de costado: adentro, adentro, afuera, afuera", 11)
+
+
+def secuencia(pasos, texto_arriba=None, sentido=1):
+    """Dibuja una lista de pasos (pie, cuadrado, zona, desplazamiento_x) con su número de orden."""
+    cuerpo = escalera_base() + leyenda()
+    for i, (pie, c, z, dx) in enumerate(pasos):
+        cuerpo += huella(i + 1, pie, c, z, dx)
+    if texto_arriba:
+        cuerpo += texto(160, 44, texto_arriba, 10)
+    return cuerpo
+
+
 ESCALERA = {
     "un-pie": esc_un_pie,
     "dos-pies": esc_dos_pies,
@@ -413,6 +449,9 @@ ESCALERA = {
     "lateral": esc_lateral,
     "zigzag": esc_zigzag,
     "salto-un-pie": esc_un_pie_salto,
+    "cinco-saltos": esc_cinco_saltos,
+    "abrir-cerrar": esc_abrir_cerrar,
+    "adentro-afuera-costado": esc_adentro_afuera_costado,
 }
 
 

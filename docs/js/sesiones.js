@@ -1,4 +1,4 @@
-import { h, imagenesNodos, patronesNodos, variantesNodo, materialesNodo, leerJugadores, guardarJugadores, jugadoresControl, renderHeader, cargarJSON, mostrarError } from "./common.js";
+import { h, imagenesNodos, patronesNodos, videosNodos, variantesNodo, materialesNodo, leerJugadores, guardarJugadores, jugadoresControl, renderHeader, cargarJSON, mostrarError } from "./common.js";
 import { completarItems, estructuraNodo, guiaDetalle, masGanado, normalizarCircuitos, repartirMinutos } from "./estructura.js";
 
 const app = document.getElementById("app");
@@ -43,8 +43,8 @@ function itemNodo(item, bi, numero = null, conEstructura = false) {
   const vars = item.variantes || ej.variantes || {};
   const dosis = item.dosis || (conEstructura ? null : ej.dosis);
   const medios = [];
-  medios.push(...imagenesNodos(ej), ...patronesNodos(ej));
-  if (ej.video) medios.push(h("a", { class: "btn", href: ej.video, target: "_blank", rel: "noopener" }, "Ver video"));
+  medios.push(...imagenesNodos(ej));
+  medios.push(...videosNodos(ej));
 
   return h("details", {
       class: "item", open: !cerrados.has(clave),
@@ -59,6 +59,7 @@ function itemNodo(item, bi, numero = null, conEstructura = false) {
       h("p", {}, ej.descripcion),
       ej.materiales?.length ? h("p", { class: "materiales-linea" }, h("strong", {}, "Materiales: "), materialesNodo(ej)) : null,
       variantesNodo(vars),
+      ej.patrones?.length ? h("div", { class: "patrones" }, patronesNodos(ej)) : null,
       medios.length ? h("div", { class: "medios" }, medios) : null,
       h("a", { class: "link-glosario", href: `glosario.html#${ej.id}` }, "Ver el ejercicio")));
 }

@@ -20,7 +20,7 @@ self.addEventListener("install", (e) => {
     await cache.addAll(BASICOS.map((r) => new Request(r, { cache: "reload" })));
     // Las imágenes salen de exercises.json: no hay una segunda lista que mantener.
     const { ejercicios } = await (await cache.match("data/exercises.json")).json();
-    const imagenes = ejercicios.flatMap((x) => [x.imagen, ...Object.values(x.imagenes || {}), ...(x.patrones || []).map((p) => p.imagen)]).filter(Boolean);
+    const imagenes = ejercicios.flatMap((x) => [x.imagen, ...Object.values(x.imagenes || {}), ...(x.patrones || []).flatMap((p) => p.imagenes || [p.imagen])]).filter(Boolean);
     // allSettled: si una imagen falla, la instalación sigue; esa se guarda cuando se mire.
     await Promise.allSettled(imagenes.map(async (r) => { if (!(await cache.match(r))) await cache.add(r); }));
   })());

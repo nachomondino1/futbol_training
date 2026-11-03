@@ -226,3 +226,24 @@ El Doc solo decía el grupo muscular de sentadilla y estocada (cuádriceps, glú
 ## Foto y video de "Pases cortos con control orientado" (2026-11-03)
 
 - Sumé tu foto (3 jugadores con un cuadrado de conos) y el video del reel. La foto va primero y debajo siguen los dibujos para 2, 3, 4 y 8. Es otro fotograma de un video ajeno (con el botón de play encima): mismo cuidado con los derechos que las otras.
+
+## Videos de Instagram (2026-11-03)
+
+- **Leg hop:** sumé la variante hacia adelante (avanzás saltando en vez de saltar en el lugar, 5 formas distintas) y el video de la cuenta scientificallyfaster como segundo botón. **Faltan las 5 variantes:** no alcancé a distinguirlas en el video; contámelas (nombre y cómo se hace cada una) y las cargo.
+- **Step-up unilateral:** sumé el video de jmendoza_oficial y las variantes por objetivo (aceleración, potencia, coordinación, agilidad, fuerza y estabilidad), solo con los nombres que se ven en el video. Falta cómo se hace cada una.
+- Los dos videos son de cuentas ajenas (una de ellas vende un programa): es un link, no se copia nada.
+
+## Escalera de coordinación: 16 patrones (2026-11-03)
+
+- Pasé de 6 a **16 patrones**, del más simple al más difícil, a partir del artículo que pegaste (kingsportstraining.com) y el video de YouTube (queda como "Ver video: 13 patrones"). Los textos son resúmenes míos en español, con el nombre en inglés entre paréntesis.
+- Se unieron los que coincidían: *Un pie por cuadrado* = One Step, *Lateral* = Side Step, y *Adentro, adentro, afuera, afuera* = Double Trouble (ahora en cada cuadrado van adentro izquierdo y derecho y afuera izquierdo y derecho; antes alternaba cuadrados).
+- **Con dibujo (9):** un pie, dos pies, lateral, adentro-adentro-afuera-afuera, adentro y afuera de costado, saltos adentro y afuera, 5 saltos y carrera, zig-zag y salto con un pie. Los dibujé yo: hay que validarlos. **Solo texto (7):** cruzado, carioca, ciempiés, ickey shuffle, river dance, atrás y adelante y shuffle a una pierna; sus pasos no estaban lo bastante claros para dibujarlos sin inventar.
+
+## Leg hop: 5 progresiones hacia adelante (2026-11-03)
+
+- Cargué los fotogramas que mandaste (uno por progresión, numeradas 1 a 5 en el video). **Las descripciones las inferí yo de las imágenes**: de menos a más (trote con saltitos, más rodilla, saltos largos, más potencia, casi un sprint). Faltan los nombres reales y cómo se hace cada una. Corregilas cuando puedas.
+- Son fotogramas de un video ajeno (cuenta scientificallyfaster): mismo cuidado con los derechos.
+
+- **Los 7 patrones de la escalera que estaban solo con texto ahora tienen dibujo** (cruzado, carioca, ciempiés, ickey shuffle, river dance, atrás y adelante, shuffle a una pierna). Son esquemas míos hechos desde la descripción del artículo: la posición exacta de cada pie es mi interpretación (sobre todo carioca, ickey shuffle y river dance), así que hay que validarlos o corregirlos. Los fotogramas del video de YouTube se descartaron (con una sola imagen no se entiende el patrón).
+
+- **Escalera (cambio de criterio):** los patrones que vienen del video de YouTube ahora tienen un botón "▶ Ver cómo se hace en YouTube (desde m:ss)" que abre el video justo en su sección. Saqué los diagramas de los 7 de los que no estaba segura (cruzado, carioca, ciempiés, ickey shuffle, river dance, atrás y adelante, shuffle a una pierna): quedan con texto y video. Conservé los 9 diagramas más claros. Los patrones que no están en el video (dos pies, zig-zag, salto con un pie, shuffle a una pierna) no tienen link.

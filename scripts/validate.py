@@ -186,10 +186,10 @@ def main() -> int:
                 errors.append(f"{eid}: imagenes con clave inválida '{k}'")
             rutas.append(ruta)
         for pat in e.get("patrones", []):
-            if not (pat.get("nombre") and pat.get("descripcion") and pat.get("imagen")):
-                errors.append(f"{eid}: cada patrón necesita nombre, descripcion e imagen")
+            if not (pat.get("nombre") and pat.get("descripcion")):
+                errors.append(f"{eid}: cada patrón necesita nombre y descripcion")
             else:
-                rutas.append(pat["imagen"])
+                rutas.extend(pat.get("imagenes") or ([pat["imagen"]] if pat.get("imagen") else []))
         for ruta in rutas:
             if not (WEB / ruta).is_file():
                 errors.append(f"{eid}: la imagen '{ruta}' no existe en docs/")

@@ -42,16 +42,6 @@ export function variantesNodo(vars) {
     claves.map((p) => h("li", {}, h("strong", {}, `Con ${p}: `), vars[String(p)])));
 }
 
-// Cuando hay muchas imágenes se muestran chicas (ver .medios en style.css); tocar una la agranda y muestra su explicación.
-function alternarFig(e) {
-  const fig = e.currentTarget;
-  fig.setAttribute("aria-expanded", String(fig.classList.toggle("fig--grande")));
-}
-const figAtributos = {
-  class: "fig", tabindex: "0", "aria-expanded": "false", onclick: alternarFig,
-  onkeydown: (e) => { if (e.key === "Enter" || e.key === " ") { e.preventDefault(); alternarFig(e); } },
-};
-
 // Imágenes del ejercicio: una por cantidad de personas (con su epígrafe) o, si no hay, la general.
 // Sin imagen devuelve [] (así no queda ningún placeholder roto).
 export function imagenesNodos(ej) {
@@ -59,19 +49,31 @@ export function imagenesNodos(ej) {
   const claves = PERSONAS.filter((p) => porCantidad[String(p)]);
   if (claves.length) {
     const foto = ej.imagen ? [h("img", { src: ej.imagen, alt: ej.nombre, loading: "lazy", width: 640, height: 400 })] : [];
-    return foto.concat(claves.map((p) => h("figure", figAtributos,
+    return foto.concat(claves.map((p) => h("figure", { class: "fig" },
       h("img", { src: porCantidad[String(p)], alt: `${ej.nombre}, con ${p}`, loading: "lazy", width: 640, height: 400 }),
       h("figcaption", {}, `Con ${p}`))));
   }
   return ej.imagen ? [h("img", { src: ej.imagen, alt: ej.nombre, loading: "lazy", width: 640, height: 400 })] : [];
 }
 
-// Patrones de un ejercicio (por ejemplo, los de la escalera): un diagrama con su nombre y cómo se hace cada uno.
-export function patronesNodos(ej) {
-  return (ej.patrones || []).map((p) => h("figure", figAtributos,
-    h("img", { src: p.imagen, alt: `${ej.nombre}: ${p.nombre}`, loading: "lazy", width: 640, height: 400 }),
-    h("figcaption", {}, h("strong", {}, p.nombre), h("span", { class: "fig__desc" }, ` — ${p.descripcion}`))));
+// Botones de video: el principal ("video") y los extra (lista "videos" de {nombre, url}).
+export function videosNodos(ej) {
+  const boton = (url, texto) => h("a", { class: "btn", href: url, target: "_blank", rel: "noopener" }, texto);
+  return [ej.video ? boton(ej.video, "Ver video") : null,
+    ...(ej.videos || []).map((v) => boton(v.url, `Ver video: ${v.nombre}`))].filter(Boolean);
 }
+
+// Patrones de un ejercicio (por ejemplo, los de la escalera): el nombre, cómo se hace con palabras y debajo la imagen.
+export function patronesNodos(ej) {
+  return (ej.patrones || []).map((p) => h("article", { class: "patron" },
+    h("h3", { class: "patron__nombre" }, p.nombre),
+    h("p", { class: "patron__texto" }, p.descripcion),
+    p.video ? h("a", { class: "btn patron__video", href: p.video, target: "_blank", rel: "noopener" }, `▶ Ver cómo se hace en YouTube${p.tiempo ? ` (desde ${p.tiempo})` : ""}`) : null,
+    ...imagenesDePatron(p).map((src) => h("img", { class: "patron__imagen", src, alt: `${ej.nombre}: ${p.nombre}`, loading: "lazy", width: 640, height: 400 }))));
+}
+
+// Un patrón puede traer una imagen ("imagen") o varias ("imagenes").
+export const imagenesDePatron = (p) => p.imagenes || (p.imagen ? [p.imagen] : []);
 
 // Materiales que necesita un ejercicio, como etiquetas. Sin materiales devuelve null.
 export function materialesNodo(ej) {

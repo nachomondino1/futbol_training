@@ -96,7 +96,7 @@
       "nombre": "Escalera de coordinación",
       "alias": [],
       "categoria": "coordinacion",
-      "descripcion": "Varios patrones de pies rápidos, uno detrás del otro: pie-pie (un apoyo por cuadrado), in-in-out-out (adentro, adentro, afuera, afuera), lateral (de costado) y otros que están en las imágenes de abajo. Volvés caminando entre pasadas.",
+      "descripcion": "Patrones de pies rápidos: se hace una pasada por patrón y se vuelve caminando. Los que van de costado se repiten mirando hacia el otro lado. Primero aprendé el patrón despacio (contando los pasos) y recién después subí la velocidad sin perder el control. Los patrones están abajo, del más simple al más difícil.",
       "dosis": "2 pasadas por patrón",
       "variantes": {},
       "imagen": "img/ejercicios/escalera.png",
@@ -116,9 +116,11 @@
       "patrones": [
         {
           "id": "un-pie",
-          "nombre": "Un pie por cuadrado",
-          "descripcion": "Pasada de carrera: un solo apoyo en cada cuadrado, alternando pie izquierdo y derecho. Rápido y con apoyos livianos.",
-          "imagen": "img/escalera-un-pie.svg"
+          "nombre": "Un pie por cuadrado (One Step)",
+          "descripcion": "Pasada rápida y liviana, con un apoyo en cada cuadrado, levantando los pies lo justo para pasar cada travesaño. Brazos a 90° moviéndose poco y el cuerpo apenas inclinado hacia adelante, con el peso sobre la parte delantera del pie.",
+          "imagen": "img/escalera-un-pie.svg",
+          "video": "https://www.youtube.com/watch?v=VE9K9w6rOmM&t=5s",
+          "tiempo": "0:05"
         },
         {
           "id": "dos-pies",
@@ -127,16 +129,44 @@
           "imagen": "img/escalera-dos-pies.svg"
         },
         {
-          "id": "in-in-out-out",
-          "nombre": "Adentro, adentro, afuera, afuera",
-          "descripcion": "Dos apoyos adentro de un cuadrado (izquierdo y derecho), y en el siguiente dos apoyos afuera, uno a cada lado. Se repite hasta el final.",
-          "imagen": "img/escalera-in-in-out-out.svg"
+          "id": "lateral",
+          "nombre": "Lateral (Side Step)",
+          "descripcion": "De costado a la escalera: con un paso lateral rápido tocás cada cuadrado con los dos pies, primero el de adelante empujando con el de atrás, sin saltar. Se repite mirando hacia el otro lado para trabajar parejo.",
+          "imagen": "img/escalera-lateral.svg",
+          "video": "https://www.youtube.com/watch?v=VE9K9w6rOmM&t=14s",
+          "tiempo": "0:14"
         },
         {
-          "id": "lateral",
-          "nombre": "Lateral (de costado)",
-          "descripcion": "De costado a la escalera, mirando hacia un lado. Entrás con el pie de adelante, juntás el otro en el mismo cuadrado y seguís al siguiente.",
-          "imagen": "img/escalera-lateral.svg"
+          "id": "in-in-out-out",
+          "nombre": "Adentro, adentro, afuera, afuera (Double Trouble)",
+          "descripcion": "Contás \"adentro, adentro, afuera, afuera\": entrás con el pie de adelante, entrás con el otro, sacás el de adelante y sacás el otro. Los dos pies tocan todos los cuadrados. Después repetís empezando con el otro pie. Primero aprendé el patrón y recién después subí la velocidad.",
+          "imagen": "img/escalera-in-in-out-out.svg",
+          "video": "https://www.youtube.com/watch?v=VE9K9w6rOmM&t=162s",
+          "tiempo": "2:42"
+        },
+        {
+          "id": "adentro-afuera-costado",
+          "nombre": "Adentro y afuera de costado (In & Out)",
+          "descripcion": "De costado, con el mismo conteo \"adentro, adentro, afuera, afuera\": entran los dos pies al cuadrado y salen del mismo lado. La pierna de adelante es la del lado hacia donde avanzás. Se repite hacia el otro lado.",
+          "imagen": "img/escalera-adentro-afuera-costado.svg",
+          "video": "https://www.youtube.com/watch?v=VE9K9w6rOmM&t=79s",
+          "tiempo": "1:19"
+        },
+        {
+          "id": "abrir-cerrar",
+          "nombre": "Saltos adentro y afuera (Side Straddle Hop)",
+          "descripcion": "Saltitos metiendo los pies adentro del cuadrado y abriéndolos afuera, con el conteo \"adentro, afuera\". Evitá chocar los pies al juntarlos, mantené los brazos a 90° y aumentá la velocidad de a poco. Sirve para movimientos explosivos hacia los costados.",
+          "imagen": "img/escalera-abrir-cerrar.svg",
+          "video": "https://www.youtube.com/watch?v=VE9K9w6rOmM&t=48s",
+          "tiempo": "0:48"
+        },
+        {
+          "id": "cinco-saltos",
+          "nombre": "5 saltos y carrera (5 Hops & Run)",
+          "descripcion": "Con los dos pies, saltás cinco cuadrados seguidos; en el quinto caés con los dos pies y enseguida pasás a un apoyo por cuadrado hasta el final. Lo importante es caer con los dos pies antes de arrancar y hacerlo rápido pero controlado. Entrena el cambio rápido de ritmo.",
+          "imagen": "img/escalera-cinco-saltos.svg",
+          "video": "https://www.youtube.com/watch?v=VE9K9w6rOmM&t=25s",
+          "tiempo": "0:25"
         },
         {
           "id": "zigzag",
@@ -149,6 +179,66 @@
           "nombre": "Salto con un pie",
           "descripcion": "Saltitos a una pierna, un apoyo en cada cuadrado, avanzando. Después se repite con la otra pierna.",
           "imagen": "img/escalera-salto-un-pie.svg"
+        },
+        {
+          "id": "cruzado",
+          "nombre": "Cruzado (Crossover)",
+          "descripcion": "Carrera de costado, con un apoyo en cada cuadrado. Pasás el pie de atrás por delante del que va adelante, sin abrirlo hacia el frente, e inclinás el cuerpo hacia donde vas. Se repite mirando hacia el otro lado.",
+          "imagen": null,
+          "video": "https://www.youtube.com/watch?v=VE9K9w6rOmM&t=36s",
+          "tiempo": "0:36"
+        },
+        {
+          "id": "carioca",
+          "nombre": "Carioca",
+          "descripcion": "De costado, se pisa cada cuadrado una sola vez, alternando pie izquierdo y derecho. Lo que cambia es que al ir cambiando de pie giras la cadera y, en vez de pasar siempre el pie por delante, alternás entre pasarlo por delante y por detrás: es como un baile brasileño, de ahí el nombre. Los brazos van a 90° y el torso gira al revés de la cadera. Se repite hacia cada lado.",
+          "imagen": null,
+          "video": "https://www.youtube.com/watch?v=VE9K9w6rOmM&t=64s",
+          "tiempo": "1:04"
+        },
+        {
+          "id": "ciempies",
+          "nombre": "Ciempiés (Centipede)",
+          "descripcion": "De costado, con el conteo \"2 adentro, 2 por encima, 2 afuera\". Tocás cada cuadrado con los dos pies, sin saltar: buscás movimientos cortos y precisos en varias direcciones. Se repite hacia el otro lado.",
+          "imagen": null,
+          "video": "https://www.youtube.com/watch?v=VE9K9w6rOmM&t=96s",
+          "tiempo": "1:36"
+        },
+        {
+          "id": "ickey",
+          "nombre": "Ickey shuffle",
+          "descripcion": "Avanzado. Arrancás con un pie adentro del cuadrado y el otro afuera. El pie de afuera entra al cuadrado y, por un instante, los dos quedan adentro, pero enseguida \"le pega\" al que estaba adentro y lo saca. Así, continuamente, un pie saca al otro mientras avanzás cuadrado por cuadrado. Conteo: \"adentro, afuera, arriba\" (1, 2, 3). Aprendelo despacio y recién después subí la velocidad.",
+          "imagen": null,
+          "video": "https://www.youtube.com/watch?v=VE9K9w6rOmM&t=114s",
+          "tiempo": "1:54"
+        },
+        {
+          "id": "river-dance",
+          "nombre": "River dance",
+          "descripcion": "Conteo \"adentro, atrás, afuera\". Desde el costado entrás con el pie más cercano, pasás el otro por detrás hasta apoyarlo del lado contrario y el tercer paso te deja listo para el siguiente conteo. No aceleres hasta tenerlo memorizado: si hace falta, hacelo caminando.",
+          "imagen": null,
+          "video": "https://www.youtube.com/watch?v=VE9K9w6rOmM&t=130s",
+          "tiempo": "2:10"
+        },
+        {
+          "id": "atras-adelante",
+          "nombre": "Atrás y adelante (Back & Forth)",
+          "descripcion": "Avanzado. Conteo \"uno adentro, dos afuera\" repetido yendo hacia atrás (backpedal). Un solo pie toca cada cuadrado, alternando. Empujá liviano hacia atrás y salí de la marcha atrás con un paso rápido hacia adelante. Los patrones de costado se hacen mirando hacia ambos lados.",
+          "imagen": null,
+          "video": "https://www.youtube.com/watch?v=VE9K9w6rOmM&t=146s",
+          "tiempo": "2:26"
+        },
+        {
+          "id": "una-pierna",
+          "nombre": "Shuffle a una pierna (Single Leg Shuffle)",
+          "descripcion": "De frente, avanzás por el costado de la escalera tocando cada cuadrado solo con el pie de adentro, mientras el de afuera acompaña. Cadera derecha al frente, pasos cortos y livianos. Después repetís del otro lado con la otra pierna. Exige pies rápidos y precisos.",
+          "imagen": null
+        }
+      ],
+      "videos": [
+        {
+          "nombre": "13 patrones",
+          "url": "https://www.youtube.com/watch?v=VE9K9w6rOmM"
         }
       ]
     },
@@ -785,11 +875,11 @@
       "nombre": "Step-up unilateral",
       "alias": [],
       "categoria": "fuerza",
-      "descripcion": "Subís al cajón empujando solo con la pierna de adelante. Fuerza, equilibrio y potencia en un movimiento funcional.",
+      "descripcion": "Subís al cajón empujando solo con la pierna de adelante. Fuerza, equilibrio y potencia en un movimiento funcional. Variantes según lo que quieras trabajar, todas con cajón: aceleración, potencia, coordinación, agilidad, fuerza y estabilidad (ver el video).",
       "dosis": "3 series × 10 reps",
       "variantes": {},
       "imagen": "img/ejercicios/step-up-unilateral.png",
-      "video": null,
+      "video": "https://www.instagram.com/p/DSQSHrvDpvj/",
       "huerfano_ok": true,
       "trabaja": {
         "principal": "cuadriceps",
@@ -912,7 +1002,7 @@
         "Salto a una pierna"
       ],
       "categoria": "potencia",
-      "descripcion": "Saltos a una pierna de lado a lado, pasando por encima de un cono (o de algo bajo, como una pelota) puesto en el medio. Saltás el cono con cada salto, de un lado al otro. Sirve para sentirte liviano en los pies y también para mejorar la conducción.",
+      "descripcion": "Saltos a una pierna de lado a lado, pasando por encima de un cono (o de algo bajo, como una pelota) puesto en el medio. Saltás el cono con cada salto, de un lado al otro. Sirve para sentirte liviano en los pies y también para mejorar la conducción. Variante hacia adelante: en vez de saltar en el lugar, avanzás saltando; hay 5 progresiones, de menos a más intensidad (ver las imágenes).",
       "dosis": null,
       "variantes": {},
       "imagen": "img/ejercicios/leg-hop.webp",
@@ -930,6 +1020,44 @@
       ],
       "materiales": [
         "conos"
+      ],
+      "videos": [
+        {
+          "nombre": "variantes hacia adelante",
+          "url": "https://www.instagram.com/p/DTIsFzPjCx7/"
+        }
+      ],
+      "patrones": [
+        {
+          "id": "prog-1",
+          "nombre": "Progresión 1",
+          "descripcion": "Empezás suave, casi como un trote, con saltitos cortos y apoyos livianos, avanzando de a poco.",
+          "imagen": "img/ejercicios/leg-hop-1.webp"
+        },
+        {
+          "id": "prog-2",
+          "nombre": "Progresión 2",
+          "descripcion": "Un poco más de elevación: la rodilla sube algo más y los apoyos son más enérgicos, siempre avanzando.",
+          "imagen": "img/ejercicios/leg-hop-2.webp"
+        },
+        {
+          "id": "prog-3",
+          "nombre": "Progresión 3",
+          "descripcion": "Saltos más largos, con un momento en el aire entre un apoyo y el siguiente.",
+          "imagen": "img/ejercicios/leg-hop-3.webp"
+        },
+        {
+          "id": "prog-4",
+          "nombre": "Progresión 4",
+          "descripcion": "Más potencia y amplitud en cada salto, con el impulso de la pierna de apoyo más marcado.",
+          "imagen": "img/ejercicios/leg-hop-4.webp"
+        },
+        {
+          "id": "prog-5",
+          "nombre": "Progresión 5",
+          "descripcion": "La más explosiva: salto largo con el cuerpo inclinado hacia adelante, cerca de un sprint.",
+          "imagen": "img/ejercicios/leg-hop-5.webp"
+        }
       ]
     },
     {

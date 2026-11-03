@@ -1,5 +1,5 @@
 import { completarItems, normalizarCircuitos } from "./estructura.js";
-import { h, imagenesNodos, patronesNodos, variantesNodo, materialesNodo, leerMateriales, guardarMateriales, normalizar, renderHeader, cargarJSON, mostrarError } from "./common.js";
+import { h, imagenesNodos, patronesNodos, videosNodos, variantesNodo, materialesNodo, leerMateriales, guardarMateriales, normalizar, renderHeader, cargarJSON, mostrarError } from "./common.js";
 
 const app = document.getElementById("app");
 // tipo: null | "con" | "sin" (pelota); sub: subcategoría de pelota (si tipo es "con") o categoría (si es "sin")
@@ -62,7 +62,7 @@ function subcategoriasNodo(ej) {
 const EMOJI = { calentamiento: "🔥", coordinacion: "🪜", fuerza: "🏋️", aerobico: "🫁", potencia: "⚡", velocidad: "💨", pelota: "⚽", "vuelta-calma": "🧘" };
 
 // Imagen para la tarjeta: la del ejercicio, la primera por cantidad de personas o la del primer patrón.
-const imagenCard = (ej) => ej.imagen || Object.values(ej.imagenes || {})[0] || ej.patrones?.[0]?.imagen || null;
+const imagenCard = (ej) => ej.imagen || Object.values(ej.imagenes || {})[0] || (ej.patrones?.[0]?.imagen || ej.patrones?.[0]?.imagenes?.[0]) || null;
 
 const categoriaDe = (ej) => datos.categorias.find((c) => c.id === ej.categoria);
 
@@ -88,8 +88,8 @@ function tarjeta(ej) {
 
 // Detalle de un ejercicio: lo que antes eran las columnas de la tabla.
 function vistaDetalle(ej) {
-  const medios = [...imagenesNodos(ej), ...patronesNodos(ej)];
-  if (ej.video) medios.push(h("a", { class: "btn", href: ej.video, target: "_blank", rel: "noopener" }, "Ver video"));
+  const medios = [...imagenesNodos(ej)];
+  medios.push(...videosNodos(ej));
   const vars = variantesNodo(ej.variantes || {});
   app.replaceChildren(
     h("a", { class: "volver", href: "#" }, "← Todos los ejercicios"),
@@ -103,6 +103,7 @@ function vistaDetalle(ej) {
       h("h2", {}, "Cómo se hace"),
       h("p", {}, ej.descripcion),
       ej.jugadores_min > 1 ? h("p", { class: "detalle__dato" }, `Se hace de a ${ej.jugadores_min} o más.`) : null,
+      ej.patrones?.length ? [h("h2", {}, "Patrones y variantes"), h("div", { class: "patrones" }, patronesNodos(ej))] : null,
       ej.dosis ? [h("h2", {}, "Dosis"), h("p", {}, ej.dosis)] : null,
       h("h2", {}, "Materiales"),
       materialesNodo(ej) || h("p", {}, "No necesita materiales."),

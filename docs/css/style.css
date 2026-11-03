@@ -262,15 +262,10 @@ h1 { font-size: 1.9rem; line-height: 1.15; margin: 8px 0 16px; }
 .fig { margin: 0; max-width: 100%; }
 .fig img { display: block; }
 .fig figcaption { font-weight: 700; font-size: .9rem; color: var(--ink-soft); padding-top: 2px; }
-/* Con 3 o más imágenes: miniaturas en grilla. Tocar una la agranda (.fig--grande) y muestra su explicación. */
-.medios:has(.fig:nth-child(3)) { display: grid; grid-template-columns: repeat(auto-fill, minmax(120px, 1fr)); gap: 8px; align-items: start; width: 100%; }
-.medios:has(.fig:nth-child(3)) > img, .medios:has(.fig:nth-child(3)) > .btn { grid-column: 1 / -1; justify-self: start; }
-.medios:has(.fig:nth-child(3)) .fig { cursor: zoom-in; }
-.medios:has(.fig:nth-child(3)) .fig img { width: 100%; }
-.medios:has(.fig:nth-child(3)) .fig figcaption { font-size: .78rem; line-height: 1.25; }
-.medios:has(.fig:nth-child(3)) .fig:not(.fig--grande) .fig__desc { display: none; }
-.medios:has(.fig:nth-child(3)) .fig--grande { grid-column: 1 / -1; cursor: zoom-out; }
-.medios:has(.fig:nth-child(3)) .fig--grande figcaption { font-size: .95rem; }
+/* Varias imágenes por cantidad de personas: grilla, cada una a un tamaño que se lee */
+.medios:has(.fig:nth-child(2)) { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; align-items: start; width: 100%; }
+.medios:has(.fig:nth-child(2)) > img, .medios:has(.fig:nth-child(2)) > .btn { grid-column: 1 / -1; justify-self: start; }
+.medios .fig img { width: 100%; }
 
 /* Ficha de vueltas / trabajo / descanso */
 .ficha { margin: 0; display: grid; }
@@ -392,3 +387,12 @@ h1 { font-size: 1.9rem; line-height: 1.15; margin: 8px 0 16px; }
 .menu-opcion input { width: 22px; height: 22px; accent-color: var(--pasto-1); }
 .menu-limpiar, .limpiar-filtros { justify-self: start; min-height: 36px; padding: 0 4px; border: 0; background: none; color: inherit; font: inherit; text-decoration: underline; cursor: pointer; }
 .limpiar-filtros { margin-left: 10px; }
+.medios:has(.fig:nth-child(3)) > 
+/* Patrones y variantes de un ejercicio: nombre, descripción y debajo la imagen */
+.patrones { display: grid; gap: 22px; }
+.patron { display: grid; gap: 6px; padding-top: 14px; border-top: 1px solid var(--line); }
+.patron:first-child { border-top: 0; padding-top: 0; }
+.patron__nombre { margin: 0; font-size: 1.05rem; }
+.patron__texto { margin: 0; }
+.patron__imagen { display: block; width: 100%; max-width: 480px; height: auto; border-radius: 8px; }
+.patron__video { justify-self: start; }
