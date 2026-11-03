@@ -355,47 +355,23 @@
           ]
         },
         {
-          "titulo": "Pelota suave",
+          "titulo": "Cierre con pelota (tranqui)",
           "min": 10,
           "opcional": true,
           "opciones": [
             {
-              "label": "El loco",
+              "label": "Tiros libres",
               "items": [
                 {
-                  "ex": "el-loco"
+                  "ex": "tiros-libres"
                 }
               ]
             },
             {
-              "label": "Posesión XvX en cuadrado",
+              "label": "Pases largos",
               "items": [
                 {
-                  "ex": "posesion-cuadrado"
-                }
-              ]
-            },
-            {
-              "label": "Rondo",
-              "items": [
-                {
-                  "ex": "rondo"
-                }
-              ]
-            },
-            {
-              "label": "Light touches (solo)",
-              "items": [
-                {
-                  "ex": "light-touches"
-                }
-              ]
-            },
-            {
-              "label": "Conducción a ritmo variable (solo)",
-              "items": [
-                {
-                  "ex": "conduccion-ritmo-variable"
+                  "ex": "circuito-pases-combinados"
                 }
               ]
             }

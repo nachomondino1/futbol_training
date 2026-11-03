@@ -302,3 +302,9 @@ El Doc solo decía el grupo muscular de sentadilla y estocada (cuádriceps, glú
 
 - Toda imagen de contenido (la del ejercicio, las de 2/3/4/8 personas y las de los patrones) va ahora dentro de un marco de **máximo 480 × 320 px**: la imagen entra entera y centrada, sin recortarse. En la práctica, las fotos verticales quedan angostas en lugar de ocupar media pantalla. Las tarjetas de la grilla de Ejercicios ya tenían su marco fijo de 4:3.
 - Si querés otro tamaño máximo, se cambia en una línea (`.marco` en `style.css`).
+
+## Cierre tranquilo de la sesión Aeróbico (2026-11-03)
+
+- El bloque final ("Pelota suave") pasó a ser **"Cierre con pelota (tranqui)"**, con solo dos opciones: **Tiros libres** (para la pegada, viene por defecto) y **Pases largos** (el circuito de pases combinados, que es de baja intensidad). Saqué El loco, la posesión, el rondo, los light touches y la conducción a ritmo variable. Sigue marcado como opcional y dura 10 min.
+- **Tiros libres** es un ejercicio nuevo; su descripción es genérica (los escribí yo): faltan distancia, si hay barrera y cuántos tiros por tanda. Los pases largos piden al menos 2 personas.
+- Si querés más minutos de trabajo en la sesión, lo ajustaría en el circuito del bloque 2 (hoy 45 min) y no en el cierre.

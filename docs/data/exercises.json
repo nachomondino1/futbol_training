@@ -1646,6 +1646,37 @@
       "jugadores_min": 2
     },
     {
+      "id": "tiros-libres",
+      "nombre": "Tiros libres",
+      "alias": [
+        "Pegada"
+      ],
+      "categoria": "pelota",
+      "descripcion": "Se patean tiros libres al arco para entrenar la pegada, sin apuro y con descanso entre tiro y tiro. Es una forma tranquila de cerrar la sesión con pelota.",
+      "dosis": "Unos 10 min, sin apuro",
+      "variantes": {},
+      "imagen": null,
+      "video": null,
+      "trabaja": {
+        "principal": "cuadriceps",
+        "secundarios": [
+          "isquiotibiales",
+          "core"
+        ]
+      },
+      "aporta": [
+        "definicion"
+      ],
+      "subcategorias": [
+        "pelota-parada",
+        "tiro"
+      ],
+      "materiales": [
+        "pelota",
+        "arco"
+      ]
+    },
+    {
       "id": "activacion-dinamica",
       "nombre": "Activación dinámica completa",
       "alias": [],
