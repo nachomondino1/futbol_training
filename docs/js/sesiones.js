@@ -19,18 +19,17 @@ renderHeader("sesiones");
 
 const duracion = (s) => s.bloques.reduce((t, b) => t + b.min, 0);
 
-// Cuántos somos hoy: se cambia acá una vez y vale para todos los bloques.
+// Cuántos somos hoy: se cambia dentro de una sesión y vale para todos sus bloques (y para las demás sesiones).
 function cambiarJugadores(n) {
   jugadores = n;
   guardarJugadores(n);
-  if (sesionActual) detalle(sesionActual, true); else grilla();
+  detalle(sesionActual, true);
 }
 const selectorJugadores = () => jugadoresControl(jugadores, cambiarJugadores);
 
 function grilla() {
   app.replaceChildren(
     h("h1", {}, "Sesiones"),
-    selectorJugadores(),
     h("div", { class: "grid-sesiones" }, datos.sesiones.map((s) =>
       h("a", { class: "card-sesion", href: `#${s.id}` },
         h("span", { class: "card-min" }, String(duracion(s)), h("small", {}, " min")),
