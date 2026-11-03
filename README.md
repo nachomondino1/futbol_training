@@ -49,7 +49,7 @@ En `docs/data/exercises.json`, dentro de `ejercicios`:
 
 - `id`: minúsculas con guiones, único. Es el link `glosario.html#sentadilla-salto`.
 - `categoria`: alguna de las de `categorias`. Los que se hacen con pelota usan `"pelota"` (se muestra "Con pelota") y además llevan `subcategorias`: una o más de `subcategorias` (tiro al arco, pase corto, pase largo, control orientado, conducción, posesión, con oposición, pelota parada). Es obligatorio y es lo que usan los filtros de la página Ejercicios.
-- `materiales`: lista de lo que hace falta (vacía si no hace falta nada). Obligatorio. Lo que tenemos está en `materiales_disponibles` (arriba de todo en `exercises.json`: conos, escalera, pelota); cualquier otra cosa se muestra como aviso (⚠) al abrir el ejercicio en una sesión; la página Ejercicios no tiene columna de materiales, el dato queda guardado al abrir el ejercicio en una sesión.
+- `materiales`: lista de lo que hace falta para el ejercicio (vacía si no hace falta nada). Obligatorio. Se muestra en el detalle del ejercicio y al abrirlo dentro de una sesión.
 - `aporta`: qué se gana con el ejercicio, con ids de `docs/data/objetivos.json` (velocidad, aeróbico, fuerza, potencia, control, precisión de tiro, coordinación, movilidad). Obligatorio. La sesión usa esto para armar "Qué vas a ganar".
 - `trabaja`: `{ "principal": "cuadriceps", "secundarios": ["gluteo-mayor"] }`, con ids de `docs/data/muscles.json` (ahí se escribe para qué sirve cada músculo). Es obligatorio.
 - `jugadores_min`: cuántos jugadores como mínimo necesita (sin dato = 1). En Sesiones, el selector "Hoy somos" oculta las opciones que piden más.

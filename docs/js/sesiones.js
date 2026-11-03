@@ -1,10 +1,9 @@
-import { h, imagenesNodos, patronesNodos, variantesNodo, avisoMateriales, leerJugadores, guardarJugadores, jugadoresControl, renderHeader, cargarJSON, mostrarError } from "./common.js";
+import { h, imagenesNodos, patronesNodos, variantesNodo, materialesNodo, leerJugadores, guardarJugadores, jugadoresControl, renderHeader, cargarJSON, mostrarError } from "./common.js";
 import { completarItems, estructuraNodo, guiaDetalle, masGanado, normalizarCircuitos, repartirMinutos } from "./estructura.js";
 
 const app = document.getElementById("app");
 let ejercicios = new Map(); // id -> ejercicio (como un dict de Python)
 let datos = null;
-let disponibles = []; // materiales que tenemos (docs/data/exercises.json)
 let objetivos = []; // qué se gana (docs/data/objetivos.json)
 let circuitos = new Map(); // id -> circuito (docs/data/circuits.json)
 
@@ -56,9 +55,9 @@ function itemNodo(item, bi, numero = null, conEstructura = false) {
         item.opcional ? h("span", { class: "etiqueta" }, "opcional") : null),
       dosis ? h("span", { class: "item-dosis" }, dosis) : null),
     h("div", { class: "item-cuerpo" },
-      avisoMateriales(ej, disponibles),
       item.nota ? h("p", { class: "nota" }, item.nota) : null,
       h("p", {}, ej.descripcion),
+      ej.materiales?.length ? h("p", { class: "materiales-linea" }, h("strong", {}, "Materiales: "), materialesNodo(ej)) : null,
       variantesNodo(vars),
       medios.length ? h("div", { class: "medios" }, medios) : null,
       h("a", { class: "link-glosario", href: `glosario.html#${ej.id}` }, "Ver el ejercicio")));
@@ -207,7 +206,6 @@ function ruta() {
 try {
   const [ex, ses, cir, obj] = await Promise.all([cargarJSON("data/exercises.json"), cargarJSON("data/sessions.json"), cargarJSON("data/circuits.json"), cargarJSON("data/objetivos.json")]);
   objetivos = obj.objetivos;
-  disponibles = ex.materiales_disponibles;
   ejercicios = new Map(ex.ejercicios.map((e) => [e.id, e]));
   circuitos = new Map(normalizarCircuitos(cir).map((c) => [c.id, c]));
   datos = ses;

@@ -120,7 +120,7 @@ El Doc solo decía el grupo muscular de sentadilla y estocada (cuádriceps, glú
 ## Ocho sesiones, una por objetivo, y materiales (2026-11-02)
 
 - **Las 5 sesiones anteriores se reemplazaron por 8**, una por objetivo (velocidad, coordinación, fuerza, potencia, aeróbico, control con pelota, definición, movilidad). Las variantes son opciones dentro de cada bloque. El "día previo" quedó dentro de Movilidad (el bloque "Pelota suave"). Hay que validar la distribución de minutos y qué opciones ofrece cada bloque.
-- **Materiales:** cada ejercicio tiene `materiales`. Lo que tenemos (conos, escalera, pelota) está en `materiales_disponibles`; todo lo demás se muestra con ⚠ como aviso al abrir el ejercicio en una sesión. Los materiales que asigné a cada ejercicio (cajón, barra hexagonal, discos, banco, trineo, subida, pelota medicinal, pared, arco, arquitos) salen de la descripción y hay que validarlos. La columna "Materiales" de Ejercicios está oculta; el dato y el aviso en las sesiones siguen.
+- **Materiales:** cada ejercicio tiene `materiales` y se muestra como sección en su detalle y como línea al abrirlo en una sesión (ya no hay aviso ⚠). Los materiales que asigné a cada ejercicio salen de la descripción y hay que validarlos.
 - **Opciones nuevas a validar:** "Series pesadas" (fuerza; dosis propuesta 3-5 series de 6-10 repeticiones), "Cuesta" (velocidad) y los bloques de potencia, que dependen de material que no tenemos.
 
 ## Circuitos unidos (2026-11-02)
@@ -198,3 +198,15 @@ El Doc solo decía el grupo muscular de sentadilla y estocada (cuádriceps, glú
 ## Variante de 3 en "Uno defiende, otro ataca" (2026-11-03)
 
 - Cargada como la contaste; el tercer jugador es el arquero (confirmado). Falta la separación de los conos y quién ataca y quién defiende (supuse que ataca el que lleva la pelota).
+
+## Ejercicios como grilla de tarjetas (2026-11-03)
+
+- La página Ejercicios ya no es una tabla: es una grilla de tarjetas con imagen y nombre. Al tocar una se abre su detalle (cómo se hace, variantes, dosis, sesiones, material con ⚠ si falta, imágenes y video). Los links desde sesiones y circuitos abren directo el detalle.
+- Los ejercicios sin imagen (16) muestran un recuadro verde con el emoji de su categoría. Se reemplaza solo cuando se les cargue una imagen.
+- Se mantiene la búsqueda, los filtros (con/sin pelota y subcategorías) y la sección de músculos abajo. Al volver del detalle queda el filtro y el lugar donde estabas.
+
+## Imágenes para los ejercicios que faltaban (2026-11-03)
+
+- Dibujé 9 diagramas más (conducción a ritmo variable, progresión de aceleración, uno contra uno, pivote de 9, zigzag con pelota, V push & cut, sole + push, light touches y leg hop). Hay que validar que cada dibujo coincida con cómo se hace.
+- Siguen sin imagen 7: movilidad articular, técnica de carrera, estiramiento estático, activación dinámica, trote suave, nordic hamstring y centro al vértice del área. Los seis primeros son de movimiento del cuerpo (necesitan foto o ilustración) y del centro no tengo clara la geometría para dibujarlo.
+- Busqué fotos con licencia libre en Wikimedia Commons y no encontré nada adecuado (nordic hamstring y estiramientos no tienen archivos útiles). No descargué nada.

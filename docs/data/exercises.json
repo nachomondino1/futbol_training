@@ -176,9 +176,9 @@
     },
     {
       "id": "zancada-estatica",
-      "nombre": "Zancada estática",
+      "nombre": "Estocada",
       "alias": [
-        "Estocada"
+        "Zancada estática"
       ],
       "categoria": "fuerza",
       "descripcion": "Un pie adelante y uno atrás. Bajás flexionando ambas rodillas hasta casi tocar el piso con la de atrás. Subís sin desplazarte.",
@@ -597,7 +597,7 @@
         "3",
         "4"
       ],
-      "imagen": null,
+      "imagen": "img/conduccion-ritmo-variable.svg",
       "video": null,
       "trabaja": {
         "principal": "coordinacion",
@@ -660,7 +660,7 @@
         "3",
         "4"
       ],
-      "imagen": null,
+      "imagen": "img/progresion-aceleracion.svg",
       "video": null,
       "trabaja": {
         "principal": "gluteo-mayor",
@@ -912,10 +912,10 @@
         "Salto a una pierna"
       ],
       "categoria": "potencia",
-      "descripcion": "Saltos a una pierna de lado a lado, para sentirte liviano en los pies. Sirve también para mejorar la conducción.",
+      "descripcion": "Saltos a una pierna de lado a lado, pasando por encima de un cono (o de algo bajo, como una pelota) puesto en el medio. Saltás el cono con cada salto, de un lado al otro. Sirve para sentirte liviano en los pies y también para mejorar la conducción.",
       "dosis": null,
       "variantes": {},
-      "imagen": null,
+      "imagen": "img/leg-hop.svg",
       "video": "https://www.instagram.com/reels/DXT_q2ACBXm/",
       "trabaja": {
         "principal": "gemelos",
@@ -928,7 +928,9 @@
         "potencia",
         "coordinacion"
       ],
-      "materiales": []
+      "materiales": [
+        "conos"
+      ]
     },
     {
       "id": "flying-sprint",
@@ -1231,7 +1233,7 @@
       "descripcion": "Individual. Sole (pisarla hacia atrás), push (toque hacia adelante) y accelerate (correr un poco). Combina coordinación y control.",
       "dosis": null,
       "variantes": {},
-      "imagen": null,
+      "imagen": "img/sole-push-acceleration.svg",
       "video": "https://www.instagram.com/reels/DXT_q2ACBXm/",
       "huerfano_ok": true,
       "trabaja": {
@@ -1257,7 +1259,7 @@
       "descripcion": "Individual. Zigzag alternando un control con el borde interno y uno con el externo.",
       "dosis": null,
       "variantes": {},
-      "imagen": null,
+      "imagen": "img/zigzag.svg",
       "video": "https://www.instagram.com/reels/DXT_q2ACBXm/",
       "huerfano_ok": true,
       "trabaja": {
@@ -1279,10 +1281,10 @@
       "nombre": "V push & cut",
       "alias": [],
       "categoria": "pelota",
-      "descripcion": "Individual. Pisás la pelota hacia adelante haciendo una L. Mejora el cambio de dirección con balón.",
+      "descripcion": "Individual y casi estático. Ponés un cono en el vértice de abajo de una V y vas pisando la pelota con la suela, dibujando una V con la pelota alrededor del cono. Mejora el cambio de dirección con la pelota.",
       "dosis": null,
       "variantes": {},
-      "imagen": null,
+      "imagen": "img/v-push-cut.svg",
       "video": "https://www.instagram.com/reels/DXT_q2ACBXm/",
       "huerfano_ok": true,
       "trabaja": {
@@ -1296,7 +1298,8 @@
         "conduccion"
       ],
       "materiales": [
-        "pelota"
+        "pelota",
+        "conos"
       ]
     },
     {
@@ -1307,7 +1310,7 @@
       "descripcion": "Individual. Conducción con el borde externo, con muchos toques y cambios de ritmo. Desarrolla la sensación de pelota y la capacidad de acelerar y frenar con el balón controlado.",
       "dosis": null,
       "variantes": {},
-      "imagen": null,
+      "imagen": "img/light-touches.svg",
       "video": "https://www.instagram.com/reels/DXT_q2ACBXm/",
       "huerfano_ok": true,
       "trabaja": {
@@ -1361,7 +1364,7 @@
       "variantes": {
         "3": "Uno hace de arquero. Los otros dos salen corriendo a máxima velocidad desde la línea del arco, uno de cada lado del arco: uno con pelota y el otro sin. Pasan por unos conos ubicados al final del área y desde ahí van hacia el centro, donde se arma el mano a mano."
       },
-      "imagen": null,
+      "imagen": "img/uno-contra-uno-tiro.svg",
       "video": null,
       "huerfano_ok": true,
       "trabaja": {
@@ -1389,7 +1392,7 @@
       "descripcion": "Un jugador se pone de frente al arco y el otro de pivote de 9. El delantero le pasa al pivote, que se la deja de primera para que pegue al arco. Variante: en vez de pegarle, se la devuelve al pie y hacen un mano a mano contra el defensor. Podés sumar 3 o 4 conos para que el delantero haga zigzag y practique el control antes del pase al pivote.",
       "dosis": null,
       "variantes": {},
-      "imagen": null,
+      "imagen": "img/pivote-9-definicion.svg",
       "video": null,
       "huerfano_ok": true,
       "trabaja": {
@@ -1749,12 +1752,5 @@
         "colchoneta"
       ]
     }
-  ],
-  "materiales_disponibles": [
-    "conos",
-    "escalera",
-    "pelota",
-    "arco",
-    "arquitos"
   ]
 }

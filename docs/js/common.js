@@ -72,15 +72,10 @@ export function patronesNodos(ej) {
     h("figcaption", {}, h("strong", {}, p.nombre), h("span", { class: "fig__desc" }, ` — ${p.descripcion}`))));
 }
 
-// Materiales de un ejercicio. Los que no tenemos (todo salvo lo de `disponibles`) van resaltados.
-export function materialesFaltantes(ej, disponibles) {
-  return (ej.materiales || []).filter((m) => !disponibles.includes(m));
-}
-
-// Aviso para cuando se abre un ejercicio de una sesión.
-export function avisoMateriales(ej, disponibles) {
-  const f = materialesFaltantes(ej, disponibles);
-  return f.length ? h("p", { class: "aviso-material", role: "note" }, `⚠ Necesita material que no tenemos: ${f.join(", ")}.`) : null;
+// Materiales que necesita un ejercicio, como etiquetas. Sin materiales devuelve null.
+export function materialesNodo(ej) {
+  const lista = ej.materiales || [];
+  return lista.length ? h("span", { class: "materiales" }, lista.map((m) => h("span", { class: "etiqueta" }, m))) : null;
 }
 
 // Minúsculas y sin tildes, para que "estocada" y "Estócada" matcheen igual.
