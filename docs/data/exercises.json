@@ -503,6 +503,38 @@
       "jugadores_min": 2
     },
     {
+      "id": "el-loco",
+      "nombre": "El loco",
+      "alias": [
+        "Rondo en círculo"
+      ],
+      "categoria": "pelota",
+      "descripcion": "Las personas forman un círculo y se pasan la pelota. Uno o varios corren por adentro del círculo para intentar recuperarla. Cuando la recuperan, el último que la tocó pasa adentro a recuperar y el que la recuperó sale al círculo a dar pases.",
+      "dosis": null,
+      "variantes": {},
+      "imagen": null,
+      "video": null,
+      "trabaja": {
+        "principal": "coordinacion",
+        "secundarios": [
+          "aerobica"
+        ]
+      },
+      "aporta": [
+        "control",
+        "aerobico"
+      ],
+      "subcategorias": [
+        "posesion",
+        "pase-corto",
+        "oposicion"
+      ],
+      "materiales": [
+        "pelota"
+      ],
+      "jugadores_min": 4
+    },
+    {
       "id": "cuadrado-uno-al-medio",
       "nombre": "Cuadrado con uno en el medio",
       "alias": [
@@ -1293,7 +1325,7 @@
       "nombre": "Reducido",
       "alias": [],
       "categoria": "pelota",
-      "descripcion": "Partidos en espacios pequeños (5v5, por ejemplo), con conos marcando los límites, a alta intensidad en bloques de 3-8 min: aeróbico específico con pelota, con la misma carga cardíaca que correr al 93% de la FC máx. Para la posesión con presión de 2 o 3 personas, ver Rondo.",
+      "descripcion": "Partidos en espacios pequeños (5v5, por ejemplo), con conos marcando los límites, a alta intensidad en bloques de 3-8 min: aeróbico específico con pelota, con la misma carga cardíaca que correr al 93% de la FC máx. Para la posesión con presión de 2 o 3 personas, ver Rondo. Sin arcos, ver Posesión XvX en cuadrado.",
       "dosis": null,
       "variantes": {},
       "imagen": "img/ejercicios/reducido.png",
@@ -1318,6 +1350,39 @@
         "conos"
       ],
       "jugadores_min": 6
+    },
+    {
+      "id": "posesion-cuadrado",
+      "nombre": "Posesión XvX en cuadrado",
+      "alias": [
+        "Posesión sin arcos"
+      ],
+      "categoria": "pelota",
+      "descripcion": "Es como el Reducido, pero sin arcos. Se marca un cuadrado con conos y se juega XvX (por ejemplo 4v4): un equipo mantiene la pelota y el otro intenta recuperarla. Si son un número impar de jugadores, uno hace de comodín (juega con el equipo que tiene la pelota). Para usarlo como entrada en calor: achicá el cuadrado un poco respecto de cómo lo jugás en serio, para que sea más técnico (toque rápido) y menos de correr a fondo; jugá al 70-80 % de intensidad, sin ir a matar cada pelota dividida; y rotá cada 2-3 minutos si alguien necesita respirar.",
+      "dosis": "2-3 min por tanda, rotando",
+      "variantes": {},
+      "imagen": null,
+      "video": null,
+      "trabaja": {
+        "principal": "coordinacion",
+        "secundarios": [
+          "aerobica"
+        ]
+      },
+      "aporta": [
+        "control",
+        "aerobico"
+      ],
+      "subcategorias": [
+        "posesion",
+        "pase-corto",
+        "oposicion"
+      ],
+      "materiales": [
+        "pelota",
+        "conos"
+      ],
+      "jugadores_min": 4
     },
     {
       "id": "pase-presion-arcos-l",
@@ -1585,7 +1650,7 @@
       "nombre": "Activación dinámica completa",
       "alias": [],
       "categoria": "calentamiento",
-      "descripcion": "Tren superior: circunducción de brazos hacia adelante, hacia atrás y hacia arriba y abajo; movimiento de cadera, con y sin piernas; tocarte con la mano la espalda superior (1 y 1). Tren inferior: skipping (cuádriceps); palomita y talones a la cola (isquios); campana, balanceo lateral hacia adentro (aductor); abducción de pierna, balanceo lateral hacia afuera (abductores); saltos con una pierna (gemelos); movimientos laterales con el centro de gravedad bajo, de frente y de espalda (glúteo); elevar el talón hacia adelante y bajar la mano para tocarlo. Velocidad: 2 series de skipping intenso, zancada larga, ¾ de velocidad y máxima velocidad. Con pelota: loco y 4v4 en reducido.",
+      "descripcion": "Tren superior: circunducción de brazos hacia adelante, hacia atrás y hacia arriba y abajo; movimiento de cadera, con y sin piernas; tocarte con la mano la espalda superior (1 y 1). Tren inferior: skipping (cuádriceps); palomita y talones a la cola (isquios); campana, balanceo lateral hacia adentro (aductor); abducción de pierna, balanceo lateral hacia afuera (abductores); saltos con una pierna (gemelos); movimientos laterales con el centro de gravedad bajo, de frente y de espalda (glúteo); elevar el talón hacia adelante y bajar la mano para tocarlo. Velocidad: 2 series de skipping intenso, zancada larga, ¾ de velocidad y máxima velocidad. Con pelota: el loco y posesión 4v4 en cuadrado (ver los ejercicios El loco y Posesión XvX en cuadrado).",
       "dosis": null,
       "variantes": {},
       "imagen": null,

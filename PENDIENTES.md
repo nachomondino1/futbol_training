@@ -247,3 +247,15 @@ El Doc solo decía el grupo muscular de sentadilla y estocada (cuádriceps, glú
 - **Los 7 patrones de la escalera que estaban solo con texto ahora tienen dibujo** (cruzado, carioca, ciempiés, ickey shuffle, river dance, atrás y adelante, shuffle a una pierna). Son esquemas míos hechos desde la descripción del artículo: la posición exacta de cada pie es mi interpretación (sobre todo carioca, ickey shuffle y river dance), así que hay que validarlos o corregirlos. Los fotogramas del video de YouTube se descartaron (con una sola imagen no se entiende el patrón).
 
 - **Escalera (cambio de criterio):** los patrones que vienen del video de YouTube ahora tienen un botón "▶ Ver cómo se hace en YouTube (desde m:ss)" que abre el video justo en su sección. Saqué los diagramas de los 7 de los que no estaba segura (cruzado, carioca, ciempiés, ickey shuffle, river dance, atrás y adelante, shuffle a una pierna): quedan con texto y video. Conservé los 9 diagramas más claros. Los patrones que no están en el video (dos pies, zig-zag, salto con un pie, shuffle a una pierna) no tienen link.
+
+## Posesión XvX en cuadrado (2026-11-03)
+
+- Ejercicio nuevo ("como el Reducido, pero sin arcos"): en la sesión Pelota, bloque "Rondos, pases y conducción". Mínimo 4 jugadores (lo asigné yo). Que el comodín juega con el equipo que tiene la pelota lo supuse yo. Falta el tamaño del cuadrado y la imagen.
+
+## El loco (2026-11-03)
+
+- Ejercicio nuevo: círculo de jugadores con uno o varios corriendo por adentro para recuperar la pelota. En la sesión Pelota, bloque "Rondos, pases y conducción". La regla de cambio ya está (el último que la tocó entra a recuperar y el que la recuperó sale al círculo). Falta cuántos van adentro y el mínimo de jugadores (puse 4). Antes "loco" solo aparecía mencionado dentro de Activación dinámica.
+
+## Entrada en calor antes del partido (2026-11-03)
+
+- Convertí el circuito de activación en **"Entrada en calor antes del partido"** (mismo id `activacion`, ninguna sesión lo usa): trote suave, activación dinámica, progresión de aceleración, flying sprint, **posesión XvX en cuadrado** y, opcional, **tiro al arco** (pase, control y definición). Falta definir cuánto dura cada parte y el orden; el orden y que el tiro sea opcional los puse yo. Si preferís dos circuitos separados (activación y entrada en calor con pelota), lo divido.

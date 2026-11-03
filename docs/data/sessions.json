@@ -404,6 +404,22 @@
                   "ex": "cuadrado-uno-al-medio"
                 }
               ]
+            },
+            {
+              "label": "Posesión XvX en cuadrado",
+              "items": [
+                {
+                  "ex": "posesion-cuadrado"
+                }
+              ]
+            },
+            {
+              "label": "El loco",
+              "items": [
+                {
+                  "ex": "el-loco"
+                }
+              ]
             }
           ]
         },
