@@ -219,6 +219,14 @@
                   "ex": "light-touches"
                 }
               ]
+            },
+            {
+              "label": "Un toque desde el cono central",
+              "items": [
+                {
+                  "ex": "un-toque-cono-central"
+                }
+              ]
             }
           ]
         },
@@ -661,6 +669,14 @@
               "items": [
                 {
                   "ex": "pase-presion-arcos-l"
+                }
+              ]
+            },
+            {
+              "label": "Un toque desde el cono central",
+              "items": [
+                {
+                  "ex": "un-toque-cono-central"
                 }
               ]
             }

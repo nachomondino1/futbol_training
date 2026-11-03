@@ -159,6 +159,9 @@ h1 { font-size: 1.9rem; line-height: 1.15; margin: 8px 0 16px; }
 /* Materiales: aviso al abrir un ejercicio que necesita algo que no tenemos */
 .aviso-material { margin: 0 0 10px; padding: 8px 12px; background: var(--resalte); border-left: 4px solid var(--acento); font-weight: 600; }
 
+.usos-lista { list-style: none; margin: 0; padding: 0; }
+.usos-lista li { padding: 2px 0; }
+
 /* Glosario: tabla en pantallas anchas, cards apiladas en angostas */
 .tabla { width: 100%; border-collapse: collapse; background: var(--surface); }
 .tabla th, .tabla td { text-align: left; vertical-align: top; padding: 12px; border-bottom: 1px solid var(--line); }

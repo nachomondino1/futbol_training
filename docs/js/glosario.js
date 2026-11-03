@@ -1,3 +1,4 @@
+import { completarItems, normalizarCircuitos } from "./estructura.js";
 import { h, imagenesNodos, variantesNodo, normalizar, renderHeader, cargarJSON, mostrarError } from "./common.js";
 
 const app = document.getElementById("app");
@@ -5,6 +6,7 @@ const app = document.getElementById("app");
 const estado = { tipo: null, sub: null, q: "" };
 let datos = null;
 let grupos = new Map(); // id -> grupo muscular o capacidad
+let usos = new Map();   // id de ejercicio -> Map(id de sesión -> {nombre, alternativa})
 
 renderHeader("glosario");
 
@@ -17,6 +19,30 @@ function celdaMedios(ej) {
   items.push(...imagenesNodos(ej));
   if (ej.video) items.push(h("a", { class: "btn", href: ej.video, target: "_blank", rel: "noopener" }, "Ver video"));
   return items.length ? h("div", { class: "medios" }, items) : null;
+}
+
+// En qué sesiones aparece cada ejercicio: en un bloque (directo o por un circuito) o como alternativa de un circuito.
+function calcularUsos(sesiones, circuitos) {
+  const porId = new Map(circuitos.map((c) => [c.id, c]));
+  const res = new Map();
+  const marcar = (ex, s, alternativa) => {
+    const m = res.get(ex) || res.set(ex, new Map()).get(ex);
+    if (!m.has(s.id) || (m.get(s.id).alternativa && !alternativa)) m.set(s.id, { nombre: s.nombre, alternativa });
+  };
+  for (const s of sesiones) for (const b of s.bloques) for (const o of b.opciones) {
+    const c = porId.get(o.circuito);
+    const items = c ? completarItems(c).items : o.items;
+    items.forEach((it) => marcar(it.ex, s, false));
+    (c?.opciones || []).forEach((x) => marcar(x.ex, s, true));
+  }
+  return res;
+}
+
+function sesionesNodo(ej) {
+  const m = usos.get(ej.id);
+  if (!m) return "—";
+  return h("ul", { class: "usos-lista" }, [...m].map(([id, u]) => h("li", {},
+    h("a", { href: `sesiones.html#${id}` }, u.nombre), u.alternativa ? h("span", { class: "alias" }, " (alternativa)") : null)));
 }
 
 // Los músculos viven al final de esta misma página: su id lleva prefijo para no chocar con los de los ejercicios.
@@ -52,6 +78,7 @@ function fila(ej) {
       trabajaNodo(ej)),
     h("td", { "data-label": "Cómo se hace" }, ej.descripcion),
     h("td", { "data-label": "Variantes" }, celdaVariantes(ej)),
+    h("td", { "data-label": "Sesiones" }, sesionesNodo(ej)),
     h("td", { "data-label": "Dosis" }, ej.dosis || "—"),
     h("td", { "data-label": "Imagen / video" }, celdaMedios(ej)));
 }
@@ -80,7 +107,7 @@ function renderLista() {
     return;
   }
   cont.replaceChildren(h("table", { class: "tabla" },
-    h("thead", {}, h("tr", {}, ["Ejercicio", "Categoría", "Cómo se hace", "Variantes", "Dosis", "Imagen / video"]
+    h("thead", {}, h("tr", {}, ["Ejercicio", "Categoría", "Cómo se hace", "Variantes", "Sesiones", "Dosis", "Imagen / video"]
       .map((t) => h("th", { scope: "col" }, t)))),
     h("tbody", {}, lista.map(fila))));
   resaltarHash();
@@ -178,8 +205,10 @@ function irAHash() {
 }
 
 try {
-  const [ex, mus] = await Promise.all([cargarJSON("data/exercises.json"), cargarJSON("data/muscles.json")]);
+  const [ex, mus, ses, cir] = await Promise.all([cargarJSON("data/exercises.json"), cargarJSON("data/muscles.json"),
+    cargarJSON("data/sessions.json"), cargarJSON("data/circuits.json")]);
   datos = ex;
+  usos = calcularUsos(ses.sesiones, normalizarCircuitos(cir));
   grupos = new Map(mus.grupos.map((g) => [g.id, g])); // await de nivel módulo: válido en <script type="module">
   armarPagina();
   irAHash();

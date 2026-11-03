@@ -1076,7 +1076,7 @@
       "descripcion": "4 series de 4 min al 90-95% de la FC máx., con 3 min de trote entre series. Es el protocolo noruego más estudiado para mejorar el VO2max en fútbol.",
       "dosis": null,
       "variantes": {},
-      "imagen": null,
+      "imagen": "img/ejercicios/intervalo-4x4.jpg",
       "video": null,
       "huerfano_ok": true,
       "trabaja": {
@@ -1454,9 +1454,11 @@
     {
       "id": "un-toque-cono-central",
       "nombre": "Un toque desde el cono central",
-      "alias": [],
+      "alias": [
+        "Pase y va"
+      ],
       "categoria": "pelota",
-      "descripcion": "Se hace de a dos. Uno se para en un cono central y el otro corre alrededor, en una zona circular de unos 5 m de radio. El que corre le da la pelota al del cono, que la devuelve de un solo toque hacia algún lado. El que corre va hasta donde fue la pelota y se la devuelve al del cono. El del cono hace correr mucho al otro: trabaja la aceleración.",
+      "descripcion": "Se hace de a dos, en una zona circular de unos 5 m de radio. Uno se queda fijo en un cono central y el otro corre alrededor. El que corre le pasa la pelota al del cono, que se la devuelve de un solo toque hacia un lado o hacia el otro, cambiando de dirección cada vez. El que corre va a buscarla y se la devuelve. Como la dirección cambia, tiene que arrancar desde parado o a media carrera. No se entrena la distancia sino la aceleración, la reacción y el primer toque con fatiga. A los 10-15 minutos el que corre tiene las piernas pesadas y el del cono casi no se mueve, así que conviene alternar los roles cada tanto. Sirve también como calentamiento activo para llegar con las piernas puestas al partido.",
       "dosis": null,
       "variantes": {},
       "imagen": null,
