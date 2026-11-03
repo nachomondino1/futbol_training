@@ -210,3 +210,19 @@ El Doc solo decía el grupo muscular de sentadilla y estocada (cuádriceps, glú
 - Dibujé 9 diagramas más (conducción a ritmo variable, progresión de aceleración, uno contra uno, pivote de 9, zigzag con pelota, V push & cut, sole + push, light touches y leg hop). Hay que validar que cada dibujo coincida con cómo se hace.
 - Siguen sin imagen 7: movilidad articular, técnica de carrera, estiramiento estático, activación dinámica, trote suave, nordic hamstring y centro al vértice del área. Los seis primeros son de movimiento del cuerpo (necesitan foto o ilustración) y del centro no tengo clara la geometría para dibujarlo.
 - Busqué fotos con licencia libre en Wikimedia Commons y no encontré nada adecuado (nordic hamstring y estiramientos no tienen archivos útiles). No descargué nada.
+
+## Filtros nuevos en Ejercicios (2026-11-03)
+
+- **Se hace solo / Hace falta alguien más:** usa el mismo `jugadores_min` que "Hoy somos" (sin dato o 1 = se hace solo). Esos mínimos son míos.
+- **Materiales que tengo:** desplegable con casillas (los materiales salen de los ejercicios, los más usados primero). Con materiales tildados se muestran los ejercicios que se pueden hacer con ellos y los que no piden nada. Lo que tildás queda guardado en el navegador. Hoy no filtra las opciones de las sesiones (se podría).
+
+- **Filtros rediseñados (2026-11-03):** ahora son tres botones en una fila (Categoría, Jugadores, Materiales). Al tocar uno se abre su menú con una pregunta ("¿Con pelota o sin pelota?", "¿Qué se trabaja?", "¿Cuántas personas hacen falta?", "Marcá los materiales que tenés"). Categoría muestra la subcategoría recién después de elegir con o sin pelota. El botón muestra lo elegido y aparece "✕ Limpiar filtros" junto a la cantidad.
+
+## Fotos de V push & cut, light touches, zigzag y sole + push (2026-11-03)
+
+- Pusiste las imágenes de los cuatro ejercicios (capturas de un video de un entrenador, con el botón de reproducir encima). Reemplazan a mis diagramas, que borré. Les agregué los conos como material (se ven en las fotos).
+- **Derechos:** son fotogramas de un video ajeno (con su título y el ícono de play). Si la web se publica, conviene confirmar que se puede usarlas o reemplazarlas por fotos propias; igual que las otras imágenes copiadas de internet.
+
+## Foto y video de "Pases cortos con control orientado" (2026-11-03)
+
+- Sumé tu foto (3 jugadores con un cuadrado de conos) y el video del reel. La foto va primero y debajo siguen los dibujos para 2, 3, 4 y 8. Es otro fotograma de un video ajeno (con el botón de play encima): mismo cuidado con los derechos que las otras.

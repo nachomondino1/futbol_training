@@ -327,48 +327,6 @@ def pivote_nueve():
     return cuerpo + texto(160, 24, "pase al pivote, la deja de primera y define", 11) + texto(205, 130, "pivote", 11)
 
 
-def zigzag_pelota():
-    pts = [(70, 140), (130, 60), (190, 140), (250, 60)]
-    cuerpo = "".join(cone(x, y + 14) for x, y in pts) + player(26, 100, 1) + pelota(46, 100)
-    cuerpo += arrow((26, 100), (70, 128), "mov", R, 6) + arrow((70, 128), (130, 72), "mov", 6, 6)
-    cuerpo += arrow((130, 72), (190, 128), "mov", 6, 6) + arrow((190, 128), (250, 72), "mov", 6, 6) + arrow((250, 72), (300, 110), "mov", 6, 4)
-    return cuerpo + texto(160, 190, "un control con el borde interno y otro con el externo", 10)
-
-
-def v_push_cut():
-    cuerpo = cone(160, 158) + player(160, 62, 1) + pelota(118, 84)
-    cuerpo += arrow((118, 84), (158, 140), "mov", 4, 4) + arrow((162, 140), (206, 84), "mov", 4, 4)
-    return (cuerpo + texto(160, 28, "pisás la pelota con la suela formando una V", 11)
-            + texto(160, 188, "con un cono en el vértice de abajo", 11))
-
-
-def sole_push():
-    cuerpo = player(50, 100, 1) + pelota(68, 100)
-    cuerpo += arrow((120, 92), (76, 92), "mov", 2, 2) + arrow((136, 108), (196, 108), "mov", 2, 2) + arrow((210, 100), (300, 100), "tiro", 2, 4)
-    return (cuerpo + texto(100, 72, "1 pisar hacia atrás", 11) + texto(165, 140, "2 toque hacia adelante", 11)
-            + texto(255, 72, "3 acelerar", 11))
-
-
-def light_touches():
-    cuerpo = player(26, 100, 1)
-    x = 46
-    for i in range(10):
-        cuerpo += arrow((x, 100), (x + 18, 100), "mov", 0, 0)[:0]
-        cuerpo += pelota(x + 10, 100)
-        x += 26
-    cuerpo += arrow((40, 128), (290, 128), "mov", 2, 4)
-    return cuerpo + texto(160, 70, "muchos toques suaves con el borde externo", 11) + texto(160, 165, "cambios de ritmo: acelerás y frenás con la pelota", 10)
-
-
-def leg_hop():
-    cuerpo = cone(160, 112)
-    saltos = [(80, "I"), (240, "I"), (80, "I"), (240, "I")]
-    cuerpo += player(80, 100, 1) + player(240, 100, 2)
-    cuerpo += curva("M 96 92 C 120 40, 200 40, 224 92")
-    cuerpo += curva("M 224 112 C 200 160, 120 160, 96 112")
-    return cuerpo + texto(160, 24, "a una pierna, pasando por encima del cono", 11) + texto(160, 190, "de lado a lado (o con algo bajo, como una pelota)", 10)
-
-
 UNICOS = {
     "cuadrado-uno-al-medio": cuadrado_medio,
     "pared-control-orientado-conos-dejada": dejada_vuelta,
@@ -384,11 +342,6 @@ UNICOS = {
     "progresion-aceleracion": progresion,
     "uno-contra-uno-tiro": uno_contra_uno,
     "pivote-9-definicion": pivote_nueve,
-    "zigzag": zigzag_pelota,
-    "v-push-cut": v_push_cut,
-    "sole-push-acceleration": sole_push,
-    "light-touches": light_touches,
-    "leg-hop": leg_hop,
 }
 
 

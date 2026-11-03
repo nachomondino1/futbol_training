@@ -58,9 +58,10 @@ export function imagenesNodos(ej) {
   const porCantidad = ej.imagenes || {};
   const claves = PERSONAS.filter((p) => porCantidad[String(p)]);
   if (claves.length) {
-    return claves.map((p) => h("figure", figAtributos,
+    const foto = ej.imagen ? [h("img", { src: ej.imagen, alt: ej.nombre, loading: "lazy", width: 640, height: 400 })] : [];
+    return foto.concat(claves.map((p) => h("figure", figAtributos,
       h("img", { src: porCantidad[String(p)], alt: `${ej.nombre}, con ${p}`, loading: "lazy", width: 640, height: 400 }),
-      h("figcaption", {}, `Con ${p}`)));
+      h("figcaption", {}, `Con ${p}`))));
   }
   return ej.imagen ? [h("img", { src: ej.imagen, alt: ej.nombre, loading: "lazy", width: 640, height: 400 })] : [];
 }
@@ -141,4 +142,18 @@ export function jugadoresControl(valor, alCambiar) {
     boton("+", "Uno más", Math.min(tope, (valor ?? 3) + 1), valor === tope),
     valor != null ? h("button", { type: "button", class: "jugadores-limpiar", onclick: () => alCambiar(null) }, "No filtrar") : null,
     h("span", { class: "jugadores-ayuda" }, valor == null ? "Decí cuántos son y te muestro solo las opciones que se pueden hacer." : "Se ocultan las opciones que necesitan más jugadores."));
+}
+
+// Qué materiales tenemos: se eligen en Ejercicios y quedan guardados en el navegador.
+const CLAVE_MATERIALES = "entrenamiento.materiales";
+
+export function leerMateriales() {
+  try {
+    const lista = JSON.parse(localStorage.getItem(CLAVE_MATERIALES) || "[]");
+    return Array.isArray(lista) ? lista.filter((m) => typeof m === "string") : [];
+  } catch { return []; }
+}
+
+export function guardarMateriales(lista) {
+  try { lista.length ? localStorage.setItem(CLAVE_MATERIALES, JSON.stringify(lista)) : localStorage.removeItem(CLAVE_MATERIALES); } catch { /* sin almacenamiento */ }
 }

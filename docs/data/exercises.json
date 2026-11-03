@@ -464,8 +464,8 @@
       "pendiente_validar": [
         "4"
       ],
-      "imagen": null,
-      "video": null,
+      "imagen": "img/ejercicios/pases-control-orientado.webp",
+      "video": "https://www.instagram.com/reel/DciTbW5KSrj",
       "imagenes": {
         "2": "img/pases-control-orientado-2.svg",
         "3": "img/pases-control-orientado-3.svg",
@@ -915,7 +915,7 @@
       "descripcion": "Saltos a una pierna de lado a lado, pasando por encima de un cono (o de algo bajo, como una pelota) puesto en el medio. Saltás el cono con cada salto, de un lado al otro. Sirve para sentirte liviano en los pies y también para mejorar la conducción.",
       "dosis": null,
       "variantes": {},
-      "imagen": "img/leg-hop.svg",
+      "imagen": "img/ejercicios/leg-hop.webp",
       "video": "https://www.instagram.com/reels/DXT_q2ACBXm/",
       "trabaja": {
         "principal": "gemelos",
@@ -964,7 +964,7 @@
       "nombre": "T-drill (conos en T)",
       "alias": [],
       "categoria": "velocidad",
-      "descripcion": "Sprint hacia adelante, shuffle lateral y backpedal, con los conos en forma de T. Combina velocidad en las 3 direcciones del fútbol. Variante: cada cono es de un color; gritás tres colores y el otro tiene que ir rápido a tocarlos y volver al cono rojo.",
+      "descripcion": "Sprint hacia adelante, shuffle lateral y backpedal, con los conos en forma de T. Combina velocidad en las 3 direcciones del fútbol.",
       "dosis": "4-6 reps con recuperación total",
       "variantes": {},
       "imagen": "img/ejercicios/t-drill.png",
@@ -1110,7 +1110,15 @@
       "materiales": [
         "conos"
       ],
-      "jugadores_min": 2
+      "jugadores_min": 2,
+      "patrones": [
+        {
+          "id": "colores",
+          "nombre": "Variante con conos de colores",
+          "descripcion": "Cada cono es de un color. Gritás tres colores y el otro tiene que ir rápido a tocarlos y volver al cono rojo.",
+          "imagen": "img/ejercicios/reactive-sprint-colores.webp"
+        }
+      ]
     },
     {
       "id": "hiit-15-15",
@@ -1233,7 +1241,7 @@
       "descripcion": "Individual. Sole (pisarla hacia atrás), push (toque hacia adelante) y accelerate (correr un poco). Combina coordinación y control.",
       "dosis": null,
       "variantes": {},
-      "imagen": "img/sole-push-acceleration.svg",
+      "imagen": "img/ejercicios/sole-push-acceleration.webp",
       "video": "https://www.instagram.com/reels/DXT_q2ACBXm/",
       "huerfano_ok": true,
       "trabaja": {
@@ -1248,7 +1256,8 @@
         "conduccion"
       ],
       "materiales": [
-        "pelota"
+        "pelota",
+        "conos"
       ]
     },
     {
@@ -1259,7 +1268,7 @@
       "descripcion": "Individual. Zigzag alternando un control con el borde interno y uno con el externo.",
       "dosis": null,
       "variantes": {},
-      "imagen": "img/zigzag.svg",
+      "imagen": "img/ejercicios/zigzag.webp",
       "video": "https://www.instagram.com/reels/DXT_q2ACBXm/",
       "huerfano_ok": true,
       "trabaja": {
@@ -1273,7 +1282,8 @@
         "conduccion"
       ],
       "materiales": [
-        "pelota"
+        "pelota",
+        "conos"
       ]
     },
     {
@@ -1284,7 +1294,7 @@
       "descripcion": "Individual y casi estático. Ponés un cono en el vértice de abajo de una V y vas pisando la pelota con la suela, dibujando una V con la pelota alrededor del cono. Mejora el cambio de dirección con la pelota.",
       "dosis": null,
       "variantes": {},
-      "imagen": "img/v-push-cut.svg",
+      "imagen": "img/ejercicios/v-push-cut.webp",
       "video": "https://www.instagram.com/reels/DXT_q2ACBXm/",
       "huerfano_ok": true,
       "trabaja": {
@@ -1310,7 +1320,7 @@
       "descripcion": "Individual. Conducción con el borde externo, con muchos toques y cambios de ritmo. Desarrolla la sensación de pelota y la capacidad de acelerar y frenar con el balón controlado.",
       "dosis": null,
       "variantes": {},
-      "imagen": "img/light-touches.svg",
+      "imagen": "img/ejercicios/light-touches.webp",
       "video": "https://www.instagram.com/reels/DXT_q2ACBXm/",
       "huerfano_ok": true,
       "trabaja": {
@@ -1324,7 +1334,8 @@
         "conduccion"
       ],
       "materiales": [
-        "pelota"
+        "pelota",
+        "conos"
       ]
     },
     {

@@ -1,9 +1,11 @@
 import { completarItems, normalizarCircuitos } from "./estructura.js";
-import { h, imagenesNodos, patronesNodos, variantesNodo, materialesNodo, normalizar, renderHeader, cargarJSON, mostrarError } from "./common.js";
+import { h, imagenesNodos, patronesNodos, variantesNodo, materialesNodo, leerMateriales, guardarMateriales, normalizar, renderHeader, cargarJSON, mostrarError } from "./common.js";
 
 const app = document.getElementById("app");
 // tipo: null | "con" | "sin" (pelota); sub: subcategoría de pelota (si tipo es "con") o categoría (si es "sin")
-const estado = { tipo: null, sub: null, q: "" };
+// gente: null | "solo" | "grupo"; materiales: los que tenemos (vacío = no filtrar por material)
+const estado = { tipo: null, sub: null, q: "", gente: null, materiales: new Set(leerMateriales()), menu: null };
+// menu: cuál de los tres filtros tiene el menú abierto (null | "categoria" | "jugadores" | "materiales")
 let datos = null;
 let grupos = new Map(); // id -> grupo muscular o capacidad
 let usos = new Map();   // id de ejercicio -> Map(id de sesión -> {nombre, alternativa})
@@ -65,6 +67,10 @@ const imagenCard = (ej) => ej.imagen || Object.values(ej.imagenes || {})[0] || e
 const categoriaDe = (ej) => datos.categorias.find((c) => c.id === ej.categoria);
 
 // Tarjeta de la grilla: solo imagen y nombre; tocarla abre el detalle.
+// Etiquetas de la tarjeta: la categoría y, si es de pelota, qué trabaja (tiro, control orientado...).
+const tagsDe = (ej) => [categoriaDe(ej)?.nombre || ej.categoria,
+  ...(ej.subcategorias || []).map((id) => datos.subcategorias.find((x) => x.id === id).nombre)];
+
 const esIndividual = (ej) => !ej.jugadores_min || ej.jugadores_min === 1;
 
 function tarjeta(ej) {
@@ -75,8 +81,9 @@ function tarjeta(ej) {
         ? h("img", { src, alt: "", loading: "lazy", width: 640, height: 400 })
         : h("span", { class: "ej-card__vacio" },
             h("span", { class: "ej-card__emoji", "aria-hidden": "true" }, EMOJI[ej.categoria] || "⚽"),
-            categoriaDe(ej)?.nombre || "")),
-    h("span", { class: "ej-card__nombre" }, ej.nombre));
+            )),
+    h("span", { class: "ej-card__nombre" }, ej.nombre),
+    h("span", { class: "ej-card__tags" }, tagsDe(ej).map((t) => h("span", { class: "etiqueta" }, t))));
 }
 
 // Detalle de un ejercicio: lo que antes eran las columnas de la tabla.
@@ -113,6 +120,10 @@ function visibles() {
       const cumple = estado.tipo === "con" ? (e.subcategorias || []).includes(estado.sub) : e.categoria === estado.sub;
       if (!cumple) return false;
     }
+    if (estado.gente === "solo" && !esIndividual(e)) return false;
+    if (estado.gente === "grupo" && esIndividual(e)) return false;
+    // con materiales elegidos: solo los ejercicios que se pueden hacer con ellos (los que no piden nada siempre entran)
+    if (estado.materiales.size && !(e.materiales || []).every((m) => estado.materiales.has(m))) return false;
     if (!q) return true;
     return [e.nombre, ...(e.alias || []), grupos.get(e.trabaja.principal).nombre].some((t) => normalizar(t).includes(q));
   });
@@ -121,30 +132,111 @@ function visibles() {
 function renderLista() {
   const lista = visibles();
   const cont = document.getElementById("lista");
-  document.getElementById("conteo").textContent =
-    `${lista.length} ${lista.length === 1 ? "ejercicio" : "ejercicios"}`;
+  const conteo = document.getElementById("conteo");
+  conteo.replaceChildren(`${lista.length} ${lista.length === 1 ? "ejercicio" : "ejercicios"}`);
+  if (hayFiltros()) conteo.append(h("button", { type: "button", class: "limpiar-filtros", onclick: limpiarFiltros }, "✕ Limpiar filtros"));
   if (!lista.length) {
-    cont.replaceChildren(h("p", { class: "vacio" }, "No hay ejercicios con ese filtro."));
+    cont.replaceChildren(h("p", { class: "vacio" }, "No hay ejercicios con esos filtros."));
     return;
   }
   cont.replaceChildren(h("div", { class: "galeria" }, lista.map(tarjeta)));
 }
 
+// --- Filtros: tres botones (Categoría, Jugadores, Materiales). Al tocar uno se abre su menú debajo. ---
+const hayFiltros = () => !!(estado.tipo || estado.sub || estado.gente || estado.materiales.size);
+
+function limpiarFiltros() {
+  estado.tipo = estado.sub = estado.gente = estado.menu = null;
+  estado.materiales.clear();
+  guardarMateriales([]);
+  renderFiltros();
+  renderLista();
+}
+
+// Materiales que aparecen en algún ejercicio, los más usados primero.
+function materialesDisponibles() {
+  const cuenta = new Map();
+  datos.ejercicios.forEach((e) => (e.materiales || []).forEach((m) => cuenta.set(m, (cuenta.get(m) || 0) + 1)));
+  return [...cuenta].sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], "es")).map(([m]) => m);
+}
+
+const mayus = (t) => t.charAt(0).toUpperCase() + t.slice(1);
+
+// Qué dice cada botón: su nombre, o su nombre y lo elegido.
+function nombreSub() {
+  const lista = estado.tipo === "con" ? datos.subcategorias : datos.categorias;
+  return lista.find((x) => x.id === estado.sub)?.nombre;
+}
+const textoCategoria = () => !estado.tipo ? "Categoría"
+  : `${estado.tipo === "con" ? "Con pelota" : "Sin pelota"}${estado.sub ? ` · ${nombreSub()}` : ""}`;
+const textoJugadores = () => estado.gente === "solo" ? "Se hace solo" : estado.gente === "grupo" ? "Con alguien más" : "Jugadores";
+const textoMateriales = () => estado.materiales.size ? `Materiales · ${estado.materiales.size}` : "Materiales";
+
 function chip(nombre, activo, alClick) {
   return h("button", { class: "chip", type: "button", "aria-pressed": String(activo), onclick: alClick }, nombre);
 }
 
-// Primera fila: con pelota o sin pelota. Segunda fila: las subcategorías de pelota o, sin pelota, las categorías.
-function renderChips() {
-  const eleg = (tipo, sub = null) => { estado.tipo = tipo; estado.sub = sub; renderChips(); renderLista(); };
-  document.getElementById("chips").replaceChildren(
-    chip("Todos", !estado.tipo, () => eleg(null)),
-    chip("Con pelota", estado.tipo === "con", () => eleg("con")),
-    chip("Sin pelota", estado.tipo === "sin", () => eleg("sin")));
+function renderPildoras() {
+  const botones = [
+    ["categoria", textoCategoria(), !!estado.tipo],
+    ["jugadores", textoJugadores(), !!estado.gente],
+    ["materiales", textoMateriales(), estado.materiales.size > 0],
+  ].map(([id, texto, activo]) => h("button", {
+    type: "button", class: "chip filtro-pildora", "aria-pressed": String(activo), "aria-expanded": String(estado.menu === id),
+    onclick: () => { estado.menu = estado.menu === id ? null : id; renderFiltros(); } },
+    h("span", { class: "filtro-texto" }, texto), h("span", { class: "filtro-flecha", "aria-hidden": "true" }, "▾")));
+  document.getElementById("filtro-pildoras").replaceChildren(...botones);
+}
+
+// Cada elección se aplica al instante. Los menús de una sola opción se cierran solos; el de materiales queda abierto para tildar varios.
+function panelCategoria() {
+  const elegir = (tipo, sub = null, cerrar = false) => { estado.tipo = tipo; estado.sub = sub; if (cerrar) estado.menu = null; renderFiltros(); renderLista(); };
   const segunda = estado.tipo === "con" ? datos.subcategorias : estado.tipo === "sin" ? datos.categorias.filter((c) => c.id !== "pelota") : [];
-  document.getElementById("chips-sub").replaceChildren(...(segunda.length
-    ? [chip("Todas", !estado.sub, () => eleg(estado.tipo)), ...segunda.map((c) => chip(c.nombre, estado.sub === c.id, () => eleg(estado.tipo, c.id)))]
-    : []));
+  return [
+    h("p", { class: "menu-tit" }, "¿Con pelota o sin pelota?"),
+    h("div", { class: "chips" },
+      chip("Todos", !estado.tipo, () => elegir(null, null, true)),
+      chip("Con pelota", estado.tipo === "con", () => elegir("con")),
+      chip("Sin pelota", estado.tipo === "sin", () => elegir("sin"))),
+    segunda.length ? h("p", { class: "menu-tit" }, estado.tipo === "con" ? "¿Qué se trabaja?" : "¿Qué categoría?") : null,
+    segunda.length
+      ? h("div", { class: "chips" },
+          chip("Todas", !estado.sub, () => elegir(estado.tipo, null, true)),
+          ...segunda.map((c) => chip(c.nombre, estado.sub === c.id, () => elegir(estado.tipo, c.id, true))))
+      : null];
+}
+
+function panelJugadores() {
+  const elegir = (g) => { estado.gente = g; estado.menu = null; renderFiltros(); renderLista(); };
+  return [
+    h("p", { class: "menu-tit" }, "¿Cuántas personas hacen falta?"),
+    h("div", { class: "chips" },
+      chip("Cualquiera", !estado.gente, () => elegir(null)),
+      chip("Se hace solo", estado.gente === "solo", () => elegir("solo")),
+      chip("Hace falta alguien más", estado.gente === "grupo", () => elegir("grupo")))];
+}
+
+function panelMateriales() {
+  const casillas = materialesDisponibles().map((m) => h("label", { class: "menu-opcion" },
+    h("input", { type: "checkbox", checked: estado.materiales.has(m), onchange: (e) => {
+      e.target.checked ? estado.materiales.add(m) : estado.materiales.delete(m);
+      guardarMateriales([...estado.materiales]);
+      renderPildoras(); // solo el botón: el menú queda como está
+      renderLista();
+    } }), mayus(m)));
+  return [
+    h("p", { class: "menu-tit" }, "Marcá los materiales que tenés"),
+    h("p", { class: "menu-ayuda" }, "Se muestran los ejercicios que podés hacer con eso, y los que no piden nada."),
+    h("div", { class: "menu-lista" }, casillas),
+    estado.materiales.size ? h("button", { type: "button", class: "menu-limpiar", onclick: () => {
+      estado.materiales.clear(); guardarMateriales([]); renderFiltros(); renderLista(); } }, "Quitar todos") : null];
+}
+
+function renderFiltros() {
+  renderPildoras();
+  const panel = document.getElementById("filtro-panel");
+  const contenido = { categoria: panelCategoria, jugadores: panelJugadores, materiales: panelMateriales }[estado.menu];
+  panel.replaceChildren(...(contenido ? contenido() : []));
 }
 
 // Músculo o capacidad: qué ejercicios lo trabajan (como principal o secundario) y para qué sirve.
@@ -186,15 +278,15 @@ function vistaLista() {
     h("p", { class: "intro" }, h("a", { href: "#musculos" }, "Músculos y para qué sirve cada uno ↓")),
     h("div", { class: "controles" },
       buscar,
-      h("div", { class: "chips", id: "chips", role: "group", "aria-label": "Con pelota o sin pelota" }),
-      h("div", { class: "chips", id: "chips-sub", role: "group", "aria-label": "Filtrar por subcategoría" })),
+      h("div", { class: "filtro-fila", id: "filtro-pildoras", role: "group", "aria-label": "Filtros" }),
+      h("div", { class: "menu-panel", id: "filtro-panel" })),
     h("p", { class: "conteo", id: "conteo", "aria-live": "polite" }),
     h("p", { class: "leyenda" },
       h("span", { class: "leyenda__punto leyenda__punto--individual", "aria-hidden": "true" }), "Se hace solo",
       h("span", { class: "leyenda__punto", "aria-hidden": "true" }), "Hace falta alguien más"),
     h("div", { id: "lista" }),
     seccionMusculos());
-  renderChips();
+  renderFiltros();
   renderLista();
 }
 
