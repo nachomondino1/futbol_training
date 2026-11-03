@@ -210,29 +210,88 @@
         "trabajo_s": 40,
         "descanso_s": 20,
         "pausa_vuelta_s": 120
-      }
+      },
+      "plegado": true
     },
     {
       "id": "fuerza-coordinacion-cierre",
       "nombre": "Fuerza, coordinación y cierre",
-      "descripcion": "Plantilla de tres partes, una detrás de la otra. La última parte cambia según el día: pelota, trabajo aeróbico o salir corriendo a máxima velocidad.",
-      "huerfano_ok": true,
-      "partes": [
+      "descripcion": "Seis estaciones y, en cada una, tres partes seguidas que hace la misma persona: primero fuerza, después coordinación y para terminar velocidad o pelota. Cada estación la ocupa una persona y todos rotan cuando se cumple el tiempo. Abajo hay una propuesta y los otros ejercicios que también sirven en cada parte.",
+      "bancos": [
+        "fuerza",
+        "coordinacion",
+        "pelota",
+        "velocidad"
+      ],
+      "guia": "circuito-estaciones",
+      "estructura": {
+        "modo": "circuito",
+        "vueltas": 3,
+        "trabajo_s": 100,
+        "descanso_s": 30,
+        "pausa_vuelta_s": 180
+      },
+      "plegado": true,
+      "items": [
         {
-          "banco": "fuerza"
+          "ex": "sentadilla-explosiva"
         },
         {
-          "banco": "coordinacion"
+          "ex": "escalera",
+          "nota": "Un pie por cuadrado."
         },
         {
-          "nombre": "Pelota, aeróbico o velocidad",
-          "bancos": [
-            "pelota",
-            "aerobico",
-            "velocidad"
-          ]
+          "ex": "conduccion-ritmo-variable",
+          "nota": "Hasta un cono y volver."
+        },
+        {
+          "ex": "zancada-estatica"
+        },
+        {
+          "ex": "tecnica-carrera",
+          "nota": "Skipping bajo."
+        },
+        {
+          "ex": "sprint-5-10-5"
+        },
+        {
+          "ex": "puente-gluteo"
+        },
+        {
+          "ex": "aceleracion-conos-zigzag"
+        },
+        {
+          "ex": "zigzag"
+        },
+        {
+          "ex": "plancha-frontal"
+        },
+        {
+          "ex": "t-drill"
+        },
+        {
+          "ex": "light-touches"
+        },
+        {
+          "ex": "elevacion-talones"
+        },
+        {
+          "ex": "leg-hop"
+        },
+        {
+          "ex": "v-push-cut"
+        },
+        {
+          "ex": "plancha-lateral"
+        },
+        {
+          "ex": "sole-push-acceleration"
+        },
+        {
+          "ex": "flying-sprint"
         }
-      ]
+      ],
+      "agrupar": 3
     }
   ]
 }

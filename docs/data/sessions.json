@@ -268,32 +268,9 @@
       "objetivo": "Capacidad aeróbica: volumen o intervalos, con pelota o sin ella, y un circuito para activar las piernas.",
       "bloques": [
         {
-          "titulo": "Coordinación",
-          "min": 10,
-          "opciones": [
-            {
-              "label": "Escalera de coordinación",
-              "items": [
-                {
-                  "ex": "escalera"
-                }
-              ]
-            }
-          ]
-        },
-        {
           "titulo": "Aeróbico",
           "min": 35,
           "opciones": [
-            {
-              "label": "Trote continuo",
-              "items": [
-                {
-                  "ex": "trote-continuo",
-                  "dosis": "30 min"
-                }
-              ]
-            },
             {
               "label": "HIIT 10/10",
               "items": [
@@ -304,11 +281,21 @@
               "estructura": {
                 "modo": "series",
                 "sets": 15,
-                "vueltas": 2,
+                "vueltas": 3,
                 "trabajo_s": 10,
                 "descanso_s": 10,
                 "pausa_vuelta_s": 120
               }
+            },
+            {
+              "label": "Trote continuo",
+              "items": [
+                {
+                  "ex": "trote-continuo",
+                  "dosis": "30 min"
+                }
+              ],
+              "min": 30
             },
             {
               "label": "Rondo",
@@ -339,7 +326,8 @@
                 {
                   "ex": "intervalo-4x4"
                 }
-              ]
+              ],
+              "min": 25
             },
             {
               "label": "Reducido",
@@ -352,12 +340,64 @@
           ]
         },
         {
-          "titulo": "Circuito de fuerza",
-          "min": 25,
+          "titulo": "Circuito de fuerza, coordinación y cierre",
+          "min": 45,
           "opciones": [
             {
-              "label": "Circuito de fuerza",
-              "circuito": "circuito-fuerza"
+              "label": "Fuerza, coordinación y cierre",
+              "circuito": "fuerza-coordinacion-cierre"
+            },
+            {
+              "label": "Solo fuerza",
+              "circuito": "circuito-fuerza",
+              "min": 25
+            }
+          ]
+        },
+        {
+          "titulo": "Pelota suave",
+          "min": 10,
+          "opcional": true,
+          "opciones": [
+            {
+              "label": "El loco",
+              "items": [
+                {
+                  "ex": "el-loco"
+                }
+              ]
+            },
+            {
+              "label": "Posesión XvX en cuadrado",
+              "items": [
+                {
+                  "ex": "posesion-cuadrado"
+                }
+              ]
+            },
+            {
+              "label": "Rondo",
+              "items": [
+                {
+                  "ex": "rondo"
+                }
+              ]
+            },
+            {
+              "label": "Light touches (solo)",
+              "items": [
+                {
+                  "ex": "light-touches"
+                }
+              ]
+            },
+            {
+              "label": "Conducción a ritmo variable (solo)",
+              "items": [
+                {
+                  "ex": "conduccion-ritmo-variable"
+                }
+              ]
             }
           ]
         }

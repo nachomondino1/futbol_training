@@ -158,7 +158,7 @@ h1 { font-size: 1.9rem; line-height: 1.15; margin: 8px 0 16px; }
   :root:not([data-theme="light"]) .cat { color: #7fd9a8; }
 }
 .medios { display: flex; flex-direction: column; gap: 8px; align-items: flex-start; }
-.medios img { max-width: 100%; height: auto; border-radius: 6px; }
+
 .btn {
   display: inline-flex;
   align-items: center;
@@ -264,8 +264,8 @@ h1 { font-size: 1.9rem; line-height: 1.15; margin: 8px 0 16px; }
 .fig figcaption { font-weight: 700; font-size: .9rem; color: var(--ink-soft); padding-top: 2px; }
 /* Varias imágenes por cantidad de personas: grilla, cada una a un tamaño que se lee */
 .medios:has(.fig:nth-child(2)) { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; align-items: start; width: 100%; }
-.medios:has(.fig:nth-child(2)) > img, .medios:has(.fig:nth-child(2)) > .btn { grid-column: 1 / -1; justify-self: start; }
-.medios .fig img { width: 100%; }
+.medios:has(.fig:nth-child(2)) > .marco, .medios:has(.fig:nth-child(2)) > .btn { grid-column: 1 / -1; justify-self: start; }
+
 
 /* Ficha de vueltas / trabajo / descanso */
 .ficha { margin: 0; display: grid; }
@@ -320,17 +320,6 @@ h1 { font-size: 1.9rem; line-height: 1.15; margin: 8px 0 16px; }
 .ganas-poco { margin: 8px 0 0; color: var(--ink-soft); font-weight: 600; }
 .ganas-nota { margin: 6px 0 0; font-size: .85rem; color: var(--ink-soft); }
 
-/* Cuántos somos hoy */
-.jugadores { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin: 4px 0 20px; padding: 10px 14px; background: var(--surface); border: 2px solid var(--line); border-radius: var(--radio); }
-.jugadores-tit { font-weight: 700; }
-.jugadores-n { min-width: 3.2rem; text-align: center; font-size: 1.4rem; line-height: 1; }
-.jugadores-btn { width: var(--tap); height: var(--tap); border-radius: 50%; border: 2px solid var(--ink); background: var(--surface); color: var(--ink); font: inherit; font-size: 1.5rem; font-weight: 700; cursor: pointer; transition: background .15s ease, transform .15s ease; }
-.jugadores-btn:hover:not(:disabled) { background: var(--resalte); }
-.jugadores-btn:active:not(:disabled) { transform: scale(.93); }
-.jugadores-btn:disabled { opacity: .35; cursor: default; }
-.jugadores-limpiar { min-height: 40px; padding: 0 14px; border-radius: 999px; border: 0; background: none; color: inherit; font: inherit; text-decoration: underline; cursor: pointer; }
-.jugadores-ayuda { flex-basis: 100%; color: var(--ink-soft); font-size: .92rem; }
-.bloque-oculto { margin: 0 0 8px; color: var(--ink-soft); font-size: .92rem; }
 
 /* Ejercicios: grilla de tarjetas */
 .galeria { display: grid; gap: 12px; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); }
@@ -387,12 +376,27 @@ h1 { font-size: 1.9rem; line-height: 1.15; margin: 8px 0 16px; }
 .menu-opcion input { width: 22px; height: 22px; accent-color: var(--pasto-1); }
 .menu-limpiar, .limpiar-filtros { justify-self: start; min-height: 36px; padding: 0 4px; border: 0; background: none; color: inherit; font: inherit; text-decoration: underline; cursor: pointer; }
 .limpiar-filtros { margin-left: 10px; }
-.medios:has(.fig:nth-child(3)) > 
 /* Patrones y variantes de un ejercicio: nombre, descripción y debajo la imagen */
 .patrones { display: grid; gap: 22px; }
 .patron { display: grid; gap: 6px; padding-top: 14px; border-top: 1px solid var(--line); }
 .patron:first-child { border-top: 0; padding-top: 0; }
 .patron__nombre { margin: 0; font-size: 1.05rem; }
 .patron__texto { margin: 0; }
-.patron__imagen { display: block; width: 100%; max-width: 480px; height: auto; border-radius: 8px; }
 .patron__video { justify-self: start; }
+.bloque-opcional { margin-left: 10px; font-size: .75rem; vertical-align: middle; background: var(--surface); color: var(--ink); border-color: var(--ink); }
+.resumen-nombre .etiqueta { margin-left: 8px; font-size: .75rem; }
+
+/* Circuito con estaciones de varias partes */
+.estacion-lista { margin-top: 14px; }
+.estacion-lista h4, .estacion__titulo { margin: 0 0 6px; font-size: 1.05rem; }
+.estaciones { display: grid; gap: 14px; margin-top: 14px; }
+.estacion { padding: 10px 12px; background: var(--bg); border-radius: 10px; }
+
+/* Opciones de un bloque que se pueden hacer solo: amarillo, como las tarjetas de Ejercicios */
+.chip--individual { border-color: var(--acento); background: var(--resalte); }
+.chip--individual[aria-pressed="true"] { background: var(--ink); color: var(--bg); box-shadow: inset 0 0 0 2px var(--acento); }
+
+/* Marco de imagen: tamaño máximo para que una imagen no ocupe tanto espacio. La imagen entra entera y centrada. */
+.marco { box-sizing: border-box; max-width: 480px; max-height: 320px; display: flex; justify-content: center; align-items: center; overflow: hidden; border-radius: 8px; }
+.marco img { display: block; width: auto; height: auto; max-width: 100%; max-height: 320px; object-fit: contain; }
+.fig .marco { max-width: 100%; }

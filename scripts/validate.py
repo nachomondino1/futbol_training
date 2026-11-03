@@ -61,6 +61,12 @@ def validar_estructura(where: str, o: dict, guias: dict, minutos: int | None) ->
             errors.append(f"{where}: estructura.{k} debe ser un entero positivo")
             return
     n = len(o["items"])
+    agrupar = o.get("agrupar")
+    if agrupar is not None and (not isinstance(agrupar, int) or agrupar < 2 or n % agrupar):
+        errors.append(f"{where}: 'agrupar' debe ser un entero >= 2 y dividir la cantidad de ejercicios ({n})")
+        return
+    if agrupar:
+        n = n // agrupar  # cada grupo es una estación
     if modo == "circuito" and n < 2:
         errors.append(f"{where}: un circuito necesita al menos 2 estaciones")
     if modo == "series" and n != 1:
@@ -133,6 +139,12 @@ def main() -> int:
                 errors.append(f"circuito {c['id']}: usa un banco inexistente '{c['banco']}'")
             else:
                 c["opciones"] = bancos[c["banco"]]["opciones"]
+        if c.get("bancos"):
+            faltan = [b for b in c["bancos"] if b not in bancos]
+            for b in faltan:
+                errors.append(f"circuito {c['id']}: usa un banco inexistente '{b}'")
+            if not faltan:
+                c["opciones"] = [o for b in c["bancos"] for o in bancos[b]["opciones"]]
         for pi, parte in enumerate(c.get("partes", []), 1):
             if parte.get("banco"):
                 if parte["banco"] not in bancos:
@@ -273,20 +285,12 @@ def main() -> int:
                     for p in it.get("pendiente_validar", []):
                         warnings.append(f"{s['id']}/{it['ex']}: variante de {p} personas propuesta, sin validar")
 
-    # Jugadores: jugadores_min válido y avisar de los bloques que no tienen opciones para grupos chicos
+    # Jugadores: jugadores_min válido (lo usan el filtro y los colores de Ejercicios)
     ex_por_id = {e["id"]: e for e in ejercicios}
     for e in ejercicios:
         m = e.get("jugadores_min")
         if m is not None and (not isinstance(m, int) or m < 1):
             errors.append(f"{e['id']}: jugadores_min debe ser un entero >= 1")
-    for s_ in ses_data["sesiones"]:
-        for b in s_["bloques"]:
-            minimos = []
-            for o in b["opciones"]:
-                its = completar_items(circuitos[o["circuito"]])["items"] if o.get("circuito") in circuitos else o.get("items", [])
-                minimos.append(max([ex_por_id.get(i["ex"], {}).get("jugadores_min", 1) for i in its] + [1]))
-            if minimos and min(minimos) > 1:
-                warnings.append(f"{s_['id']}/{b['titulo']}: con menos de {min(minimos)} jugadores el bloque no tiene opciones")
 
     for c in circ_data:
         where = f"circuito {c['id']}"
@@ -303,6 +307,11 @@ def main() -> int:
                         errors.append(f"{where}: parte {pi}: ex inexistente '{o['ex']}'")
             if all(p.get("opciones") for p in partes):
                 c = completar_items(c)
+        elif c.get("opciones") and c.get("items"):  # ejercicios fijos + alternativas
+            for o in c["opciones"]:
+                usados.add(o["ex"])
+                if o["ex"] not in ids:
+                    errors.append(f"{where}: ex inexistente en el banco '{o['ex']}'")
         elif c.get("opciones"):  # lista de ejercicios posibles + orden propuesto
             pool = {o["ex"] for o in c["opciones"]}
             for o in c["opciones"]:
@@ -322,6 +331,10 @@ def main() -> int:
         if not c.get("items"):
             errors.append(f"{where}: sin items")
             continue
+        if c.get("agrupar"):
+            vistos = [it["ex"] for it in c["items"]]
+            for ex_id in sorted({x for x in vistos if vistos.count(x) > 1}):
+                warnings.append(f"{where}: repite el ejercicio '{ex_id}' en varias estaciones")
         for it in c["items"]:
             usados.add(it["ex"])
             if it["ex"] not in ids:

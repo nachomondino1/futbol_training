@@ -1,5 +1,5 @@
 import { h, renderHeader, cargarJSON, mostrarError } from "./common.js";
-import { completarItems, estructuraNodo, guiaDetalle, masGanado, normalizarCircuitos, repartirMinutos } from "./estructura.js";
+import { agruparEstaciones, completarItems, estructuraNodo, guiaDetalle, masGanado, normalizarCircuitos, repartirMinutos } from "./estructura.js";
 
 const app = document.getElementById("app");
 renderHeader("circuitos");
@@ -94,23 +94,29 @@ function tarjetaPlantilla(c) {
     usadoEn(c));
 }
 
-// Circuito de ejercicios fijos, en orden.
+// Circuito de ejercicios fijos, en orden. Con "agrupar", cada grupo de ejercicios es una estación.
 function tarjetaSimple(c) {
   const ef = completarItems(c);
   const guia = c.guia ? guiaDetalle(guias[c.guia]) : null;
+  const usados = new Set(ef.items.map((it) => it.ex));
+  const etiqueta = (it, ej) => categorias.get(ej.categoria);
   return h("section", { class: "musculo circuito", id: c.id },
     h("h2", {}, c.nombre),
     etiquetas(ef.items),
     h("p", { class: "musculo-para" }, c.descripcion),
     ef.estructura ? estructuraNodo(ef, guia) : guia,
-    h("h3", {}, `${ef.items.length} ejercicios, en este orden`),
-    listaEjercicios(ef.items, (it, ej) => categorias.get(ej.categoria)),
+    ef.agrupar
+      ? [h("h3", {}, `${Math.ceil(ef.items.length / ef.agrupar)} estaciones, ${ef.agrupar} ejercicios en cada una`),
+         ...agruparEstaciones(ef.items, ef.agrupar).map((grupo, k) => h("div", { class: "estacion-lista" },
+           h("h4", {}, `Estación ${k + 1}`), listaEjercicios(grupo, etiqueta)))]
+      : [h("h3", {}, `${ef.items.length} ejercicios, en este orden`), listaEjercicios(ef.items, etiqueta)],
+    c.opciones ? alternativasNodo("Otros ejercicios que podés usar", c.opciones.filter((o) => !usados.has(o.ex))) : null,
     usadoEn(c));
 }
 
 function tarjeta(c) {
   if (c.partes) return tarjetaPlantilla(c);
-  if (c.opciones) return tarjetaPool(c);
+  if (c.opciones && c.propuesta) return tarjetaPool(c);
   return tarjetaSimple(c);
 }
 

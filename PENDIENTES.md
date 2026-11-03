@@ -263,3 +263,42 @@ El Doc solo decía el grupo muscular de sentadilla y estocada (cuádriceps, glú
 ## Entrada en calor como sesión (2026-11-03)
 
 - El circuito de entrada en calor pasó a ser la **quinta sesión** ("Entrada en calor", unos 22 min): trote y activación dinámica (8), aceleración y velocidad (4), posesión XvX en cuadrado (6) y tiro al arco si hay arco (4). Se eliminó el circuito `activacion`. Con esto se supera el máximo de 4 sesiones que habías pedido (lo elegiste vos). Los minutos por bloque los puse yo; con menos de 4 jugadores la posesión no tiene opciones (el aviso sale solo).
+
+## "Hoy somos" sacado de las sesiones (2026-11-03)
+
+- Se quitó el selector "Hoy somos" y el filtrado de opciones por cantidad de jugadores en las sesiones. Queda como posible mejora futura (ver `PLAN_CANTIDAD_JUGADORES.md`; el código está en el commit `9d7073d`). Se mantienen `jugadores_min` y el filtro "Jugadores" en Ejercicios.
+
+## La duración del bloque depende de la opción (2026-11-03)
+
+- En las sesiones, los minutos de un bloque y el total ahora cambian según la opción elegida. Las series (HIIT, rondo) se calculan solas con su estructura; las demás opciones pueden traer su propio `min`. En el bloque Aeróbico: **HIIT 10/10 = 12 min** (2 vueltas de 15 sets de 10 s / 10 s + 2 min de pausa), **Rondo = 28 min**, **Intervalo 4×4 = 25 min** (4 series de 4 min + 3 de trote) y **Trote continuo = 30 min**.
+- **Faltan HIIT 15/15 y Reducido:** no sé cuánto duran, así que siguen en 35 min (el valor del bloque). Si me decís cuánto, los ajusto. La tarjeta de la sesión suma con la primera opción de cada bloque (Aeróbico queda en 65 min).
+- Con HIIT 10/10 el bloque dura 12 min y la sesión 47: sobra tiempo. Se podría sugerir sumar más trabajo (otra serie, trote antes) cuando la opción es corta.
+
+- **HIIT 10/10 en Aeróbico:** como dura solo 12 min, le agregué una nota que sugiere sumar 10-15 min de trote suave antes o una tercera vuelta (unos 19 min). No cambié el protocolo que me diste (2 vueltas de 15 sets); si preferís que quede fijo con más trabajo, decime cuál.
+
+- **HIIT 10/10 ahora son 3 vueltas** (15 sets de 10 s / 10 s, con 2 min de pausa entre vueltas): unos 19 min. Reemplaza a la nota anterior que sugería sumar trabajo.
+
+- **HIIT 10/10 es la opción por defecto del bloque Aeróbico** (primera de la lista): la sesión Aeróbico queda en 54 min (+ 10 opcionales).
+
+## Circuito de fuerza, coordinación y cierre en la sesión Aeróbico (2026-11-03)
+
+- Sesión Aeróbico: **se sacó el bloque de coordinación (escalera)**; ahora arranca con el bloque Aeróbico y sigue el circuito, y al final queda Pelota suave (opcional). Con HIIT 10/10 la sesión dura 49 min (+ 10 opcionales).
+- **Circuito nuevo "Fuerza, coordinación y cierre"** (reemplaza a la plantilla que ninguna sesión usaba): 6 estaciones de 40 s / 20 s y 2 min de pausa entre vueltas, **4 vueltas = unos 30 min** (el de solo fuerza queda en 3 vueltas). Propuesta mía: estocada, escalera (pie-pie), puente de glúteo, técnica de carrera (skipping bajo), plancha frontal y light touches; las alternativas salen de los bancos de fuerza, coordinación y pelota. La velocidad quedó afuera a propósito (un sprint de 40 s deja de ser velocidad). Si preferís 3 vueltas o otras estaciones, decime.
+- La sesión ofrece las dos versiones del circuito: "Fuerza, coordinación y cierre" (por defecto) y "Solo fuerza".
+
+- **Circuito "Fuerza, coordinación y cierre" ahora de 45 min:** 6 estaciones de **50 s de trabajo y 20 s de descanso**, **5 vueltas** y **2 min 30 s de pausa** entre vueltas (exacto 45 min). Subí el trabajo de 40 a 50 s y el descanso lo dejé en 20 s (con 25 s serían unos 46 min). El bloque dura 45 min y la sesión Aeróbico, con HIIT 10/10, 64 min (+ 10 opcionales). La versión "Solo fuerza" sigue con 3 vueltas de 40/20 (25 min). Ajustalo si preferís otros números.
+
+## Estaciones de tres partes (2026-11-03)
+
+- El circuito "Fuerza, coordinación y cierre" ahora tiene **6 estaciones y en cada una tres partes seguidas** (fuerza, coordinación y velocidad o pelota), que hace la misma persona; cada estación la ocupa una persona y rotan al cumplirse el tiempo. Cada estación dura **1 min 40 s de trabajo** (unos 33 s por parte) + **30 s de descanso**, **3 vueltas** y **3 min de pausa**: unos **45 min** exactos. La sesión Aeróbico queda en 64 min (+ 10 opcionales).
+- **Las 18 partes las propuse yo** (por ejemplo: 1 sentadilla explosiva, escalera, conducción hasta un cono y volver; 2 estocada, técnica de carrera, sprint 5-10-5; 3 puente de glúteo, aceleración en zigzag, zigzag con pelota; 4 plancha frontal, técnica de carrera, light touches; 5 elevación de talones, leg hop, V push & cut; 6 plancha lateral, técnica de carrera, sole + push). Usé una sola estación con la escalera, porque tienen una sola. Cambiá lo que no sirva. Los otros ejercicios que sirven se listan aparte (hoy no se eligen por parte).
+- La guía "Cómo rotar las estaciones" fue escrita para estaciones de un solo ejercicio; conviene revisarla.
+
+- **Sin ejercicios repetidos en las 6 estaciones** (la técnica de carrera estaba 3 veces): 1 sentadilla explosiva, escalera, conducción a ritmo variable; 2 estocada, técnica de carrera (skipping), sprint 5-10-5; 3 puente de glúteo, aceleración en zigzag, zigzag con pelota; 4 plancha frontal, T-drill, light touches; 5 elevación de talones, leg hop, V push & cut; 6 plancha lateral, sole + push + aceleración, flying sprint. Los 18 son distintos y el validador avisa si se repite alguno.
+
+- **Pelota suave (Aeróbico):** sumé dos opciones que se pueden hacer solo, **Light touches** y **Conducción a ritmo variable**, para cuando no hay gente (se ven en amarillo). Un **tiro al arco individual** no existe todavía como ejercicio: si me contás cómo lo hacés solo, lo agrego como tercera opción individual.
+
+## Imágenes dentro de un marco con tamaño máximo (2026-11-03)
+
+- Toda imagen de contenido (la del ejercicio, las de 2/3/4/8 personas y las de los patrones) va ahora dentro de un marco de **máximo 480 × 320 px**: la imagen entra entera y centrada, sin recortarse. En la práctica, las fotos verticales quedan angostas en lugar de ocupar media pantalla. Las tarjetas de la grilla de Ejercicios ya tenían su marco fijo de 4:3.
+- Si querés otro tamaño máximo, se cambia en una línea (`.marco` en `style.css`).

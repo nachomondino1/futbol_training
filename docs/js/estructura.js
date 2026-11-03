@@ -8,13 +8,30 @@ export function tiempo(seg) {
   return s ? `${m} min ${s} s` : `${m} min`;
 }
 
+// Un circuito con "agrupar: 3" junta los ejercicios de a 3: cada grupo es una estación (la persona que está ahí hace los 3 seguidos).
+export function agruparEstaciones(items, n) {
+  const grupos = [];
+  for (let i = 0; i < items.length; i += n) grupos.push(items.slice(i, i + n));
+  return grupos;
+}
+const unidadesDe = (op) => op.estructura.modo === "circuito"
+  ? (op.agrupar ? Math.ceil(op.items.length / op.agrupar) : op.items.length)
+  : (op.estructura.sets || 1);
+
+// Minutos que dura una opción con estructura (series o circuito), redondeados.
+export function minutosEstructura(op) {
+  const e = op.estructura;
+  const unidades = unidadesDe(op);
+  return Math.round((e.vueltas * unidades * (e.trabajo_s + e.descanso_s) + (e.vueltas - 1) * (e.pausa_vuelta_s || 0)) / 60);
+}
+
 // Ficha con los números de una opción: vueltas, estaciones o sets, trabajo, descanso, pausa.
 export function estructuraNodo(op, guia = null) {
   const e = op.estructura;
   const circuito = e.modo === "circuito";
-  const unidades = circuito ? op.items.length : (e.sets || 1);
+  const unidades = unidadesDe(op);
   const pausa = e.pausa_vuelta_s || 0;
-  const totalMin = Math.round((e.vueltas * unidades * (e.trabajo_s + e.descanso_s) + (e.vueltas - 1) * pausa) / 60);
+  const totalMin = minutosEstructura(op);
   const nombreDesc = e.descanso_nombre ? e.descanso_nombre[0].toUpperCase() + e.descanso_nombre.slice(1) : "Descanso";
   const porUnidad = circuito ? "por estación" : e.sets ? "por set" : "";
 
@@ -55,6 +72,8 @@ export function itemsDePartes(c, elegidas = {}) {
 export function normalizarCircuitos({ bancos = {}, circuitos }) {
   return circuitos.map((c) => {
     if (c.banco) return { ...c, opciones: bancos[c.banco].opciones };
+    // varios bancos en un circuito: cada opción lleva el nombre de su banco como grupo
+    if (c.bancos) return { ...c, opciones: c.bancos.flatMap((b) => bancos[b].opciones.map((o) => ({ grupo: bancos[b].nombre, ...o }))) };
     if (!c.partes) return c;
     return { ...c, partes: c.partes.map((p) => {
       if (p.banco) return { ...p, nombre: p.nombre || bancos[p.banco].nombre, opciones: bancos[p.banco].opciones };

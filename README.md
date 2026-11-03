@@ -52,7 +52,7 @@ En `docs/data/exercises.json`, dentro de `ejercicios`:
 - `materiales`: lista de lo que hace falta para el ejercicio (vacía si no hace falta nada). Obligatorio. Se muestra en el detalle del ejercicio y al abrirlo dentro de una sesión.
 - `aporta`: qué se gana con el ejercicio, con ids de `docs/data/objetivos.json` (velocidad, aeróbico, fuerza, potencia, control, precisión de tiro, coordinación, movilidad). Obligatorio. La sesión usa esto para armar "Qué vas a ganar".
 - `trabaja`: `{ "principal": "cuadriceps", "secundarios": ["gluteo-mayor"] }`, con ids de `docs/data/muscles.json` (ahí se escribe para qué sirve cada músculo). Es obligatorio.
-- `jugadores_min`: cuántos jugadores como mínimo necesita (sin dato = 1). En Sesiones, el selector "Hoy somos" oculta las opciones que piden más.
+- `jugadores_min`: cuántos jugadores como mínimo necesita (sin dato = 1). Lo usan el filtro "Jugadores" y los colores de las tarjetas en Ejercicios.
 - Si depende de cuántos son, poné `"requiere_variantes": true` y cargá `"2"`, `"3"`, `"4"` y `"8"` en `variantes`.
 - Si propusiste una variante que todavía no validaste, agregá `"pendiente_validar": ["4"]`.
 - Un ejercicio que ninguna sesión usa es error, salvo que le pongas `"huerfano_ok": true`.
@@ -110,6 +110,7 @@ Un circuito es un conjunto de ejercicios, en orden. Se define una vez en `docs/d
 ```
 
 - `estructura` y `guia` son opcionales: un circuito puede ser solo la lista de ejercicios, sin tiempos (ver "Vueltas, trabajo y descanso" más abajo).
+- Un circuito de **estaciones con varias partes** lleva `items` en orden y `"agrupar": 3`: cada grupo de 3 ejercicios es una estación (la persona que está ahí hace los 3 seguidos) y `estructura` cuenta las estaciones, no los ejercicios. Con `bancos` (lista de bancos) se muestran, aparte, los otros ejercicios que también sirven. Ejemplo: `fuerza-coordinacion-cierre`.
 - Si lo que importa es **qué ejercicios se pueden meter** y no un orden fijo (el circuito de fuerza), usá un banco y una propuesta en lugar de `items`: `banco` es la lista de ejercicios posibles, `elegir` cuántos se hacen y `propuesta` el orden que se sugiere. En Circuitos y en la sesión se ve la propuesta y el resto como "otros ejercicios que podés usar" (no se eligen):
 
 ```json
@@ -138,7 +139,7 @@ Un circuito es un conjunto de ejercicios, en orden. Se define una vez en `docs/d
 
 La entrada en calor antes del partido es una sesión más (`entrada-en-calor`), armada con los mismos ejercicios (trote suave, activación dinámica, aceleración, posesión XvX en cuadrado y tiro).
 
-Cada sesión lleva un `objetivo` (una frase). Debajo, la página calcula "Qué vas a ganar": reparte los minutos de cada bloque, con la opción elegida, entre lo que aporta cada ejercicio, y muestra lo principal.
+Una opción puede traer su propio `min`; si es una serie (HIIT, rondo) los minutos se calculan con su estructura y, si no, vale el `min` del bloque. Cada sesión lleva un `objetivo` (una frase). Debajo, la página calcula "Qué vas a ganar": reparte los minutos de cada bloque, con la opción elegida, entre lo que aporta cada ejercicio, y muestra lo principal.
 
 ### Vueltas, trabajo y descanso
 
@@ -155,7 +156,7 @@ Una opción puede traer `estructura` para que la sesión diga cuántas vueltas h
 
 - `modo: "circuito"`: cada item es una estación, numeradas en orden. En cada una se hace `trabajo_s` + `descanso_s`; al terminar todas se descansa `pausa_vuelta_s` y se repite. `guia` es el ejercicio que explica cómo rotar (se muestra arriba).
 - `modo: "series"`: un solo item que se repite `vueltas` veces con `trabajo_s` / `descanso_s` (por ejemplo el rondo: 5 vueltas de 4 min con 1 min 30 s de `descanso_nombre: "pausa activa"`).
-- En `series` se puede agregar `sets`: cuántos sets seguidos van dentro de cada vuelta (HIIT: 15 sets de 10 s / 10 s, 2 vueltas, 2 min entre vueltas).
+- En `series` se puede agregar `sets`: cuántos sets seguidos van dentro de cada vuelta (HIIT: 15 sets de 10 s / 10 s, 3 vueltas, 2 min entre vueltas).
 - Todos los tiempos van en segundos. La web calcula el tiempo total; el validador avisa si no entra en el `min` del bloque.
 - Si falta `pausa_vuelta_s` en un circuito de más de una vuelta, el validador avisa y la web muestra "a definir".
 
@@ -190,5 +191,5 @@ docs/             la web (lo que sirve GitHub Pages)
 scripts/validate.py · scripts/gen_iconos.py
 fuente/           Doc original exportado (solo referencia)
 PENDIENTES.md     lo que propuse yo y falta validar
-PLAN_CANTIDAD_JUGADORES.md   filtro según cuántos somos: primera versión hecha; plan de lo que falta
+PLAN_CANTIDAD_JUGADORES.md   filtro según cuántos somos: idea para el futuro (una primera versión se sacó de la web)
 ```
