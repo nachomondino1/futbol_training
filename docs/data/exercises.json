@@ -1358,7 +1358,9 @@
       "categoria": "pelota",
       "descripcion": "El defensor (o el arquero) le da el pase al que ataca y se arma una situación de partido.",
       "dosis": null,
-      "variantes": {},
+      "variantes": {
+        "3": "Uno hace de arquero. Los otros dos salen corriendo a máxima velocidad desde la línea del arco, uno de cada lado del arco: uno con pelota y el otro sin. Pasan por unos conos ubicados al final del área y desde ahí van hacia el centro, donde se arma el mano a mano."
+      },
       "imagen": null,
       "video": null,
       "huerfano_ok": true,

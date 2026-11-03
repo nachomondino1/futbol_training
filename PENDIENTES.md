@@ -194,3 +194,7 @@ El Doc solo decía el grupo muscular de sentadilla y estocada (cuádriceps, glú
 - **Mínimo de jugadores por ejercicio (`jugadores_min`): lo asigné yo, hay que validarlo.** De a 2: rondo, pases con control orientado, pase-control-definición, pases combinados, presión y arcos, pase y va, pase al cono lateral, carrera en V con devolución, uno defiende otro ataca, pivote de 9, centro al vértice, pelota al campo rival y reactive sprint. De a 3: pared y control orientado entre conos. De a 4: cuadrado con uno en el medio. De a 6: reducido. El resto, 1.
 - Solo se usa el mínimo: con más jugadores se pueden armar varios grupos. No hay máximo ni diagramas para 5, 6 y 7 (ver `PLAN_CANTIDAD_JUGADORES.md`).
 - Con 1 jugador, el bloque "Definición" y el de "Pases y control orientado" de Fuerza y potencia no tienen opciones: muestra todas con un aviso.
+
+## Variante de 3 en "Uno defiende, otro ataca" (2026-11-03)
+
+- Cargada como la contaste; el tercer jugador es el arquero (confirmado). Falta la separación de los conos y quién ataca y quién defiende (supuse que ataca el que lleva la pelota).
