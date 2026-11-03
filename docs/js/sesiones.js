@@ -1,14 +1,15 @@
-import { h, imagenesNodos, variantesNodo, renderHeader, cargarJSON, mostrarError } from "./common.js";
+import { h, imagenesNodos, variantesNodo, avisoMateriales, renderHeader, cargarJSON, mostrarError } from "./common.js";
 import { completarItems, estructuraNodo, guiaDetalle, masGanado, normalizarCircuitos, repartirMinutos } from "./estructura.js";
 
 const app = document.getElementById("app");
 let ejercicios = new Map(); // id -> ejercicio (como un dict de Python)
 let datos = null;
+let disponibles = []; // materiales que tenemos (docs/data/exercises.json)
 let objetivos = []; // qué se gana (docs/data/objetivos.json)
 let circuitos = new Map(); // id -> circuito (docs/data/circuits.json)
 
 // Estado de la vista de detalle. Vive en memoria mientras la página esté abierta.
-const abiertos = new Set();   // "bloque:ex" de los ítems expandidos; sobrevive al cambio de opción
+const cerrados = new Set();   // "bloque:ex" de los ítems que cerraste; por defecto está todo desplegado
 let elegidas = {};            // índice de bloque -> índice de opción elegida
 let sesionActual = null;
 let ganasAbierto = false;     // "Qué vas a ganar" arranca plegado y recuerda si lo abriste
@@ -38,13 +39,15 @@ function itemNodo(item, bi, numero = null, conEstructura = false) {
   if (ej.video) medios.push(h("a", { class: "btn", href: ej.video, target: "_blank", rel: "noopener" }, "Ver video"));
 
   return h("details", {
-      class: "item", open: abiertos.has(clave),
-      ontoggle: (e) => { e.target.open ? abiertos.add(clave) : abiertos.delete(clave); } },
+      class: "item", open: !cerrados.has(clave),
+      ontoggle: (e) => { e.target.open ? cerrados.delete(clave) : cerrados.add(clave); } },
     h("summary", {},
       h("span", { class: "item-nombre" },
-        numero ? h("span", { class: "est-num" }, String(numero)) : null, ej.nombre),
+        numero ? h("span", { class: "est-num" }, String(numero)) : null, ej.nombre,
+        item.opcional ? h("span", { class: "etiqueta" }, "opcional") : null),
       dosis ? h("span", { class: "item-dosis" }, dosis) : null),
     h("div", { class: "item-cuerpo" },
+      avisoMateriales(ej, disponibles),
       item.nota ? h("p", { class: "nota" }, item.nota) : null,
       h("p", {}, ej.descripcion),
       variantesNodo(vars),
@@ -67,8 +70,8 @@ function resumenNodo(s) {
 function guiaNodo(id, bi) {
   const clave = `${bi}:guia:${id}`;
   return guiaDetalle(datos.guias[id], {
-    abierto: abiertos.has(clave),
-    alAlternar: (e) => { e.target.open ? abiertos.add(clave) : abiertos.delete(clave); } });
+    abierto: !cerrados.has(clave),
+    alAlternar: (e) => { e.target.open ? cerrados.delete(clave) : cerrados.add(clave); } });
 }
 
 // Una opción puede referenciar un circuito de la lista de circuitos: hereda sus items, estructura y guía.
@@ -90,8 +93,7 @@ function posiblesNodo(opcion) {
           h("summary", {}, `Otros ejercicios que podés usar (${otros.length})`),
           h("ul", { class: "musculo-lista" }, otros.map((o) =>
             h("li", {}, h("a", { href: `glosario.html#${o.ex}` }, o.nombre || ejercicios.get(o.ex).nombre)))))
-      : null,
-    h("a", { class: "link-glosario", href: `circuitos.html#${opcion.id}` }, "Elegir los ejercicios de hoy"));
+      : null);
 }
 
 function bloqueNodo(b, bi) {
@@ -159,7 +161,7 @@ function gananciasNodo(s) {
 
 function detalle(s, conservar = false) {
   if (!conservar || sesionActual !== s) {
-    if (sesionActual !== s) { abiertos.clear(); elegidas = {}; }
+    if (sesionActual !== s) { cerrados.clear(); elegidas = {}; }
   }
   sesionActual = s;
   const y = window.scrollY;
@@ -184,6 +186,7 @@ function ruta() {
 try {
   const [ex, ses, cir, obj] = await Promise.all([cargarJSON("data/exercises.json"), cargarJSON("data/sessions.json"), cargarJSON("data/circuits.json"), cargarJSON("data/objetivos.json")]);
   objetivos = obj.objetivos;
+  disponibles = ex.materiales_disponibles;
   ejercicios = new Map(ex.ejercicios.map((e) => [e.id, e]));
   circuitos = new Map(normalizarCircuitos(cir).map((c) => [c.id, c]));
   datos = ses;

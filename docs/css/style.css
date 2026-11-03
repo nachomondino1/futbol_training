@@ -156,6 +156,9 @@ h1 { font-size: 1.9rem; line-height: 1.15; margin: 8px 0 16px; }
 .chip[aria-pressed="true"] { background: var(--ink); color: var(--bg); }
 .conteo { color: var(--ink-soft); margin: 0 0 8px; }
 
+/* Materiales: aviso al abrir un ejercicio que necesita algo que no tenemos */
+.aviso-material { margin: 0 0 10px; padding: 8px 12px; background: var(--resalte); border-left: 4px solid var(--acento); font-weight: 600; }
+
 /* Glosario: tabla en pantallas anchas, cards apiladas en angostas */
 .tabla { width: 100%; border-collapse: collapse; background: var(--surface); }
 .tabla th, .tabla td { text-align: left; vertical-align: top; padding: 12px; border-bottom: 1px solid var(--line); }
@@ -335,17 +338,6 @@ h1 { font-size: 1.9rem; line-height: 1.15; margin: 8px 0 16px; }
 .usado-en a { color: inherit; }
 .nav { flex-wrap: wrap; }
 @media (max-width: 420px) { .nav { gap: 0; } .nav a { padding: 0 9px; font-size: .95rem; } }
-.circuito .opciones { margin: 12px 0 8px; }
-
-/* Plantilla de circuito: elegir una opción por parte */
-.hoy { background: var(--bg); border-radius: 10px; padding: 8px 14px 10px; margin: 12px 0; }
-.hoy h3 { margin: 4px 0; color: var(--ink); font-size: 1.1rem; }
-.parte-ayuda { margin: 14px 0 0; font-weight: 700; color: var(--ink-soft); }
-.parte { margin-top: 18px; }
-.parte h3 { margin: 0 0 6px; font-size: 1.1rem; color: var(--ink); display: flex; flex-wrap: wrap; align-items: baseline; gap: 2px 10px; }
-.parte-elegida { font-weight: 600; color: var(--ink-soft); font-size: .95rem; }
-.grupo-opciones { margin: 8px 0 0; font-weight: 700; color: var(--ink-soft); font-size: .9rem; }
-.parte .opciones { margin: 6px 0 4px; }
 
 /* Qué vas a ganar (hoja de sesión) */
 .ganas { background: var(--surface); border-radius: 14px; border-left: 8px solid var(--acento); padding: 12px 16px 12px; margin: 8px 0 12px; }

@@ -1,15 +1,444 @@
 {
   "sesiones": [
     {
-      "id": "fisico-aerobico-piernas",
-      "nombre": "Físico: aeróbico + piernas",
-      "objetivo": "Volumen aeróbico (con posesión de pelota, trote o HIIT) combinado con un circuito para activar las piernas.",
+      "id": "velocidad",
+      "nombre": "Velocidad",
+      "objetivo": "Correr rápido de verdad: aceleración, velocidad máxima y cambios de dirección, con descanso completo entre repeticiones.",
+      "bloques": [
+        {
+          "titulo": "Activación extendida",
+          "min": 15,
+          "opciones": [
+            {
+              "label": "Activación extendida",
+              "circuito": "activacion",
+              "nota": "Trote progresivo, cada vez más rápido, y no te saltees la técnica de carrera."
+            }
+          ]
+        },
+        {
+          "titulo": "Sprints",
+          "min": 25,
+          "opciones": [
+            {
+              "label": "Aceleración",
+              "items": [
+                {
+                  "ex": "progresion-aceleracion"
+                }
+              ]
+            },
+            {
+              "label": "Velocidad máxima",
+              "items": [
+                {
+                  "ex": "flying-sprint"
+                },
+                {
+                  "ex": "velocidad-maxima-cono"
+                }
+              ]
+            },
+            {
+              "label": "Cuesta",
+              "items": [
+                {
+                  "ex": "hill-sprint"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "titulo": "Cambios de dirección",
+          "min": 20,
+          "opciones": [
+            {
+              "label": "Ritmo con conos",
+              "items": [
+                {
+                  "ex": "cambios-ritmo-conos"
+                }
+              ]
+            },
+            {
+              "label": "Sprint corto con cono (5-10-5)",
+              "items": [
+                {
+                  "ex": "sprint-5-10-5"
+                }
+              ]
+            },
+            {
+              "label": "Reactive sprint (señal visual)",
+              "items": [
+                {
+                  "ex": "reactive-sprint"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "titulo": "Pelota",
+          "min": 15,
+          "opciones": [
+            {
+              "label": "Sprint + control + pase",
+              "items": [
+                {
+                  "ex": "sprint-control-pase"
+                }
+              ]
+            },
+            {
+              "label": "Conducción de pelota a ritmo variable",
+              "items": [
+                {
+                  "ex": "conduccion-ritmo-variable"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "titulo": "Vuelta a la calma",
+          "min": 10,
+          "opciones": [
+            {
+              "label": "Estiramiento estático y vuelta a la calma",
+              "items": [
+                {
+                  "ex": "estiramiento-estatico"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "coordinacion",
+      "nombre": "Coordinación y agilidad",
+      "objetivo": "Pies rápidos, cambios de dirección y control del cuerpo.",
       "bloques": [
         {
           "titulo": "Activación",
           "min": 10,
           "opciones": [
             {
+              "label": "Activación",
+              "circuito": "activacion"
+            }
+          ]
+        },
+        {
+          "titulo": "Pies",
+          "min": 20,
+          "opciones": [
+            {
+              "label": "Escalera de coordinación",
+              "items": [
+                {
+                  "ex": "escalera"
+                }
+              ]
+            },
+            {
+              "label": "Técnica de carrera",
+              "items": [
+                {
+                  "ex": "tecnica-carrera"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "titulo": "Agilidad",
+          "min": 20,
+          "opciones": [
+            {
+              "label": "T-drill (conos en T)",
+              "items": [
+                {
+                  "ex": "t-drill"
+                }
+              ]
+            },
+            {
+              "label": "Aceleración a cada cono en zigzag",
+              "items": [
+                {
+                  "ex": "aceleracion-conos-zigzag"
+                }
+              ]
+            },
+            {
+              "label": "Reactive sprint (señal visual)",
+              "items": [
+                {
+                  "ex": "reactive-sprint"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "titulo": "Pelota con conos",
+          "min": 25,
+          "opciones": [
+            {
+              "label": "Zigzag con pelota",
+              "items": [
+                {
+                  "ex": "zigzag"
+                }
+              ]
+            },
+            {
+              "label": "V push & cut",
+              "items": [
+                {
+                  "ex": "v-push-cut"
+                }
+              ]
+            },
+            {
+              "label": "Sole + push + acceleration",
+              "items": [
+                {
+                  "ex": "sole-push-acceleration"
+                }
+              ]
+            },
+            {
+              "label": "Light touches (toques suaves)",
+              "items": [
+                {
+                  "ex": "light-touches"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "titulo": "Vuelta a la calma",
+          "min": 10,
+          "opciones": [
+            {
+              "label": "Estiramiento estático y vuelta a la calma",
+              "items": [
+                {
+                  "ex": "estiramiento-estatico"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "fuerza",
+      "nombre": "Fuerza",
+      "objetivo": "Fuerza de piernas y core, con técnica controlada.",
+      "bloques": [
+        {
+          "titulo": "Activación",
+          "min": 10,
+          "opciones": [
+            {
+              "label": "Activación",
+              "circuito": "activacion"
+            }
+          ]
+        },
+        {
+          "titulo": "Coordinación",
+          "min": 15,
+          "opciones": [
+            {
+              "label": "Escalera de coordinación",
+              "items": [
+                {
+                  "ex": "escalera"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "titulo": "Fuerza",
+          "min": 35,
+          "opciones": [
+            {
+              "label": "Circuito de fuerza",
+              "circuito": "circuito-fuerza",
+              "estructura": {
+                "descanso_s": 30
+              }
+            },
+            {
+              "label": "Series pesadas",
+              "items": [
+                {
+                  "ex": "trap-bar-deadlift"
+                },
+                {
+                  "ex": "bulgarian-split-squat"
+                },
+                {
+                  "ex": "step-up-unilateral"
+                }
+              ],
+              "nota": "Propuesta: 3-5 series de 6-10 repeticiones con descanso largo. Necesita barra, banco y cajón."
+            }
+          ]
+        },
+        {
+          "titulo": "Técnica de pelota",
+          "min": 15,
+          "opciones": [
+            {
+              "label": "Pases cortos con control orientado",
+              "items": [
+                {
+                  "ex": "pases-control-orientado"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "titulo": "Vuelta a la calma",
+          "min": 10,
+          "opciones": [
+            {
+              "label": "Estiramiento estático y vuelta a la calma",
+              "items": [
+                {
+                  "ex": "estiramiento-estatico"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "potencia",
+      "nombre": "Potencia y salto",
+      "objetivo": "Explosividad: saltos, lanzamientos y sprints cortos, con descanso completo.",
+      "bloques": [
+        {
+          "titulo": "Activación",
+          "min": 10,
+          "opciones": [
+            {
+              "label": "Activación",
+              "circuito": "activacion"
+            }
+          ]
+        },
+        {
+          "titulo": "Saltos",
+          "min": 30,
+          "opciones": [
+            {
+              "label": "Cajón y horizontal",
+              "items": [
+                {
+                  "ex": "box-jump"
+                },
+                {
+                  "ex": "broad-jump"
+                }
+              ]
+            },
+            {
+              "label": "Con carga",
+              "items": [
+                {
+                  "ex": "sentadilla-explosiva"
+                },
+                {
+                  "ex": "med-ball-slam"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "titulo": "Reactividad",
+          "min": 15,
+          "opciones": [
+            {
+              "label": "Leg hop",
+              "items": [
+                {
+                  "ex": "leg-hop"
+                }
+              ]
+            },
+            {
+              "label": "Bounding (zancadas exageradas)",
+              "items": [
+                {
+                  "ex": "bounding"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "titulo": "Sprint corto",
+          "min": 15,
+          "opciones": [
+            {
+              "label": "Flying sprint (30 m)",
+              "items": [
+                {
+                  "ex": "flying-sprint"
+                }
+              ]
+            },
+            {
+              "label": "Sprint corto con cono (5-10-5)",
+              "items": [
+                {
+                  "ex": "sprint-5-10-5"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "titulo": "Vuelta a la calma",
+          "min": 10,
+          "opciones": [
+            {
+              "label": "Estiramiento estático y vuelta a la calma",
+              "items": [
+                {
+                  "ex": "estiramiento-estatico"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "aerobico",
+      "nombre": "Aeróbico",
+      "objetivo": "Capacidad aeróbica: volumen o intervalos, con pelota o sin ella, y un circuito para activar las piernas.",
+      "bloques": [
+        {
+          "titulo": "Activación",
+          "min": 10,
+          "opciones": [
+            {
+              "label": "Activación",
               "circuito": "activacion"
             }
           ]
@@ -19,10 +448,10 @@
           "min": 10,
           "opciones": [
             {
+              "label": "Escalera de coordinación",
               "items": [
                 {
-                  "ex": "escalera",
-                  "dosis": "4-5 patrones x 2 pasadas"
+                  "ex": "escalera"
                 }
               ]
             }
@@ -71,6 +500,30 @@
                 "descanso_s": 90,
                 "descanso_nombre": "pausa activa"
               }
+            },
+            {
+              "label": "HIIT 15/15",
+              "items": [
+                {
+                  "ex": "hiit-15-15"
+                }
+              ]
+            },
+            {
+              "label": "Intervalo 4×4 minutos",
+              "items": [
+                {
+                  "ex": "intervalo-4x4"
+                }
+              ]
+            },
+            {
+              "label": "Reducido",
+              "items": [
+                {
+                  "ex": "reducido"
+                }
+              ]
             }
           ]
         },
@@ -79,6 +532,7 @@
           "min": 25,
           "opciones": [
             {
+              "label": "Circuito de fuerza",
               "circuito": "circuito-fuerza"
             }
           ]
@@ -88,10 +542,10 @@
           "min": 10,
           "opciones": [
             {
+              "label": "Estiramiento estático y vuelta a la calma",
               "items": [
                 {
-                  "ex": "estiramiento-estatico",
-                  "dosis": "10-15 min"
+                  "ex": "estiramiento-estatico"
                 }
               ]
             }
@@ -100,15 +554,16 @@
       ]
     },
     {
-      "id": "pelota-fisico-liviano",
-      "nombre": "Pelota + físico liviano",
-      "objetivo": "Más pelota y un poco de físico, para llegar bien al partido.",
+      "id": "control",
+      "nombre": "Control con pelota",
+      "objetivo": "Técnica con pelota: conducción, pase y control, con poca carga física.",
       "bloques": [
         {
           "titulo": "Activación",
           "min": 10,
           "opciones": [
             {
+              "label": "Activación",
               "circuito": "activacion"
             }
           ]
@@ -144,26 +599,68 @@
           ]
         },
         {
-          "titulo": "Circuito de fuerza",
+          "titulo": "Conducción",
           "min": 25,
           "opciones": [
             {
-              "circuito": "circuito-fuerza",
-              "estructura": {
-                "descanso_s": 30
-              }
+              "label": "Conducción en V con suela",
+              "items": [
+                {
+                  "ex": "conduccion-v-suela"
+                }
+              ]
+            },
+            {
+              "label": "Zigzag con pelota",
+              "items": [
+                {
+                  "ex": "zigzag"
+                }
+              ]
+            },
+            {
+              "label": "Light touches (toques suaves)",
+              "items": [
+                {
+                  "ex": "light-touches"
+                }
+              ]
             }
           ]
         },
         {
-          "titulo": "Técnica de pelota",
+          "titulo": "Pase y control",
           "min": 15,
           "opciones": [
             {
+              "label": "Pases cortos con control orientado",
               "items": [
                 {
-                  "ex": "pases-control-orientado",
-                  "nota": "Parados o con desplazamiento mínimo, sin carrera."
+                  "ex": "pases-control-orientado"
+                }
+              ]
+            },
+            {
+              "label": "Circuito de pases combinados",
+              "items": [
+                {
+                  "ex": "circuito-pases-combinados"
+                }
+              ]
+            },
+            {
+              "label": "Pase al cono lateral y control a máxima velocidad",
+              "items": [
+                {
+                  "ex": "pase-cono-lateral-control"
+                }
+              ]
+            },
+            {
+              "label": "Pase con presión inmediata y arcos en L",
+              "items": [
+                {
+                  "ex": "pase-presion-arcos-l"
                 }
               ]
             }
@@ -174,6 +671,7 @@
           "min": 10,
           "opciones": [
             {
+              "label": "Estiramiento estático y vuelta a la calma",
               "items": [
                 {
                   "ex": "estiramiento-estatico"
@@ -185,228 +683,73 @@
       ]
     },
     {
-      "id": "velocidad-aceleracion",
-      "nombre": "Velocidad y aceleración",
-      "objetivo": "Desarrollar aceleración progresiva, técnica de carrera y cambios de ritmo, priorizando la técnica sobre la velocidad máxima.",
-      "bloques": [
-        {
-          "titulo": "Activación extendida",
-          "min": 20,
-          "opciones": [
-            {
-              "circuito": "activacion-velocidad"
-            }
-          ]
-        },
-        {
-          "titulo": "Progresiones de aceleración",
-          "min": 20,
-          "opciones": [
-            {
-              "items": [
-                {
-                  "ex": "progresion-aceleracion",
-                  "dosis": "6-8 repeticiones, 15-20 m al 60-70%"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "titulo": "Cambios de ritmo con conos",
-          "min": 25,
-          "opciones": [
-            {
-              "items": [
-                {
-                  "ex": "cambios-ritmo-conos",
-                  "dosis": "4-5 pasadas, con pausa entre cada una"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "titulo": "Pelota a ritmo variable",
-          "min": 15,
-          "opciones": [
-            {
-              "items": [
-                {
-                  "ex": "conduccion-ritmo-variable",
-                  "nota": "Sin robo ni presión de compañero."
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "titulo": "Vuelta a la calma",
-          "min": 10,
-          "opciones": [
-            {
-              "items": [
-                {
-                  "ex": "estiramiento-estatico",
-                  "nota": "Énfasis en cuádriceps e isquios."
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "fuerza-control",
-      "nombre": "Fuerza y control",
-      "objetivo": "Priorizar fuerza controlada y técnica de pelota de baja intensidad, con poca carga aeróbica.",
+      "id": "definicion",
+      "nombre": "Definición y tiro",
+      "objetivo": "Precisión y remate, con poca carga física.",
       "bloques": [
         {
           "titulo": "Activación",
           "min": 10,
           "opciones": [
             {
+              "label": "Activación",
               "circuito": "activacion"
             }
           ]
         },
         {
-          "titulo": "Coordinación",
+          "titulo": "Pase y remate",
+          "min": 20,
+          "opciones": [
+            {
+              "label": "Pase, control y definición",
+              "items": [
+                {
+                  "ex": "pase-control-definicion"
+                }
+              ]
+            },
+            {
+              "label": "Pivote de 9 y definición",
+              "items": [
+                {
+                  "ex": "pivote-9-definicion"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "titulo": "Duelo",
+          "min": 25,
+          "opciones": [
+            {
+              "label": "Uno defiende, otro ataca",
+              "items": [
+                {
+                  "ex": "uno-contra-uno-tiro"
+                }
+              ]
+            },
+            {
+              "label": "Pase con presión inmediata y arcos en L",
+              "items": [
+                {
+                  "ex": "pase-presion-arcos-l"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "titulo": "Centros",
           "min": 15,
           "opciones": [
             {
+              "label": "Centro al vértice del área grande y tiro",
               "items": [
                 {
-                  "ex": "escalera",
-                  "dosis": "5-6 patrones x 2 pasadas"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "titulo": "Circuito de fuerza",
-          "min": 35,
-          "opciones": [
-            {
-              "circuito": "circuito-fuerza",
-              "estructura": {
-                "descanso_s": 30
-              }
-            }
-          ]
-        },
-        {
-          "titulo": "Técnica de pelota",
-          "min": 15,
-          "opciones": [
-            {
-              "items": [
-                {
-                  "ex": "pases-control-orientado",
-                  "nota": "Baja intensidad, parados o con desplazamiento mínimo, sin carrera."
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "titulo": "Vuelta a la calma",
-          "min": 10,
-          "opciones": [
-            {
-              "items": [
-                {
-                  "ex": "estiramiento-estatico"
-                }
-              ]
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "id": "dia-previo",
-      "nombre": "Día previo al partido",
-      "objetivo": "Activar sin generar fatiga ni estímulo nuevo. Sin circuito de fuerza ni 4v4 competitivo.",
-      "bloques": [
-        {
-          "titulo": "Movilidad suave",
-          "min": 8,
-          "opciones": [
-            {
-              "circuito": "activacion",
-              "nota": "Muy suave: trote a ritmo de charla y movilidad, sin pelota."
-            }
-          ]
-        },
-        {
-          "titulo": "Posesión de baja intensidad",
-          "min": 15,
-          "opciones": [
-            {
-              "items": [
-                {
-                  "ex": "rondo",
-                  "nota": "A ritmo de toque, bajo.",
-                  "variantes": {
-                    "2": "Posesión con movimiento controlado, caminando entre pases.",
-                    "3": "Rondo triangular al mismo ritmo bajo.",
-                    "4": "Rondo 3v1 al mismo ritmo bajo.",
-                    "8": "Rondo grande: 7 tocan y 1 presiona, a ritmo de toque."
-                  },
-                  "pendiente_validar": [
-                    "4"
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "titulo": "Circuito de pases combinados",
-          "min": 15,
-          "opciones": [
-            {
-              "items": [
-                {
-                  "ex": "circuito-pases-combinados"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "titulo": "Tiro al arco suave",
-          "min": 7,
-          "opciones": [
-            {
-              "items": [
-                {
-                  "ex": "pase-control-definicion",
-                  "nota": "Suave, sin oposición.",
-                  "variantes": {
-                    "2": "Uno pasa, el otro controla y define. Alternan.",
-                    "3": "Pared simple, sin oposición.",
-                    "4": "Pared simple de a dos, los otros dos esperan y rotan. Sin oposición.",
-                    "8": "Fila corta, 1-2 tiros por jugador."
-                  },
-                  "pendiente_validar": [
-                    "4"
-                  ]
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "titulo": "Activación neuromuscular",
-          "min": 4,
-          "opciones": [
-            {
-              "items": [
-                {
-                  "ex": "activacion-neuromuscular"
+                  "ex": "centro-vertice-area"
                 }
               ]
             }
@@ -417,10 +760,122 @@
           "min": 5,
           "opciones": [
             {
+              "label": "Estiramiento estático y vuelta a la calma",
               "items": [
                 {
-                  "ex": "estiramiento-estatico",
-                  "nota": "Estiramiento suave, sin forzar rango."
+                  "ex": "estiramiento-estatico"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "movilidad",
+      "nombre": "Movilidad y prevención",
+      "objetivo": "Soltar el cuerpo y prevenir lesiones, sin intensidad. Sirve el día previo al partido y el día después.",
+      "bloques": [
+        {
+          "titulo": "Trote y movilidad",
+          "min": 8,
+          "opciones": [
+            {
+              "label": "Trote y movilidad",
+              "items": [
+                {
+                  "ex": "trote-suave"
+                },
+                {
+                  "ex": "movilidad-articular"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "titulo": "Activación suave",
+          "min": 15,
+          "opciones": [
+            {
+              "label": "Activación dinámica completa",
+              "items": [
+                {
+                  "ex": "activacion-dinamica"
+                }
+              ]
+            },
+            {
+              "label": "Activación neuromuscular",
+              "items": [
+                {
+                  "ex": "activacion-neuromuscular"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "titulo": "Cadera y core",
+          "min": 15,
+          "opciones": [
+            {
+              "label": "Cadera y core",
+              "items": [
+                {
+                  "ex": "puente-gluteo"
+                },
+                {
+                  "ex": "abduccion-cadera"
+                },
+                {
+                  "ex": "plancha-lateral"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "titulo": "Pelota suave",
+          "min": 15,
+          "opciones": [
+            {
+              "label": "Rondo bajo",
+              "items": [
+                {
+                  "ex": "rondo"
+                }
+              ],
+              "nota": "A baja intensidad: solo tocar, sin sprints."
+            },
+            {
+              "label": "Circuito de pases combinados",
+              "items": [
+                {
+                  "ex": "circuito-pases-combinados"
+                }
+              ]
+            },
+            {
+              "label": "Tiro suave",
+              "items": [
+                {
+                  "ex": "pase-control-definicion"
+                }
+              ],
+              "nota": "Sin oposición y sin esfuerzo."
+            }
+          ]
+        },
+        {
+          "titulo": "Estiramientos",
+          "min": 10,
+          "opciones": [
+            {
+              "label": "Estiramiento estático y vuelta a la calma",
+              "items": [
+                {
+                  "ex": "estiramiento-estatico"
                 }
               ]
             }

@@ -177,7 +177,7 @@
     {
       "id": "activacion",
       "nombre": "Activación",
-      "descripcion": "El circuito para entrar en calor antes de entrenar: trote suave y movilidad articular. Se usa al arrancar casi todas las sesiones.",
+      "descripcion": "El circuito para entrar en calor antes de entrenar: trote suave y movilidad articular. La técnica de carrera es opcional: se suma en los días de velocidad.",
       "items": [
         {
           "ex": "trote-suave",
@@ -185,24 +185,10 @@
         },
         {
           "ex": "movilidad-articular"
-        }
-      ]
-    },
-    {
-      "id": "activacion-velocidad",
-      "nombre": "Activación extendida (velocidad)",
-      "descripcion": "Calentamiento más largo para el día de velocidad: trote progresivo, movilidad dinámica y técnica de carrera.",
-      "items": [
-        {
-          "ex": "trote-suave",
-          "nota": "Trote progresivo, cada vez más rápido."
-        },
-        {
-          "ex": "movilidad-articular",
-          "nota": "Movilidad dinámica."
         },
         {
           "ex": "tecnica-carrera",
+          "opcional": true,
           "dosis": "3 series cortas de cada una, 15-20 m, volviendo caminando"
         }
       ]
@@ -246,9 +232,9 @@
       }
     },
     {
-      "id": "fuerza-coordinacion-pelota",
-      "nombre": "Fuerza, coordinación, pelota",
-      "descripcion": "Plantilla de tres partes, una detrás de la otra: elegís una opción de cada una según el día. La última parte es un ejercicio con pelota.",
+      "id": "fuerza-coordinacion-cierre",
+      "nombre": "Fuerza, coordinación y cierre",
+      "descripcion": "Plantilla de tres partes, una detrás de la otra. La última parte cambia según el día: pelota, trabajo aeróbico o salir corriendo a máxima velocidad.",
       "huerfano_ok": true,
       "partes": [
         {
@@ -258,41 +244,12 @@
           "banco": "coordinacion"
         },
         {
-          "banco": "pelota"
-        }
-      ]
-    },
-    {
-      "id": "fuerza-coordinacion-aerobico",
-      "nombre": "Fuerza, coordinación, aeróbico",
-      "descripcion": "Plantilla de tres partes, una detrás de la otra: elegís una opción de cada una según el día. La última parte es trabajo aeróbico.",
-      "huerfano_ok": true,
-      "partes": [
-        {
-          "banco": "fuerza"
-        },
-        {
-          "banco": "coordinacion"
-        },
-        {
-          "banco": "aerobico"
-        }
-      ]
-    },
-    {
-      "id": "fuerza-coordinacion-velocidad",
-      "nombre": "Fuerza, coordinación, velocidad máxima",
-      "descripcion": "Plantilla de tres partes, una detrás de la otra: elegís una opción de cada una según el día. La última parte es salir corriendo a máxima velocidad.",
-      "huerfano_ok": true,
-      "partes": [
-        {
-          "banco": "fuerza"
-        },
-        {
-          "banco": "coordinacion"
-        },
-        {
-          "banco": "velocidad"
+          "nombre": "Pelota, aeróbico o velocidad",
+          "bancos": [
+            "pelota",
+            "aerobico",
+            "velocidad"
+          ]
         }
       ]
     }

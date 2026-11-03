@@ -55,6 +55,17 @@ export function imagenesNodos(ej) {
   return ej.imagen ? [h("img", { src: ej.imagen, alt: ej.nombre, loading: "lazy", width: 640, height: 400 })] : [];
 }
 
+// Materiales de un ejercicio. Los que no tenemos (todo salvo lo de `disponibles`) van resaltados.
+export function materialesFaltantes(ej, disponibles) {
+  return (ej.materiales || []).filter((m) => !disponibles.includes(m));
+}
+
+// Aviso para cuando se abre un ejercicio de una sesión.
+export function avisoMateriales(ej, disponibles) {
+  const f = materialesFaltantes(ej, disponibles);
+  return f.length ? h("p", { class: "aviso-material", role: "note" }, `⚠ Necesita material que no tenemos: ${f.join(", ")}.`) : null;
+}
+
 // Minúsculas y sin tildes, para que "estocada" y "Estócada" matcheen igual.
 export function normalizar(s) {
   return s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase();

@@ -49,6 +49,7 @@ En `docs/data/exercises.json`, dentro de `ejercicios`:
 
 - `id`: minúsculas con guiones, único. Es el link `glosario.html#sentadilla-salto`.
 - `categoria`: alguna de las de `categorias`. Los que se hacen con pelota usan `"pelota"` (se muestra "Con pelota") y además llevan `subcategorias`: una o más de `subcategorias` (tiro al arco, pase corto, pase largo, control orientado, conducción, posesión, con oposición, pelota parada). Es obligatorio y es lo que usan los filtros de la página Ejercicios.
+- `materiales`: lista de lo que hace falta (vacía si no hace falta nada). Obligatorio. Lo que tenemos está en `materiales_disponibles` (arriba de todo en `exercises.json`: conos, escalera, pelota); cualquier otra cosa se muestra como aviso (⚠) al abrir el ejercicio en una sesión; la página Ejercicios no tiene columna de materiales, el dato queda guardado al abrir el ejercicio en una sesión.
 - `aporta`: qué se gana con el ejercicio, con ids de `docs/data/objetivos.json` (velocidad, aeróbico, fuerza, potencia, control, precisión de tiro, coordinación, movilidad). Obligatorio. La sesión usa esto para armar "Qué vas a ganar".
 - `trabaja`: `{ "principal": "cuadriceps", "secundarios": ["gluteo-mayor"] }`, con ids de `docs/data/muscles.json` (ahí se escribe para qué sirve cada músculo). Es obligatorio.
 - Si depende de cuántos son, poné `"requiere_variantes": true` y cargá `"2"`, `"3"`, `"4"` y `"8"` en `variantes`.
@@ -108,7 +109,7 @@ Un circuito es un conjunto de ejercicios, en orden. Se define una vez en `docs/d
 ```
 
 - `estructura` y `guia` son opcionales: un circuito puede ser solo la lista de ejercicios, sin tiempos (ver "Vueltas, trabajo y descanso" más abajo).
-- Si lo que importa es **qué ejercicios se pueden meter** y no un orden fijo (el circuito de fuerza), usá un banco y una propuesta en lugar de `items`: `banco` es la lista de ejercicios posibles, `elegir` cuántos se hacen y `propuesta` el orden que se sugiere. En la página Circuitos se eligen los del día; en la sesión se ve la propuesta y el resto como "otros ejercicios que podés usar":
+- Si lo que importa es **qué ejercicios se pueden meter** y no un orden fijo (el circuito de fuerza), usá un banco y una propuesta en lugar de `items`: `banco` es la lista de ejercicios posibles, `elegir` cuántos se hacen y `propuesta` el orden que se sugiere. En Circuitos y en la sesión se ve la propuesta y el resto como "otros ejercicios que podés usar" (no se eligen):
 
 ```json
 { "id": "circuito-fuerza", "nombre": "Circuito de fuerza", "banco": "fuerza", "elegir": 6,
@@ -116,7 +117,7 @@ Un circuito es un conjunto de ejercicios, en orden. Se define una vez en `docs/d
   "estructura": { "modo": "circuito", "vueltas": 3, "trabajo_s": 40, "descanso_s": 20, "pausa_vuelta_s": 120 } }
 ```
 
-- Si es una plantilla donde elegís una opción por parte (fuerza, coordinación, pelota), usá `partes` en lugar de `items`. Las opciones se escriben una sola vez en `bancos` y las partes los referencian:
+- Si es una plantilla con una opción propuesta por parte (la primera) y alternativas (fuerza, coordinación, pelota), usá `partes` en lugar de `items`. Las opciones se escriben una sola vez en `bancos` y las partes los referencian:
 
 ```json
 "bancos": {
@@ -124,12 +125,13 @@ Un circuito es un conjunto de ejercicios, en orden. Se define una vez en `docs/d
   "pelota": { "nombre": "Pelota", "opciones": [{ "ex": "zigzag" }] }
 },
 "circuitos": [
-  { "id": "fuerza-coordinacion-pelota", "nombre": "Fuerza, coordinación, pelota",
-    "partes": [{ "banco": "fuerza" }, { "banco": "coordinacion" }, { "banco": "pelota" }] }
+  { "id": "fuerza-coordinacion-cierre", "nombre": "Fuerza, coordinación y cierre",
+    "partes": [{ "banco": "fuerza" }, { "banco": "coordinacion" },
+               { "nombre": "Pelota, aeróbico o velocidad", "bancos": ["pelota", "aerobico", "velocidad"] }] }
 ]
 ```
 
-  Una opción puede traer `nombre` (lo que se ve en el botón) y `nota`. Para otra combinación (por ejemplo fuerza, coordinación, aeróbico) solo hay que armar otro circuito con otros bancos. Los bancos son los mismos que usa el circuito de fuerza.
+  Una opción puede traer `nombre` (lo que se ve en el botón) y `nota`. Una parte puede juntar varios bancos con `bancos` (cada opción muestra el nombre de su banco). Un ejercicio de un circuito puede ser opcional con `"opcional": true`. Los bancos son los mismos que usa el circuito de fuerza.
 - En una sesión, la opción lo usa así: `{ "circuito": "circuito-fuerza", "estructura": { "descanso_s": 30 } }`. Lo que la opción defina por su cuenta (acá, el descanso) pisa lo del circuito.
 - Un circuito que ninguna sesión usa es error, salvo que le pongas `"huerfano_ok": true`. Sus ejercicios cuentan como usados.
 

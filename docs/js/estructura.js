@@ -56,9 +56,12 @@ export function normalizarCircuitos({ bancos = {}, circuitos }) {
   return circuitos.map((c) => {
     if (c.banco) return { ...c, opciones: bancos[c.banco].opciones };
     if (!c.partes) return c;
-    return { ...c, partes: c.partes.map((p) => p.banco
-      ? { ...p, nombre: p.nombre || bancos[p.banco].nombre, opciones: bancos[p.banco].opciones }
-      : p) };
+    return { ...c, partes: c.partes.map((p) => {
+      if (p.banco) return { ...p, nombre: p.nombre || bancos[p.banco].nombre, opciones: bancos[p.banco].opciones };
+      // varios bancos en una parte: cada opción lleva el nombre de su banco como grupo
+      if (p.bancos) return { ...p, opciones: p.bancos.flatMap((b) => bancos[b].opciones.map((o) => ({ grupo: bancos[b].nombre, ...o }))) };
+      return p;
+    }) };
   });
 }
 

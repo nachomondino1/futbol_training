@@ -10,9 +10,6 @@ let objetivos = [];
 let circuitos = [];
 let sesiones = [];
 let guias = {};
-const estado = { pool: {}, partes: {} };
-// pool: id de circuito -> ids de los ejercicios elegidos, en el orden en que se van a hacer
-// partes: id de plantilla -> [índice de la opción elegida en cada parte]
 
 const nombreDe = (o) => o.nombre || ejercicios.get(o.ex).nombre;
 
@@ -50,77 +47,50 @@ function listaEjercicios(items, etiquetaDe) {
       h("span", { class: "est-num" }, String(i + 1)),
       h("a", { href: `glosario.html#${ej.id}` }, it.nombre || ej.nombre),
       h("span", { class: "etiqueta" }, etiquetaDe(it, ej)),
+      it.opcional ? h("span", { class: "etiqueta" }, "opcional") : null,
       detalle ? h("span", { class: "item-dosis" }, detalle) : null);
   }));
 }
 
-// Lista de ejercicios posibles: se eligen los que se quieran y se propone un orden (el que se hace hoy).
+// Alternativas: lista desplegable de ejercicios que también sirven en lugar de los propuestos.
+function alternativasNodo(titulo, opciones) {
+  if (!opciones.length) return null;
+  return h("details", { class: "musculo-sec" },
+    h("summary", {}, `${titulo} (${opciones.length})`),
+    h("ul", { class: "musculo-lista" }, opciones.map((o) =>
+      h("li", {}, h("a", { href: `glosario.html#${o.ex}` }, nombreDe(o)), o.grupo ? h("span", { class: "etiqueta" }, o.grupo) : null))));
+}
+
+// Lista de ejercicios posibles: se muestra la propuesta y, aparte, el resto de las alternativas.
 function tarjetaPool(c) {
   const propuesta = c.propuesta.map((p) => p.ex);
-  const elegidos = estado.pool[c.id] ||= [...propuesta];
-  const items = elegidos.map((ex) => {
-    const nota = c.propuesta.find((p) => p.ex === ex)?.nota ?? c.opciones.find((o) => o.ex === ex)?.nota;
-    return { ex, nota, nombre: c.opciones.find((o) => o.ex === ex)?.nombre };
-  });
+  const items = c.propuesta.map((p) => ({ ex: p.ex, nota: p.nota ?? c.opciones.find((o) => o.ex === p.ex)?.nota, nombre: c.opciones.find((o) => o.ex === p.ex)?.nombre }));
   const guia = c.guia ? guiaDetalle(guias[c.guia]) : null;
-  const alternar = (ex) => {
-    const i = elegidos.indexOf(ex);
-    if (i >= 0) elegidos.splice(i, 1); else elegidos.push(ex);
-    pintar();
-  };
-
   return h("section", { class: "musculo circuito", id: c.id },
     h("h2", {}, c.nombre),
     etiquetas(items),
     h("p", { class: "musculo-para" }, c.descripcion),
     c.estructura ? estructuraNodo({ ...c, items }, guia) : guia,
-    h("div", { class: "hoy" },
-      h("h3", {}, "Tu circuito de hoy"),
-      items.length ? listaEjercicios(items, (it, ej) => categorias.get(ej.categoria)) : h("p", {}, "Elegí al menos un ejercicio."),
-      items.length !== c.elegir ? h("p", { class: "ganas-nota" }, `Elegiste ${items.length}; lo habitual son ${c.elegir}.`) : null),
-    h("p", { class: "parte-ayuda" }, "Elegí los ejercicios (se hacen en el orden en que los vas tocando):"),
-    h("div", { class: "opciones", role: "group", "aria-label": "Ejercicios posibles" }, c.opciones.map((o) =>
-      h("button", { type: "button", class: "chip", "aria-pressed": String(elegidos.includes(o.ex)), onclick: () => alternar(o.ex) }, nombreDe(o)))),
-    h("button", { type: "button", class: "chip", onclick: () => { estado.pool[c.id] = [...propuesta]; pintar(); } }, "Volver al orden propuesto"),
+    h("h3", {}, `Propuesta: ${items.length} ejercicios`),
+    listaEjercicios(items, (it, ej) => categorias.get(ej.categoria)),
+    alternativasNodo("Otros ejercicios que podés usar", c.opciones.filter((o) => !propuesta.includes(o.ex))),
     usadoEn(c));
 }
 
-// Plantilla: tres (o más) partes y, de cada una, las opciones posibles. Se elige una por parte.
+// Plantilla: varias partes. De cada una se propone una opción (la primera) y se listan las otras.
 function tarjetaPlantilla(c) {
-  const elegidas = estado.partes[c.id] ||= c.partes.map(() => 0);
-  const items = c.partes.map((p, pi) => p.opciones[elegidas[pi]]);
-
-  const hoy = h("div", { class: "hoy" },
-    h("h3", {}, "Tu circuito de hoy"),
-    h("ol", { class: "circuito-lista" }, c.partes.map((p, pi) => {
-      const o = items[pi];
-      return h("li", {},
-        h("span", { class: "est-num" }, String(pi + 1)),
-        h("a", { href: `glosario.html#${o.ex}` }, nombreDe(o)),
-        h("span", { class: "etiqueta" }, p.nombre),
-        o.nota ? h("span", { class: "item-dosis" }, o.nota) : null);
-    })));
-
-  const parte = (p, pi) => {
-    const grupos = [...new Set(p.opciones.map((o) => o.grupo || ""))];
-    return h("div", { class: "parte" },
-      h("h3", {}, `Parte ${pi + 1}: ${p.nombre}`, h("span", { class: "parte-elegida" }, nombreDe(items[pi]))),
-      grupos.flatMap((g) => [
-        g ? h("p", { class: "grupo-opciones" }, g) : null,
-        h("div", { class: "opciones", role: "group", "aria-label": `${p.nombre}${g ? ": " + g : ""}` },
-          p.opciones.map((o, oi) => (o.grupo || "") === g
-            ? h("button", { type: "button", class: "chip", "aria-pressed": String(elegidas[pi] === oi),
-                onclick: () => { elegidas[pi] = oi; pintar(); } }, nombreDe(o))
-            : null))]));
-  };
-
+  const items = c.partes.map((p) => p.opciones[0]);
   return h("section", { class: "musculo circuito", id: c.id },
     h("h2", {}, c.nombre),
     etiquetas(items),
     h("p", { class: "musculo-para" }, c.descripcion),
-    hoy,
-    h("p", { class: "parte-ayuda" }, "Elegí una opción de cada parte:"),
-    c.partes.map(parte),
+    h("h3", {}, "Propuesta"),
+    h("ol", { class: "circuito-lista" }, c.partes.map((p, pi) => h("li", {},
+      h("span", { class: "est-num" }, String(pi + 1)),
+      h("a", { href: `glosario.html#${items[pi].ex}` }, nombreDe(items[pi])),
+      h("span", { class: "etiqueta" }, p.nombre),
+      items[pi].nota ? h("span", { class: "item-dosis" }, items[pi].nota) : null))),
+    c.partes.map((p) => alternativasNodo(`Alternativas de ${p.nombre.toLowerCase()}`, p.opciones.slice(1))),
     usadoEn(c));
 }
 
@@ -145,13 +115,11 @@ function tarjeta(c) {
 }
 
 function pintar() {
-  const y = window.scrollY;
   app.replaceChildren(
     h("h1", {}, "Circuitos"),
-    h("p", { class: "intro" }, "Un circuito es un conjunto de ejercicios hechos en orden. Algunos son una lista de ejercicios posibles para elegir; otros, una plantilla donde elegís una opción por parte."),
+    h("p", { class: "intro" }, "Un circuito es un conjunto de ejercicios hechos en orden. Cada uno trae una propuesta y, aparte, las alternativas que también sirven."),
     indice(circuitos),
     ...circuitos.map(tarjeta));
-  window.scrollTo(0, y);
 }
 
 try {

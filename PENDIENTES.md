@@ -116,3 +116,15 @@ El Doc solo decía el grupo muscular de sentadilla y estocada (cuádriceps, glú
 - Las subcategorías de pelota las definí yo a partir de las que dijiste (tiro al arco, pase largo, pase corto, control orientado) más las que hacían falta para los otros ejercicios. Qué subcategorías lleva cada uno (uno a tres) también es mío: revisalo.
 - **"Reducido" pasó de Aeróbico a Con pelota** (sigue aportando aeróbico).
 - La categoría "Pelota" ahora se llama "Con pelota".
+
+## Ocho sesiones, una por objetivo, y materiales (2026-11-02)
+
+- **Las 5 sesiones anteriores se reemplazaron por 8**, una por objetivo (velocidad, coordinación, fuerza, potencia, aeróbico, control con pelota, definición, movilidad). Las variantes son opciones dentro de cada bloque. El "día previo" quedó dentro de Movilidad (el bloque "Pelota suave"). Hay que validar la distribución de minutos y qué opciones ofrece cada bloque.
+- **Materiales:** cada ejercicio tiene `materiales`. Lo que tenemos (conos, escalera, pelota) está en `materiales_disponibles`; todo lo demás se muestra con ⚠ como aviso al abrir el ejercicio en una sesión. Los materiales que asigné a cada ejercicio (cajón, barra hexagonal, discos, banco, trineo, subida, pelota medicinal, pared, "arco o 2 conos") salen de la descripción y hay que validarlos. La columna "Materiales" de Ejercicios está oculta; el dato y el aviso en las sesiones siguen.
+- **Opciones nuevas a validar:** "Series pesadas" (fuerza; dosis propuesta 3-5 series de 6-10 repeticiones), "Cuesta" (velocidad) y los bloques de potencia, que dependen de material que no tenemos.
+
+## Circuitos unidos (2026-11-02)
+
+- **Activación es un solo circuito:** trote suave, movilidad articular y técnica de carrera como **opcional** (se usa en los días de velocidad). Se eliminó `activacion-velocidad`; la sesión de Velocidad lo reutiliza con una nota.
+- **Las tres plantillas son una:** "Fuerza, coordinación y cierre". La última parte junta pelota, aeróbico y velocidad (20 alternativas, con el nombre del banco de cada una). Como propuesta queda el primer ejercicio de pelota: decime si preferís otro.
+- **Las sesiones muestran todo desplegado** (ejercicios y guías); "Qué vas a ganar" sigue plegado.

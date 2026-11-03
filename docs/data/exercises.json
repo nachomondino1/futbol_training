@@ -87,7 +87,8 @@
       },
       "aporta": [
         "movilidad"
-      ]
+      ],
+      "materiales": []
     },
     {
       "id": "escalera",
@@ -107,6 +108,9 @@
       },
       "aporta": [
         "coordinacion"
+      ],
+      "materiales": [
+        "escalera"
       ]
     },
     {
@@ -128,7 +132,8 @@
       },
       "aporta": [
         "fuerza"
-      ]
+      ],
+      "materiales": []
     },
     {
       "id": "zancada-estatica",
@@ -151,7 +156,8 @@
       },
       "aporta": [
         "fuerza"
-      ]
+      ],
+      "materiales": []
     },
     {
       "id": "wall-sit",
@@ -173,6 +179,9 @@
       },
       "aporta": [
         "fuerza"
+      ],
+      "materiales": [
+        "pared"
       ]
     },
     {
@@ -193,7 +202,8 @@
       },
       "aporta": [
         "fuerza"
-      ]
+      ],
+      "materiales": []
     },
     {
       "id": "abduccion-cadera",
@@ -211,7 +221,8 @@
       },
       "aporta": [
         "fuerza"
-      ]
+      ],
+      "materiales": []
     },
     {
       "id": "elevacion-talones",
@@ -229,7 +240,8 @@
       },
       "aporta": [
         "fuerza"
-      ]
+      ],
+      "materiales": []
     },
     {
       "id": "plancha-frontal",
@@ -247,7 +259,8 @@
       },
       "aporta": [
         "fuerza"
-      ]
+      ],
+      "materiales": []
     },
     {
       "id": "plancha-lateral",
@@ -267,7 +280,8 @@
       },
       "aporta": [
         "fuerza"
-      ]
+      ],
+      "materiales": []
     },
     {
       "id": "trote-continuo",
@@ -288,7 +302,8 @@
       },
       "aporta": [
         "aerobico"
-      ]
+      ],
+      "materiales": []
     },
     {
       "id": "hiit-10-10",
@@ -308,7 +323,8 @@
       },
       "aporta": [
         "aerobico"
-      ]
+      ],
+      "materiales": []
     },
     {
       "id": "rondo",
@@ -350,6 +366,10 @@
       "subcategorias": [
         "posesion",
         "pase-corto"
+      ],
+      "materiales": [
+        "pelota",
+        "conos"
       ]
     },
     {
@@ -388,6 +408,10 @@
         "pase-corto",
         "pase-largo",
         "control-orientado"
+      ],
+      "materiales": [
+        "pelota",
+        "conos"
       ]
     },
     {
@@ -429,6 +453,10 @@
         "tiro",
         "control-orientado",
         "pase-corto"
+      ],
+      "materiales": [
+        "pelota",
+        "arco (o 2 conos)"
       ]
     },
     {
@@ -467,6 +495,9 @@
         "pase-largo",
         "pase-corto",
         "control-orientado"
+      ],
+      "materiales": [
+        "pelota"
       ]
     },
     {
@@ -501,6 +532,9 @@
       ],
       "subcategorias": [
         "conduccion"
+      ],
+      "materiales": [
+        "pelota"
       ]
     },
     {
@@ -524,7 +558,8 @@
       "aporta": [
         "velocidad",
         "coordinacion"
-      ]
+      ],
+      "materiales": []
     },
     {
       "id": "progresion-aceleracion",
@@ -557,7 +592,8 @@
       },
       "aporta": [
         "velocidad"
-      ]
+      ],
+      "materiales": []
     },
     {
       "id": "cambios-ritmo-conos",
@@ -578,6 +614,9 @@
       },
       "aporta": [
         "velocidad"
+      ],
+      "materiales": [
+        "conos"
       ]
     },
     {
@@ -599,6 +638,9 @@
       "aporta": [
         "velocidad",
         "movilidad"
+      ],
+      "materiales": [
+        "pelota"
       ]
     },
     {
@@ -624,7 +666,8 @@
       },
       "aporta": [
         "movilidad"
-      ]
+      ],
+      "materiales": []
     },
     {
       "id": "bulgarian-split-squat",
@@ -646,6 +689,9 @@
       },
       "aporta": [
         "fuerza"
+      ],
+      "materiales": [
+        "banco"
       ]
     },
     {
@@ -671,6 +717,10 @@
       },
       "aporta": [
         "fuerza"
+      ],
+      "materiales": [
+        "barra hexagonal",
+        "discos"
       ]
     },
     {
@@ -692,6 +742,9 @@
       },
       "aporta": [
         "fuerza"
+      ],
+      "materiales": [
+        "cajón"
       ]
     },
     {
@@ -715,6 +768,9 @@
       "aporta": [
         "potencia",
         "fuerza"
+      ],
+      "materiales": [
+        "peso liviano"
       ]
     },
     {
@@ -737,6 +793,9 @@
       },
       "aporta": [
         "potencia"
+      ],
+      "materiales": [
+        "cajón"
       ]
     },
     {
@@ -762,7 +821,8 @@
       "aporta": [
         "potencia",
         "velocidad"
-      ]
+      ],
+      "materiales": []
     },
     {
       "id": "med-ball-slam",
@@ -783,6 +843,9 @@
       },
       "aporta": [
         "potencia"
+      ],
+      "materiales": [
+        "pelota medicinal"
       ]
     },
     {
@@ -807,7 +870,8 @@
       "aporta": [
         "potencia",
         "coordinacion"
-      ]
+      ],
+      "materiales": []
     },
     {
       "id": "flying-sprint",
@@ -829,7 +893,8 @@
       },
       "aporta": [
         "velocidad"
-      ]
+      ],
+      "materiales": []
     },
     {
       "id": "t-drill",
@@ -852,6 +917,9 @@
       "aporta": [
         "velocidad",
         "coordinacion"
+      ],
+      "materiales": [
+        "conos"
       ]
     },
     {
@@ -875,7 +943,8 @@
       "aporta": [
         "potencia",
         "velocidad"
-      ]
+      ],
+      "materiales": []
     },
     {
       "id": "sprint-5-10-5",
@@ -897,6 +966,9 @@
       },
       "aporta": [
         "velocidad"
+      ],
+      "materiales": [
+        "conos"
       ]
     },
     {
@@ -920,6 +992,9 @@
       "aporta": [
         "velocidad",
         "fuerza"
+      ],
+      "materiales": [
+        "subida leve"
       ]
     },
     {
@@ -943,6 +1018,9 @@
       "aporta": [
         "velocidad",
         "fuerza"
+      ],
+      "materiales": [
+        "trineo (o bandas elásticas)"
       ]
     },
     {
@@ -965,6 +1043,9 @@
       "aporta": [
         "velocidad",
         "coordinacion"
+      ],
+      "materiales": [
+        "conos"
       ]
     },
     {
@@ -984,7 +1065,8 @@
       },
       "aporta": [
         "aerobico"
-      ]
+      ],
+      "materiales": []
     },
     {
       "id": "intervalo-4x4",
@@ -1003,7 +1085,8 @@
       },
       "aporta": [
         "aerobico"
-      ]
+      ],
+      "materiales": []
     },
     {
       "id": "reducido",
@@ -1029,6 +1112,10 @@
       "subcategorias": [
         "posesion",
         "oposicion"
+      ],
+      "materiales": [
+        "pelota",
+        "conos"
       ]
     },
     {
@@ -1063,6 +1150,11 @@
         "oposicion",
         "control-orientado",
         "conduccion"
+      ],
+      "materiales": [
+        "pelota",
+        "conos",
+        "mini arcos (o 2 conos)"
       ]
     },
     {
@@ -1088,6 +1180,9 @@
       ],
       "subcategorias": [
         "conduccion"
+      ],
+      "materiales": [
+        "pelota"
       ]
     },
     {
@@ -1110,6 +1205,9 @@
       ],
       "subcategorias": [
         "conduccion"
+      ],
+      "materiales": [
+        "pelota"
       ]
     },
     {
@@ -1132,6 +1230,9 @@
       ],
       "subcategorias": [
         "conduccion"
+      ],
+      "materiales": [
+        "pelota"
       ]
     },
     {
@@ -1154,6 +1255,9 @@
       ],
       "subcategorias": [
         "conduccion"
+      ],
+      "materiales": [
+        "pelota"
       ]
     },
     {
@@ -1178,6 +1282,9 @@
       "subcategorias": [
         "control-orientado",
         "pase-corto"
+      ],
+      "materiales": [
+        "pelota"
       ]
     },
     {
@@ -1201,6 +1308,10 @@
       "subcategorias": [
         "tiro",
         "oposicion"
+      ],
+      "materiales": [
+        "pelota",
+        "arco (o 2 conos)"
       ]
     },
     {
@@ -1224,6 +1335,11 @@
       "subcategorias": [
         "tiro",
         "pase-corto"
+      ],
+      "materiales": [
+        "pelota",
+        "arco (o 2 conos)",
+        "conos"
       ]
     },
     {
@@ -1247,6 +1363,10 @@
       "subcategorias": [
         "pelota-parada",
         "tiro"
+      ],
+      "materiales": [
+        "pelota",
+        "arco (o 2 conos)"
       ]
     },
     {
@@ -1266,6 +1386,9 @@
       },
       "aporta": [
         "movilidad"
+      ],
+      "materiales": [
+        "pelota"
       ]
     },
     {
@@ -1293,6 +1416,10 @@
       "subcategorias": [
         "control-orientado",
         "pase-corto"
+      ],
+      "materiales": [
+        "pelota",
+        "conos"
       ]
     },
     {
@@ -1318,6 +1445,10 @@
       ],
       "subcategorias": [
         "conduccion"
+      ],
+      "materiales": [
+        "pelota",
+        "conos"
       ]
     },
     {
@@ -1345,6 +1476,10 @@
       ],
       "subcategorias": [
         "pase-corto"
+      ],
+      "materiales": [
+        "pelota",
+        "conos"
       ]
     },
     {
@@ -1374,6 +1509,10 @@
         "control-orientado",
         "pase-corto",
         "conduccion"
+      ],
+      "materiales": [
+        "pelota",
+        "conos"
       ]
     },
     {
@@ -1396,6 +1535,9 @@
       },
       "aporta": [
         "velocidad"
+      ],
+      "materiales": [
+        "conos"
       ]
     },
     {
@@ -1418,6 +1560,9 @@
       },
       "aporta": [
         "velocidad"
+      ],
+      "materiales": [
+        "conos"
       ]
     },
     {
@@ -1438,7 +1583,13 @@
       },
       "aporta": [
         "movilidad"
-      ]
+      ],
+      "materiales": []
     }
+  ],
+  "materiales_disponibles": [
+    "conos",
+    "escalera",
+    "pelota"
   ]
 }

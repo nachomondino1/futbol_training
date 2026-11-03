@@ -140,6 +140,12 @@ def main() -> int:
                 else:  # se resuelve acá y el resto de las reglas ve las opciones como si fueran propias
                     parte["opciones"] = bancos[parte["banco"]]["opciones"]
                     parte.setdefault("nombre", bancos[parte["banco"]]["nombre"])
+            elif parte.get("bancos"):
+                faltan = [b for b in parte["bancos"] if b not in bancos]
+                for b in faltan:
+                    errors.append(f"circuito {c['id']}: la parte {pi} usa un banco inexistente '{b}'")
+                if not faltan:
+                    parte["opciones"] = [o for b in parte["bancos"] for o in bancos[b]["opciones"]]
     circuitos = {c["id"]: c for c in circ_data}
     for d in dupes([c["id"] for c in circ_data]):
         errors.append(f"circuito duplicado: {d}")
@@ -191,6 +197,9 @@ def main() -> int:
             if k not in subcats:
                 errors.append(f"{eid}: subcategoría inexistente '{k}'")
         usadas_sub.update(subs)
+        mats = e.get("materiales")
+        if not isinstance(mats, list):
+            errors.append(f"{eid}: falta 'materiales' (lista; vacía si no hace falta nada)")
         ap = e.get("aporta")
         if not ap:
             errors.append(f"{eid}: falta 'aporta' (qué se gana con el ejercicio)")
