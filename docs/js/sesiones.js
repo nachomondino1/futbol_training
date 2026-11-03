@@ -1,4 +1,4 @@
-import { h, imagenesNodos, patronesNodos, variantesNodo, avisoMateriales, renderHeader, cargarJSON, mostrarError } from "./common.js";
+import { h, imagenesNodos, patronesNodos, variantesNodo, avisoMateriales, leerJugadores, guardarJugadores, jugadoresControl, renderHeader, cargarJSON, mostrarError } from "./common.js";
 import { completarItems, estructuraNodo, guiaDetalle, masGanado, normalizarCircuitos, repartirMinutos } from "./estructura.js";
 
 const app = document.getElementById("app");
@@ -13,14 +13,24 @@ const cerrados = new Set();   // "bloque:ex" de los ítems que cerraste; por def
 let elegidas = {};            // índice de bloque -> índice de opción elegida
 let sesionActual = null;
 let ganasAbierto = false;     // "Qué vas a ganar" arranca plegado y recuerda si lo abriste
+let jugadores = leerJugadores(); // cuántos somos hoy (null = sin filtrar)
 
 renderHeader("sesiones");
 
 const duracion = (s) => s.bloques.reduce((t, b) => t + b.min, 0);
 
+// Cuántos somos hoy: se cambia acá una vez y vale para todos los bloques.
+function cambiarJugadores(n) {
+  jugadores = n;
+  guardarJugadores(n);
+  if (sesionActual) detalle(sesionActual, true); else grilla();
+}
+const selectorJugadores = () => jugadoresControl(jugadores, cambiarJugadores);
+
 function grilla() {
   app.replaceChildren(
     h("h1", {}, "Sesiones"),
+    selectorJugadores(),
     h("div", { class: "grid-sesiones" }, datos.sesiones.map((s) =>
       h("a", { class: "card-sesion", href: `#${s.id}` },
         h("span", { class: "card-min" }, String(duracion(s)), h("small", {}, " min")),
@@ -83,10 +93,27 @@ function resolver(o) {
   return { ...base, ...o, items: base.items, estructura, numerado: true };
 }
 
+// Una opción necesita tantos jugadores como el ejercicio que más pida (jugadores_min en exercises.json; sin dato = 1).
+const minimoDe = (opcion) => Math.max(1, ...resolver(opcion).items.map((it) => ejercicios.get(it.ex).jugadores_min || 1));
+
+// Índices de las opciones del bloque que se pueden hacer con los que somos. Si ninguna se puede, quedan todas (con aviso).
+function indicesVisibles(b) {
+  const todas = b.opciones.map((_, i) => i);
+  if (jugadores == null) return todas;
+  const ok = todas.filter((i) => minimoDe(b.opciones[i]) <= jugadores);
+  return ok.length ? ok : todas;
+}
+
+// Opción elegida: la que tocaste si sigue visible; si no, la primera visible.
+function indiceElegido(b, bi) {
+  const vis = indicesVisibles(b);
+  return vis.includes(elegidas[bi]) ? elegidas[bi] : vis[0];
+}
+
 // Si el circuito es una lista de ejercicios posibles, la sesión muestra la propuesta y deja ver el resto.
 function posiblesNodo(opcion) {
   const usados = new Set(opcion.items.map((it) => it.ex));
-  const otros = opcion.opciones.filter((o) => !usados.has(o.ex));
+  const otros = opcion.opciones.filter((o) => !usados.has(o.ex) && (jugadores == null || (ejercicios.get(o.ex).jugadores_min || 1) <= jugadores));
   return h("div", { class: "posibles" },
     otros.length
       ? h("details", { class: "musculo-sec" },
@@ -97,9 +124,12 @@ function posiblesNodo(opcion) {
 }
 
 function bloqueNodo(b, bi) {
-  const idx = Math.min(elegidas[bi] ?? 0, b.opciones.length - 1);
+  const vis = indicesVisibles(b);
+  const idx = indiceElegido(b, bi);
   const opcion = resolver(b.opciones[idx]);
-  const varias = b.opciones.length > 1;
+  const varias = vis.length > 1;
+  const ocultas = b.opciones.length - vis.length;
+  const sinOpciones = jugadores != null && vis.every((i) => minimoDe(b.opciones[i]) > jugadores);
   return h("section", { class: "bloque", id: `bloque-${bi}`, "aria-labelledby": `b${bi}` },
     h("header", { class: "bloque-cab" },
       h("span", { class: "bloque-n" }, String(bi + 1)),
@@ -108,10 +138,12 @@ function bloqueNodo(b, bi) {
     h("div", { class: "bloque-cuerpo" },
     varias
       ? h("div", { class: "opciones", role: "group", "aria-label": `Opciones de ${b.titulo}` },
-          b.opciones.map((o, oi) => h("button", {
+          vis.map((oi) => h("button", {
             type: "button", class: "chip", "aria-pressed": String(oi === idx),
-            onclick: () => { elegidas[bi] = oi; detalle(sesionActual, true); } }, o.label)))
+            onclick: () => { elegidas[bi] = oi; detalle(sesionActual, true); } }, b.opciones[oi].label)))
       : null,
+    ocultas ? h("p", { class: "bloque-oculto" }, `Ocultamos ${ocultas} ${ocultas === 1 ? "opción que necesita" : "opciones que necesitan"} más de ${jugadores} ${jugadores === 1 ? "jugador" : "jugadores"}.`) : null,
+    sinOpciones ? h("p", { class: "bloque-oculto" }, `Con ${jugadores} ${jugadores === 1 ? "jugador" : "jugadores"} no hay opciones pensadas para este bloque; te mostramos todas.`) : null,
     opcion.nota ? h("p", { class: "nota" }, opcion.nota) : null,
     opcion.estructura ? estructuraNodo(opcion, opcion.guia ? guiaNodo(opcion.guia, bi) : null) : null,
     h("div", { class: "items" },
@@ -119,29 +151,18 @@ function bloqueNodo(b, bi) {
     opcion.opciones ? posiblesNodo(opcion) : null));
 }
 
-function precauciones() {
-  return h("details", { class: "precauciones" },
-    h("summary", {}, "Precauciones por lesión"),
-    h("table", { class: "tabla" },
-      h("thead", {}, h("tr", {}, ["Lesión", "Evitar", "Alternativa"].map((t) => h("th", { scope: "col" }, t)))),
-      h("tbody", {}, datos.precauciones.map((p) => h("tr", {},
-        h("td", { class: "td-nombre", "data-label": "Lesión" }, h("span", { class: "nombre" }, p.lesion)),
-        h("td", { "data-label": "Evitar" }, p.evitar),
-        h("td", { "data-label": "Alternativa" }, p.alternativa))))));
-}
-
 // Qué se gana con la sesión: reparte los minutos de cada bloque (con la opción elegida) entre lo que aporta cada ejercicio.
-function minutosGanados(s, elegidasBloque = {}) {
+function minutosGanados(s) {
   const minutos = new Map();
   s.bloques.forEach((b, bi) => {
-    const opcion = resolver(b.opciones[Math.min(elegidasBloque[bi] ?? 0, b.opciones.length - 1)]);
+    const opcion = resolver(b.opciones[indiceElegido(b, bi)]);
     repartirMinutos(opcion.items, b.min, ejercicios, minutos);
   });
   return minutos;
 }
 
 function gananciasNodo(s) {
-  const minutos = minutosGanados(s, elegidas);
+  const minutos = minutosGanados(s);
   const fuertes = masGanado(minutos, objetivos);
   const poco = objetivos.filter((o) => minutos.get(o.id) > 0 && !fuertes.some((g) => g.id === o.id));
   const etiquetas = masGanado(minutos, objetivos, { max: 3, etiquetas: true });
@@ -168,11 +189,11 @@ function detalle(s, conservar = false) {
   app.replaceChildren(
     h("a", { class: "volver", href: "#" }, "Todas las sesiones"),
     h("h1", {}, s.nombre),
+    selectorJugadores(),
     s.cuando ? h("p", { class: "intro" }, `Cuándo: ${s.cuando}`) : null,
     gananciasNodo(s),
     resumenNodo(s),
-    ...s.bloques.map(bloqueNodo),
-    precauciones());
+    ...s.bloques.map(bloqueNodo));
   if (conservar) window.scrollTo(0, y);
   else window.scrollTo(0, 0);
 }

@@ -120,7 +120,7 @@ El Doc solo decía el grupo muscular de sentadilla y estocada (cuádriceps, glú
 ## Ocho sesiones, una por objetivo, y materiales (2026-11-02)
 
 - **Las 5 sesiones anteriores se reemplazaron por 8**, una por objetivo (velocidad, coordinación, fuerza, potencia, aeróbico, control con pelota, definición, movilidad). Las variantes son opciones dentro de cada bloque. El "día previo" quedó dentro de Movilidad (el bloque "Pelota suave"). Hay que validar la distribución de minutos y qué opciones ofrece cada bloque.
-- **Materiales:** cada ejercicio tiene `materiales`. Lo que tenemos (conos, escalera, pelota) está en `materiales_disponibles`; todo lo demás se muestra con ⚠ como aviso al abrir el ejercicio en una sesión. Los materiales que asigné a cada ejercicio (cajón, barra hexagonal, discos, banco, trineo, subida, pelota medicinal, pared, "arco o 2 conos") salen de la descripción y hay que validarlos. La columna "Materiales" de Ejercicios está oculta; el dato y el aviso en las sesiones siguen.
+- **Materiales:** cada ejercicio tiene `materiales`. Lo que tenemos (conos, escalera, pelota) está en `materiales_disponibles`; todo lo demás se muestra con ⚠ como aviso al abrir el ejercicio en una sesión. Los materiales que asigné a cada ejercicio (cajón, barra hexagonal, discos, banco, trineo, subida, pelota medicinal, pared, arco, arquitos) salen de la descripción y hay que validarlos. La columna "Materiales" de Ejercicios está oculta; el dato y el aviso en las sesiones siguen.
 - **Opciones nuevas a validar:** "Series pesadas" (fuerza; dosis propuesta 3-5 series de 6-10 repeticiones), "Cuesta" (velocidad) y los bloques de potencia, que dependen de material que no tenemos.
 
 ## Circuitos unidos (2026-11-02)
@@ -168,3 +168,29 @@ El Doc solo decía el grupo muscular de sentadilla y estocada (cuádriceps, glú
 - La escalera ahora tiene **6 patrones con su diagrama**: un pie por cuadrado, dos pies por cuadrado, adentro-adentro-afuera-afuera, lateral, zig-zag y salto con un pie. Los dibujé yo (SVG propios, sin derechos de terceros): blanco = pie izquierdo, amarillo = derecho, los números son el orden de los apoyos.
 - **Hay que validar cada patrón.** Del Doc salían solo "pie-pie", "in-in-out-out" y "lateral" (y "zig-zag, in-out, lateral" en otra parte); cómo se hace cada uno exactamente (por ejemplo, el lateral y el zig-zag) lo definí yo. "Dos pies por cuadrado" y "Salto con un pie" los sumé yo por ser comunes.
 - Se regeneran con `python3 scripts/gen_diagramas.py`.
+
+## Tres ejercicios nuevos con pelota (2026-11-03)
+
+- **Cuadrado con uno en el medio** (rondo en cuadrado de 3 m): lo puse en la sesión Pelota. La variante de 4 (un lado del cuadrado siempre vacío) ya está confirmada. La rotación del del medio después de cada minuto también la sumé yo.
+- **Conducción y vuelta por detrás** (de a 3, conos a 15 m): en Pelota, bloque "Conducción y pase". Que rotan los lugares después de unos minutos lo sumé yo. Lo leí como una dejada: el que conduce deja la pelota al compañero (que no se mueve) y le da la vuelta por detrás para retomarla.
+- **Pelota al campo rival** (idea tuya, de a 2): en Velocidad y agilidad, bloque "Pelota". Reglas confirmadas por vos: punto si la pelota queda quieta en el campo rival antes de que pueda pegarle, punto para el rival si la mandás afuera, a 10. Falta el tamaño exacto de la cancha.
+- Subcategorías y qué aporta cada uno (control, velocidad) las asigné yo.
+
+## Pared y control orientado entre conos (2026-11-03)
+
+- Ejercicio nuevo de a 3 (conos a 15 m, pared de primera y control orientado). Quedó en la sesión Pelota, bloque "Conducción y pases con conos". Lo dosifiqué en 1 minuto por tanda, como dijiste ("ponele"), y que rotan después lo sumé yo. Subcategorías y lo que aporta (control, velocidad) las asigné yo.
+
+## Revisión de ejercicios (2026-11-03)
+
+- **Imágenes:** 11 diagramas nuevos dibujados por mí (conos y pelota). Ahora 45 de 62 ejercicios tienen imagen. Hay que validar que cada dibujo coincida con cómo se hace. Sin imagen quedan 17: los individuales con pelota (sole + push, zigzag, V push & cut, light touches, conducción a ritmo variable), los de movilidad y calentamiento, los de definición (uno contra uno, pivote de 9, centro al vértice), técnica de carrera, progresión de aceleración, activación neuromuscular, leg hop y nordic hamstring.
+- **Textos limpiados:** se sacaron referencias al Doc ("Parte 2", "biblioteca del Doc", "reel") de trote continuo, aceleración en zigzag y leg hop.
+- **Duplicados unificados (2026-11-03):** (1) *Activación neuromuscular* pasó a ser alias de *Progresión de aceleración*, que absorbió su texto (sin pelota, en parejas, 10-15 m al 60-70%, protege de desgarros). (2) *Velocidad máxima hasta el cono* pasó a ser alias de *Flying sprint* (tramo marcado con conos, la vuelta a máxima o caminando); la activación usa ahora flying sprint. (3) *Reducido* quedó solo como partidos en espacios chicos (5v5…); la posesión de 2-3 personas se explica en *Rondo*. (4) *Conducción y vuelta por detrás* se unió con *Pared y control orientado entre conos*: un solo ejercicio de a 3 con dos formas (pared de primera, o dejada y vuelta por detrás), cada una con su dibujo. Hay que validar que las fusiones sean como las usan.
+- **Descripciones flojas:** "Uno defiende, otro ataca" (no dice dónde ni cómo se juega), "Velocidad máxima hasta el cono" (sin distancia) y "Activación dinámica completa" (usa "loco" sin explicar y mezcla varias cosas).
+- **Nombres en inglés mezclados** con los en español (Sole + push + acceleration, V push & cut, Light touches, Flying sprint, Box jump, T-drill…).
+
+## "Hoy somos" en las sesiones (2026-11-03)
+
+- Selector arriba de Sesiones (lista y detalle): decís cuántos son una vez, se guarda en el navegador y cada bloque muestra solo las opciones que se pueden hacer. "No filtrar" lo saca.
+- **Mínimo de jugadores por ejercicio (`jugadores_min`): lo asigné yo, hay que validarlo.** De a 2: rondo, pases con control orientado, pase-control-definición, pases combinados, presión y arcos, pase y va, pase al cono lateral, carrera en V con devolución, uno defiende otro ataca, pivote de 9, centro al vértice, pelota al campo rival y reactive sprint. De a 3: pared y control orientado entre conos. De a 4: cuadrado con uno en el medio. De a 6: reducido. El resto, 1.
+- Solo se usa el mínimo: con más jugadores se pueden armar varios grupos. No hay máximo ni diagramas para 5, 6 y 7 (ver `PLAN_CANTIDAD_JUGADORES.md`).
+- Con 1 jugador, el bloque "Definición" y el de "Pases y control orientado" de Fuerza y potencia no tienen opciones: muestra todas con un aviso.

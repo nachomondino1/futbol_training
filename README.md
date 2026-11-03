@@ -52,6 +52,7 @@ En `docs/data/exercises.json`, dentro de `ejercicios`:
 - `materiales`: lista de lo que hace falta (vacía si no hace falta nada). Obligatorio. Lo que tenemos está en `materiales_disponibles` (arriba de todo en `exercises.json`: conos, escalera, pelota); cualquier otra cosa se muestra como aviso (⚠) al abrir el ejercicio en una sesión; la página Ejercicios no tiene columna de materiales, el dato queda guardado al abrir el ejercicio en una sesión.
 - `aporta`: qué se gana con el ejercicio, con ids de `docs/data/objetivos.json` (velocidad, aeróbico, fuerza, potencia, control, precisión de tiro, coordinación, movilidad). Obligatorio. La sesión usa esto para armar "Qué vas a ganar".
 - `trabaja`: `{ "principal": "cuadriceps", "secundarios": ["gluteo-mayor"] }`, con ids de `docs/data/muscles.json` (ahí se escribe para qué sirve cada músculo). Es obligatorio.
+- `jugadores_min`: cuántos jugadores como mínimo necesita (sin dato = 1). En Sesiones, el selector "Hoy somos" oculta las opciones que piden más.
 - Si depende de cuántos son, poné `"requiere_variantes": true` y cargá `"2"`, `"3"`, `"4"` y `"8"` en `variantes`.
 - Si propusiste una variante que todavía no validaste, agregá `"pendiente_validar": ["4"]`.
 - Un ejercicio que ninguna sesión usa es error, salvo que le pongas `"huerfano_ok": true`.
@@ -189,5 +190,5 @@ docs/             la web (lo que sirve GitHub Pages)
 scripts/validate.py · scripts/gen_iconos.py
 fuente/           Doc original exportado (solo referencia)
 PENDIENTES.md     lo que propuse yo y falta validar
-PLAN_CANTIDAD_JUGADORES.md   plan en stand-by: filtrar ejercicios según cuántos somos
+PLAN_CANTIDAD_JUGADORES.md   filtro según cuántos somos: primera versión hecha; plan de lo que falta
 ```

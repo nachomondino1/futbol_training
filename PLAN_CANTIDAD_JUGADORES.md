@@ -1,6 +1,6 @@
 # Plan (stand-by): cuántos somos ese día
 
-**Estado:** en pausa. Todavía no está claro cómo implementarlo. El selector "Somos" se sacó del código de la web: ya no existe en el header ni se guarda nada en el navegador. Cada ejercicio muestra todas sus variantes (2, 3, 4 y 8) y todos sus diagramas. La versión vieja del selector (botones 2, 3, 4, 8 que elegían una sola variante) está en el historial de git, en el commit `6d954ff` (`docs/js/common.js`).
+**Estado (2026-11-03): primera versión hecha, simple.** En Sesiones hay un selector "Hoy somos" (se dice una vez y queda guardado en el navegador) y cada bloque oculta las opciones que necesitan más jugadores (`jugadores_min` en `exercises.json`). Lo de abajo es el plan original, que sigue pendiente para lo que falta (rangos máximos, variantes por rango, diagramas para 5, 6 y 7). Antes: en pausa. Todavía no está claro cómo implementarlo. El selector "Somos" se sacó del código de la web: ya no existe en el header ni se guarda nada en el navegador. Cada ejercicio muestra todas sus variantes (2, 3, 4 y 8) y todos sus diagramas. La versión vieja del selector (botones 2, 3, 4, 8 que elegían una sola variante) está en el historial de git, en el commit `6d954ff` (`docs/js/common.js`).
 
 ## Qué se quiere
 

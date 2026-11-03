@@ -330,7 +330,7 @@
         "Trote a ritmo conversacional"
       ],
       "categoria": "aerobico",
-      "descripcion": "Correr a ritmo conversacional (60-70% de la FC máx.): tenés que poder hablar sin ahogarte. Es la base aeróbica que mejora la recuperación entre sprints y sostiene la intensidad en el segundo tiempo. Si alguno no llega a los 30 min corridos, alterna trote y caminata rápida en vez de forzar. En la biblioteca del Doc figura de 45 min; en el día de resistencia se hace de 30.",
+      "descripcion": "Correr a ritmo conversacional (60-70% de la FC máx.): tenés que poder hablar sin ahogarte. Es la base aeróbica que mejora la recuperación entre sprints y sostiene la intensidad en el segundo tiempo. Si alguno no llega a los 30 min corridos, alterna trote y caminata rápida en vez de forzar. Dura entre 30 y 45 min.",
       "dosis": null,
       "variantes": {},
       "imagen": "img/ejercicios/trote-continuo.png",
@@ -409,7 +409,43 @@
       "materiales": [
         "pelota",
         "conos"
-      ]
+      ],
+      "jugadores_min": 2
+    },
+    {
+      "id": "cuadrado-uno-al-medio",
+      "nombre": "Cuadrado con uno en el medio",
+      "alias": [
+        "Rondo en cuadrado"
+      ],
+      "categoria": "pelota",
+      "descripcion": "Armás un cuadrado de unos 3 m de lado con conos. Hay un jugador afuera en cada lado del cuadrado y uno adentro, en el centro, que tiene que recuperar la pelota. Los de afuera se la pasan sin que el del medio la intercepte. Se juega durante un minuto y después rotan. Variantes: (1) no se le puede devolver el pase al que te lo dio, así en vez de 3 opciones de pase tenés 2; (2) cada vez que pasás tenés que moverte al otro lado del cuadrado.",
+      "dosis": "1 minuto por tanda, rotando al del medio",
+      "variantes": {
+        "4": "Un lado del cuadrado queda siempre vacío: tres jugadores afuera y uno en el medio. Es más exigente para los de afuera, que tienen menos opciones de pase."
+      },
+      "imagen": "img/cuadrado-uno-al-medio.svg",
+      "video": null,
+      "trabaja": {
+        "principal": "coordinacion",
+        "secundarios": [
+          "cuadriceps",
+          "gemelos"
+        ]
+      },
+      "aporta": [
+        "control"
+      ],
+      "subcategorias": [
+        "posesion",
+        "pase-corto",
+        "oposicion"
+      ],
+      "materiales": [
+        "pelota",
+        "conos"
+      ],
+      "jugadores_min": 4
     },
     {
       "id": "pases-control-orientado",
@@ -451,7 +487,8 @@
       "materiales": [
         "pelota",
         "conos"
-      ]
+      ],
+      "jugadores_min": 2
     },
     {
       "id": "pase-control-definicion",
@@ -495,8 +532,9 @@
       ],
       "materiales": [
         "pelota",
-        "arco (o 2 conos)"
-      ]
+        "arco"
+      ],
+      "jugadores_min": 2
     },
     {
       "id": "circuito-pases-combinados",
@@ -537,7 +575,8 @@
       ],
       "materiales": [
         "pelota"
-      ]
+      ],
+      "jugadores_min": 2
     },
     {
       "id": "conduccion-ritmo-variable",
@@ -603,9 +642,11 @@
     {
       "id": "progresion-aceleracion",
       "nombre": "Progresión de aceleración",
-      "alias": [],
+      "alias": [
+        "Activación neuromuscular"
+      ],
       "categoria": "velocidad",
-      "descripcion": "Arranque progresivo, no explosivo desde el primer paso. Acelerás gradualmente hasta el 60-70% de la velocidad máxima en 15-20 m. Volvés caminando como descanso completo.",
+      "descripcion": "Arranque progresivo, no explosivo desde el primer paso. Acelerás gradualmente hasta el 60-70% de la velocidad máxima en 15-20 m. Volvés caminando como descanso completo. Hecha sin pelota, en parejas y en tramos cortos de 10-15 m al 60-70%, sirve como activación antes del partido: es corto pero no se saca, porque es lo que más protege contra desgarros tempranos.",
       "dosis": null,
       "requiere_variantes": true,
       "variantes": {
@@ -642,7 +683,7 @@
       "descripcion": "Recorrido marcado con conos, alternando tramos de trote suave y tramos de aceleración corta. Sin cortes de dirección de 90°.",
       "dosis": null,
       "variantes": {},
-      "imagen": null,
+      "imagen": "img/cambios-ritmo-conos.svg",
       "video": null,
       "trabaja": {
         "principal": "cuadriceps",
@@ -657,31 +698,6 @@
       "materiales": [
         "conos"
       ]
-    },
-    {
-      "id": "activacion-neuromuscular",
-      "nombre": "Activación neuromuscular",
-      "alias": [],
-      "categoria": "velocidad",
-      "descripcion": "Sin pelota, aceleraciones cortas de 10-15 m al 60-70%, en parejas. Es corto pero no se saca: es lo que más protege contra desgarros tempranos en el partido.",
-      "dosis": null,
-      "variantes": {},
-      "imagen": null,
-      "video": null,
-      "trabaja": {
-        "principal": "isquiotibiales",
-        "secundarios": [
-          "cuadriceps"
-        ]
-      },
-      "aporta": [
-        "velocidad",
-        "movilidad"
-      ],
-      "materiales": [
-        "pelota"
-      ],
-      "huerfano_ok": true
     },
     {
       "id": "estiramiento-estatico",
@@ -896,7 +912,7 @@
         "Salto a una pierna"
       ],
       "categoria": "potencia",
-      "descripcion": "Saltos a una pierna de lado a lado, para sentirte liviano en los pies. Es una de las cinco cosas del reel para desarrollar la conducción.",
+      "descripcion": "Saltos a una pierna de lado a lado, para sentirte liviano en los pies. Sirve también para mejorar la conducción.",
       "dosis": null,
       "variantes": {},
       "imagen": null,
@@ -917,9 +933,11 @@
     {
       "id": "flying-sprint",
       "nombre": "Flying sprint (30 m)",
-      "alias": [],
+      "alias": [
+        "Velocidad máxima hasta el cono"
+      ],
       "categoria": "velocidad",
-      "descripcion": "Tomás velocidad en 15 m y \"volás\" los siguientes 15 m a máxima intensidad. Desarrolla la velocidad máxima y la mecánica de sprint.",
+      "descripcion": "Tomás velocidad en 15 m y \"volás\" los siguientes 15 m a máxima intensidad, sin pelota. Desarrolla la velocidad máxima y la mecánica de sprint. Podés marcar el tramo con conos hasta el último cono. La vuelta puede ser también a máxima velocidad o caminando.",
       "dosis": "4-6 reps",
       "variantes": {},
       "imagen": "img/ejercicios/flying-sprint.png",
@@ -935,7 +953,9 @@
       "aporta": [
         "velocidad"
       ],
-      "materiales": []
+      "materiales": [
+        "conos"
+      ]
     },
     {
       "id": "t-drill",
@@ -1087,7 +1107,8 @@
       ],
       "materiales": [
         "conos"
-      ]
+      ],
+      "jugadores_min": 2
     },
     {
       "id": "hiit-15-15",
@@ -1134,7 +1155,7 @@
       "nombre": "Reducido",
       "alias": [],
       "categoria": "pelota",
-      "descripcion": "Juego en espacio chico. Con conos marcando el límite, 2 tocan y 1 presiona en el medio (con 3 personas) y rotan roles. O partidos en espacios pequeños (5v5) a alta intensidad en bloques de 3-8 min: aeróbico específico con pelota, con la misma carga cardíaca que correr al 93% de la FC máx.",
+      "descripcion": "Partidos en espacios pequeños (5v5, por ejemplo), con conos marcando los límites, a alta intensidad en bloques de 3-8 min: aeróbico específico con pelota, con la misma carga cardíaca que correr al 93% de la FC máx. Para la posesión con presión de 2 o 3 personas, ver Rondo.",
       "dosis": null,
       "variantes": {},
       "imagen": "img/ejercicios/reducido.png",
@@ -1157,7 +1178,8 @@
       "materiales": [
         "pelota",
         "conos"
-      ]
+      ],
+      "jugadores_min": 6
     },
     {
       "id": "pase-presion-arcos-l",
@@ -1195,8 +1217,9 @@
       "materiales": [
         "pelota",
         "conos",
-        "mini arcos (o 2 conos)"
-      ]
+        "arquitos"
+      ],
+      "jugadores_min": 2
     },
     {
       "id": "sole-push-acceleration",
@@ -1352,8 +1375,9 @@
       ],
       "materiales": [
         "pelota",
-        "arco (o 2 conos)"
-      ]
+        "arco"
+      ],
+      "jugadores_min": 2
     },
     {
       "id": "pivote-9-definicion",
@@ -1379,9 +1403,10 @@
       ],
       "materiales": [
         "pelota",
-        "arco (o 2 conos)",
+        "arco",
         "conos"
-      ]
+      ],
+      "jugadores_min": 2
     },
     {
       "id": "centro-vertice-area",
@@ -1407,8 +1432,9 @@
       ],
       "materiales": [
         "pelota",
-        "arco (o 2 conos)"
-      ]
+        "arco"
+      ],
+      "jugadores_min": 2
     },
     {
       "id": "activacion-dinamica",
@@ -1440,7 +1466,7 @@
       "descripcion": "Tres conos formando una V corta. Un jugador se para en el vértice de abajo y corre de un extremo al otro. Cada vez que llega a un extremo, otra persona le tira una pelota y él se la devuelve. Se puede devolver de varias formas: rastrera; aérea, de cabeza; parándola de pecho y devolviéndola; de volea, con la pierna en el aire; o dejándola picar antes y devolviéndola.",
       "dosis": null,
       "variantes": {},
-      "imagen": null,
+      "imagen": "img/carrera-v-devolucion.svg",
       "video": null,
       "huerfano_ok": true,
       "trabaja": {
@@ -1461,7 +1487,8 @@
       "materiales": [
         "pelota",
         "conos"
-      ]
+      ],
+      "jugadores_min": 2
     },
     {
       "id": "conduccion-v-suela",
@@ -1471,7 +1498,7 @@
       "descripcion": "Con los tres conos en V: vas hacia un extremo conduciendo la pelota, la pisás con la suela y la llevás con la suela, yendo marcha atrás, hasta volver al lugar inicial. Después vas al otro extremo conduciendo y hacés lo mismo con la suela del otro pie, hasta volver al lugar inicial. Y así.",
       "dosis": null,
       "variantes": {},
-      "imagen": null,
+      "imagen": "img/conduccion-v-suela.svg",
       "video": null,
       "huerfano_ok": true,
       "trabaja": {
@@ -1502,7 +1529,7 @@
       "descripcion": "Se hace de a dos, en una zona circular de unos 5 m de radio. Uno se queda fijo en un cono central y el otro corre alrededor. El que corre le pasa la pelota al del cono, que se la devuelve de un solo toque hacia un lado o hacia el otro, cambiando de dirección cada vez. El que corre va a buscarla y se la devuelve. Como la dirección cambia, tiene que arrancar desde parado o a media carrera. No se entrena la distancia sino la aceleración, la reacción y el primer toque con fatiga. A los 10-15 minutos el que corre tiene las piernas pesadas y el del cono casi no se mueve, así que conviene alternar los roles cada tanto. Sirve también como calentamiento activo para llegar con las piernas puestas al partido.",
       "dosis": null,
       "variantes": {},
-      "imagen": null,
+      "imagen": "img/un-toque-cono-central.svg",
       "video": null,
       "huerfano_ok": true,
       "trabaja": {
@@ -1523,7 +1550,8 @@
       "materiales": [
         "pelota",
         "conos"
-      ]
+      ],
+      "jugadores_min": 2
     },
     {
       "id": "pase-cono-lateral-control",
@@ -1533,7 +1561,7 @@
       "descripcion": "Se hace de a dos. Dos conos separados unos 8 m y un tercer cono más o menos a la mitad, corrido hacia un costado (no en la misma línea). Uno se para en ese cono del costado y el otro corre de cono a cono de la línea. En un extremo, el que corre le da el pase al del costado, que se la devuelve al espacio, casi llegando al otro cono, por donde viene corriendo por adentro. Tiene que controlar yendo a máxima velocidad y pegar la vueltita con la pelota por fuera del cono. Después vuelve corriendo hasta el primer cono, pega otra vez la vueltita y ahí le da el pase al del cono del costado, que se la tira de nuevo al espacio. Y así.",
       "dosis": null,
       "variantes": {},
-      "imagen": null,
+      "imagen": "img/pase-cono-lateral-control.svg",
       "video": null,
       "huerfano_ok": true,
       "trabaja": {
@@ -1556,42 +1584,104 @@
       "materiales": [
         "pelota",
         "conos"
-      ]
+      ],
+      "jugadores_min": 2
     },
     {
-      "id": "velocidad-maxima-cono",
-      "nombre": "Velocidad máxima hasta el cono",
-      "alias": [],
-      "categoria": "velocidad",
-      "descripcion": "Corrés sin pelota a máxima velocidad hasta el último cono. La vuelta puede ser también a máxima o caminando. Sirve como la parte de velocidad de un circuito combinado.",
-      "dosis": null,
-      "variantes": {},
+      "id": "pared-control-orientado-conos",
+      "nombre": "Pared y control orientado entre conos",
+      "alias": [
+        "Pared con control orientado",
+        "Dejada y vuelta por detrás"
+      ],
+      "categoria": "pelota",
+      "descripcion": "Se hace de a 3. Ponés 2 conos separados unos 15 m, con un compañero parado en cada uno. El tercero se para en el medio con la pelota y va y viene entre los dos, sale conduciendo hacia uno y a mitad de camino se la juega. Hay dos formas de hacerlo (mirá los dibujos). Así durante un minuto, y después rotan los lugares.",
+      "dosis": "1 minuto por tanda, rotando",
+      "variantes": {
+        "3": "Dos compañeros quietos, cada uno en su cono (a unos 15 m), y el tercero yendo y viniendo entre ellos."
+      },
       "imagen": null,
       "video": null,
-      "huerfano_ok": true,
       "trabaja": {
-        "principal": "isquiotibiales",
+        "principal": "coordinacion",
         "secundarios": [
-          "gluteo-mayor",
+          "cuadriceps",
           "gemelos"
         ]
       },
       "aporta": [
+        "control",
         "velocidad"
       ],
+      "subcategorias": [
+        "pase-corto",
+        "control-orientado",
+        "conduccion"
+      ],
       "materiales": [
+        "pelota",
         "conos"
-      ]
+      ],
+      "patrones": [
+        {
+          "id": "pared",
+          "nombre": "Pared de primera y control orientado",
+          "descripcion": "A mitad de camino entre el centro y el cono le pasa al compañero, que se la devuelve de primera. La recibe con un control orientado y sale conduciendo hacia el otro cono, donde repite lo mismo.",
+          "imagen": "img/pared-control-orientado-conos.svg"
+        },
+        {
+          "id": "dejada",
+          "nombre": "Dejada y vuelta por detrás",
+          "descripcion": "Conduce hasta justo antes del compañero y le deja la pelota. El compañero solo la deja servida, sin moverse. El que conducía le da la vuelta por detrás, la retoma y sale conduciendo hacia el otro cono.",
+          "imagen": "img/pared-control-orientado-conos-dejada.svg"
+        }
+      ],
+      "jugadores_min": 3
+    },
+    {
+      "id": "pelota-al-campo-rival",
+      "nombre": "Pelota al campo rival",
+      "alias": [
+        "Pelota quieta"
+      ],
+      "categoria": "pelota",
+      "descripcion": "Se hace de a 2, en una cancha del tamaño de fútbol 5 o fútbol 6, con una sola pelota. Cada jugador se queda en su mitad y se pasan la pelota de un lado al otro. Si la pelota queda quieta en el campo del rival antes de que pueda pegarle, sumás un punto. Si la pelota que mandaste sale de la zona delimitada o de la cancha, el punto es para el rival. Se juega a 10 puntos. Hay aceleraciones cortas y cambios de ritmo según adónde te la mande el compañero. Cuanto más grande la cancha, más tenés que correr.",
+      "dosis": "A 10 puntos",
+      "variantes": {
+        "2": "Un jugador en cada mitad de la cancha, con una sola pelota."
+      },
+      "imagen": "img/pelota-al-campo-rival.svg",
+      "video": null,
+      "trabaja": {
+        "principal": "coordinacion",
+        "secundarios": [
+          "cuadriceps",
+          "gemelos"
+        ]
+      },
+      "aporta": [
+        "velocidad",
+        "control"
+      ],
+      "subcategorias": [
+        "pase-largo",
+        "control-orientado"
+      ],
+      "materiales": [
+        "pelota",
+        "conos"
+      ],
+      "jugadores_min": 2
     },
     {
       "id": "aceleracion-conos-zigzag",
       "nombre": "Aceleración a cada cono en zigzag",
       "alias": [],
       "categoria": "velocidad",
-      "descripcion": "Corrés en zigzag y acelerás hacia cada cono. Sale de la \"Parte 2\" de los circuitos del Doc.",
+      "descripcion": "Con los conos en zigzag, corrés de uno a otro y acelerás hacia cada cono.",
       "dosis": null,
       "variantes": {},
-      "imagen": null,
+      "imagen": "img/aceleracion-conos-zigzag.svg",
       "video": null,
       "huerfano_ok": true,
       "trabaja": {
@@ -1661,6 +1751,8 @@
   "materiales_disponibles": [
     "conos",
     "escalera",
-    "pelota"
+    "pelota",
+    "arco",
+    "arquitos"
   ]
 }

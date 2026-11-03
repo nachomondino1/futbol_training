@@ -162,9 +162,6 @@
       "nombre": "Velocidad máxima",
       "opciones": [
         {
-          "ex": "velocidad-maxima-cono"
-        },
-        {
           "ex": "flying-sprint"
         },
         {
@@ -194,7 +191,8 @@
           "ex": "progresion-aceleracion"
         },
         {
-          "ex": "velocidad-maxima-cono"
+          "ex": "flying-sprint",
+          "nota": "A máxima velocidad."
         }
       ],
       "huerfano_ok": true

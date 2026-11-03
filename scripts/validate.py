@@ -273,6 +273,21 @@ def main() -> int:
                     for p in it.get("pendiente_validar", []):
                         warnings.append(f"{s['id']}/{it['ex']}: variante de {p} personas propuesta, sin validar")
 
+    # Jugadores: jugadores_min válido y avisar de los bloques que no tienen opciones para grupos chicos
+    ex_por_id = {e["id"]: e for e in ejercicios}
+    for e in ejercicios:
+        m = e.get("jugadores_min")
+        if m is not None and (not isinstance(m, int) or m < 1):
+            errors.append(f"{e['id']}: jugadores_min debe ser un entero >= 1")
+    for s_ in ses_data["sesiones"]:
+        for b in s_["bloques"]:
+            minimos = []
+            for o in b["opciones"]:
+                its = completar_items(circuitos[o["circuito"]])["items"] if o.get("circuito") in circuitos else o.get("items", [])
+                minimos.append(max([ex_por_id.get(i["ex"], {}).get("jugadores_min", 1) for i in its] + [1]))
+            if minimos and min(minimos) > 1:
+                warnings.append(f"{s_['id']}/{b['titulo']}: con menos de {min(minimos)} jugadores el bloque no tiene opciones")
+
     for c in circ_data:
         where = f"circuito {c['id']}"
         partes = c.get("partes")

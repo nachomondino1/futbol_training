@@ -247,8 +247,6 @@ h1 { font-size: 1.9rem; line-height: 1.15; margin: 8px 0 16px; }
 .item-cuerpo p { margin: 8px 0; }
 .nota { font-weight: 700; background: var(--resalte); padding: 6px 10px; border-radius: 6px; }
 .link-glosario { display: inline-flex; align-items: center; min-height: var(--tap); font-weight: 700; }
-.precauciones { margin-top: 28px; background: var(--surface); border-radius: 14px; padding: 0 14px 8px; }
-.precauciones summary { min-height: var(--tap); display: flex; align-items: center; font-weight: 800; font-size: 1.2rem; cursor: pointer; }
 
 @media (max-width: 760px) {
   .tabla, .tabla tbody, .tabla tr, .tabla td { display: block; width: 100%; }
@@ -356,3 +354,15 @@ h1 { font-size: 1.9rem; line-height: 1.15; margin: 8px 0 16px; }
 .ganas-para { grid-column: 1 / -1; color: var(--ink-soft); font-size: .95rem; }
 .ganas-poco { margin: 8px 0 0; color: var(--ink-soft); font-weight: 600; }
 .ganas-nota { margin: 6px 0 0; font-size: .85rem; color: var(--ink-soft); }
+
+/* Cuántos somos hoy */
+.jugadores { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 12px; margin: 4px 0 20px; padding: 10px 14px; background: var(--surface); border: 2px solid var(--line); border-radius: var(--radio); }
+.jugadores-tit { font-weight: 700; }
+.jugadores-n { min-width: 3.2rem; text-align: center; font-size: 1.4rem; line-height: 1; }
+.jugadores-btn { width: var(--tap); height: var(--tap); border-radius: 50%; border: 2px solid var(--ink); background: var(--surface); color: var(--ink); font: inherit; font-size: 1.5rem; font-weight: 700; cursor: pointer; transition: background .15s ease, transform .15s ease; }
+.jugadores-btn:hover:not(:disabled) { background: var(--resalte); }
+.jugadores-btn:active:not(:disabled) { transform: scale(.93); }
+.jugadores-btn:disabled { opacity: .35; cursor: default; }
+.jugadores-limpiar { min-height: 40px; padding: 0 14px; border-radius: 999px; border: 0; background: none; color: inherit; font: inherit; text-decoration: underline; cursor: pointer; }
+.jugadores-ayuda { flex-basis: 100%; color: var(--ink-soft); font-size: .92rem; }
+.bloque-oculto { margin: 0 0 8px; color: var(--ink-soft); font-size: .92rem; }

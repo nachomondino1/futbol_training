@@ -192,6 +192,119 @@ def cpc_8():
     return cuerpo + texto(160, 105, "rombo", 12)
 
 
+# --- Ejercicios con conos y pelota: un diagrama por ejercicio (docs/img/<id>.svg) ---
+def curva(d):
+    return (f'<path d="{d}" fill="none" stroke="{AMARILLO}" stroke-width="2.5" stroke-dasharray="6 5" '
+            f'marker-end="url(#ma)"/>')
+
+
+def linea(x1, y1, x2, y2, extra=""):
+    return f'<line x1="{x1}" y1="{y1}" x2="{x2}" y2="{y2}" stroke="#fff" stroke-width="2" {extra}/>'
+
+
+def cuadrado_medio():
+    pasadores = [(160, 38), (242, 100), (160, 162), (78, 100)]
+    cuerpo = "".join(cone(x, y) for x, y in [(112, 62), (208, 62), (208, 138), (112, 138)])
+    cuerpo += arrow(pasadores[0], pasadores[1]) + arrow(pasadores[1], pasadores[2]) + arrow(pasadores[3], pasadores[0])
+    cuerpo += "".join(player(x, y, i + 1) for i, (x, y) in enumerate(pasadores)) + player(160, 100, "", "d")
+    return cuerpo + texto(160, 195, "los de afuera pasan, el del medio presiona", 11)
+
+
+def dos_conos_base():
+    return (cone(40, 122) + cone(280, 122) + player(40, 100, 2) + player(280, 100, 3)
+            + linea(40, 150, 280, 150, 'stroke-dasharray="4 4" opacity=".7"')
+            + texto(160, 168, "unos 15 m", 11))
+
+
+def dejada_vuelta():
+    cuerpo = dos_conos_base() + player(160, 100, 1)
+    cuerpo += arrow((160, 100), (95, 100), "mov", R + 2, 4)
+    cuerpo += curva("M 95 100 C 78 66, 4 66, 4 100 C 4 134, 62 128, 82 106")
+    cuerpo += arrow((95, 100), (225, 100), "mov", 6, 4)[:0]
+    cuerpo += curva("M 90 112 C 130 124, 190 124, 232 112")
+    cuerpo += curva("M 232 100 C 250 66, 318 66, 318 100 C 318 134, 262 128, 240 106")
+    return cuerpo + texto(160, 30, "le deja la pelota y le da la vuelta por detrás", 11)
+
+
+def pared_control():
+    cuerpo = dos_conos_base() + player(160, 100, 1)
+    cuerpo += arrow((160, 100), (100, 100), "mov", R + 2, 4)
+    cuerpo += arrow((100, 92), (52, 92)) + arrow((52, 108), (100, 108))
+    cuerpo += arrow((100, 120), (220, 120), "mov", 6, 4)
+    cuerpo += arrow((220, 92), (268, 92)) + arrow((268, 108), (220, 108))
+    return cuerpo + texto(160, 30, "pared de primera y control orientado", 11)
+
+
+def un_toque_central():
+    cuerpo = ('<circle cx="160" cy="100" r="78" fill="none" stroke="#fff" stroke-width="2" '
+              'stroke-dasharray="5 5" opacity=".7"/>')
+    cuerpo += cone(160, 112) + player(160, 100, 1)
+    cuerpo += player(95, 55, 2) + arrow((95, 55), (160, 100))
+    cuerpo += arrow((160, 100), (236, 138)) + curva("M 104 64 C 150 30, 240 70, 240 124")
+    return cuerpo + texto(160, 193, "devuelve de un toque; radio ≈ 5 m", 11)
+
+
+def campo_rival():
+    cuerpo = (linea(160, 12, 160, 188) + '<circle cx="160" cy="100" r="22" fill="none" stroke="#fff" stroke-width="2"/>'
+              + player(70, 100, 1) + player(250, 100, 2)
+              + arrow((70, 100), (250, 100)) + arrow((250, 118), (70, 118)))
+    cuerpo += texto(80, 40, "tu campo", 12) + texto(240, 40, "campo rival", 12)
+    return cuerpo + texto(160, 190, "punto si queda quieta en el campo rival (a 10)", 10)
+
+
+def cono_lateral():
+    cuerpo = cone(50, 132) + cone(270, 132) + cone(160, 62)
+    cuerpo += player(160, 50, 2) + player(50, 112, 1)
+    cuerpo += arrow((50, 112), (160, 50)) + arrow((160, 50), (230, 115))
+    cuerpo += arrow((60, 124), (250, 124), "mov", 4, 4)
+    return cuerpo + texto(160, 168, "vueltita por fuera del cono, a máxima velocidad", 10)
+
+
+def v_devolucion():
+    cuerpo = cone(160, 164) + cone(60, 70) + cone(260, 70) + player(160, 30, 2) + player(160, 142, 1)
+    cuerpo += arrow((160, 142), (70, 82), "mov", R + 2, 8) + arrow((160, 142), (250, 82), "mov", R + 2, 8)
+    cuerpo += arrow((160, 30), (80, 56)) + arrow((90, 66), (166, 40))[:0]
+    return cuerpo + texto(160, 192, "en cada extremo recibe una pelota y la devuelve", 10)
+
+
+def v_suela():
+    cuerpo = cone(160, 164) + cone(60, 70) + cone(260, 70) + player(160, 142, 1)
+    cuerpo += arrow((152, 140), (68, 80), "mov", R + 2, 8) + arrow((74, 90), (152, 154), "mov", 8, R + 2)
+    cuerpo += arrow((168, 140), (252, 80), "mov", R + 2, 8) + arrow((246, 90), (168, 154), "mov", 8, R + 2)
+    return cuerpo + texto(160, 24, "ida conduciendo, vuelta de espaldas con la suela", 10)
+
+
+def zigzag_conos():
+    pts = [(70, 60), (130, 140), (190, 60), (250, 140), (300, 60)]
+    cuerpo = "".join(cone(x, y) for x, y in pts) + player(24, 100, 1)
+    cuerpo += arrow((24, 100), (66, 66), "tiro", R + 2, 10)
+    for a, b in zip(pts, pts[1:]):
+        cuerpo += arrow(a, b, "tiro", 10, 10)
+    return cuerpo + texto(160, 190, "acelerás hacia cada cono", 11)
+
+
+def cambios_ritmo():
+    xs = [30, 85, 140, 195, 250, 305]
+    cuerpo = "".join(cone(x, 126) for x in xs) + player(30, 100, 1)
+    for i, (a, b) in enumerate(zip(xs, xs[1:])):
+        cuerpo += arrow((a, 100), (b, 100), "mov" if i % 2 == 0 else "tiro", R + 2 if i == 0 else 4, 6)
+    return cuerpo + texto(160, 160, "tramos suaves (línea punteada) y acelerados (gruesa)", 10)
+
+
+UNICOS = {
+    "cuadrado-uno-al-medio": cuadrado_medio,
+    "pared-control-orientado-conos-dejada": dejada_vuelta,
+    "pared-control-orientado-conos": pared_control,
+    "un-toque-cono-central": un_toque_central,
+    "pelota-al-campo-rival": campo_rival,
+    "pase-cono-lateral-control": cono_lateral,
+    "carrera-v-devolucion": v_devolucion,
+    "conduccion-v-suela": v_suela,
+    "aceleracion-conos-zigzag": zigzag_conos,
+    "cambios-ritmo-conos": cambios_ritmo,
+}
+
+
 # --- Escalera de coordinación: huellas numeradas sobre una escalera de 6 cuadrados ---
 # Se avanza de izquierda a derecha. Blanco = pie izquierdo, amarillo = pie derecho.
 X0, CELDA = 28, 44
@@ -278,7 +391,9 @@ def main():
             (OUT / f"{ex}-{n}.svg").write_text(svg(f"{ex} con {n}", fn()), encoding="utf-8")
     for nombre, fn in ESCALERA.items():
         (OUT / f"escalera-{nombre}.svg").write_text(svg(f"Escalera: {nombre}", fn()), encoding="utf-8")
-    print(f"{sum(len(f) for f in DIAGRAMAS.values()) + len(ESCALERA)} diagramas en {OUT}")
+    for ex, fn in UNICOS.items():
+        (OUT / f"{ex}.svg").write_text(svg(ex, fn()), encoding="utf-8")
+    print(f"{sum(len(f) for f in DIAGRAMAS.values()) + len(ESCALERA) + len(UNICOS)} diagramas en {OUT}")
 
 
 if __name__ == "__main__":

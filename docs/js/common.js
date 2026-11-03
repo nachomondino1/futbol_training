@@ -119,3 +119,31 @@ export function mostrarError(contenedor, err) {
     : h("p", {}, "No se pudieron cargar los datos. Probá recargar. (", String(err.message), ")");
   contenedor.replaceChildren(h("div", { class: "aviso", role: "alert" }, msg));
 }
+
+// Cuántos somos hoy: se dice una vez (en Sesiones) y queda guardado en el navegador. null = sin filtrar.
+const CLAVE_JUGADORES = "entrenamiento.jugadores";
+
+export function leerJugadores() {
+  try {
+    const n = Number(localStorage.getItem(CLAVE_JUGADORES));
+    return Number.isInteger(n) && n >= 1 ? n : null;
+  } catch { return null; }
+}
+
+export function guardarJugadores(n) {
+  try { n ? localStorage.setItem(CLAVE_JUGADORES, String(n)) : localStorage.removeItem(CLAVE_JUGADORES); } catch { /* sin almacenamiento: queda solo en esta visita */ }
+}
+
+// Selector "Hoy somos − N +". alCambiar(n) recibe el número nuevo (o null si se quita el filtro).
+export function jugadoresControl(valor, alCambiar) {
+  const tope = 22;
+  const boton = (texto, etiqueta, nuevo, desactivado) => h("button", {
+    type: "button", class: "jugadores-btn", "aria-label": etiqueta, disabled: desactivado, onclick: () => alCambiar(nuevo) }, texto);
+  return h("div", { class: "jugadores", role: "group", "aria-label": "Cuántos somos hoy" },
+    h("span", { class: "jugadores-tit" }, "Hoy somos"),
+    boton("−", "Uno menos", Math.max(1, (valor ?? 5) - 1), valor === 1),
+    h("strong", { class: "jugadores-n", "aria-live": "polite" }, valor == null ? "todos" : String(valor)),
+    boton("+", "Uno más", Math.min(tope, (valor ?? 3) + 1), valor === tope),
+    valor != null ? h("button", { type: "button", class: "jugadores-limpiar", onclick: () => alCambiar(null) }, "No filtrar") : null,
+    h("span", { class: "jugadores-ayuda" }, valor == null ? "Decí cuántos son y te muestro solo las opciones que se pueden hacer." : "Se ocultan las opciones que necesitan más jugadores."));
+}

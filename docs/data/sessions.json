@@ -44,9 +44,6 @@
               "items": [
                 {
                   "ex": "flying-sprint"
-                },
-                {
-                  "ex": "velocidad-maxima-cono"
                 }
               ]
             },
@@ -107,7 +104,7 @@
           ]
         },
         {
-          "titulo": "Pelota",
+          "titulo": "Pelota con aceleraciones y cambios de ritmo",
           "min": 15,
           "opciones": [
             {
@@ -155,6 +152,14 @@
               "items": [
                 {
                   "ex": "un-toque-cono-central"
+                }
+              ]
+            },
+            {
+              "label": "Pelota al campo rival",
+              "items": [
+                {
+                  "ex": "pelota-al-campo-rival"
                 }
               ]
             }
@@ -241,7 +246,7 @@
           ]
         },
         {
-          "titulo": "Técnica de pelota",
+          "titulo": "Pases y control orientado",
           "min": 15,
           "opciones": [
             {
@@ -365,7 +370,7 @@
       "objetivo": "Técnica con pelota: conducción, pase, control y definición, con poca carga física.",
       "bloques": [
         {
-          "titulo": "Pelota",
+          "titulo": "Rondos, pases y conducción",
           "min": 20,
           "opciones": [
             {
@@ -391,11 +396,19 @@
                   "ex": "conduccion-ritmo-variable"
                 }
               ]
+            },
+            {
+              "label": "Cuadrado con uno en el medio",
+              "items": [
+                {
+                  "ex": "cuadrado-uno-al-medio"
+                }
+              ]
             }
           ]
         },
         {
-          "titulo": "Conducción y pase",
+          "titulo": "Conducción y pases con conos",
           "min": 25,
           "opciones": [
             {
@@ -461,11 +474,19 @@
                   "ex": "pase-presion-arcos-l"
                 }
               ]
+            },
+            {
+              "label": "Pared y control orientado entre conos",
+              "items": [
+                {
+                  "ex": "pared-control-orientado-conos"
+                }
+              ]
             }
           ]
         },
         {
-          "titulo": "Definición",
+          "titulo": "Definición y tiro al arco",
           "min": 25,
           "opciones": [
             {
@@ -504,18 +525,6 @@
         }
       ],
       "cuando": "Sirve para el día previo al partido si la hacés corta y suave."
-    }
-  ],
-  "precauciones": [
-    {
-      "lesion": "Desgarro de cuádriceps",
-      "evitar": "Sentadilla, zancada, wall sit, sprints, cambios de dirección bruscos.",
-      "alternativa": "Reemplazar por puente de glúteo, abducción de cadera, plancha y elevación de talones (si no duele). En el día de velocidad, hacer solo el bloque de pelota a ritmo variable. El trote continuo es de lo más seguro de la rutina; si duele, se corta."
-    },
-    {
-      "lesion": "Tobillo",
-      "evitar": "Superficies irregulares, apoyos bruscos en la escalera y cambios de dirección.",
-      "alternativa": "Bajar el ritmo en esos bloques y priorizar el apoyo controlado por sobre la velocidad."
     }
   ],
   "guias": {
