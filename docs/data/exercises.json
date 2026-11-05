@@ -1589,6 +1589,36 @@
       "jugadores_min": 2
     },
     {
+      "id": "dos-contra-uno",
+      "nombre": "Dos contra uno",
+      "alias": [
+        "2v1"
+      ],
+      "categoria": "pelota",
+      "descripcion": "Situación de partido: dos delanteros contra un defensor. El arquero saca (o, si no hay arquero, la pone en juego un delantero) y los dos atacan el arco: uno conduce, el otro acompaña para dar la opción de pase. El defensor trata de cortar el pase o cerrar al que lleva la pelota. Después de cada jugada rotan los roles.",
+      "dosis": null,
+      "variantes": {},
+      "imagen": null,
+      "video": null,
+      "huerfano_ok": false,
+      "trabaja": {
+        "principal": "coordinacion",
+        "secundarios": []
+      },
+      "aporta": [
+        "definicion"
+      ],
+      "subcategorias": [
+        "tiro",
+        "oposicion"
+      ],
+      "materiales": [
+        "pelota",
+        "arco"
+      ],
+      "jugadores_min": 3
+    },
+    {
       "id": "pivote-9-definicion",
       "nombre": "Pivote de 9 y definición",
       "alias": [],
@@ -1911,7 +1941,8 @@
         "pelota",
         "conos"
       ],
-      "jugadores_min": 2
+      "jugadores_min": 2,
+      "jugadores_max": 2
     },
     {
       "id": "aceleracion-conos-zigzag",

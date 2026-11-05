@@ -11,6 +11,8 @@ let circuitos = new Map(); // id -> circuito (docs/data/circuits.json)
 const cerrados = new Set();   // "bloque:ex" de los ítems que cerraste; por defecto está todo desplegado
 const abiertos = new Set();   // "bloque:ex" de los ítems que abriste en un circuito que arranca plegado (circuito-fuerza)
 let elegidas = {};            // índice de bloque -> índice de opción elegida
+let somos = null;             // cuántos jugadores somos hoy (null = sin filtro)
+const MAX_SOMOS = 10;
 let sesionActual = null;
 let ganasAbierto = false;     // "Qué vas a ganar" arranca plegado y recuerda si lo abriste
 
@@ -100,9 +102,29 @@ function resolver(o) {
 // Una opción se puede hacer solo si ninguno de sus ejercicios pide compañeros (jugadores_min en exercises.json; sin dato = 1).
 const esIndividual = (opcion) => resolver(opcion).items.every((it) => (ejercicios.get(it.ex).jugadores_min || 1) === 1);
 
-// Opción elegida del bloque: la que tocaste o, si no tocaste ninguna, la primera.
+// Una opción sirve para N jugadores si todos sus ejercicios aceptan N (jugadores_min / jugadores_max; sin dato = 1 / sin tope).
+const cabe = (opcion, n) => resolver(opcion).items.every((it) => {
+  const ej = ejercicios.get(it.ex);
+  return n >= (ej.jugadores_min || 1) && n <= (ej.jugadores_max ?? Infinity);
+});
+
+// Índices de las opciones del bloque que sirven para los que somos (todas si no elegiste cantidad).
+const indicesValidos = (b, bi) => b.opciones.map((_, i) => i).filter((i) => somos == null || cabe(b.opciones[i], somos));
+
+// Opción elegida del bloque: la que tocaste o, si no tocaste ninguna, la primera. Si no sirve para los que somos, la primera que sirva.
 function indiceElegido(b, bi) {
-  return Math.min(elegidas[bi] ?? 0, b.opciones.length - 1);
+  const idx = Math.min(elegidas[bi] ?? 0, b.opciones.length - 1);
+  const validos = indicesValidos(b, bi);
+  return validos.length && !validos.includes(idx) ? validos[0] : idx;
+}
+
+// "Hoy somos": una solapa por cantidad; tocar la elegida la saca y vuelve a mostrar todo.
+function somosNodo() {
+  return h("div", { class: "somos", role: "group", "aria-label": "Cuántos somos hoy" },
+    h("span", { class: "somos__tit" }, "Hoy somos"),
+    Array.from({ length: MAX_SOMOS }, (_, k) => k + 1).map((n) => h("button", {
+      type: "button", class: "chip chip--n", "aria-pressed": String(somos === n),
+      onclick: () => { somos = somos === n ? null : n; detalle(sesionActual, true); } }, String(n))));
 }
 
 // Si el circuito es una lista de ejercicios posibles, la sesión muestra la propuesta y deja ver el resto.
@@ -121,19 +143,25 @@ function posiblesNodo(opcion) {
 function bloqueNodo(b, bi) {
   const idx = indiceElegido(b, bi);
   const opcion = resolver(b.opciones[idx]);
+  const validos = indicesValidos(b, bi);
   const varias = b.opciones.length > 1;
+  const sinOpciones = validos.length === 0;
   return h("section", { class: "bloque", id: `bloque-${bi}`, "aria-labelledby": `b${bi}` },
     h("header", { class: "bloque-cab" },
       h("span", { class: "bloque-n" }, String(bi + 1)),
       h("h2", { id: `b${bi}` }, b.titulo, b.opcional ? h("span", { class: "etiqueta bloque-opcional" }, "opcional") : null),
       h("span", { class: "bloque-min" }, String(minutosDe(b, opcion)), h("small", {}, " min"))),
     h("div", { class: "bloque-cuerpo" },
-    varias
-      ? h("div", { class: "opciones", role: "group", "aria-label": `Opciones de ${b.titulo}` },
-          b.opciones.map((o, oi) => h("button", {
-            type: "button", class: `chip${esIndividual(o) ? " chip--individual" : ""}`, "aria-pressed": String(oi === idx),
-            onclick: () => { elegidas[bi] = oi; detalle(sesionActual, true); } }, o.label)))
+    sinOpciones
+      ? h("p", { class: "nota" }, `Ninguna opción de este bloque sirve para ${somos} jugadores: salteá el bloque o elegí otra cantidad.`)
       : null,
+    varias && !sinOpciones
+      ? h("div", { class: "opciones", role: "group", "aria-label": `Opciones de ${b.titulo}` },
+          validos.map((oi) => h("button", {
+            type: "button", class: `chip${esIndividual(b.opciones[oi]) ? " chip--individual" : ""}`, "aria-pressed": String(oi === idx),
+            onclick: () => { elegidas[bi] = oi; detalle(sesionActual, true); } }, b.opciones[oi].label)))
+      : null,
+    sinOpciones ? null : h("div", { class: "bloque-contenido" },
     opcion.nota ? h("p", { class: "nota" }, opcion.nota) : null,
     opcion.estructura ? estructuraNodo(opcion, opcion.guia ? guiaNodo(opcion.guia, bi) : null) : null,
     opcion.agrupar
@@ -142,7 +170,7 @@ function bloqueNodo(b, bi) {
           h("div", { class: "items" }, grupo.map((it, j) => itemNodo(it, bi, `${k + 1}.${j + 1}`, !!opcion.estructura, !!opcion.plegado))))))
       : h("div", { class: "items" },
           opcion.items.map((it, i) => itemNodo(it, bi, opcion.numerado || opcion.estructura?.modo === "circuito" ? i + 1 : null, !!opcion.estructura, !!opcion.plegado))),
-    opcion.opciones ? posiblesNodo(opcion) : null));
+    opcion.opciones ? posiblesNodo(opcion) : null)));
 }
 
 // Qué se gana con la sesión: reparte los minutos de cada bloque (con la opción elegida) entre lo que aporta cada ejercicio.
@@ -177,7 +205,7 @@ function gananciasNodo(s) {
 
 function detalle(s, conservar = false) {
   if (!conservar || sesionActual !== s) {
-    if (sesionActual !== s) { cerrados.clear(); abiertos.clear(); elegidas = {}; }
+    if (sesionActual !== s) { cerrados.clear(); abiertos.clear(); elegidas = {}; somos = null; }
   }
   sesionActual = s;
   const y = window.scrollY;
@@ -188,6 +216,7 @@ function detalle(s, conservar = false) {
     h("p", { class: "leyenda" },
       h("span", { class: "leyenda__punto leyenda__punto--individual", "aria-hidden": "true" }), "Opción que se puede hacer solo",
       h("span", { class: "leyenda__punto", "aria-hidden": "true" }), "Hace falta alguien más"),
+    somosNodo(),
     gananciasNodo(s),
     resumenNodo(s),
     ...s.bloques.map(bloqueNodo));

@@ -291,6 +291,9 @@ def main() -> int:
         m = e.get("jugadores_min")
         if m is not None and (not isinstance(m, int) or m < 1):
             errors.append(f"{e['id']}: jugadores_min debe ser un entero >= 1")
+        mx = e.get("jugadores_max")
+        if mx is not None and (not isinstance(mx, int) or mx < (m or 1)):
+            errors.append(f"{e['id']}: jugadores_max debe ser un entero >= jugadores_min")
 
     for c in circ_data:
         where = f"circuito {c['id']}"

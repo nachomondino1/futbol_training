@@ -1,4 +1,6 @@
-# Plan (stand-by): cuántos somos ese día
+# Plan: cuántos somos ese día
+
+**Actualización (2026-11-05):** se implementó una versión: en cada sesión (una sola vez, arriba) hay solapas "Hoy somos" 1–10; tocar una filtra las opciones de todos los bloques con `jugadores_min`/`jugadores_max` de cada ejercicio, y tocarla de nuevo la saca. Si ninguna opción sirve, avisa. Por ahora solo `pelota-al-campo-rival` tiene `jugadores_max` (2); el resto de los topes están por definir. Lo de abajo es el plan original.
 
 **Estado (2026-11-03): en pausa otra vez.** Hubo una primera versión simple (selector "Hoy somos" en cada sesión, guardado en el navegador, que ocultaba las opciones de cada bloque que pedían más jugadores). Se sacó de la web por decisión tuya para dejarlo como posible mejora futura. Quedó el dato `jugadores_min` en `exercises.json` (lo usan el filtro "Jugadores" y los colores de las tarjetas en Ejercicios). La versión del selector está en el historial de git: commit `9d7073d` (código en `docs/js/sesiones.js` y `docs/js/common.js`). Todavía no está claro cómo implementarlo. El selector "Somos" se sacó del código de la web: ya no existe en el header ni se guarda nada en el navegador. Cada ejercicio muestra todas sus variantes (2, 3, 4 y 8) y todos sus diagramas. La versión vieja del selector (botones 2, 3, 4, 8 que elegían una sola variante) está en el historial de git, en el commit `6d954ff` (`docs/js/common.js`).
 

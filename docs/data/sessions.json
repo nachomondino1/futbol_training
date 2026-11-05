@@ -374,6 +374,22 @@
                   "ex": "circuito-pases-combinados"
                 }
               ]
+            },
+            {
+              "label": "Uno contra uno",
+              "items": [
+                {
+                  "ex": "uno-contra-uno-tiro"
+                }
+              ]
+            },
+            {
+              "label": "Dos contra uno",
+              "items": [
+                {
+                  "ex": "dos-contra-uno"
+                }
+              ]
             }
           ]
         }

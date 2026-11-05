@@ -400,3 +400,8 @@ h1 { font-size: 1.9rem; line-height: 1.15; margin: 8px 0 16px; }
 .marco { box-sizing: border-box; max-width: 480px; max-height: 320px; display: flex; justify-content: center; align-items: center; overflow: hidden; border-radius: 8px; }
 .marco img { display: block; width: auto; height: auto; max-width: 100%; max-height: 320px; object-fit: contain; }
 .fig .marco { max-width: 100%; }
+
+/* "Hoy somos": solapas con la cantidad de jugadores, dentro de cada bloque */
+.somos { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin: 12px 0 0; }
+.somos__tit { color: var(--ink-soft); font-size: .9rem; margin-right: 4px; }
+.chip--n { min-width: 40px; padding-inline: 0; text-align: center; }

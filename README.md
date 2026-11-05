@@ -53,6 +53,7 @@ En `docs/data/exercises.json`, dentro de `ejercicios`:
 - `aporta`: qué se gana con el ejercicio, con ids de `docs/data/objetivos.json` (velocidad, aeróbico, fuerza, potencia, control, precisión de tiro, coordinación, movilidad). Obligatorio. La sesión usa esto para armar "Qué vas a ganar".
 - `trabaja`: `{ "principal": "cuadriceps", "secundarios": ["gluteo-mayor"] }`, con ids de `docs/data/muscles.json` (ahí se escribe para qué sirve cada músculo). Es obligatorio.
 - `jugadores_min`: cuántos jugadores como mínimo necesita (sin dato = 1). Lo usan el filtro "Jugadores" y los colores de las tarjetas en Ejercicios.
+- `jugadores_max`: tope de jugadores (sin dato = sin tope). Junto con `jugadores_min`, lo usa el selector "Hoy somos" de cada bloque en Sesiones: al elegir una cantidad, deja solo las opciones cuyos ejercicios aceptan esa cantidad.
 - Si depende de cuántos son, poné `"requiere_variantes": true` y cargá `"2"`, `"3"`, `"4"` y `"8"` en `variantes`.
 - Si propusiste una variante que todavía no validaste, agregá `"pendiente_validar": ["4"]`.
 - Un ejercicio que ninguna sesión usa es error, salvo que le pongas `"huerfano_ok": true`.
