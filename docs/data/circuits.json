@@ -472,7 +472,13 @@
           }
         ]
       },
-      "lista_titulo": "Versión de 6 min: 12 bloques, en este orden"
+      "lista_titulo": "Versión de 6 min: 12 bloques, en este orden",
+      "videos": [
+        {
+          "nombre": "Ver el reel del HIIT 20/10 en Instagram (@md.training__)",
+          "url": "https://www.instagram.com/reel/DfUg-JZp_Rt/"
+        }
+      ]
     }
   ]
 }

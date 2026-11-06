@@ -248,6 +248,11 @@ El Doc solo decía el grupo muscular de sentadilla y estocada (cuádriceps, glú
 
 - **Escalera (cambio de criterio):** los patrones que vienen del video de YouTube ahora tienen un botón "▶ Ver cómo se hace en YouTube (desde m:ss)" que abre el video justo en su sección. Saqué los diagramas de los 7 de los que no estaba segura (cruzado, carioca, ciempiés, ickey shuffle, river dance, atrás y adelante, shuffle a una pierna): quedan con texto y video. Conservé los 9 diagramas más claros. Los patrones que no están en el video (dos pies, zig-zag, salto con un pie, shuffle a una pierna) no tienen link.
 
+## Movilidad de tobillo (2026-11-06)
+
+- Se sumó como variante de **Movilidad articular** (nº 2), no como ejercicio aparte: estocada con una rodilla en el piso y banda elástica en el tobillo, rodilla hacia adelante y a los costados. Con link al reel de @tano_coach. La descripción la armé mirando el video sin sonido; faltan repeticiones, tiempo y para qué lado tira la banda.
+- El circuito Todo coordinación tiene un botón al reel del HIIT 20/10 de @md.training__ (muestra una fila de conos, no la escalera).
+
 ## Todo coordinación (2026-11-06)
 
 - Circuito nuevo `todo-coordinacion` (sin sesión que lo use): siempre con la escalera. Versión principiante de 6 min: 12 bloques de 20 s de trabajo y 10 s de descanso, con 6 patrones (un pie, in-in-out-out, carioca, dos pies, lateral, zig-zag) y cada uno 2 veces seguidas. Progresión continua sin pausa: 9 min = 3 veces cada uno, 12 min = 4 veces; 8 y 10 min con 8 o 10 patrones x2 (cruzado, ciempiés, river dance y salto con un pie como extras). La progresión y los patrones los propuse yo: validar. La tabla de progresión y la lista de patrones se ven en el mismo circuito (campos `progresion` y `patrones`). El reel de @md.training__ (HIIT 20/10) es un método de resistencia con una fila de conos; se tomó solo el formato 20/10.

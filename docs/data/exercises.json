@@ -100,7 +100,7 @@
         "movilidad dinámica"
       ],
       "categoria": "calentamiento",
-      "descripcion": "Círculos de tobillo, rodillas altas caminando, talones a la cola, apertura y cierre de cadera.",
+      "descripcion": "Círculos de tobillo, rodillas altas caminando, talones a la cola, apertura y cierre de cadera. Para el tobillo, mirá también la variante en estocada con banda.",
       "dosis": "1 min cada uno",
       "variantes": {},
       "imagen": null,
@@ -113,7 +113,20 @@
         "movilidad"
       ],
       "materiales": [],
-      "huerfano_ok": true
+      "huerfano_ok": true,
+      "patrones": [
+        {
+          "id": "tobillo-banda",
+          "nombre": "Movilidad de tobillo en estocada, con banda",
+          "descripcion": "En posición de estocada, con una rodilla en el piso y el otro pie apoyado adelante, con una banda elástica fija atada al tobillo. Llevás la rodilla hacia adelante y hacia los costados, sin despegar el talón, para ganar movilidad de tobillo (clave para la velocidad y para prevenir lesiones). Repeticiones y tiempo a definir."
+        }
+      ],
+      "videos": [
+        {
+          "nombre": "Movilidad de tobillo con banda (Instagram, @tano_coach)",
+          "url": "https://www.instagram.com/reel/DcEakVVyH1l/"
+        }
+      ]
     },
     {
       "id": "trote-suave",

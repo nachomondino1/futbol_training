@@ -126,6 +126,7 @@ function tarjetaSimple(c) {
     h("h2", {}, c.nombre),
     etiquetas(ef.items),
     h("p", { class: "musculo-para" }, c.descripcion),
+    c.videos ? h("p", {}, c.videos.map((v) => h("a", { class: "btn", href: v.url, target: "_blank", rel: "noopener" }, `▶ ${v.nombre}`))) : null,
     ef.estructura ? estructuraNodo(ef, guia) : guia,
     ef.agrupar
       ? [h("h3", {}, `${Math.ceil(ef.items.length / ef.agrupar)} estaciones, ${ef.agrupar} ejercicios en cada una`),
