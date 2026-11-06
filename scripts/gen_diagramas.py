@@ -162,36 +162,6 @@ def pcd_8():
             + texto(110, 70, "fila con la pelota") + texto(160, 190, "1-2 tiros por jugador"))
 
 
-# --- Circuito de pases combinados ---
-def cpc_2():
-    return (cone(60, 118) + cone(260, 118) + par(100, n1=1, n2=2)
-            + arrow((260, 100), (60, 100), "mov", R + 2, R + 2)
-            + texto(160, 82, "control orientado") + texto(160, 190, "pase largo de vuelta"))
-
-
-def cpc_3():
-    return (player(40, 60, 1) + player(100, 150, 2) + player(280, 60, 3)
-            + arrow((40, 60), (100, 150)) + arrow((100, 150), (280, 60))
-            + arrow((280, 60), (40, 60), "mov", R + 2, R + 2)
-            + texto(190, 130, "pase largo 20-25 m"))
-
-
-def cpc_4():
-    return par(60, n1=1, n2=2) + par(140, n1=3, n2=4) + texto(160, 100, "dos parejas")
-
-
-def cpc_8():
-    v = [(160, 28), (282, 100), (160, 172), (38, 100)]
-    cuerpo = ""
-    for i in range(4):
-        cuerpo += arrow(v[i], v[(i + 1) % 4], s0=22, s1=24)
-    n = 1
-    for x, y in v:
-        cuerpo += player(x - 14, y, n) + player(x + 14, y, n + 1)
-        n += 2
-    return cuerpo + texto(160, 105, "rombo", 12)
-
-
 # --- Ejercicios con conos y pelota: un diagrama por ejercicio (docs/img/<id>.svg) ---
 def curva(d):
     return (f'<path d="{d}" fill="none" stroke="{AMARILLO}" stroke-width="2.5" stroke-dasharray="6 5" '
@@ -327,7 +297,94 @@ def pivote_nueve():
     return cuerpo + texto(160, 24, "pase al pivote, la deja de primera y define", 11) + texto(205, 130, "pivote", 11)
 
 
+def dos_contra_uno():
+    cuerpo = goal() + player(60, 65, 1) + player(60, 135, 2) + player(170, 100, "", "d")
+    cuerpo += arrow((60, 65), (200, 65), "mov", R + 2, 4)
+    cuerpo += arrow((200, 65), (284, 92), "tiro", 4, 4) + arrow((60, 135), (190, 135), "mov", R + 2, 4)
+    cuerpo += arrow((190, 135), (200, 70), "pase", 4, 4)
+    return cuerpo + texto(150, 124, "defensor", 11) + texto(160, 190, "dos atacan, uno defiende: se la pasan y definen", 10)
+
+
+def centro_vertice():
+    cuerpo = f'<rect x="196" y="24" width="116" height="152" fill="none" stroke="#fff" stroke-width="2" opacity=".8"/>' + goal()
+    cuerpo += cone(196, 52) + player(50, 160, 1) + player(110, 100, 2)
+    cuerpo += arrow((50, 160), (190, 60), "pase", R + 2, 4) + arrow((110, 100), (190, 56), "mov", R + 2, 12)
+    cuerpo += arrow((200, 56), (284, 96), "tiro", 4, 4)
+    return cuerpo + texto(120, 30, "vértice del área grande", 11) + texto(160, 190, "centro al vértice, entra en velocidad y define", 10)
+
+
+def tiros_libres():
+    cuerpo = goal() + "".join(player(190, y, "", "d") for y in (80, 100, 120)) + player(70, 140, 1) + pelota(92, 140)
+    cuerpo += curva("M 98 136 Q 190 30 282 92")
+    return cuerpo + texto(190, 150, "barrera", 11) + texto(160, 190, "pegada al arco, sin apuro", 11)
+
+
+def skipping_bajo():
+    cuerpo = cone(40, 135) + cone(280, 135) + player(40, 100, 1)
+    pasos = "M 60 100 " + "".join(f"q 5 -9 10 0 " for _ in range(21))
+    cuerpo += f'<path d="{pasos}" fill="none" stroke="{AMARILLO}" stroke-width="2.5" marker-end="url(#ma)"/>'
+    return cuerpo + texto(160, 160, "15-20 m", 12) + texto(160, 60, "pasos cortos y rápidos, rodilla baja", 11)
+
+
+# --- Posesión reducida: zona de 4 conos; blanco = mantiene, amarillo = recupera, C = comodín ---
+def _blancos(pts, desde=1):
+    return "".join(player(x, y, i + desde) for i, (x, y) in enumerate(pts))
+
+
+def _amarillos(pts):
+    return "".join(player(x, y, "", "d") for x, y in pts)
+
+
+def pr_4v4():
+    b = [(70, 55), (110, 145), (225, 60), (250, 140)]
+    a = [(120, 95), (170, 125), (170, 75), (205, 105)]
+    return (cuadrado() + arrow(b[0], b[2]) + arrow(b[2], b[3]) + arrow(b[1], b[0])
+            + _blancos(b) + _amarillos(a) + texto(160, 16, "4v4 en cuadrado o rectángulo", 12)
+            + texto(160, 195, "un equipo mantiene la pelota, el otro la recupera", 10))
+
+
+def pr_comodin():
+    b = [(70, 55), (110, 145), (225, 60), (250, 140)]
+    a = [(125, 95), (175, 130), (175, 70), (210, 100)]
+    return (cuadrado() + arrow(b[0], (160, 100)) + arrow((160, 100), b[3]) + arrow(b[2], b[0])
+            + _blancos(b) + player(160, 100, "C") + _amarillos(a)
+            + texto(160, 16, "4v4 y un comodín (9 jugadores)", 12)
+            + texto(160, 195, "C: comodín, juega con quien tiene la pelota", 10))
+
+
+def pr_3v1():
+    b = [(75, 55), (250, 65), (160, 150)]
+    return (cuadrado() + arrow(b[0], b[1]) + arrow(b[1], b[2]) + arrow(b[2], b[0])
+            + _blancos(b) + _amarillos([(160, 98)]) + texto(160, 16, "3v1", 12)
+            + texto(160, 195, "tres mantienen, uno presiona", 11))
+
+
+def pr_2v1():
+    b = [(85, 60), (235, 60)]
+    return (cuadrado() + arrow((85, 54), (235, 54)) + arrow((235, 66), (85, 66))
+            + _blancos(b) + _amarillos([(160, 125)]) + arrow((160, 112), (160, 72), "mov", R + 2, 4)
+            + texto(160, 16, "2v1", 12) + texto(160, 195, "dos mantienen, uno presiona", 11))
+
+
+def pr_arquitos():
+    arco = lambda x: f'<rect x="{x}" y="80" width="8" height="40" fill="none" stroke="#fff" stroke-width="3"/>'
+    b = [(80, 60), (110, 140), (190, 75), (215, 130)]
+    a = [(130, 100), (170, 125), (160, 65), (235, 100)]
+    return (cuadrado() + arco(20) + arco(292) + arrow(b[0], b[2]) + arrow(b[2], (288, 100), "tiro", R + 2, 4)
+            + _blancos(b) + _amarillos(a) + texto(160, 16, "con dos arquitos: se juega con gol", 12)
+            + texto(160, 195, "cada equipo ataca un arquito y defiende el otro", 10))
+
+
 UNICOS = {
+    "posesion-reducida-4v4": pr_4v4,
+    "posesion-reducida-comodin": pr_comodin,
+    "posesion-reducida-3v1": pr_3v1,
+    "posesion-reducida-2v1": pr_2v1,
+    "posesion-reducida-arquitos": pr_arquitos,
+    "dos-contra-uno": dos_contra_uno,
+    "centro-vertice-area": centro_vertice,
+    "tiros-libres": tiros_libres,
+    "skipping-bajo": skipping_bajo,
     "cuadrado-uno-al-medio": cuadrado_medio,
     "pared-control-orientado-conos-dejada": dejada_vuelta,
     "pared-control-orientado-conos": pared_control,
@@ -459,7 +516,6 @@ DIAGRAMAS = {
     "rondo": (rondo_2, rondo_3, rondo_4, rondo_8),
     "pases-control-orientado": (pases_2, pases_3, pases_4, pases_8),
     "pase-control-definicion": (pcd_2, pcd_3, pcd_4, pcd_8),
-    "circuito-pases-combinados": (cpc_2, cpc_3, cpc_4, cpc_8),
 }
 
 

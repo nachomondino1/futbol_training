@@ -58,7 +58,7 @@ function itemNodo(item, bi, numero = null, conEstructura = false, plegado = fals
       } },
     h("summary", {},
       h("span", { class: "item-nombre" },
-        numero ? h("span", { class: "est-num" }, String(numero)) : null, ej.nombre,
+        numero ? h("span", { class: "est-num" }, String(numero)) : null, h("span", { class: "num-ej" }, String(ej.numero)), ej.nombre,
         item.opcional ? h("span", { class: "etiqueta" }, "opcional") : null),
       dosis ? h("span", { class: "item-dosis" }, dosis) : null),
     h("div", { class: "item-cuerpo" },

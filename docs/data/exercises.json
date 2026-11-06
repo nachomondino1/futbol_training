@@ -69,7 +69,31 @@
   ],
   "ejercicios": [
     {
+      "id": "activacion-dinamica",
+      "numero": 1,
+      "nombre": "Activación dinámica completa",
+      "alias": [],
+      "categoria": "calentamiento",
+      "descripcion": "Tren superior: circunducción de brazos hacia adelante, hacia atrás y hacia arriba y abajo; movimiento de cadera, con y sin piernas; tocarte con la mano la espalda superior (1 y 1). Tren inferior: skipping (cuádriceps); palomita y talones a la cola (isquios); campana, balanceo lateral hacia adentro (aductor); abducción de pierna, balanceo lateral hacia afuera (abductores); saltos con una pierna (gemelos); movimientos laterales con el centro de gravedad bajo, de frente y de espalda (glúteo); elevar el talón hacia adelante y bajar la mano para tocarlo. Velocidad: 2 series de skipping intenso, zancada larga, ¾ de velocidad y máxima velocidad. Con pelota: el loco y posesión 4v4 en cuadrado (ver los ejercicios El loco y Posesión XvX en cuadrado).",
+      "dosis": null,
+      "variantes": {},
+      "imagen": null,
+      "video": null,
+      "huerfano_ok": true,
+      "trabaja": {
+        "principal": "movilidad",
+        "secundarios": []
+      },
+      "aporta": [
+        "movilidad"
+      ],
+      "materiales": [
+        "pelota"
+      ]
+    },
+    {
       "id": "movilidad-articular",
+      "numero": 2,
       "nombre": "Movilidad articular",
       "alias": [
         "movilidad suave",
@@ -92,7 +116,30 @@
       "huerfano_ok": true
     },
     {
+      "id": "trote-suave",
+      "numero": 3,
+      "nombre": "Trote suave",
+      "alias": [
+        "Trote progresivo"
+      ],
+      "categoria": "calentamiento",
+      "descripcion": "Trote a ritmo bajo para entrar en calor. Para ir subiendo de a poco se hace progresivo: cada vez un poco más rápido.",
+      "dosis": "3-4 min",
+      "variantes": {},
+      "imagen": null,
+      "video": null,
+      "trabaja": {
+        "principal": "aerobica",
+        "secundarios": []
+      },
+      "aporta": [
+        "movilidad"
+      ],
+      "materiales": []
+    },
+    {
       "id": "escalera",
+      "numero": 4,
       "nombre": "Escalera de coordinación",
       "alias": [],
       "categoria": "coordinacion",
@@ -243,99 +290,8 @@
       ]
     },
     {
-      "id": "sentadilla",
-      "nombre": "Sentadilla",
-      "alias": [],
-      "categoria": "fuerza",
-      "descripcion": "Parado, pies al ancho de hombros. Bajás flexionando cadera y rodilla como si te sentaras, pecho arriba. Subís apretando glúteo.",
-      "dosis": null,
-      "variantes": {},
-      "imagen": "img/ejercicios/sentadilla.png",
-      "video": "https://www.youtube.com/watch?v=qsAkuNORgmk",
-      "trabaja": {
-        "principal": "cuadriceps",
-        "secundarios": [
-          "gluteo-mayor",
-          "isquiotibiales"
-        ]
-      },
-      "aporta": [
-        "fuerza"
-      ],
-      "materiales": []
-    },
-    {
-      "id": "zancada-estatica",
-      "nombre": "Estocada",
-      "alias": [
-        "Zancada estática"
-      ],
-      "categoria": "fuerza",
-      "descripcion": "Un pie adelante y uno atrás. Bajás flexionando ambas rodillas hasta casi tocar el piso con la de atrás. Subís sin desplazarte.",
-      "dosis": null,
-      "variantes": {},
-      "imagen": "img/ejercicios/zancada-estatica.png",
-      "video": "https://www.youtube.com/watch?v=G9DenYUVPjc",
-      "trabaja": {
-        "principal": "cuadriceps",
-        "secundarios": [
-          "gluteo-mayor",
-          "isquiotibiales"
-        ]
-      },
-      "aporta": [
-        "fuerza"
-      ],
-      "materiales": []
-    },
-    {
-      "id": "wall-sit",
-      "nombre": "Wall sit",
-      "alias": [
-        "Sentadilla isométrica contra pared"
-      ],
-      "categoria": "fuerza",
-      "descripcion": "Espalda apoyada en la pared. Bajás hasta que las rodillas queden a 90° y sostenés la posición sin moverte.",
-      "dosis": null,
-      "variantes": {},
-      "imagen": "img/ejercicios/wall-sit.png",
-      "video": "https://www.youtube.com/watch?v=mGTJtgmYgRw",
-      "trabaja": {
-        "principal": "cuadriceps",
-        "secundarios": [
-          "gluteo-mayor"
-        ]
-      },
-      "aporta": [
-        "fuerza"
-      ],
-      "materiales": [
-        "pared"
-      ]
-    },
-    {
-      "id": "puente-gluteo",
-      "nombre": "Puente de glúteo",
-      "alias": [],
-      "categoria": "fuerza",
-      "descripcion": "Doble pierna: acostado boca arriba, rodillas flexionadas y pies apoyados. Empujás con los talones y subís la cadera hasta línea recta hombro-rodilla. Apretás arriba y bajás controlado. A una pierna: igual, con una pierna estirada en el aire, alternando lados. Con pausa: como el doble pierna, sosteniendo 2-3 s arriba apretando el glúteo antes de bajar.",
-      "dosis": null,
-      "variantes": {},
-      "imagen": "img/ejercicios/puente-gluteo.png",
-      "video": "https://www.youtube.com/watch?v=v_9dS-l3GWU",
-      "trabaja": {
-        "principal": "gluteo-mayor",
-        "secundarios": [
-          "isquiotibiales"
-        ]
-      },
-      "aporta": [
-        "fuerza"
-      ],
-      "materiales": []
-    },
-    {
       "id": "abduccion-cadera",
+      "numero": 5,
       "nombre": "Abducción de cadera lateral",
       "alias": [],
       "categoria": "fuerza",
@@ -354,502 +310,8 @@
       "materiales": []
     },
     {
-      "id": "elevacion-talones",
-      "nombre": "Elevación de talones",
-      "alias": [],
-      "categoria": "fuerza",
-      "descripcion": "Parado, subís en punta de pie lo más alto posible y bajás controlado. Podés apoyarte en algo para el equilibrio.",
-      "dosis": null,
-      "variantes": {},
-      "imagen": "img/ejercicios/elevacion-talones.png",
-      "video": "https://www.youtube.com/watch?v=JDfWLEipMOc",
-      "trabaja": {
-        "principal": "gemelos",
-        "secundarios": []
-      },
-      "aporta": [
-        "fuerza"
-      ],
-      "materiales": []
-    },
-    {
-      "id": "plancha-frontal",
-      "nombre": "Plancha frontal",
-      "alias": [],
-      "categoria": "fuerza",
-      "descripcion": "Apoyado en antebrazos y puntas de pie, cuerpo en línea recta de cabeza a talón. Sostenés sin moverte.",
-      "dosis": null,
-      "variantes": {},
-      "imagen": "img/ejercicios/plancha-frontal.png",
-      "video": "https://www.youtube.com/watch?v=sG5SaIAz9wk",
-      "trabaja": {
-        "principal": "core",
-        "secundarios": []
-      },
-      "aporta": [
-        "fuerza"
-      ],
-      "materiales": []
-    },
-    {
-      "id": "plancha-lateral",
-      "nombre": "Plancha lateral",
-      "alias": [],
-      "categoria": "fuerza",
-      "descripcion": "Apoyado en un antebrazo, cuerpo de costado en línea recta y cadera levantada del piso. Sostenés y después cambiás de lado.",
-      "dosis": null,
-      "variantes": {},
-      "imagen": "img/ejercicios/plancha-lateral.png",
-      "video": "https://www.youtube.com/watch?v=bRivOELQVOs",
-      "trabaja": {
-        "principal": "core",
-        "secundarios": [
-          "gluteo-medio"
-        ]
-      },
-      "aporta": [
-        "fuerza"
-      ],
-      "materiales": []
-    },
-    {
-      "id": "trote-continuo",
-      "nombre": "Trote continuo (zona 2)",
-      "alias": [
-        "Resistencia continua",
-        "Trote a ritmo conversacional"
-      ],
-      "categoria": "aerobico",
-      "descripcion": "Correr a ritmo conversacional (60-70% de la FC máx.): tenés que poder hablar sin ahogarte. Es la base aeróbica que mejora la recuperación entre sprints y sostiene la intensidad en el segundo tiempo. Si alguno no llega a los 30 min corridos, alterna trote y caminata rápida en vez de forzar. Dura entre 30 y 45 min.",
-      "dosis": null,
-      "variantes": {},
-      "imagen": "img/ejercicios/trote-continuo.png",
-      "video": null,
-      "trabaja": {
-        "principal": "aerobica",
-        "secundarios": []
-      },
-      "aporta": [
-        "aerobico"
-      ],
-      "materiales": []
-    },
-    {
-      "id": "hiit-10-10",
-      "nombre": "HIIT 10\"/10\"",
-      "alias": [
-        "HIIT 10/10"
-      ],
-      "categoria": "aerobico",
-      "descripcion": "Corrés fuerte 10 segundos y descansás 10: eso es un set. Hacés 15 sets seguidos, descansás 2 minutos y repetís los 15 sets. Con la app Interval Timer: preparación 10 s, 15 sets de 10 s de trabajo y 10 s de descanso, y cool down de 30 s (5:30 en total).",
-      "dosis": "15 sets de 10 s / 10 s, 3 vueltas",
-      "variantes": {},
-      "imagen": "img/ejercicios/hiit-10-10.jpg",
-      "video": null,
-      "trabaja": {
-        "principal": "aerobica",
-        "secundarios": []
-      },
-      "aporta": [
-        "aerobico"
-      ],
-      "materiales": []
-    },
-    {
-      "id": "rondo",
-      "nombre": "Rondo / posesión reducida",
-      "alias": [
-        "Posesión"
-      ],
-      "categoria": "pelota",
-      "descripcion": "Juego reducido de posesión con conos marcando el límite del espacio.",
-      "dosis": null,
-      "requiere_variantes": true,
-      "variantes": {
-        "2": "Posesión con movimiento controlado: se pasan la pelota mientras se desplazan a conos objetivo marcados dentro del cuadrado, sin quedarse parados.",
-        "3": "Rondo triangular: 2 tocan y 1 presiona en el medio. Rotan roles cada 2-3 min.",
-        "4": "Rondo 3v1: 3 tocan y 1 presiona en el medio. Rotan roles cada 2-3 min.",
-        "8": "Rondo 6v2 (6 tocan, 2 presionan en el medio, rotan cada 2-3 min) o 4v4 en cuadrado si prefieren competir."
-      },
-      "pendiente_validar": [
-        "4"
-      ],
-      "imagen": null,
-      "video": null,
-      "imagenes": {
-        "2": "img/rondo-2.svg",
-        "3": "img/rondo-3.svg",
-        "4": "img/rondo-4.svg",
-        "8": "img/rondo-8.svg"
-      },
-      "trabaja": {
-        "principal": "aerobica",
-        "secundarios": [
-          "coordinacion"
-        ]
-      },
-      "aporta": [
-        "control",
-        "aerobico"
-      ],
-      "subcategorias": [
-        "posesion",
-        "pase-corto"
-      ],
-      "materiales": [
-        "pelota",
-        "conos"
-      ],
-      "jugadores_min": 2
-    },
-    {
-      "id": "el-loco",
-      "nombre": "El loco",
-      "alias": [
-        "Rondo en círculo"
-      ],
-      "categoria": "pelota",
-      "descripcion": "Las personas forman un círculo y se pasan la pelota. Uno o varios corren por adentro del círculo para intentar recuperarla. Cuando la recuperan, el último que la tocó pasa adentro a recuperar y el que la recuperó sale al círculo a dar pases.",
-      "dosis": null,
-      "variantes": {},
-      "imagen": null,
-      "video": null,
-      "trabaja": {
-        "principal": "coordinacion",
-        "secundarios": [
-          "aerobica"
-        ]
-      },
-      "aporta": [
-        "control",
-        "aerobico"
-      ],
-      "subcategorias": [
-        "posesion",
-        "pase-corto",
-        "oposicion"
-      ],
-      "materiales": [
-        "pelota"
-      ],
-      "jugadores_min": 4
-    },
-    {
-      "id": "cuadrado-uno-al-medio",
-      "nombre": "Cuadrado con uno en el medio",
-      "alias": [
-        "Rondo en cuadrado"
-      ],
-      "categoria": "pelota",
-      "descripcion": "Armás un cuadrado de unos 3 m de lado con conos. Hay un jugador afuera en cada lado del cuadrado y uno adentro, en el centro, que tiene que recuperar la pelota. Los de afuera se la pasan sin que el del medio la intercepte. Se juega durante un minuto y después rotan. Variantes: (1) no se le puede devolver el pase al que te lo dio, así en vez de 3 opciones de pase tenés 2; (2) cada vez que pasás tenés que moverte al otro lado del cuadrado.",
-      "dosis": "1 minuto por tanda, rotando al del medio",
-      "variantes": {
-        "4": "Un lado del cuadrado queda siempre vacío: tres jugadores afuera y uno en el medio. Es más exigente para los de afuera, que tienen menos opciones de pase."
-      },
-      "imagen": "img/cuadrado-uno-al-medio.svg",
-      "video": null,
-      "trabaja": {
-        "principal": "coordinacion",
-        "secundarios": [
-          "cuadriceps",
-          "gemelos"
-        ]
-      },
-      "aporta": [
-        "control"
-      ],
-      "subcategorias": [
-        "posesion",
-        "pase-corto",
-        "oposicion"
-      ],
-      "materiales": [
-        "pelota",
-        "conos"
-      ],
-      "jugadores_min": 4
-    },
-    {
-      "id": "pases-control-orientado",
-      "nombre": "Pases cortos con control orientado",
-      "alias": [],
-      "categoria": "pelota",
-      "descripcion": "Pase al ras del piso y control con un toque orientado antes de devolver. Para dificultarlo: más distancia, alternar pie hábil y no hábil, cambiar la superficie de contacto.",
-      "dosis": null,
-      "requiere_variantes": true,
-      "variantes": {
-        "2": "Enfrentados a 10 m, cada uno parado en un cono. Se dan un pase, controlan con un toque orientado hacia el otro pie y dan el pase largo al compañero. Reciben de un lado del cono y pasan del otro.",
-        "3": "Separados 8-10 m, pase al ras del piso. El que recibe controla con un toque orientado hacia un costado antes de devolver.",
-        "4": "Dos parejas, cada una hace el ejercicio de 2 en su propio espacio, en simultáneo.",
-        "8": "Cuatro parejas, cada una hace el ejercicio de 2 en su propio espacio, en simultáneo."
-      },
-      "pendiente_validar": [
-        "4"
-      ],
-      "imagen": "img/ejercicios/pases-control-orientado.webp",
-      "video": "https://www.instagram.com/reel/DciTbW5KSrj",
-      "imagenes": {
-        "2": "img/pases-control-orientado-2.svg",
-        "3": "img/pases-control-orientado-3.svg",
-        "4": "img/pases-control-orientado-4.svg",
-        "8": "img/pases-control-orientado-8.svg"
-      },
-      "trabaja": {
-        "principal": "coordinacion",
-        "secundarios": []
-      },
-      "aporta": [
-        "control"
-      ],
-      "subcategorias": [
-        "pase-corto",
-        "pase-largo",
-        "control-orientado"
-      ],
-      "materiales": [
-        "pelota",
-        "conos"
-      ],
-      "jugadores_min": 2
-    },
-    {
-      "id": "pase-control-definicion",
-      "nombre": "Pase, control y definición",
-      "alias": [
-        "Tiro al arco"
-      ],
-      "categoria": "pelota",
-      "descripcion": "Ejercicio base de finalización, sin oposición real. Para sumar presión, uno puede hacer de defensor pasivo: solo estira un brazo o se mueve lateralmente, sin salir a robar.",
-      "dosis": null,
-      "requiere_variantes": true,
-      "variantes": {
-        "2": "Uno pasa, el otro controla y define de primera o al segundo toque. Alternan.",
-        "3": "Dos pasan en pared y uno define. Rotan los tres roles cada 3-4 tiros.",
-        "4": "Dos pasan en pared, uno define y el cuarto hace de defensor pasivo. Rotan los cuatro roles cada 3-4 tiros.",
-        "8": "Fila con la pelota, 1-2 tiros por jugador rotando rápido. Con 2 arcos, dividen el grupo y achican la espera."
-      },
-      "pendiente_validar": [
-        "4"
-      ],
-      "imagen": null,
-      "video": null,
-      "imagenes": {
-        "2": "img/pase-control-definicion-2.svg",
-        "3": "img/pase-control-definicion-3.svg",
-        "4": "img/pase-control-definicion-4.svg",
-        "8": "img/pase-control-definicion-8.svg"
-      },
-      "trabaja": {
-        "principal": "coordinacion",
-        "secundarios": []
-      },
-      "aporta": [
-        "definicion",
-        "control"
-      ],
-      "subcategorias": [
-        "tiro",
-        "control-orientado",
-        "pase-corto"
-      ],
-      "materiales": [
-        "pelota",
-        "arco"
-      ],
-      "jugadores_min": 2
-    },
-    {
-      "id": "circuito-pases-combinados",
-      "nombre": "Circuito de pases combinados",
-      "alias": [],
-      "categoria": "pelota",
-      "descripcion": "Secuencia de pases con control orientado y pase largo. Es de baja intensidad.",
-      "dosis": null,
-      "requiere_variantes": true,
-      "variantes": {
-        "2": "Ejercicio de control orientado + pase largo (ver Pases cortos con control orientado, variante de 2).",
-        "3": "Control orientado corto + pase largo de 20-25 m.",
-        "4": "Dos parejas, cada una hace el ejercicio de 2 en su propio espacio, en simultáneo.",
-        "8": "Formación en línea o en rombo, con control orientado y algún pase largo ocasional."
-      },
-      "pendiente_validar": [
-        "4"
-      ],
-      "imagen": null,
-      "video": null,
-      "imagenes": {
-        "2": "img/circuito-pases-combinados-2.svg",
-        "3": "img/circuito-pases-combinados-3.svg",
-        "4": "img/circuito-pases-combinados-4.svg",
-        "8": "img/circuito-pases-combinados-8.svg"
-      },
-      "trabaja": {
-        "principal": "coordinacion",
-        "secundarios": []
-      },
-      "aporta": [
-        "control"
-      ],
-      "subcategorias": [
-        "pase-largo",
-        "pase-corto",
-        "control-orientado"
-      ],
-      "materiales": [
-        "pelota"
-      ],
-      "jugadores_min": 2
-    },
-    {
-      "id": "conduccion-ritmo-variable",
-      "nombre": "Conducción de pelota a ritmo variable",
-      "alias": [],
-      "categoria": "pelota",
-      "descripcion": "Llevás la pelota controlada alternando tramos lentos y tramos de aceleración corta, sin presión de un compañero.",
-      "dosis": null,
-      "requiere_variantes": true,
-      "variantes": {
-        "2": "Cada uno con su pelota, o una pelota por turno.",
-        "3": "Cada uno con su pelota, o una pelota por turno.",
-        "4": "Cada uno con su pelota, o repartidos en dos parejas con una pelota cada una.",
-        "8": "Repartirse en parejas o grupos chicos si hay más de una pelota."
-      },
-      "pendiente_validar": [
-        "2",
-        "3",
-        "4"
-      ],
-      "imagen": "img/conduccion-ritmo-variable.svg",
-      "video": null,
-      "trabaja": {
-        "principal": "coordinacion",
-        "secundarios": [
-          "aerobica"
-        ]
-      },
-      "aporta": [
-        "control"
-      ],
-      "subcategorias": [
-        "conduccion"
-      ],
-      "materiales": [
-        "pelota"
-      ]
-    },
-    {
-      "id": "tecnica-carrera",
-      "nombre": "Técnica de carrera",
-      "alias": [],
-      "categoria": "velocidad",
-      "descripcion": "Skipping bajo (pasos cortos y rápidos con poca elevación de rodilla), taloneo (talón hacia la cola trotando) y rodillas altas (elevación marcada trotando).",
-      "dosis": "15-20 m por serie",
-      "variantes": {},
-      "imagen": null,
-      "video": "https://www.youtube.com/watch?v=uRuV40jNgB0",
-      "trabaja": {
-        "principal": "coordinacion",
-        "secundarios": [
-          "gemelos",
-          "cuadriceps",
-          "isquiotibiales"
-        ]
-      },
-      "aporta": [
-        "velocidad",
-        "coordinacion"
-      ],
-      "materiales": []
-    },
-    {
-      "id": "progresion-aceleracion",
-      "nombre": "Progresión de aceleración",
-      "alias": [
-        "Activación neuromuscular"
-      ],
-      "categoria": "velocidad",
-      "descripcion": "Arranque progresivo, no explosivo desde el primer paso. Acelerás gradualmente hasta el 60-70% de la velocidad máxima en 15-20 m. Volvés caminando como descanso completo. Hecha sin pelota, en parejas y en tramos cortos de 10-15 m al 60-70%, sirve como activación antes del partido: es corto pero no se saca, porque es lo que más protege contra desgarros tempranos.",
-      "dosis": null,
-      "requiere_variantes": true,
-      "variantes": {
-        "2": "Salen juntos o por turnos.",
-        "3": "Salen por turnos o de a dos.",
-        "4": "Salen de a dos, en dos tandas.",
-        "8": "Trabajar en parejas o tandas de 2-3 para no esperar turno."
-      },
-      "pendiente_validar": [
-        "2",
-        "3",
-        "4"
-      ],
-      "imagen": "img/progresion-aceleracion.svg",
-      "video": null,
-      "trabaja": {
-        "principal": "gluteo-mayor",
-        "secundarios": [
-          "isquiotibiales",
-          "cuadriceps",
-          "gemelos"
-        ]
-      },
-      "aporta": [
-        "velocidad"
-      ],
-      "materiales": []
-    },
-    {
-      "id": "cambios-ritmo-conos",
-      "nombre": "Cambios de ritmo con conos",
-      "alias": [],
-      "categoria": "velocidad",
-      "descripcion": "Recorrido marcado con conos, alternando tramos de trote suave y tramos de aceleración corta. Sin cortes de dirección de 90°.",
-      "dosis": null,
-      "variantes": {},
-      "imagen": "img/cambios-ritmo-conos.svg",
-      "video": null,
-      "trabaja": {
-        "principal": "cuadriceps",
-        "secundarios": [
-          "gluteo-mayor",
-          "gemelos"
-        ]
-      },
-      "aporta": [
-        "velocidad"
-      ],
-      "materiales": [
-        "conos"
-      ]
-    },
-    {
-      "id": "estiramiento-estatico",
-      "nombre": "Estiramiento estático y vuelta a la calma",
-      "alias": [
-        "Vuelta a la calma"
-      ],
-      "categoria": "vuelta-calma",
-      "descripcion": "Caminata y estiramiento estático de cuádriceps, isquios, gemelos y cadera. Sin forzar el rango.",
-      "dosis": null,
-      "pendiente_dosis": "Cuánto tiempo sostener cada estiramiento: no está en el Doc.",
-      "variantes": {},
-      "imagen": null,
-      "video": null,
-      "trabaja": {
-        "principal": "movilidad",
-        "secundarios": [
-          "cuadriceps",
-          "isquiotibiales",
-          "gemelos"
-        ]
-      },
-      "aporta": [
-        "movilidad"
-      ],
-      "materiales": [],
-      "huerfano_ok": true
-    },
-    {
       "id": "bulgarian-split-squat",
+      "numero": 6,
       "nombre": "Bulgarian split squat",
       "alias": [],
       "categoria": "fuerza",
@@ -874,7 +336,82 @@
       ]
     },
     {
+      "id": "elevacion-talones",
+      "numero": 7,
+      "nombre": "Elevación de talones",
+      "alias": [],
+      "categoria": "fuerza",
+      "descripcion": "Parado, subís en punta de pie lo más alto posible y bajás controlado. Podés apoyarte en algo para el equilibrio.",
+      "dosis": null,
+      "variantes": {},
+      "imagen": "img/ejercicios/elevacion-talones.png",
+      "video": "https://www.youtube.com/watch?v=JDfWLEipMOc",
+      "trabaja": {
+        "principal": "gemelos",
+        "secundarios": []
+      },
+      "aporta": [
+        "fuerza"
+      ],
+      "materiales": []
+    },
+    {
+      "id": "zancada-estatica",
+      "numero": 8,
+      "nombre": "Estocada",
+      "alias": [
+        "Zancada estática"
+      ],
+      "categoria": "fuerza",
+      "descripcion": "Un pie adelante y uno atrás. Bajás flexionando ambas rodillas hasta casi tocar el piso con la de atrás. Subís sin desplazarte.",
+      "dosis": null,
+      "variantes": {},
+      "imagen": "img/ejercicios/zancada-estatica.png",
+      "video": "https://www.youtube.com/watch?v=G9DenYUVPjc",
+      "trabaja": {
+        "principal": "cuadriceps",
+        "secundarios": [
+          "gluteo-mayor",
+          "isquiotibiales"
+        ]
+      },
+      "aporta": [
+        "fuerza"
+      ],
+      "materiales": []
+    },
+    {
+      "id": "nordic-hamstring",
+      "numero": 9,
+      "nombre": "Nordic hamstring",
+      "alias": [
+        "Curl nórdico"
+      ],
+      "categoria": "fuerza",
+      "descripcion": "De rodillas sobre una colchoneta, con un compañero sosteniéndote los tobillos. Bajás el torso hacia adelante lo más lento que puedas, con el cuerpo recto de las rodillas a la cabeza, frenando la caída con los isquios. Al final te frenás con las manos y volvés a subir ayudándote con ellas. Es el ejercicio con más respaldo para prevenir lesiones de isquiotibiales.",
+      "dosis": "2-3 series de 4-6 repeticiones",
+      "pendiente_dosis": "Dosis propuesta por mí; empezar con pocas repeticiones y subir de a poco.",
+      "variantes": {},
+      "imagen": null,
+      "video": null,
+      "trabaja": {
+        "principal": "isquiotibiales",
+        "secundarios": [
+          "gluteo-mayor",
+          "core"
+        ]
+      },
+      "aporta": [
+        "fuerza"
+      ],
+      "materiales": [
+        "compañero para sostener los tobillos",
+        "colchoneta"
+      ]
+    },
+    {
       "id": "trap-bar-deadlift",
+      "numero": 10,
       "nombre": "Peso muerto con barra hexagonal",
       "alias": [
         "Trap bar deadlift"
@@ -903,7 +440,95 @@
       ]
     },
     {
+      "id": "plancha-frontal",
+      "numero": 11,
+      "nombre": "Plancha frontal",
+      "alias": [],
+      "categoria": "fuerza",
+      "descripcion": "Apoyado en antebrazos y puntas de pie, cuerpo en línea recta de cabeza a talón. Sostenés sin moverte.",
+      "dosis": null,
+      "variantes": {},
+      "imagen": "img/ejercicios/plancha-frontal.png",
+      "video": "https://www.youtube.com/watch?v=sG5SaIAz9wk",
+      "trabaja": {
+        "principal": "core",
+        "secundarios": []
+      },
+      "aporta": [
+        "fuerza"
+      ],
+      "materiales": []
+    },
+    {
+      "id": "plancha-lateral",
+      "numero": 12,
+      "nombre": "Plancha lateral",
+      "alias": [],
+      "categoria": "fuerza",
+      "descripcion": "Apoyado en un antebrazo, cuerpo de costado en línea recta y cadera levantada del piso. Sostenés y después cambiás de lado.",
+      "dosis": null,
+      "variantes": {},
+      "imagen": "img/ejercicios/plancha-lateral.png",
+      "video": "https://www.youtube.com/watch?v=bRivOELQVOs",
+      "trabaja": {
+        "principal": "core",
+        "secundarios": [
+          "gluteo-medio"
+        ]
+      },
+      "aporta": [
+        "fuerza"
+      ],
+      "materiales": []
+    },
+    {
+      "id": "puente-gluteo",
+      "numero": 13,
+      "nombre": "Puente de glúteo",
+      "alias": [],
+      "categoria": "fuerza",
+      "descripcion": "Doble pierna: acostado boca arriba, rodillas flexionadas y pies apoyados. Empujás con los talones y subís la cadera hasta línea recta hombro-rodilla. Apretás arriba y bajás controlado. A una pierna: igual, con una pierna estirada en el aire, alternando lados. Con pausa: como el doble pierna, sosteniendo 2-3 s arriba apretando el glúteo antes de bajar.",
+      "dosis": null,
+      "variantes": {},
+      "imagen": "img/ejercicios/puente-gluteo.png",
+      "video": "https://www.youtube.com/watch?v=v_9dS-l3GWU",
+      "trabaja": {
+        "principal": "gluteo-mayor",
+        "secundarios": [
+          "isquiotibiales"
+        ]
+      },
+      "aporta": [
+        "fuerza"
+      ],
+      "materiales": []
+    },
+    {
+      "id": "sentadilla",
+      "numero": 14,
+      "nombre": "Sentadilla",
+      "alias": [],
+      "categoria": "fuerza",
+      "descripcion": "Parado, pies al ancho de hombros. Bajás flexionando cadera y rodilla como si te sentaras, pecho arriba. Subís apretando glúteo.",
+      "dosis": null,
+      "variantes": {},
+      "imagen": "img/ejercicios/sentadilla.png",
+      "video": "https://www.youtube.com/watch?v=qsAkuNORgmk",
+      "trabaja": {
+        "principal": "cuadriceps",
+        "secundarios": [
+          "gluteo-mayor",
+          "isquiotibiales"
+        ]
+      },
+      "aporta": [
+        "fuerza"
+      ],
+      "materiales": []
+    },
+    {
       "id": "step-up-unilateral",
+      "numero": 15,
       "nombre": "Step-up unilateral",
       "alias": [],
       "categoria": "fuerza",
@@ -927,17 +552,18 @@
       ]
     },
     {
-      "id": "sentadilla-explosiva",
-      "nombre": "Sentadilla explosiva",
+      "id": "wall-sit",
+      "numero": 16,
+      "nombre": "Wall sit",
       "alias": [
-        "Speed squat"
+        "Sentadilla isométrica contra pared"
       ],
-      "categoria": "potencia",
-      "descripcion": "Sentadilla con poco peso y foco en la velocidad de subida. Convierte la fuerza en potencia y prepara el sistema nervioso.",
-      "dosis": "4 series × 5 reps",
+      "categoria": "fuerza",
+      "descripcion": "Espalda apoyada en la pared. Bajás hasta que las rodillas queden a 90° y sostenés la posición sin moverte.",
+      "dosis": null,
       "variantes": {},
-      "imagen": "img/ejercicios/sentadilla-explosiva.png",
-      "video": null,
+      "imagen": "img/ejercicios/wall-sit.png",
+      "video": "https://www.youtube.com/watch?v=mGTJtgmYgRw",
       "trabaja": {
         "principal": "cuadriceps",
         "secundarios": [
@@ -945,15 +571,102 @@
         ]
       },
       "aporta": [
-        "potencia",
         "fuerza"
       ],
       "materiales": [
-        "peso liviano"
+        "pared"
       ]
     },
     {
+      "id": "hiit-10-10",
+      "numero": 17,
+      "nombre": "HIIT 10\"/10\"",
+      "alias": [
+        "HIIT 10/10"
+      ],
+      "categoria": "aerobico",
+      "descripcion": "Corrés fuerte 10 segundos y descansás 10: eso es un set. Hacés 15 sets seguidos, descansás 2 minutos y repetís los 15 sets. Con la app Interval Timer: preparación 10 s, 15 sets de 10 s de trabajo y 10 s de descanso, y cool down de 30 s (5:30 en total).",
+      "dosis": "15 sets de 10 s / 10 s, 3 vueltas",
+      "variantes": {},
+      "imagen": "img/ejercicios/hiit-10-10.jpg",
+      "video": null,
+      "trabaja": {
+        "principal": "aerobica",
+        "secundarios": []
+      },
+      "aporta": [
+        "aerobico"
+      ],
+      "materiales": []
+    },
+    {
+      "id": "hiit-15-15",
+      "numero": 18,
+      "nombre": "HIIT 15/15",
+      "alias": [],
+      "categoria": "aerobico",
+      "descripcion": "15 segundos de carrera intensa y 15 de recuperación, en series de 4-6 minutos. Es el más validado para fútbol amateur.",
+      "dosis": "varias series de 4-6 min",
+      "variantes": {},
+      "imagen": "img/ejercicios/hiit-15-15.png",
+      "video": null,
+      "huerfano_ok": true,
+      "trabaja": {
+        "principal": "aerobica",
+        "secundarios": []
+      },
+      "aporta": [
+        "aerobico"
+      ],
+      "materiales": []
+    },
+    {
+      "id": "intervalo-4x4",
+      "numero": 19,
+      "nombre": "Intervalo 4×4 minutos",
+      "alias": [],
+      "categoria": "aerobico",
+      "descripcion": "4 series de 4 min al 90-95% de la FC máx., con 3 min de trote entre series. Es el protocolo noruego más estudiado para mejorar el VO2max en fútbol.",
+      "dosis": null,
+      "variantes": {},
+      "imagen": "img/ejercicios/intervalo-4x4.jpg",
+      "video": null,
+      "huerfano_ok": true,
+      "trabaja": {
+        "principal": "aerobica",
+        "secundarios": []
+      },
+      "aporta": [
+        "aerobico"
+      ],
+      "materiales": []
+    },
+    {
+      "id": "trote-continuo",
+      "numero": 20,
+      "nombre": "Trote continuo (zona 2)",
+      "alias": [
+        "Resistencia continua",
+        "Trote a ritmo conversacional"
+      ],
+      "categoria": "aerobico",
+      "descripcion": "Correr a ritmo conversacional (60-70% de la FC máx.): tenés que poder hablar sin ahogarte. Es la base aeróbica que mejora la recuperación entre sprints y sostiene la intensidad en el segundo tiempo. Si alguno no llega a los 30 min corridos, alterna trote y caminata rápida en vez de forzar. Dura entre 30 y 45 min.",
+      "dosis": null,
+      "variantes": {},
+      "imagen": "img/ejercicios/trote-continuo.png",
+      "video": null,
+      "trabaja": {
+        "principal": "aerobica",
+        "secundarios": []
+      },
+      "aporta": [
+        "aerobico"
+      ],
+      "materiales": []
+    },
+    {
       "id": "box-jump",
+      "numero": 21,
       "nombre": "Box jump",
       "alias": [],
       "categoria": "potencia",
@@ -978,57 +691,8 @@
       ]
     },
     {
-      "id": "broad-jump",
-      "nombre": "Salto horizontal (broad jump)",
-      "alias": [
-        "Broad jump"
-      ],
-      "categoria": "potencia",
-      "descripcion": "Desde parado, saltás lo más lejos posible y mantenés el aterrizaje. Entrena potencia horizontal, que se transfiere directo al primer paso.",
-      "dosis": "4 × 5 reps",
-      "variantes": {},
-      "imagen": "img/ejercicios/broad-jump.png",
-      "video": null,
-      "huerfano_ok": true,
-      "trabaja": {
-        "principal": "gluteo-mayor",
-        "secundarios": [
-          "isquiotibiales",
-          "cuadriceps"
-        ]
-      },
-      "aporta": [
-        "potencia",
-        "velocidad"
-      ],
-      "materiales": []
-    },
-    {
-      "id": "med-ball-slam",
-      "nombre": "Med ball slam",
-      "alias": [],
-      "categoria": "potencia",
-      "descripcion": "Con la pelota medicinal sobre la cabeza, la tirás al suelo con toda la fuerza. Potencia de tren superior y core en un movimiento completo.",
-      "dosis": "3 × 8 reps",
-      "variantes": {},
-      "imagen": "img/ejercicios/med-ball-slam.png",
-      "video": null,
-      "huerfano_ok": true,
-      "trabaja": {
-        "principal": "core",
-        "secundarios": [
-          "tren-superior"
-        ]
-      },
-      "aporta": [
-        "potencia"
-      ],
-      "materiales": [
-        "pelota medicinal"
-      ]
-    },
-    {
       "id": "leg-hop",
+      "numero": 22,
       "nombre": "Leg hop",
       "alias": [
         "Salto a una pierna"
@@ -1093,7 +757,190 @@
       ]
     },
     {
+      "id": "med-ball-slam",
+      "numero": 23,
+      "nombre": "Med ball slam",
+      "alias": [],
+      "categoria": "potencia",
+      "descripcion": "Con la pelota medicinal sobre la cabeza, la tirás al suelo con toda la fuerza. Potencia de tren superior y core en un movimiento completo.",
+      "dosis": "3 × 8 reps",
+      "variantes": {},
+      "imagen": "img/ejercicios/med-ball-slam.png",
+      "video": null,
+      "huerfano_ok": true,
+      "trabaja": {
+        "principal": "core",
+        "secundarios": [
+          "tren-superior"
+        ]
+      },
+      "aporta": [
+        "potencia"
+      ],
+      "materiales": [
+        "pelota medicinal"
+      ]
+    },
+    {
+      "id": "broad-jump",
+      "numero": 24,
+      "nombre": "Salto horizontal (broad jump)",
+      "alias": [
+        "Broad jump"
+      ],
+      "categoria": "potencia",
+      "descripcion": "Desde parado, saltás lo más lejos posible y mantenés el aterrizaje. Entrena potencia horizontal, que se transfiere directo al primer paso.",
+      "dosis": "4 × 5 reps",
+      "variantes": {},
+      "imagen": "img/ejercicios/broad-jump.png",
+      "video": null,
+      "huerfano_ok": true,
+      "trabaja": {
+        "principal": "gluteo-mayor",
+        "secundarios": [
+          "isquiotibiales",
+          "cuadriceps"
+        ]
+      },
+      "aporta": [
+        "potencia",
+        "velocidad"
+      ],
+      "materiales": []
+    },
+    {
+      "id": "sentadilla-explosiva",
+      "numero": 25,
+      "nombre": "Sentadilla explosiva",
+      "alias": [
+        "Speed squat"
+      ],
+      "categoria": "potencia",
+      "descripcion": "Sentadilla con poco peso y foco en la velocidad de subida. Convierte la fuerza en potencia y prepara el sistema nervioso.",
+      "dosis": "4 series × 5 reps",
+      "variantes": {},
+      "imagen": "img/ejercicios/sentadilla-explosiva.png",
+      "video": null,
+      "trabaja": {
+        "principal": "cuadriceps",
+        "secundarios": [
+          "gluteo-mayor"
+        ]
+      },
+      "aporta": [
+        "potencia",
+        "fuerza"
+      ],
+      "materiales": [
+        "peso liviano"
+      ]
+    },
+    {
+      "id": "aceleracion-conos-zigzag",
+      "numero": 26,
+      "nombre": "Aceleración a cada cono en zigzag",
+      "alias": [],
+      "categoria": "velocidad",
+      "descripcion": "Con los conos en zigzag, corrés de uno a otro y acelerás hacia cada cono.",
+      "dosis": null,
+      "variantes": {},
+      "imagen": "img/aceleracion-conos-zigzag.svg",
+      "video": null,
+      "huerfano_ok": true,
+      "trabaja": {
+        "principal": "gluteo-mayor",
+        "secundarios": [
+          "cuadriceps",
+          "gemelos"
+        ]
+      },
+      "aporta": [
+        "velocidad"
+      ],
+      "materiales": [
+        "conos"
+      ]
+    },
+    {
+      "id": "bounding",
+      "numero": 27,
+      "nombre": "Bounding (zancadas exageradas)",
+      "alias": [],
+      "categoria": "velocidad",
+      "descripcion": "Carrera con zancadas máximas, rodilla arriba e impulsándote fuerte. Desarrolla el ciclo de zancada y la potencia de cada paso.",
+      "dosis": "4 × 20 m",
+      "variantes": {},
+      "imagen": "img/ejercicios/bounding.png",
+      "video": null,
+      "huerfano_ok": true,
+      "trabaja": {
+        "principal": "gluteo-mayor",
+        "secundarios": [
+          "isquiotibiales",
+          "gemelos"
+        ]
+      },
+      "aporta": [
+        "potencia",
+        "velocidad"
+      ],
+      "materiales": []
+    },
+    {
+      "id": "cambios-ritmo-conos",
+      "numero": 28,
+      "nombre": "Cambios de ritmo con conos",
+      "alias": [],
+      "categoria": "velocidad",
+      "descripcion": "Recorrido marcado con conos, alternando tramos de trote suave y tramos de aceleración corta. Sin cortes de dirección de 90°.",
+      "dosis": null,
+      "variantes": {},
+      "imagen": "img/cambios-ritmo-conos.svg",
+      "video": null,
+      "trabaja": {
+        "principal": "cuadriceps",
+        "secundarios": [
+          "gluteo-mayor",
+          "gemelos"
+        ]
+      },
+      "aporta": [
+        "velocidad"
+      ],
+      "materiales": [
+        "conos"
+      ]
+    },
+    {
+      "id": "sled-push",
+      "numero": 29,
+      "nombre": "Empuje de trineo (sled push)",
+      "alias": [],
+      "categoria": "velocidad",
+      "descripcion": "Empujás un trineo con carga leve 10-20 m a máxima velocidad. Trabaja la fase de aceleración sin carga en la zancada y desarrolla potencia horizontal. En lugar del trineo se pueden usar bandas elásticas.",
+      "dosis": "4-5 series",
+      "variantes": {},
+      "imagen": "img/ejercicios/sled-push.png",
+      "video": null,
+      "huerfano_ok": true,
+      "trabaja": {
+        "principal": "cuadriceps",
+        "secundarios": [
+          "gluteo-mayor",
+          "gemelos"
+        ]
+      },
+      "aporta": [
+        "velocidad",
+        "fuerza"
+      ],
+      "materiales": [
+        "trineo (o bandas elásticas)"
+      ]
+    },
+    {
       "id": "flying-sprint",
+      "numero": 30,
       "nombre": "Flying sprint (30 m)",
       "alias": [
         "Velocidad máxima hasta el cono"
@@ -1120,82 +967,8 @@
       ]
     },
     {
-      "id": "t-drill",
-      "nombre": "T-drill (conos en T)",
-      "alias": [],
-      "categoria": "velocidad",
-      "descripcion": "Sprint hacia adelante, shuffle lateral y backpedal, con los conos en forma de T. Combina velocidad en las 3 direcciones del fútbol.",
-      "dosis": "4-6 reps con recuperación total",
-      "variantes": {},
-      "imagen": "img/ejercicios/t-drill.png",
-      "video": null,
-      "huerfano_ok": true,
-      "trabaja": {
-        "principal": "gluteo-medio",
-        "secundarios": [
-          "aductores",
-          "cuadriceps"
-        ]
-      },
-      "aporta": [
-        "velocidad",
-        "coordinacion"
-      ],
-      "materiales": [
-        "conos"
-      ]
-    },
-    {
-      "id": "bounding",
-      "nombre": "Bounding (zancadas exageradas)",
-      "alias": [],
-      "categoria": "velocidad",
-      "descripcion": "Carrera con zancadas máximas, rodilla arriba e impulsándote fuerte. Desarrolla el ciclo de zancada y la potencia de cada paso.",
-      "dosis": "4 × 20 m",
-      "variantes": {},
-      "imagen": "img/ejercicios/bounding.png",
-      "video": null,
-      "huerfano_ok": true,
-      "trabaja": {
-        "principal": "gluteo-mayor",
-        "secundarios": [
-          "isquiotibiales",
-          "gemelos"
-        ]
-      },
-      "aporta": [
-        "potencia",
-        "velocidad"
-      ],
-      "materiales": []
-    },
-    {
-      "id": "sprint-5-10-5",
-      "nombre": "Sprint corto con cono (5-10-5)",
-      "alias": [],
-      "categoria": "velocidad",
-      "descripcion": "3 conos en línea separados 5 m. Sprint al cono del medio, pivoteás y volvés, y sprint al cono final. Aceleración y primer paso explosivo.",
-      "dosis": "4 series, 30 s de descanso",
-      "variantes": {},
-      "imagen": "img/ejercicios/sprint-5-10-5.png",
-      "video": null,
-      "huerfano_ok": true,
-      "trabaja": {
-        "principal": "cuadriceps",
-        "secundarios": [
-          "gluteo-mayor",
-          "aductores"
-        ]
-      },
-      "aporta": [
-        "velocidad"
-      ],
-      "materiales": [
-        "conos"
-      ]
-    },
-    {
       "id": "hill-sprint",
+      "numero": 31,
       "nombre": "Hill sprint (cuesta arriba)",
       "alias": [],
       "categoria": "velocidad",
@@ -1221,33 +994,45 @@
       ]
     },
     {
-      "id": "sled-push",
-      "nombre": "Empuje de trineo (sled push)",
-      "alias": [],
+      "id": "progresion-aceleracion",
+      "numero": 32,
+      "nombre": "Progresión de aceleración",
+      "alias": [
+        "Activación neuromuscular"
+      ],
       "categoria": "velocidad",
-      "descripcion": "Empujás un trineo con carga leve 10-20 m a máxima velocidad. Trabaja la fase de aceleración sin carga en la zancada y desarrolla potencia horizontal. En lugar del trineo se pueden usar bandas elásticas.",
-      "dosis": "4-5 series",
-      "variantes": {},
-      "imagen": "img/ejercicios/sled-push.png",
+      "descripcion": "Arranque progresivo, no explosivo desde el primer paso. Acelerás gradualmente hasta el 60-70% de la velocidad máxima en 15-20 m. Volvés caminando como descanso completo. Hecha sin pelota, en parejas y en tramos cortos de 10-15 m al 60-70%, sirve como activación antes del partido: es corto pero no se saca, porque es lo que más protege contra desgarros tempranos.",
+      "dosis": null,
+      "requiere_variantes": true,
+      "variantes": {
+        "2": "Salen juntos o por turnos.",
+        "3": "Salen por turnos o de a dos.",
+        "4": "Salen de a dos, en dos tandas.",
+        "8": "Trabajar en parejas o tandas de 2-3 para no esperar turno."
+      },
+      "pendiente_validar": [
+        "2",
+        "3",
+        "4"
+      ],
+      "imagen": "img/progresion-aceleracion.svg",
       "video": null,
-      "huerfano_ok": true,
       "trabaja": {
-        "principal": "cuadriceps",
+        "principal": "gluteo-mayor",
         "secundarios": [
-          "gluteo-mayor",
+          "isquiotibiales",
+          "cuadriceps",
           "gemelos"
         ]
       },
       "aporta": [
-        "velocidad",
-        "fuerza"
+        "velocidad"
       ],
-      "materiales": [
-        "trineo (o bandas elásticas)"
-      ]
+      "materiales": []
     },
     {
       "id": "reactive-sprint",
+      "numero": 33,
       "nombre": "Reactive sprint (señal visual)",
       "alias": [],
       "categoria": "velocidad",
@@ -1281,455 +1066,88 @@
       ]
     },
     {
-      "id": "hiit-15-15",
-      "nombre": "HIIT 15/15",
+      "id": "sprint-5-10-5",
+      "numero": 34,
+      "nombre": "Sprint corto con cono (5-10-5)",
       "alias": [],
-      "categoria": "aerobico",
-      "descripcion": "15 segundos de carrera intensa y 15 de recuperación, en series de 4-6 minutos. Es el más validado para fútbol amateur.",
-      "dosis": "varias series de 4-6 min",
+      "categoria": "velocidad",
+      "descripcion": "3 conos en línea separados 5 m. Sprint al cono del medio, pivoteás y volvés, y sprint al cono final. Aceleración y primer paso explosivo.",
+      "dosis": "4 series, 30 s de descanso",
       "variantes": {},
-      "imagen": "img/ejercicios/hiit-15-15.png",
+      "imagen": "img/ejercicios/sprint-5-10-5.png",
       "video": null,
       "huerfano_ok": true,
-      "trabaja": {
-        "principal": "aerobica",
-        "secundarios": []
-      },
-      "aporta": [
-        "aerobico"
-      ],
-      "materiales": []
-    },
-    {
-      "id": "intervalo-4x4",
-      "nombre": "Intervalo 4×4 minutos",
-      "alias": [],
-      "categoria": "aerobico",
-      "descripcion": "4 series de 4 min al 90-95% de la FC máx., con 3 min de trote entre series. Es el protocolo noruego más estudiado para mejorar el VO2max en fútbol.",
-      "dosis": null,
-      "variantes": {},
-      "imagen": "img/ejercicios/intervalo-4x4.jpg",
-      "video": null,
-      "huerfano_ok": true,
-      "trabaja": {
-        "principal": "aerobica",
-        "secundarios": []
-      },
-      "aporta": [
-        "aerobico"
-      ],
-      "materiales": []
-    },
-    {
-      "id": "reducido",
-      "nombre": "Reducido",
-      "alias": [],
-      "categoria": "pelota",
-      "descripcion": "Partidos en espacios pequeños (5v5, por ejemplo), con conos marcando los límites, a alta intensidad en bloques de 3-8 min: aeróbico específico con pelota, con la misma carga cardíaca que correr al 93% de la FC máx. Para la posesión con presión de 2 o 3 personas, ver Rondo. Sin arcos, ver Posesión XvX en cuadrado.",
-      "dosis": null,
-      "variantes": {},
-      "imagen": "img/ejercicios/reducido.png",
-      "video": null,
-      "huerfano_ok": true,
-      "trabaja": {
-        "principal": "aerobica",
-        "secundarios": [
-          "coordinacion"
-        ]
-      },
-      "aporta": [
-        "aerobico",
-        "control"
-      ],
-      "subcategorias": [
-        "posesion",
-        "oposicion"
-      ],
-      "materiales": [
-        "pelota",
-        "conos"
-      ],
-      "jugadores_min": 6
-    },
-    {
-      "id": "posesion-cuadrado",
-      "nombre": "Posesión XvX en cuadrado",
-      "alias": [
-        "Posesión sin arcos"
-      ],
-      "categoria": "pelota",
-      "descripcion": "Es como el Reducido, pero sin arcos. Se marca un cuadrado con conos y se juega XvX (por ejemplo 4v4): un equipo mantiene la pelota y el otro intenta recuperarla. Si son un número impar de jugadores, uno hace de comodín (juega con el equipo que tiene la pelota). Para usarlo como entrada en calor: achicá el cuadrado un poco respecto de cómo lo jugás en serio, para que sea más técnico (toque rápido) y menos de correr a fondo; jugá al 70-80 % de intensidad, sin ir a matar cada pelota dividida; y rotá cada 2-3 minutos si alguien necesita respirar.",
-      "dosis": "2-3 min por tanda, rotando",
-      "variantes": {},
-      "imagen": null,
-      "video": null,
-      "trabaja": {
-        "principal": "coordinacion",
-        "secundarios": [
-          "aerobica"
-        ]
-      },
-      "aporta": [
-        "control",
-        "aerobico"
-      ],
-      "subcategorias": [
-        "posesion",
-        "pase-corto",
-        "oposicion"
-      ],
-      "materiales": [
-        "pelota",
-        "conos"
-      ],
-      "jugadores_min": 4
-    },
-    {
-      "id": "pase-presion-arcos-l",
-      "nombre": "Pase con presión inmediata y arcos en L",
-      "alias": [
-        "Delantero contra defensor con arquitos"
-      ],
-      "categoria": "pelota",
-      "descripcion": "Armás un cuadrado de unos 5×5 m con conos. El delantero se para en un vértice y el defensor en el vértice opuesto. Detrás del defensor va el pasador. En los otros dos vértices ponés un mini arco cada uno, mirando al delantero. Mecánica: 1) el pasador le da el pase al delantero; 2) apenas sale el pase, el defensor sale corriendo a máxima velocidad para robarle la pelota; 3) el delantero controla orientado para amagar al defensor y sacárselo de encima, y tiene que pasar conduciendo la pelota por uno de los dos arquitos. Es un 2v1 que arranca en desventaja para el defensor, con doble salida gracias a los arcos en L.",
-      "dosis": null,
-      "variantes": {
-        "2": "El defensor también hace de pasador: le da el pase al delantero y sale a presionar.",
-        "3": "Delantero, defensor y un pasador que se para detrás del defensor. Rotan los roles."
-      },
-      "imagen": "img/ejercicios/pase-presion-arcos-l.png",
-      "video": null,
-      "huerfano_ok": true,
-      "trabaja": {
-        "principal": "coordinacion",
-        "secundarios": []
-      },
-      "pendiente_validar": [
-        "2",
-        "3"
-      ],
-      "aporta": [
-        "control",
-        "velocidad"
-      ],
-      "subcategorias": [
-        "oposicion",
-        "control-orientado",
-        "conduccion"
-      ],
-      "materiales": [
-        "pelota",
-        "conos",
-        "arquitos"
-      ],
-      "jugadores_min": 2
-    },
-    {
-      "id": "sole-push-acceleration",
-      "nombre": "Sole + push + acceleration",
-      "alias": [
-        "Sole push accelerate"
-      ],
-      "categoria": "pelota",
-      "descripcion": "Individual. Sole (pisarla hacia atrás), push (toque hacia adelante) y accelerate (correr un poco). Combina coordinación y control.",
-      "dosis": null,
-      "variantes": {},
-      "imagen": "img/ejercicios/sole-push-acceleration.webp",
-      "video": "https://www.instagram.com/reels/DXT_q2ACBXm/",
-      "huerfano_ok": true,
-      "trabaja": {
-        "principal": "coordinacion",
-        "secundarios": []
-      },
-      "aporta": [
-        "control",
-        "coordinacion"
-      ],
-      "subcategorias": [
-        "conduccion"
-      ],
-      "materiales": [
-        "pelota",
-        "conos"
-      ]
-    },
-    {
-      "id": "zigzag",
-      "nombre": "Zigzag con pelota",
-      "alias": [],
-      "categoria": "pelota",
-      "descripcion": "Individual. Zigzag alternando un control con el borde interno y uno con el externo.",
-      "dosis": null,
-      "variantes": {},
-      "imagen": "img/ejercicios/zigzag.webp",
-      "video": "https://www.instagram.com/reels/DXT_q2ACBXm/",
-      "huerfano_ok": true,
-      "trabaja": {
-        "principal": "coordinacion",
-        "secundarios": []
-      },
-      "aporta": [
-        "control"
-      ],
-      "subcategorias": [
-        "conduccion"
-      ],
-      "materiales": [
-        "pelota",
-        "conos"
-      ]
-    },
-    {
-      "id": "v-push-cut",
-      "nombre": "V push & cut",
-      "alias": [],
-      "categoria": "pelota",
-      "descripcion": "Individual y casi estático. Ponés un cono en el vértice de abajo de una V y vas pisando la pelota con la suela, dibujando una V con la pelota alrededor del cono. Mejora el cambio de dirección con la pelota.",
-      "dosis": null,
-      "variantes": {},
-      "imagen": "img/ejercicios/v-push-cut.webp",
-      "video": "https://www.instagram.com/reels/DXT_q2ACBXm/",
-      "huerfano_ok": true,
-      "trabaja": {
-        "principal": "coordinacion",
-        "secundarios": []
-      },
-      "aporta": [
-        "control"
-      ],
-      "subcategorias": [
-        "conduccion"
-      ],
-      "materiales": [
-        "pelota",
-        "conos"
-      ]
-    },
-    {
-      "id": "light-touches",
-      "nombre": "Light touches (toques suaves)",
-      "alias": [],
-      "categoria": "pelota",
-      "descripcion": "Individual. Conducción con el borde externo, con muchos toques y cambios de ritmo. Desarrolla la sensación de pelota y la capacidad de acelerar y frenar con el balón controlado.",
-      "dosis": null,
-      "variantes": {},
-      "imagen": "img/ejercicios/light-touches.webp",
-      "video": "https://www.instagram.com/reels/DXT_q2ACBXm/",
-      "huerfano_ok": true,
-      "trabaja": {
-        "principal": "coordinacion",
-        "secundarios": []
-      },
-      "aporta": [
-        "control"
-      ],
-      "subcategorias": [
-        "conduccion"
-      ],
-      "materiales": [
-        "pelota",
-        "conos"
-      ]
-    },
-    {
-      "id": "sprint-control-pase",
-      "nombre": "Sprint + control + pase",
-      "alias": [],
-      "categoria": "pelota",
-      "descripcion": "Sprint de 15 m hasta una pelota parada, la controlás de un toque y pasás a un objetivo. Conecta velocidad con control en una situación de juego real.",
-      "dosis": "5 repeticiones",
-      "variantes": {},
-      "imagen": "img/ejercicios/sprint-control-pase.png",
-      "video": null,
-      "huerfano_ok": true,
-      "trabaja": {
-        "principal": "coordinacion",
-        "secundarios": []
-      },
-      "aporta": [
-        "control",
-        "velocidad"
-      ],
-      "subcategorias": [
-        "control-orientado",
-        "pase-corto"
-      ],
-      "materiales": [
-        "pelota"
-      ]
-    },
-    {
-      "id": "uno-contra-uno-tiro",
-      "nombre": "Uno defiende, otro ataca",
-      "alias": [],
-      "categoria": "pelota",
-      "descripcion": "El defensor (o el arquero) le da el pase al que ataca y se arma una situación de partido.",
-      "dosis": null,
-      "variantes": {
-        "3": "Uno hace de arquero. Los otros dos salen corriendo a máxima velocidad desde la línea del arco, uno de cada lado del arco: uno con pelota y el otro sin. Pasan por unos conos ubicados al final del área y desde ahí van hacia el centro, donde se arma el mano a mano."
-      },
-      "imagen": "img/uno-contra-uno-tiro.svg",
-      "video": null,
-      "huerfano_ok": true,
-      "trabaja": {
-        "principal": "coordinacion",
-        "secundarios": []
-      },
-      "aporta": [
-        "definicion"
-      ],
-      "subcategorias": [
-        "tiro",
-        "oposicion"
-      ],
-      "materiales": [
-        "pelota",
-        "arco"
-      ],
-      "jugadores_min": 2
-    },
-    {
-      "id": "dos-contra-uno",
-      "nombre": "Dos contra uno",
-      "alias": [
-        "2v1"
-      ],
-      "categoria": "pelota",
-      "descripcion": "Situación de partido: dos delanteros contra un defensor. El arquero saca (o, si no hay arquero, la pone en juego un delantero) y los dos atacan el arco: uno conduce, el otro acompaña para dar la opción de pase. El defensor trata de cortar el pase o cerrar al que lleva la pelota. Después de cada jugada rotan los roles.",
-      "dosis": null,
-      "variantes": {},
-      "imagen": null,
-      "video": null,
-      "huerfano_ok": false,
-      "trabaja": {
-        "principal": "coordinacion",
-        "secundarios": []
-      },
-      "aporta": [
-        "definicion"
-      ],
-      "subcategorias": [
-        "tiro",
-        "oposicion"
-      ],
-      "materiales": [
-        "pelota",
-        "arco"
-      ],
-      "jugadores_min": 3
-    },
-    {
-      "id": "pivote-9-definicion",
-      "nombre": "Pivote de 9 y definición",
-      "alias": [],
-      "categoria": "pelota",
-      "descripcion": "Un jugador se pone de frente al arco y el otro de pivote de 9. El delantero le pasa al pivote, que se la deja de primera para que pegue al arco. Variante: en vez de pegarle, se la devuelve al pie y hacen un mano a mano contra el defensor. Podés sumar 3 o 4 conos para que el delantero haga zigzag y practique el control antes del pase al pivote.",
-      "dosis": null,
-      "variantes": {},
-      "imagen": "img/pivote-9-definicion.svg",
-      "video": null,
-      "huerfano_ok": true,
-      "trabaja": {
-        "principal": "coordinacion",
-        "secundarios": []
-      },
-      "aporta": [
-        "definicion"
-      ],
-      "subcategorias": [
-        "tiro",
-        "pase-corto"
-      ],
-      "materiales": [
-        "pelota",
-        "arco",
-        "conos"
-      ],
-      "jugadores_min": 2
-    },
-    {
-      "id": "centro-vertice-area",
-      "nombre": "Centro al vértice del área grande y tiro",
-      "alias": [],
-      "categoria": "pelota",
-      "descripcion": "Jugada preparada de pelota parada: centro al vértice del área grande y tiro, entrando en velocidad. Se puede practicar con las barreras puestas como defensores en el área (en Albanueva).",
-      "dosis": null,
-      "variantes": {},
-      "imagen": null,
-      "video": null,
-      "huerfano_ok": true,
-      "trabaja": {
-        "principal": "coordinacion",
-        "secundarios": []
-      },
-      "aporta": [
-        "definicion"
-      ],
-      "subcategorias": [
-        "pelota-parada",
-        "tiro"
-      ],
-      "materiales": [
-        "pelota",
-        "arco"
-      ],
-      "jugadores_min": 2
-    },
-    {
-      "id": "tiros-libres",
-      "nombre": "Tiros libres",
-      "alias": [
-        "Pegada"
-      ],
-      "categoria": "pelota",
-      "descripcion": "Se patean tiros libres al arco para entrenar la pegada, sin apuro y con descanso entre tiro y tiro. Es una forma tranquila de cerrar la sesión con pelota.",
-      "dosis": "Unos 10 min, sin apuro",
-      "variantes": {},
-      "imagen": null,
-      "video": null,
       "trabaja": {
         "principal": "cuadriceps",
         "secundarios": [
-          "isquiotibiales",
-          "core"
+          "gluteo-mayor",
+          "aductores"
         ]
       },
       "aporta": [
-        "definicion"
-      ],
-      "subcategorias": [
-        "pelota-parada",
-        "tiro"
+        "velocidad"
       ],
       "materiales": [
-        "pelota",
-        "arco"
+        "conos"
       ]
     },
     {
-      "id": "activacion-dinamica",
-      "nombre": "Activación dinámica completa",
+      "id": "t-drill",
+      "numero": 35,
+      "nombre": "T-drill (conos en T)",
       "alias": [],
-      "categoria": "calentamiento",
-      "descripcion": "Tren superior: circunducción de brazos hacia adelante, hacia atrás y hacia arriba y abajo; movimiento de cadera, con y sin piernas; tocarte con la mano la espalda superior (1 y 1). Tren inferior: skipping (cuádriceps); palomita y talones a la cola (isquios); campana, balanceo lateral hacia adentro (aductor); abducción de pierna, balanceo lateral hacia afuera (abductores); saltos con una pierna (gemelos); movimientos laterales con el centro de gravedad bajo, de frente y de espalda (glúteo); elevar el talón hacia adelante y bajar la mano para tocarlo. Velocidad: 2 series de skipping intenso, zancada larga, ¾ de velocidad y máxima velocidad. Con pelota: el loco y posesión 4v4 en cuadrado (ver los ejercicios El loco y Posesión XvX en cuadrado).",
-      "dosis": null,
+      "categoria": "velocidad",
+      "descripcion": "Sprint hacia adelante, shuffle lateral y backpedal, con los conos en forma de T. Combina velocidad en las 3 direcciones del fútbol.",
+      "dosis": "4-6 reps con recuperación total",
       "variantes": {},
-      "imagen": null,
+      "imagen": "img/ejercicios/t-drill.png",
       "video": null,
       "huerfano_ok": true,
       "trabaja": {
-        "principal": "movilidad",
-        "secundarios": []
+        "principal": "gluteo-medio",
+        "secundarios": [
+          "aductores",
+          "cuadriceps"
+        ]
       },
       "aporta": [
-        "movilidad"
+        "velocidad",
+        "coordinacion"
       ],
       "materiales": [
-        "pelota"
+        "conos"
       ]
     },
     {
+      "id": "tecnica-carrera",
+      "numero": 36,
+      "nombre": "Skipping bajo",
+      "alias": [
+        "Técnica de carrera"
+      ],
+      "categoria": "velocidad",
+      "descripcion": "Pasos cortos y rápidos, con poca elevación de rodilla, apoyando de punta de pie.",
+      "dosis": "15-20 m por serie",
+      "variantes": {},
+      "imagen": "img/skipping-bajo.svg",
+      "video": "https://www.youtube.com/watch?v=uRuV40jNgB0",
+      "trabaja": {
+        "principal": "coordinacion",
+        "secundarios": [
+          "gemelos",
+          "cuadriceps",
+          "isquiotibiales"
+        ]
+      },
+      "aporta": [
+        "velocidad",
+        "coordinacion"
+      ],
+      "materiales": []
+    },
+    {
       "id": "carrera-v-devolucion",
+      "numero": 37,
       "nombre": "Carrera en V con devolución",
       "alias": [],
       "categoria": "pelota",
@@ -1761,7 +1179,75 @@
       "jugadores_min": 2
     },
     {
+      "id": "centro-vertice-area",
+      "numero": 38,
+      "nombre": "Centro al vértice del área grande y tiro",
+      "alias": [],
+      "categoria": "pelota",
+      "descripcion": "Jugada preparada de pelota parada: centro al vértice del área grande y tiro, entrando en velocidad. Se puede practicar con las barreras puestas como defensores en el área (en Albanueva).",
+      "dosis": null,
+      "variantes": {},
+      "imagen": "img/centro-vertice-area.svg",
+      "video": null,
+      "huerfano_ok": true,
+      "trabaja": {
+        "principal": "coordinacion",
+        "secundarios": []
+      },
+      "aporta": [
+        "definicion"
+      ],
+      "subcategorias": [
+        "pelota-parada",
+        "tiro"
+      ],
+      "materiales": [
+        "pelota",
+        "arco"
+      ],
+      "jugadores_min": 2
+    },
+    {
+      "id": "conduccion-ritmo-variable",
+      "numero": 40,
+      "nombre": "Conducción de pelota a ritmo variable",
+      "alias": [],
+      "categoria": "pelota",
+      "descripcion": "Llevás la pelota controlada alternando tramos lentos y tramos de aceleración corta, sin presión de un compañero.",
+      "dosis": null,
+      "requiere_variantes": true,
+      "variantes": {
+        "2": "Cada uno con su pelota, o una pelota por turno.",
+        "3": "Cada uno con su pelota, o una pelota por turno.",
+        "4": "Cada uno con su pelota, o repartidos en dos parejas con una pelota cada una.",
+        "8": "Repartirse en parejas o grupos chicos si hay más de una pelota."
+      },
+      "pendiente_validar": [
+        "2",
+        "3",
+        "4"
+      ],
+      "imagen": "img/conduccion-ritmo-variable.svg",
+      "video": null,
+      "trabaja": {
+        "principal": "coordinacion",
+        "secundarios": [
+          "aerobica"
+        ]
+      },
+      "aporta": [
+        "control"
+      ],
+      "subcategorias": [
+        "conduccion"
+      ],
+      "materiales": [
+        "pelota"
+      ]
+    },
+    {
       "id": "conduccion-v-suela",
+      "numero": 41,
       "nombre": "Conducción en V con suela",
       "alias": [],
       "categoria": "pelota",
@@ -1790,75 +1276,150 @@
       ]
     },
     {
-      "id": "un-toque-cono-central",
-      "nombre": "Un toque desde el cono central",
+      "id": "cuadrado-uno-al-medio",
+      "numero": 42,
+      "nombre": "Cuadrado con uno en el medio",
       "alias": [
-        "Pase y va"
+        "Rondo en cuadrado"
       ],
       "categoria": "pelota",
-      "descripcion": "Se hace de a dos, en una zona circular de unos 5 m de radio. Uno se queda fijo en un cono central y el otro corre alrededor. El que corre le pasa la pelota al del cono, que se la devuelve de un solo toque hacia un lado o hacia el otro, cambiando de dirección cada vez. El que corre va a buscarla y se la devuelve. Como la dirección cambia, tiene que arrancar desde parado o a media carrera. No se entrena la distancia sino la aceleración, la reacción y el primer toque con fatiga. A los 10-15 minutos el que corre tiene las piernas pesadas y el del cono casi no se mueve, así que conviene alternar los roles cada tanto. Sirve también como calentamiento activo para llegar con las piernas puestas al partido.",
-      "dosis": null,
-      "variantes": {},
-      "imagen": "img/un-toque-cono-central.svg",
+      "descripcion": "Armás un cuadrado de unos 3 m de lado con conos. Hay un jugador afuera en cada lado del cuadrado y uno adentro, en el centro, que tiene que recuperar la pelota. Los de afuera se la pasan sin que el del medio la intercepte. Se juega durante un minuto y después rotan. Variantes: (1) no se le puede devolver el pase al que te lo dio, así en vez de 3 opciones de pase tenés 2; (2) cada vez que pasás tenés que moverte al otro lado del cuadrado.",
+      "dosis": "1 minuto por tanda, rotando al del medio",
+      "variantes": {
+        "4": "Un lado del cuadrado queda siempre vacío: tres jugadores afuera y uno en el medio. Es más exigente para los de afuera, que tienen menos opciones de pase."
+      },
+      "imagen": "img/cuadrado-uno-al-medio.svg",
       "video": null,
-      "huerfano_ok": true,
       "trabaja": {
-        "principal": "gluteo-mayor",
+        "principal": "coordinacion",
         "secundarios": [
           "cuadriceps",
-          "gemelos",
+          "gemelos"
+        ]
+      },
+      "aporta": [
+        "control"
+      ],
+      "subcategorias": [
+        "posesion",
+        "pase-corto",
+        "oposicion"
+      ],
+      "materiales": [
+        "pelota",
+        "conos"
+      ],
+      "jugadores_min": 4
+    },
+    {
+      "id": "dos-contra-uno",
+      "numero": 43,
+      "nombre": "Dos contra uno",
+      "alias": [
+        "2v1"
+      ],
+      "categoria": "pelota",
+      "descripcion": "Situación de partido: dos delanteros contra un defensor. El arquero saca (o, si no hay arquero, la pone en juego un delantero) y los dos atacan el arco: uno conduce, el otro acompaña para dar la opción de pase. El defensor trata de cortar el pase o cerrar al que lleva la pelota. Después de cada jugada rotan los roles.",
+      "dosis": null,
+      "variantes": {},
+      "imagen": "img/dos-contra-uno.svg",
+      "video": null,
+      "huerfano_ok": false,
+      "trabaja": {
+        "principal": "coordinacion",
+        "secundarios": []
+      },
+      "aporta": [
+        "definicion"
+      ],
+      "subcategorias": [
+        "tiro",
+        "oposicion"
+      ],
+      "materiales": [
+        "pelota",
+        "arco"
+      ],
+      "jugadores_min": 3
+    },
+    {
+      "id": "light-touches",
+      "numero": 44,
+      "nombre": "Light touches (toques suaves)",
+      "alias": [],
+      "categoria": "pelota",
+      "descripcion": "Individual. Conducción con el borde externo, con muchos toques y cambios de ritmo. Desarrolla la sensación de pelota y la capacidad de acelerar y frenar con el balón controlado.",
+      "dosis": null,
+      "variantes": {},
+      "imagen": "img/ejercicios/light-touches.webp",
+      "video": "https://www.instagram.com/reels/DXT_q2ACBXm/",
+      "huerfano_ok": true,
+      "trabaja": {
+        "principal": "coordinacion",
+        "secundarios": []
+      },
+      "aporta": [
+        "control"
+      ],
+      "subcategorias": [
+        "conduccion"
+      ],
+      "materiales": [
+        "pelota",
+        "conos"
+      ]
+    },
+    {
+      "id": "rondo",
+      "numero": 45,
+      "nombre": "Loco",
+      "alias": [
+        "El loco",
+        "Rondo",
+        "Rondo en círculo"
+      ],
+      "categoria": "pelota",
+      "descripcion": "Las personas forman un círculo y se pasan la pelota de primera o de segunda (dos toques), evitando que la toquen los que están en el centro. Adentro van pocos, uno o varios, corriendo para recuperarla. Cuando la recuperan, el último que la tocó pasa adentro y el que la recuperó sale al círculo a dar pases.",
+      "dosis": "2-3 min por tanda, rotando",
+      "requiere_variantes": false,
+      "variantes": {
+        "3": "Rondo triangular: 2 tocan y 1 presiona en el medio. Rotan roles cada 2-3 min.",
+        "4": "Rondo 3v1: 3 tocan y 1 presiona en el medio. Rotan roles cada 2-3 min.",
+        "8": "Rondo 6v2: 6 tocan y 2 presionan en el medio. Rotan cada 2-3 min."
+      },
+      "pendiente_validar": [
+        "4"
+      ],
+      "imagen": null,
+      "video": null,
+      "imagenes": {
+        "3": "img/rondo-3.svg",
+        "4": "img/rondo-4.svg",
+        "8": "img/rondo-8.svg"
+      },
+      "trabaja": {
+        "principal": "aerobica",
+        "secundarios": [
           "coordinacion"
         ]
       },
       "aporta": [
-        "velocidad",
-        "control"
+        "control",
+        "aerobico"
       ],
       "subcategorias": [
+        "posesion",
         "pase-corto"
       ],
       "materiales": [
         "pelota",
         "conos"
       ],
-      "jugadores_min": 2
-    },
-    {
-      "id": "pase-cono-lateral-control",
-      "nombre": "Pase al cono lateral y control a máxima velocidad",
-      "alias": [],
-      "categoria": "pelota",
-      "descripcion": "Se hace de a dos. Dos conos separados unos 8 m y un tercer cono más o menos a la mitad, corrido hacia un costado (no en la misma línea). Uno se para en ese cono del costado y el otro corre de cono a cono de la línea. En un extremo, el que corre le da el pase al del costado, que se la devuelve al espacio, casi llegando al otro cono, por donde viene corriendo por adentro. Tiene que controlar yendo a máxima velocidad y pegar la vueltita con la pelota por fuera del cono. Después vuelve corriendo hasta el primer cono, pega otra vez la vueltita y ahí le da el pase al del cono del costado, que se la tira de nuevo al espacio. Y así.",
-      "dosis": null,
-      "variantes": {},
-      "imagen": "img/pase-cono-lateral-control.svg",
-      "video": null,
-      "huerfano_ok": true,
-      "trabaja": {
-        "principal": "coordinacion",
-        "secundarios": [
-          "gluteo-mayor",
-          "isquiotibiales",
-          "cuadriceps"
-        ]
-      },
-      "aporta": [
-        "control",
-        "velocidad"
-      ],
-      "subcategorias": [
-        "control-orientado",
-        "pase-corto",
-        "conduccion"
-      ],
-      "materiales": [
-        "pelota",
-        "conos"
-      ],
-      "jugadores_min": 2
+      "jugadores_min": 3
     },
     {
       "id": "pared-control-orientado-conos",
+      "numero": 46,
       "nombre": "Pared y control orientado entre conos",
       "alias": [
         "Pared con control orientado",
@@ -1909,7 +1470,179 @@
       "jugadores_min": 3
     },
     {
+      "id": "pase-cono-lateral-control",
+      "numero": 47,
+      "nombre": "Pase al cono lateral y control a máxima velocidad",
+      "alias": [],
+      "categoria": "pelota",
+      "descripcion": "Se hace de a dos. Dos conos separados unos 8 m y un tercer cono más o menos a la mitad, corrido hacia un costado (no en la misma línea). Uno se para en ese cono del costado y el otro corre de cono a cono de la línea. En un extremo, el que corre le da el pase al del costado, que se la devuelve al espacio, casi llegando al otro cono, por donde viene corriendo por adentro. Tiene que controlar yendo a máxima velocidad y pegar la vueltita con la pelota por fuera del cono. Después vuelve corriendo hasta el primer cono, pega otra vez la vueltita y ahí le da el pase al del cono del costado, que se la tira de nuevo al espacio. Y así.",
+      "dosis": null,
+      "variantes": {},
+      "imagen": "img/pase-cono-lateral-control.svg",
+      "video": null,
+      "huerfano_ok": true,
+      "trabaja": {
+        "principal": "coordinacion",
+        "secundarios": [
+          "gluteo-mayor",
+          "isquiotibiales",
+          "cuadriceps"
+        ]
+      },
+      "aporta": [
+        "control",
+        "velocidad"
+      ],
+      "subcategorias": [
+        "control-orientado",
+        "pase-corto",
+        "conduccion"
+      ],
+      "materiales": [
+        "pelota",
+        "conos"
+      ],
+      "jugadores_min": 2
+    },
+    {
+      "id": "pase-presion-arcos-l",
+      "numero": 48,
+      "nombre": "Pase con presión inmediata y arcos en L",
+      "alias": [
+        "Delantero contra defensor con arquitos"
+      ],
+      "categoria": "pelota",
+      "descripcion": "Armás un cuadrado de unos 5×5 m con conos. El delantero se para en un vértice y el defensor en el vértice opuesto. Detrás del defensor va el pasador. En los otros dos vértices ponés un mini arco cada uno, mirando al delantero. Mecánica: 1) el pasador le da el pase al delantero; 2) apenas sale el pase, el defensor sale corriendo a máxima velocidad para robarle la pelota; 3) el delantero controla orientado para amagar al defensor y sacárselo de encima, y tiene que pasar conduciendo la pelota por uno de los dos arquitos. Es un 2v1 que arranca en desventaja para el defensor, con doble salida gracias a los arcos en L.",
+      "dosis": null,
+      "variantes": {
+        "2": "El defensor también hace de pasador: le da el pase al delantero y sale a presionar.",
+        "3": "Delantero, defensor y un pasador que se para detrás del defensor. Rotan los roles."
+      },
+      "imagen": "img/ejercicios/pase-presion-arcos-l.png",
+      "video": null,
+      "huerfano_ok": true,
+      "trabaja": {
+        "principal": "coordinacion",
+        "secundarios": []
+      },
+      "pendiente_validar": [
+        "2",
+        "3"
+      ],
+      "aporta": [
+        "control",
+        "velocidad"
+      ],
+      "subcategorias": [
+        "oposicion",
+        "control-orientado",
+        "conduccion"
+      ],
+      "materiales": [
+        "pelota",
+        "conos",
+        "arquitos"
+      ],
+      "jugadores_min": 2
+    },
+    {
+      "id": "pase-control-definicion",
+      "numero": 49,
+      "nombre": "Pase, control y definición",
+      "alias": [
+        "Tiro al arco"
+      ],
+      "categoria": "pelota",
+      "descripcion": "Ejercicio base de finalización, sin oposición real. Para sumar presión, uno puede hacer de defensor pasivo: solo estira un brazo o se mueve lateralmente, sin salir a robar.",
+      "dosis": null,
+      "requiere_variantes": true,
+      "variantes": {
+        "2": "Uno pasa, el otro controla y define de primera o al segundo toque. Alternan.",
+        "3": "Dos pasan en pared y uno define. Rotan los tres roles cada 3-4 tiros.",
+        "4": "Dos pasan en pared, uno define y el cuarto hace de defensor pasivo. Rotan los cuatro roles cada 3-4 tiros.",
+        "8": "Fila con la pelota, 1-2 tiros por jugador rotando rápido. Con 2 arcos, dividen el grupo y achican la espera."
+      },
+      "pendiente_validar": [
+        "4"
+      ],
+      "imagen": null,
+      "video": null,
+      "imagenes": {
+        "2": "img/pase-control-definicion-2.svg",
+        "3": "img/pase-control-definicion-3.svg",
+        "4": "img/pase-control-definicion-4.svg",
+        "8": "img/pase-control-definicion-8.svg"
+      },
+      "trabaja": {
+        "principal": "coordinacion",
+        "secundarios": []
+      },
+      "aporta": [
+        "definicion",
+        "control"
+      ],
+      "subcategorias": [
+        "tiro",
+        "control-orientado",
+        "pase-corto"
+      ],
+      "materiales": [
+        "pelota",
+        "arco"
+      ],
+      "jugadores_min": 2
+    },
+    {
+      "id": "pases-control-orientado",
+      "numero": 50,
+      "nombre": "Pases con control orientado",
+      "alias": [
+        "Pases cortos con control orientado",
+        "Circuito de pases combinados",
+        "Pases largos"
+      ],
+      "categoria": "pelota",
+      "descripcion": "Pase al ras del piso y control con un toque orientado antes de devolver; se puede sumar un pase largo (20-25 m), de baja intensidad. Para dificultarlo: más distancia, alternar pie hábil y no hábil, cambiar la superficie de contacto.",
+      "dosis": null,
+      "requiere_variantes": true,
+      "variantes": {
+        "2": "Enfrentados a 10 m, cada uno parado en un cono. Se dan un pase, controlan con un toque orientado hacia el otro pie y dan el pase largo al compañero. Reciben de un lado del cono y pasan del otro.",
+        "3": "Separados 8-10 m, pase al ras del piso. El que recibe controla con un toque orientado hacia un costado antes de devolver. Variante con pase largo: control orientado corto y pase largo de 20-25 m.",
+        "4": "Dos parejas, cada una hace el ejercicio de 2 en su propio espacio, en simultáneo.",
+        "8": "Cuatro parejas, cada una hace el ejercicio de 2 en su propio espacio, en simultáneo. O formación en línea o en rombo, con control orientado y algún pase largo ocasional."
+      },
+      "pendiente_validar": [
+        "4"
+      ],
+      "imagen": "img/ejercicios/pases-control-orientado.webp",
+      "video": "https://www.instagram.com/reel/DciTbW5KSrj",
+      "imagenes": {
+        "2": "img/pases-control-orientado-2.svg",
+        "3": "img/pases-control-orientado-3.svg",
+        "4": "img/pases-control-orientado-4.svg",
+        "8": "img/pases-control-orientado-8.svg"
+      },
+      "trabaja": {
+        "principal": "coordinacion",
+        "secundarios": []
+      },
+      "aporta": [
+        "control"
+      ],
+      "subcategorias": [
+        "pase-corto",
+        "pase-largo",
+        "control-orientado"
+      ],
+      "materiales": [
+        "pelota",
+        "conos"
+      ],
+      "jugadores_min": 2
+    },
+    {
       "id": "pelota-al-campo-rival",
+      "numero": 51,
       "nombre": "Pelota al campo rival",
       "alias": [
         "Pelota quieta"
@@ -1945,78 +1678,329 @@
       "jugadores_max": 2
     },
     {
-      "id": "aceleracion-conos-zigzag",
-      "nombre": "Aceleración a cada cono en zigzag",
+      "id": "pivote-9-definicion",
+      "numero": 52,
+      "nombre": "Pivote de 9 y definición",
       "alias": [],
-      "categoria": "velocidad",
-      "descripcion": "Con los conos en zigzag, corrés de uno a otro y acelerás hacia cada cono.",
+      "categoria": "pelota",
+      "descripcion": "Un jugador se pone de frente al arco y el otro de pivote de 9. El delantero le pasa al pivote, que se la deja de primera para que pegue al arco. Variante: en vez de pegarle, se la devuelve al pie y hacen un mano a mano contra el defensor. Podés sumar 3 o 4 conos para que el delantero haga zigzag y practique el control antes del pase al pivote.",
       "dosis": null,
       "variantes": {},
-      "imagen": "img/aceleracion-conos-zigzag.svg",
+      "imagen": "img/pivote-9-definicion.svg",
+      "video": null,
+      "huerfano_ok": true,
+      "trabaja": {
+        "principal": "coordinacion",
+        "secundarios": []
+      },
+      "aporta": [
+        "definicion"
+      ],
+      "subcategorias": [
+        "tiro",
+        "pase-corto"
+      ],
+      "materiales": [
+        "pelota",
+        "arco",
+        "conos"
+      ],
+      "jugadores_min": 2
+    },
+    {
+      "id": "reducido",
+      "numero": 53,
+      "nombre": "Posesión reducida",
+      "alias": [
+        "Reducido",
+        "Posesión",
+        "Posesión XvX en cuadrado",
+        "Posesión sin arcos"
+      ],
+      "categoria": "pelota",
+      "descripcion": "Juego de posesión en una zona delimitada con conos (un cuadrado o un rectángulo): un equipo mantiene la pelota y el otro intenta recuperarla. A alta intensidad, en bloques de 3-8 min, es aeróbico específico con pelota (la misma carga cardíaca que correr al 93 % de la FC máx). Hay muchas variantes según cuántos sean: 4v4; con número impar, un comodín que juega con el equipo que tiene la pelota (por ejemplo 9 = 4v4 y un comodín); 3v1; 2v1. Otra variante: sumarle dos arquitos, uno en cada punta, para jugar partidos reducidos (5v5, por ejemplo) con gol. Para el Loco (círculo con pocos adentro), ver Loco.",
+      "dosis": "3-8 min por tanda, rotando",
+      "variantes": {},
+      "imagen": "img/ejercicios/reducido.png",
+      "video": null,
+      "huerfano_ok": true,
+      "trabaja": {
+        "principal": "aerobica",
+        "secundarios": [
+          "coordinacion"
+        ]
+      },
+      "aporta": [
+        "aerobico",
+        "control"
+      ],
+      "subcategorias": [
+        "posesion",
+        "oposicion"
+      ],
+      "materiales": [
+        "pelota",
+        "conos"
+      ],
+      "jugadores_min": 3,
+      "requiere_variantes": false,
+      "patrones": [
+        {
+          "id": "4v4",
+          "nombre": "4v4 en cuadrado o rectángulo",
+          "descripcion": "Zona delimitada por 4 conos. Un equipo mantiene la pelota y el otro intenta recuperarla; rotan cada 2-3 min.",
+          "imagen": "img/posesion-reducida-4v4.svg"
+        },
+        {
+          "id": "comodin",
+          "nombre": "4v4 y un comodín",
+          "descripcion": "Con 9 jugadores: 4v4 más un comodín que juega siempre con el equipo que tiene la pelota, así ese equipo siempre tiene superioridad.",
+          "imagen": "img/posesion-reducida-comodin.svg"
+        },
+        {
+          "id": "3v1",
+          "nombre": "3v1",
+          "descripcion": "Con 4 jugadores: tres mantienen la pelota y uno presiona. Rotan cada 2-3 min.",
+          "imagen": "img/posesion-reducida-3v1.svg"
+        },
+        {
+          "id": "2v1",
+          "nombre": "2v1",
+          "descripcion": "Con 3 jugadores: dos mantienen la pelota y uno presiona. Rotan cada 2-3 min.",
+          "imagen": "img/posesion-reducida-2v1.svg"
+        },
+        {
+          "id": "arquitos",
+          "nombre": "Con dos arquitos",
+          "descripcion": "Se agrega un arquito en cada punta de la zona y se juega con gol: cada equipo ataca un arquito y defiende el otro (por ejemplo 4v4 o 5v5).",
+          "imagen": "img/posesion-reducida-arquitos.svg"
+        }
+      ]
+    },
+    {
+      "id": "sprint-control-pase",
+      "numero": 55,
+      "nombre": "Sprint + control + pase",
+      "alias": [],
+      "categoria": "pelota",
+      "descripcion": "Sprint de 15 m hasta una pelota parada, la controlás de un toque y pasás a un objetivo. Conecta velocidad con control en una situación de juego real.",
+      "dosis": "5 repeticiones",
+      "variantes": {},
+      "imagen": "img/ejercicios/sprint-control-pase.png",
+      "video": null,
+      "huerfano_ok": true,
+      "trabaja": {
+        "principal": "coordinacion",
+        "secundarios": []
+      },
+      "aporta": [
+        "control",
+        "velocidad"
+      ],
+      "subcategorias": [
+        "control-orientado",
+        "pase-corto"
+      ],
+      "materiales": [
+        "pelota"
+      ]
+    },
+    {
+      "id": "tiros-libres",
+      "numero": 56,
+      "nombre": "Tiros libres",
+      "alias": [
+        "Pegada"
+      ],
+      "categoria": "pelota",
+      "descripcion": "Se patean tiros libres al arco para entrenar la pegada, sin apuro y con descanso entre tiro y tiro. Es una forma tranquila de cerrar la sesión con pelota.",
+      "dosis": "Unos 10 min, sin apuro",
+      "variantes": {},
+      "imagen": "img/tiros-libres.svg",
+      "video": null,
+      "trabaja": {
+        "principal": "cuadriceps",
+        "secundarios": [
+          "isquiotibiales",
+          "core"
+        ]
+      },
+      "aporta": [
+        "definicion"
+      ],
+      "subcategorias": [
+        "pelota-parada",
+        "tiro"
+      ],
+      "materiales": [
+        "pelota",
+        "arco"
+      ]
+    },
+    {
+      "id": "un-toque-cono-central",
+      "numero": 57,
+      "nombre": "Un toque desde el cono central",
+      "alias": [
+        "Pase y va"
+      ],
+      "categoria": "pelota",
+      "descripcion": "Se hace de a dos, en una zona circular de unos 5 m de radio. Uno se queda fijo en un cono central y el otro corre alrededor. El que corre le pasa la pelota al del cono, que se la devuelve de un solo toque hacia un lado o hacia el otro, cambiando de dirección cada vez. El que corre va a buscarla y se la devuelve. Como la dirección cambia, tiene que arrancar desde parado o a media carrera. No se entrena la distancia sino la aceleración, la reacción y el primer toque con fatiga. A los 10-15 minutos el que corre tiene las piernas pesadas y el del cono casi no se mueve, así que conviene alternar los roles cada tanto. Sirve también como calentamiento activo para llegar con las piernas puestas al partido.",
+      "dosis": null,
+      "variantes": {},
+      "imagen": "img/un-toque-cono-central.svg",
       "video": null,
       "huerfano_ok": true,
       "trabaja": {
         "principal": "gluteo-mayor",
         "secundarios": [
           "cuadriceps",
-          "gemelos"
+          "gemelos",
+          "coordinacion"
         ]
       },
       "aporta": [
-        "velocidad"
+        "velocidad",
+        "control"
+      ],
+      "subcategorias": [
+        "pase-corto"
       ],
       "materiales": [
+        "pelota",
+        "conos"
+      ],
+      "jugadores_min": 2
+    },
+    {
+      "id": "uno-contra-uno-tiro",
+      "numero": 58,
+      "nombre": "Uno defiende, otro ataca",
+      "alias": [],
+      "categoria": "pelota",
+      "descripcion": "El defensor (o el arquero) le da el pase al que ataca y se arma una situación de partido.",
+      "dosis": null,
+      "variantes": {
+        "3": "Uno hace de arquero. Los otros dos salen corriendo a máxima velocidad desde la línea del arco, uno de cada lado del arco: uno con pelota y el otro sin. Pasan por unos conos ubicados al final del área y desde ahí van hacia el centro, donde se arma el mano a mano."
+      },
+      "imagen": "img/uno-contra-uno-tiro.svg",
+      "video": null,
+      "huerfano_ok": true,
+      "trabaja": {
+        "principal": "coordinacion",
+        "secundarios": []
+      },
+      "aporta": [
+        "definicion"
+      ],
+      "subcategorias": [
+        "tiro",
+        "oposicion"
+      ],
+      "materiales": [
+        "pelota",
+        "arco"
+      ],
+      "jugadores_min": 2
+    },
+    {
+      "id": "v-push-cut",
+      "numero": 59,
+      "nombre": "V push & cut",
+      "alias": [],
+      "categoria": "pelota",
+      "descripcion": "Individual y casi estático. Ponés un cono en el vértice de abajo de una V y vas pisando la pelota con la suela, dibujando una V con la pelota alrededor del cono. Mejora el cambio de dirección con la pelota.",
+      "dosis": null,
+      "variantes": {},
+      "imagen": "img/ejercicios/v-push-cut.webp",
+      "video": "https://www.instagram.com/reels/DXT_q2ACBXm/",
+      "huerfano_ok": true,
+      "trabaja": {
+        "principal": "coordinacion",
+        "secundarios": []
+      },
+      "aporta": [
+        "control"
+      ],
+      "subcategorias": [
+        "conduccion"
+      ],
+      "materiales": [
+        "pelota",
         "conos"
       ]
     },
     {
-      "id": "trote-suave",
-      "nombre": "Trote suave",
+      "id": "zigzag",
+      "numero": 60,
+      "nombre": "Zigzag con pelota",
       "alias": [
-        "Trote progresivo"
+        "Sole + push + acceleration",
+        "Sole push accelerate"
       ],
-      "categoria": "calentamiento",
-      "descripcion": "Trote a ritmo bajo para entrar en calor. Para ir subiendo de a poco se hace progresivo: cada vez un poco más rápido.",
-      "dosis": "3-4 min",
+      "categoria": "pelota",
+      "descripcion": "Individual, entre conos en zigzag, para mejorar el control de balón. Se hace de dos formas (mirá los dibujos): zigzag alternando un control con el borde interno y uno con el externo; o sole + push + acceleration, que combina coordinación y control.",
+      "dosis": null,
+      "variantes": {},
+      "imagen": null,
+      "video": "https://www.instagram.com/reels/DXT_q2ACBXm/",
+      "huerfano_ok": true,
+      "trabaja": {
+        "principal": "coordinacion",
+        "secundarios": []
+      },
+      "aporta": [
+        "control"
+      ],
+      "subcategorias": [
+        "conduccion"
+      ],
+      "materiales": [
+        "pelota",
+        "conos"
+      ],
+      "patrones": [
+        {
+          "id": "bordes",
+          "nombre": "Zigzag con borde interno y externo",
+          "descripcion": "Zigzag alternando un control con el borde interno y uno con el externo.",
+          "imagen": "img/ejercicios/zigzag.webp"
+        },
+        {
+          "id": "sole-push",
+          "nombre": "Sole + push + acceleration",
+          "descripcion": "Sole (pisarla hacia atrás), push (toque hacia adelante) y accelerate (correr un poco).",
+          "imagen": "img/ejercicios/sole-push-acceleration.webp"
+        }
+      ]
+    },
+    {
+      "id": "estiramiento-estatico",
+      "numero": 61,
+      "nombre": "Estiramiento estático y vuelta a la calma",
+      "alias": [
+        "Vuelta a la calma"
+      ],
+      "categoria": "vuelta-calma",
+      "descripcion": "Caminata y estiramiento estático de cuádriceps, isquios, gemelos y cadera. Sin forzar el rango.",
+      "dosis": null,
+      "pendiente_dosis": "Cuánto tiempo sostener cada estiramiento: no está en el Doc.",
       "variantes": {},
       "imagen": null,
       "video": null,
       "trabaja": {
-        "principal": "aerobica",
-        "secundarios": []
+        "principal": "movilidad",
+        "secundarios": [
+          "cuadriceps",
+          "isquiotibiales",
+          "gemelos"
+        ]
       },
       "aporta": [
         "movilidad"
       ],
-      "materiales": []
-    },
-    {
-      "id": "nordic-hamstring",
-      "nombre": "Nordic hamstring",
-      "alias": [
-        "Curl nórdico"
-      ],
-      "categoria": "fuerza",
-      "descripcion": "De rodillas sobre una colchoneta, con un compañero sosteniéndote los tobillos. Bajás el torso hacia adelante lo más lento que puedas, con el cuerpo recto de las rodillas a la cabeza, frenando la caída con los isquios. Al final te frenás con las manos y volvés a subir ayudándote con ellas. Es el ejercicio con más respaldo para prevenir lesiones de isquiotibiales.",
-      "dosis": "2-3 series de 4-6 repeticiones",
-      "pendiente_dosis": "Dosis propuesta por mí; empezar con pocas repeticiones y subir de a poco.",
-      "variantes": {},
-      "imagen": null,
-      "video": null,
-      "trabaja": {
-        "principal": "isquiotibiales",
-        "secundarios": [
-          "gluteo-mayor",
-          "core"
-        ]
-      },
-      "aporta": [
-        "fuerza"
-      ],
-      "materiales": [
-        "compañero para sostener los tobillos",
-        "colchoneta"
-      ]
+      "materiales": [],
+      "huerfano_ok": true
     }
   ]
 }

@@ -287,10 +287,15 @@ def main() -> int:
 
     # Jugadores: jugadores_min válido (lo usan el filtro y los colores de Ejercicios)
     ex_por_id = {e["id"]: e for e in ejercicios}
+    for n in dupes([str(e.get("numero")) for e in ejercicios]):
+        errors.append(f"numero repetido: {n}")
     for e in ejercicios:
         m = e.get("jugadores_min")
         if m is not None and (not isinstance(m, int) or m < 1):
             errors.append(f"{e['id']}: jugadores_min debe ser un entero >= 1")
+        n = e.get("numero")
+        if not isinstance(n, int) or n < 1:
+            errors.append(f"{e['id']}: falta numero (entero >= 1)")
         mx = e.get("jugadores_max")
         if mx is not None and (not isinstance(mx, int) or mx < (m or 1)):
             errors.append(f"{e['id']}: jugadores_max debe ser un entero >= jugadores_min")

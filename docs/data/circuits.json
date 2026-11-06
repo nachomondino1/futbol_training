@@ -81,16 +81,6 @@
           "nota": "Pasos cortos y rápidos con poca elevación de rodilla."
         },
         {
-          "ex": "tecnica-carrera",
-          "nombre": "Taloneo",
-          "nota": "Talón hacia la cola, trotando."
-        },
-        {
-          "ex": "tecnica-carrera",
-          "nombre": "Rodillas altas",
-          "nota": "Elevación de rodilla marcada, trotando."
-        },
-        {
           "ex": "aceleracion-conos-zigzag"
         }
       ]
@@ -106,9 +96,6 @@
         },
         {
           "ex": "light-touches"
-        },
-        {
-          "ex": "sole-push-acceleration"
         },
         {
           "ex": "conduccion-ritmo-variable"
@@ -285,13 +272,51 @@
           "ex": "plancha-lateral"
         },
         {
-          "ex": "sole-push-acceleration"
+          "ex": "zigzag",
+          "nota": "Sole + push + acceleration."
         },
         {
           "ex": "flying-sprint"
         }
       ],
       "agrupar": 3
+    },
+    {
+      "id": "entrada-en-calor",
+      "nombre": "Entrada en calor antes del partido",
+      "descripcion": "Para el día del partido, antes de jugar (unos 22 min): trote suave, activación dinámica, aceleración y velocidad, y para terminar con pelota (posesión reducida y, si hay arco, tiro).",
+      "huerfano_ok": true,
+      "items": [
+        {
+          "ex": "trote-suave",
+          "dosis": "3-4 min"
+        },
+        {
+          "ex": "activacion-dinamica",
+          "dosis": "4-5 min",
+          "nota": "Primero el tren superior, después el inferior."
+        },
+        {
+          "ex": "progresion-aceleracion",
+          "dosis": "2 min"
+        },
+        {
+          "ex": "flying-sprint",
+          "dosis": "2 min",
+          "nota": "A máxima velocidad."
+        },
+        {
+          "ex": "reducido",
+          "dosis": "6 min",
+          "nota": "Cuadrado un poco más chico que en serio, para que sea más técnico (toque rápido) y menos de correr a fondo; al 70-80 % de intensidad, sin ir a matar cada pelota dividida; rotá cada 2-3 minutos si alguien necesita respirar."
+        },
+        {
+          "ex": "pase-control-definicion",
+          "dosis": "4 min",
+          "nota": "Si hay arco.",
+          "opcional": true
+        }
+      ]
     }
   ]
 }

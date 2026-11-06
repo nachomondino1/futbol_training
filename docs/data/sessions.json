@@ -18,7 +18,7 @@
               ]
             },
             {
-              "label": "Técnica de carrera",
+              "label": "Skipping bajo",
               "items": [
                 {
                   "ex": "tecnica-carrera"
@@ -140,14 +140,6 @@
               ]
             },
             {
-              "label": "Sole + push + acceleration",
-              "items": [
-                {
-                  "ex": "sole-push-acceleration"
-                }
-              ]
-            },
-            {
               "label": "Un toque desde el cono central",
               "items": [
                 {
@@ -250,7 +242,7 @@
           "min": 15,
           "opciones": [
             {
-              "label": "Pases cortos con control orientado",
+              "label": "Pases con control orientado",
               "items": [
                 {
                   "ex": "pases-control-orientado"
@@ -298,7 +290,7 @@
               "min": 30
             },
             {
-              "label": "Rondo",
+              "label": "Loco",
               "items": [
                 {
                   "ex": "rondo"
@@ -330,7 +322,7 @@
               "min": 25
             },
             {
-              "label": "Reducido",
+              "label": "Posesión reducida",
               "items": [
                 {
                   "ex": "reducido"
@@ -371,7 +363,8 @@
               "label": "Pases largos",
               "items": [
                 {
-                  "ex": "circuito-pases-combinados"
+                  "ex": "pases-control-orientado",
+                  "nota": "Con pase largo de 20-25 m, tranqui."
                 }
               ]
             },
@@ -406,7 +399,7 @@
           "min": 20,
           "opciones": [
             {
-              "label": "Rondo",
+              "label": "Loco",
               "items": [
                 {
                   "ex": "rondo"
@@ -438,18 +431,10 @@
               ]
             },
             {
-              "label": "Posesión XvX en cuadrado",
+              "label": "Posesión reducida",
               "items": [
                 {
-                  "ex": "posesion-cuadrado"
-                }
-              ]
-            },
-            {
-              "label": "El loco",
-              "items": [
-                {
-                  "ex": "el-loco"
+                  "ex": "reducido"
                 }
               ]
             }
@@ -484,18 +469,10 @@
               ]
             },
             {
-              "label": "Pases cortos con control orientado",
+              "label": "Pases con control orientado",
               "items": [
                 {
                   "ex": "pases-control-orientado"
-                }
-              ]
-            },
-            {
-              "label": "Circuito de pases combinados",
-              "items": [
-                {
-                  "ex": "circuito-pases-combinados"
                 }
               ]
             },
@@ -573,79 +550,6 @@
         }
       ],
       "cuando": "Sirve para el día previo al partido si la hacés corta y suave."
-    },
-    {
-      "id": "entrada-en-calor",
-      "nombre": "Entrada en calor",
-      "objetivo": "Entrar en calor antes del partido: trote, movimiento, aceleración y velocidad, y para terminar con pelota (posesión XvX en cuadrado y, si hay arco, tiro).",
-      "cuando": "El día del partido, antes de jugar.",
-      "bloques": [
-        {
-          "titulo": "Trote y activación dinámica",
-          "min": 8,
-          "opciones": [
-            {
-              "label": "Trote y activación dinámica",
-              "items": [
-                {
-                  "ex": "trote-suave",
-                  "dosis": "3-4 min"
-                },
-                {
-                  "ex": "activacion-dinamica",
-                  "nota": "Primero el tren superior, después el inferior."
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "titulo": "Aceleración y velocidad",
-          "min": 4,
-          "opciones": [
-            {
-              "label": "Aceleración y velocidad",
-              "items": [
-                {
-                  "ex": "progresion-aceleracion"
-                },
-                {
-                  "ex": "flying-sprint",
-                  "nota": "A máxima velocidad."
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "titulo": "Posesión XvX en cuadrado",
-          "min": 6,
-          "opciones": [
-            {
-              "label": "Posesión XvX en cuadrado",
-              "items": [
-                {
-                  "ex": "posesion-cuadrado"
-                }
-              ]
-            }
-          ]
-        },
-        {
-          "titulo": "Tiro al arco (si hay arco)",
-          "min": 4,
-          "opciones": [
-            {
-              "label": "Pase, control y definición",
-              "items": [
-                {
-                  "ex": "pase-control-definicion"
-                }
-              ]
-            }
-          ]
-        }
-      ]
     }
   ],
   "guias": {

@@ -248,11 +248,31 @@ El Doc solo decía el grupo muscular de sentadilla y estocada (cuádriceps, glú
 
 - **Escalera (cambio de criterio):** los patrones que vienen del video de YouTube ahora tienen un botón "▶ Ver cómo se hace en YouTube (desde m:ss)" que abre el video justo en su sección. Saqué los diagramas de los 7 de los que no estaba segura (cruzado, carioca, ciempiés, ickey shuffle, river dance, atrás y adelante, shuffle a una pierna): quedan con texto y video. Conservé los 9 diagramas más claros. Los patrones que no están en el video (dos pies, zig-zag, salto con un pie, shuffle a una pierna) no tienen link.
 
+## Entrada en calor como circuito (2026-11-06)
+
+- Se sacó la sesión "Entrada en calor" y quedó como **circuito** `entrada-en-calor` (en Circuitos, sin sesión que lo use). Mismos ejercicios y orden: trote suave, activación dinámica, progresión de aceleración, flying sprint, posesión reducida y tiro (opcional, si hay arco). Los minutos de cada parte (3-4, 4-5, 2, 2, 6, 4) los repartí yo a partir de los bloques de la sesión (8, 4, 6, 4): validar.
+
+## Poda de ejercicios (2026-11-06)
+
+- **39 + 50:** el Circuito de pases combinados (39) pasó a ser variante del 50, que ahora es **Pases con control orientado**. El pase largo de 20-25 m quedó en la variante de 3 (y la línea/rombo en la de 8). En Aeróbico, la opción "Pases largos" usa el 50 con esa nota. Se borraron los diagramas del 39. Texto de las variantes unificado por mí: validar.
+- **54 + 60:** Sole + push + acceleration (54) se unió con el 60, **Zigzag con pelota**, como dos patrones con su imagen cada uno. En el circuito de estaciones (circuito de fuerza) la estación que era Sole + push + acceleration ahora es Zigzag con la nota "Sole + push + acceleration" (si se sacaba, cambiaba cómo se agrupan las estaciones de a 3).
+- Los números 39 y 54 quedan retirados y no se reusan.
+
+## Loco / Posesión reducida / Skipping bajo (2026-11-05)
+
+- **Loco** (nº 45, id `rondo`) vuelve a ser solo el círculo: pocos adentro, pases de primera o de dos toques. **Posesión reducida** (nº 53, id `reducido`) es el juego en zona con conos (4v4, comodín, 3v1, 2v1) y, como variante, con dos arquitos. Las variantes por cantidad de ambos y el texto de los dos arquitos los redacté yo: validar.
+- **Skipping bajo** (nº 36, id `tecnica-carrera`) quedó solo con ese ejercicio; en el circuito de coordinación saqué Taloneo y Rodillas altas.
+- Diagramas nuevos (hechos por mí, validar): Dos contra uno, Centro al vértice, Tiros libres y Skipping bajo. Sin diagrama quedan Movilidad articular, Activación dinámica, Trote suave, Nordic hamstring y Estiramiento (son movimientos del cuerpo, no se dibujan bien con círculos y flechas).
+
 ## Posesión XvX en cuadrado (2026-11-03)
+
+- **Actualización 2026-11-05:** se unió con el Loco/rondo (id `rondo`): la variante con número impar (3v1, 2v1) y la de XvX (4v4) son el mismo ejercicio. Mínimo 3 jugadores, así que se sacó la variante "Con 2". Lo de abajo es el historial.
 
 - Ejercicio nuevo ("como el Reducido, pero sin arcos"): en la sesión Pelota, bloque "Rondos, pases y conducción". Mínimo 4 jugadores (lo asigné yo). Que el comodín juega con el equipo que tiene la pelota lo supuse yo. Falta el tamaño del cuadrado y la imagen.
 
 ## El loco (2026-11-03)
+
+- **Actualización 2026-11-05:** "El loco" era lo mismo que el rondo: se sacó como ejercicio aparte y el rondo pasó a llamarse **Loco** (ids sin cambios, `rondo`; "Rondo" quedó como alias). Lo de abajo es el historial.
 
 - Ejercicio nuevo: círculo de jugadores con uno o varios corriendo por adentro para recuperar la pelota. En la sesión Pelota, bloque "Rondos, pases y conducción". La regla de cambio ya está (el último que la tocó entra a recuperar y el que la recuperó sale al círculo). Falta cuántos van adentro y el mínimo de jugadores (puse 4). Antes "loco" solo aparecía mencionado dentro de Activación dinámica.
 

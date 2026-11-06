@@ -52,8 +52,9 @@ En `docs/data/exercises.json`, dentro de `ejercicios`:
 - `materiales`: lista de lo que hace falta para el ejercicio (vacía si no hace falta nada). Obligatorio. Se muestra en el detalle del ejercicio y al abrirlo dentro de una sesión.
 - `aporta`: qué se gana con el ejercicio, con ids de `docs/data/objetivos.json` (velocidad, aeróbico, fuerza, potencia, control, precisión de tiro, coordinación, movilidad). Obligatorio. La sesión usa esto para armar "Qué vas a ganar".
 - `trabaja`: `{ "principal": "cuadriceps", "secundarios": ["gluteo-mayor"] }`, con ids de `docs/data/muscles.json` (ahí se escribe para qué sirve cada músculo). Es obligatorio.
+- `numero`: número fijo del ejercicio, único; se muestra como "12" en Ejercicios y en Sesiones para poder referirse a él. No se reusa ni se renumera: si se borra o se une uno, su número queda libre; un ejercicio nuevo toma el siguiente al más alto.
 - `jugadores_min`: cuántos jugadores como mínimo necesita (sin dato = 1). Lo usan el filtro "Jugadores" y los colores de las tarjetas en Ejercicios.
-- `jugadores_max`: tope de jugadores (sin dato = sin tope). Junto con `jugadores_min`, lo usa el selector "Hoy somos" de cada bloque en Sesiones: al elegir una cantidad, deja solo las opciones cuyos ejercicios aceptan esa cantidad.
+- `jugadores_max`: tope de jugadores (sin dato = sin tope). Junto con `jugadores_min`, lo usa el selector "Hoy somos" de cada sesión: al elegir una cantidad, deja solo las opciones cuyos ejercicios aceptan esa cantidad.
 - Si depende de cuántos son, poné `"requiere_variantes": true` y cargá `"2"`, `"3"`, `"4"` y `"8"` en `variantes`.
 - Si propusiste una variante que todavía no validaste, agregá `"pendiente_validar": ["4"]`.
 - Un ejercicio que ninguna sesión usa es error, salvo que le pongas `"huerfano_ok": true`.
@@ -138,7 +139,7 @@ Un circuito es un conjunto de ejercicios, en orden. Se define una vez en `docs/d
 - En una sesión, la opción lo usa así: `{ "circuito": "circuito-fuerza", "estructura": { "descanso_s": 30 } }`. Lo que la opción defina por su cuenta (acá, el descanso) pisa lo del circuito.
 - Un circuito que ninguna sesión usa es error, salvo que le pongas `"huerfano_ok": true`. Sus ejercicios cuentan como usados.
 
-La entrada en calor antes del partido es una sesión más (`entrada-en-calor`), armada con los mismos ejercicios (trote suave, activación dinámica, aceleración, posesión XvX en cuadrado y tiro).
+La entrada en calor antes del partido es un circuito (`entrada-en-calor`, en Circuitos), no una sesión: trote suave, activación dinámica, aceleración, velocidad, posesión reducida y, si hay arco, tiro.
 
 Una opción puede traer su propio `min`; si es una serie (HIIT, rondo) los minutos se calculan con su estructura y, si no, vale el `min` del bloque. Cada sesión lleva un `objetivo` (una frase). Debajo, la página calcula "Qué vas a ganar": reparte los minutos de cada bloque, con la opción elegida, entre lo que aporta cada ejercicio, y muestra lo principal.
 

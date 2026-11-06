@@ -82,7 +82,7 @@ function tarjeta(ej) {
         : h("span", { class: "ej-card__vacio" },
             h("span", { class: "ej-card__emoji", "aria-hidden": "true" }, EMOJI[ej.categoria] || "⚽"),
             )),
-    h("span", { class: "ej-card__nombre" }, ej.nombre),
+    h("span", { class: "ej-card__nombre" }, h("span", { class: "num-ej" }, String(ej.numero)), ej.nombre),
     h("span", { class: "ej-card__tags" }, tagsDe(ej).map((t) => h("span", { class: "etiqueta" }, t))));
 }
 
@@ -94,7 +94,7 @@ function vistaDetalle(ej) {
   app.replaceChildren(
     h("a", { class: "volver", href: "#" }, "← Todos los ejercicios"),
     h("div", { class: "detalle" },
-      h("h1", {}, ej.nombre),
+      h("h1", {}, h("span", { class: "num-ej" }, String(ej.numero)), ej.nombre),
       ej.alias?.length ? h("p", { class: "alias" }, `También: ${ej.alias.join(", ")}`) : null,
       h("p", { class: "card-meta" }, h("span", { class: "cat" }, categoriaDe(ej)?.nombre || ej.categoria)),
       subcategoriasNodo(ej),
