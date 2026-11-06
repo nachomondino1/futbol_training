@@ -39,7 +39,7 @@ export function estructuraNodo(op, guia = null) {
   if (circuito) filas.push(["Estaciones", String(unidades)]);
   else if (e.sets) filas.push(["Sets por vuelta", String(e.sets)]);
   filas.push([`Trabajo ${porUnidad}`.trim(), tiempo(e.trabajo_s)], [`${nombreDesc} ${porUnidad}`.trim(), tiempo(e.descanso_s)]);
-  if (e.vueltas > 1 && (circuito || pausa)) filas.push(["Pausa entre vueltas", pausa ? tiempo(pausa) : "a definir"]);
+  if (e.vueltas > 1 && (circuito || pausa)) filas.push(["Pausa entre vueltas", pausa ? tiempo(pausa) : e.pausa_vuelta_s === 0 ? "sin pausa" : "a definir"]);
 
   return h("div", { class: "estructura" },
     h("dl", { class: "ficha" }, filas.map(([k, v]) => h("div", {}, h("dt", {}, k), h("dd", {}, v)))),

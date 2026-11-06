@@ -408,3 +408,8 @@ h1 { font-size: 1.9rem; line-height: 1.15; margin: 8px 0 16px; }
 
 /* Número fijo de cada ejercicio (campo "numero"): sirve para pedir cambios por número */
 .num-ej { color: var(--ink-soft); font-size: .8em; font-weight: 700; margin-right: 6px; white-space: nowrap; }
+
+/* Tabla de progresión de un circuito */
+.tabla { width: 100%; border-collapse: collapse; margin: 8px 0 16px; font-size: .95rem; }
+.tabla th, .tabla td { text-align: left; padding: 8px 10px; border-bottom: 1px solid var(--line); vertical-align: top; }
+.tabla th { color: var(--ink-soft); font-size: .85rem; }

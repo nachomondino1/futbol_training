@@ -94,6 +94,28 @@ function tarjetaPlantilla(c) {
     usadoEn(c));
 }
 
+// Tabla de cuánto hacer según el tiempo (campo "progresion" del circuito).
+function progresionNodo(p) {
+  if (!p) return null;
+  return h("div", { class: "progresion" },
+    h("h3", {}, p.titulo),
+    p.nota ? h("p", { class: "nota" }, p.nota) : null,
+    h("table", { class: "tabla" },
+      h("thead", {}, h("tr", {}, h("th", {}, "Tiempo"), h("th", {}, "Bloques"), h("th", {}, "Qué hacer"))),
+      h("tbody", {}, p.filas.map((f) => h("tr", {}, h("td", {}, `${f.min} min`), h("td", {}, String(f.bloques)), h("td", {}, f.que))))));
+}
+
+// Todos los patrones que se pueden usar (campo "patrones" del circuito); los "extra" son los que se suman al subir el tiempo.
+function patronesNodo(p) {
+  if (!p) return null;
+  return h("div", {},
+    h("h3", {}, p.titulo),
+    h("ul", { class: "musculo-lista" }, p.lista.map((x) => h("li", {},
+      h("a", { href: "glosario.html#escalera" }, x.nombre),
+      h("span", { class: "etiqueta" }, x.extra ? "se suma al subir" : "base"),
+      x.nota ? h("span", { class: "item-dosis" }, x.nota) : null))));
+}
+
 // Circuito de ejercicios fijos, en orden. Con "agrupar", cada grupo de ejercicios es una estación.
 function tarjetaSimple(c) {
   const ef = completarItems(c);
@@ -109,7 +131,8 @@ function tarjetaSimple(c) {
       ? [h("h3", {}, `${Math.ceil(ef.items.length / ef.agrupar)} estaciones, ${ef.agrupar} ejercicios en cada una`),
          ...agruparEstaciones(ef.items, ef.agrupar).map((grupo, k) => h("div", { class: "estacion-lista" },
            h("h4", {}, `Estación ${k + 1}`), listaEjercicios(grupo, etiqueta)))]
-      : [h("h3", {}, `${ef.items.length} ejercicios, en este orden`), listaEjercicios(ef.items, etiqueta)],
+      : [progresionNodo(c.progresion), patronesNodo(c.patrones),
+         h("h3", {}, c.lista_titulo || `${ef.items.length} ejercicios, en este orden`), listaEjercicios(ef.items, etiqueta)],
     c.opciones ? alternativasNodo("Otros ejercicios que podés usar", c.opciones.filter((o) => !usados.has(o.ex))) : null,
     usadoEn(c));
 }

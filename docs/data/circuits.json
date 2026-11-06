@@ -317,6 +317,162 @@
           "opcional": true
         }
       ]
+    },
+    {
+      "id": "todo-coordinacion",
+      "nombre": "Todo coordinación",
+      "descripcion": "Siempre con la escalera de coordinación, cambiando de patrón: cada bloque son 20 s de trabajo y 10 s de descanso (20/10), seguidos y sin pausa. Versión principiante: 6 min. Con el tiempo se sube hasta 12 min continuos. Abajo está la tabla de cuánto hacer según el tiempo y la lista de patrones.",
+      "huerfano_ok": true,
+      "estructura": {
+        "modo": "circuito",
+        "vueltas": 1,
+        "trabajo_s": 20,
+        "descanso_s": 10,
+        "pausa_vuelta_s": 0
+      },
+      "items": [
+        {
+          "ex": "escalera",
+          "nombre": "Escalera: un pie por cuadrado",
+          "nota": "Un apoyo en cada cuadrado. (vez 1 de 2)"
+        },
+        {
+          "ex": "escalera",
+          "nombre": "Escalera: un pie por cuadrado",
+          "nota": "Un apoyo en cada cuadrado. (vez 2 de 2)"
+        },
+        {
+          "ex": "escalera",
+          "nombre": "Escalera: in-in-out-out",
+          "nota": "Adentro, adentro, afuera, afuera. (vez 1 de 2)"
+        },
+        {
+          "ex": "escalera",
+          "nombre": "Escalera: in-in-out-out",
+          "nota": "Adentro, adentro, afuera, afuera. (vez 2 de 2)"
+        },
+        {
+          "ex": "escalera",
+          "nombre": "Escalera: carioca",
+          "nota": "De costado, un apoyo por cuadrado, alternando pies. (vez 1 de 2)"
+        },
+        {
+          "ex": "escalera",
+          "nombre": "Escalera: carioca",
+          "nota": "De costado, un apoyo por cuadrado, alternando pies. (vez 2 de 2)"
+        },
+        {
+          "ex": "escalera",
+          "nombre": "Escalera: dos pies por cuadrado",
+          "nota": "Saltitos con los dos pies juntos. (vez 1 de 2)"
+        },
+        {
+          "ex": "escalera",
+          "nombre": "Escalera: dos pies por cuadrado",
+          "nota": "Saltitos con los dos pies juntos. (vez 2 de 2)"
+        },
+        {
+          "ex": "escalera",
+          "nombre": "Escalera: lateral",
+          "nota": "De costado, tocando cada cuadrado con los dos pies. (vez 1 de 2)"
+        },
+        {
+          "ex": "escalera",
+          "nombre": "Escalera: lateral",
+          "nota": "De costado, tocando cada cuadrado con los dos pies. (vez 2 de 2)"
+        },
+        {
+          "ex": "escalera",
+          "nombre": "Escalera: zig-zag",
+          "nota": "Un pie adentro y el otro afuera, alternando. (vez 1 de 2)"
+        },
+        {
+          "ex": "escalera",
+          "nombre": "Escalera: zig-zag",
+          "nota": "Un pie adentro y el otro afuera, alternando. (vez 2 de 2)"
+        }
+      ],
+      "progresion": {
+        "titulo": "Cuánto hacer según el tiempo",
+        "nota": "Cada bloque dura 30 s (20 s de trabajo y 10 s de descanso).",
+        "filas": [
+          {
+            "min": 6,
+            "bloques": 12,
+            "que": "6 patrones base, 2 veces cada uno (es la lista de abajo)"
+          },
+          {
+            "min": 8,
+            "bloques": 16,
+            "que": "8 patrones, 2 veces cada uno: los 6 base + cruzado y ciempiés"
+          },
+          {
+            "min": 9,
+            "bloques": 18,
+            "que": "6 patrones base, 3 veces cada uno"
+          },
+          {
+            "min": 10,
+            "bloques": 20,
+            "que": "10 patrones, 2 veces cada uno: los 8 anteriores + river dance y salto con un pie"
+          },
+          {
+            "min": 12,
+            "bloques": 24,
+            "que": "6 patrones base, 4 veces cada uno"
+          }
+        ]
+      },
+      "patrones": {
+        "titulo": "Patrones de la escalera",
+        "lista": [
+          {
+            "nombre": "Un pie por cuadrado",
+            "nota": "Un apoyo en cada cuadrado."
+          },
+          {
+            "nombre": "In-in-out-out",
+            "nota": "Adentro, adentro, afuera, afuera."
+          },
+          {
+            "nombre": "Carioca",
+            "nota": "De costado, un apoyo por cuadrado, alternando pies."
+          },
+          {
+            "nombre": "Dos pies por cuadrado",
+            "nota": "Saltitos con los dos pies juntos."
+          },
+          {
+            "nombre": "Lateral",
+            "nota": "De costado, tocando cada cuadrado con los dos pies."
+          },
+          {
+            "nombre": "Zig-zag",
+            "nota": "Un pie adentro y el otro afuera, alternando."
+          },
+          {
+            "nombre": "Cruzado",
+            "nota": "De costado, pasando el pie de atrás por delante.",
+            "extra": true
+          },
+          {
+            "nombre": "Ciempiés",
+            "nota": "De costado: 2 adentro, 2 por encima, 2 afuera.",
+            "extra": true
+          },
+          {
+            "nombre": "River dance",
+            "nota": "Adentro, atrás, afuera.",
+            "extra": true
+          },
+          {
+            "nombre": "Salto con un pie",
+            "nota": "Saltitos a una pierna, un apoyo por cuadrado.",
+            "extra": true
+          }
+        ]
+      },
+      "lista_titulo": "Versión de 6 min: 12 bloques, en este orden"
     }
   ]
 }
