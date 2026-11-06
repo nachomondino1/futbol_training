@@ -251,6 +251,10 @@
             {
               "label": "Pase y control orientado",
               "circuito": "circuito-pase-control-orientado"
+            },
+            {
+              "label": "Pelota de a dos",
+              "circuito": "circuito-pelota-de-a-dos"
             }
           ]
         },

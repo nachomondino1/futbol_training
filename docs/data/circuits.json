@@ -704,6 +704,13 @@
           "ex": "bounding",
           "dosis": "5 min · 4 × 20 m"
         }
+      ],
+      "videos": [
+        {
+          "nombre": "Ejercicios de fuerza y potencia",
+          "descripcion": "De @md.training__. Muestra seis ejercicios: split concéntrica, sentadilla explosiva, salto al cajón reactivo, hop lateral (que es nuestro leg hop), hop reactivo (una variante del leg hop con una mini pesa en el piso) y ataque al cajón lateral.",
+          "url": "https://www.instagram.com/reel/De4MJVSJRQg/"
+        }
       ]
     },
     {
@@ -719,6 +726,13 @@
         {
           "ex": "med-ball-slam",
           "dosis": "10 min · 3 × 8 reps"
+        }
+      ],
+      "videos": [
+        {
+          "nombre": "Ejercicios de fuerza y potencia",
+          "descripcion": "De @md.training__. Muestra seis ejercicios: split concéntrica, sentadilla explosiva, salto al cajón reactivo, hop lateral (que es nuestro leg hop), hop reactivo (una variante del leg hop con una mini pesa en el piso) y ataque al cajón lateral.",
+          "url": "https://www.instagram.com/reel/De4MJVSJRQg/"
         }
       ]
     },
@@ -851,6 +865,30 @@
         3,
         2,
         2
+      ]
+    },
+    {
+      "id": "circuito-pelota-de-a-dos",
+      "numero": 20,
+      "nombre": "Pelota de a dos",
+      "descripcion": "Cuatro ejercicios con pelota para hacer de a dos, uno atrás del otro, de menos a más movimiento: el Quemado con pelota (casi en el lugar), la carrera en V con devolución, uno contra uno y para terminar el juego de pelota al campo rival. En cada uno se rotan los roles. Unos 25 min en total.",
+      "items": [
+        {
+          "ex": "quemado-con-pelota",
+          "dosis": "6 min"
+        },
+        {
+          "ex": "carrera-v-devolucion",
+          "dosis": "6 min"
+        },
+        {
+          "ex": "uno-contra-uno-tiro",
+          "dosis": "6 min"
+        },
+        {
+          "ex": "pelota-al-campo-rival",
+          "dosis": "6 min · a 10 puntos"
+        }
       ]
     }
   ]

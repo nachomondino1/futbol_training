@@ -180,6 +180,13 @@ def cuadrado_medio():
     return cuerpo + texto(160, 195, "los de afuera pasan, el del medio presiona", 11)
 
 
+def quemado_con_pelota():
+    cuerpo = "".join(cone(x, y) for x, y in [(130, 70), (190, 70), (130, 130), (190, 130)])
+    cuerpo += player(160, 100, 1) + pelota(176, 108) + player(40, 100, "", "d")
+    cuerpo += cone(95, 92) + arrow((40, 100), (122, 100), "mov", R + 2, 4)
+    return cuerpo + texto(160, 50, "cuadrado de unos 2 × 2 m", 11) + texto(62, 128, "tira conos", 10) + texto(160, 165, "esquiva y no deja salir la pelota", 11)
+
+
 def dos_conos_base():
     return (cone(40, 122) + cone(280, 122) + player(40, 100, 2) + player(280, 100, 3)
             + linea(40, 150, 280, 150, 'stroke-dasharray="4 4" opacity=".7"')
@@ -376,6 +383,7 @@ def pr_arquitos():
 
 
 UNICOS = {
+    "quemado-con-pelota": quemado_con_pelota,
     "posesion-reducida-4v4": pr_4v4,
     "posesion-reducida-comodin": pr_comodin,
     "posesion-reducida-3v1": pr_3v1,

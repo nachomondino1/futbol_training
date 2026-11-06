@@ -248,6 +248,15 @@ El Doc solo decía el grupo muscular de sentadilla y estocada (cuádriceps, glú
 
 - **Escalera (cambio de criterio):** los patrones que vienen del video de YouTube ahora tienen un botón "▶ Ver cómo se hace en YouTube (desde m:ss)" que abre el video justo en su sección. Saqué los diagramas de los 7 de los que no estaba segura (cruzado, carioca, ciempiés, ickey shuffle, river dance, atrás y adelante, shuffle a una pierna): quedan con texto y video. Conservé los 9 diagramas más claros. Los patrones que no están en el video (dos pies, zig-zag, salto con un pie, shuffle a una pierna) no tienen link.
 
+## Circuito 20: Pelota de a dos (2026-11-06)
+
+- Quemado con pelota (62), Carrera en V con devolución, Uno defiende otro ataca y Pelota al campo rival, unos 6 min cada uno (25 min). Es la tercera opción del bloque 2 de Pelota, junto a Control de balón (6) y Pase y control orientado (7): son tres, si querés dejar dos, decime cuál sacar. Tiempos y orden propuestos por mí.
+
+## Reels de fuerza de piernas y cuadrado con conos (2026-11-06)
+
+- **Quemado con pelota (nº 62):** ejercicio nuevo, no variante del 42 (otra lógica: de a 2, uno adentro de un cuadrado de unos 2 × 2 m con la pelota y el otro afuera le tira conos al cuerpo). Descripción y diagrama armados por mí con lo que contaste y el reel de @fernandocastillejor: validar. Está en el circuito 20, Pelota de a dos.
+- **Reel de @md.training__ (6 ejercicios de fuerza y potencia):** con lo que contaste lo mapeé a ejercicios que ya existían, sin crear ninguno: split concéntrica como patrón de Bulgarian split squat (6), salto al cajón reactivo como patrón de Box jump (21), hop reactivo como patrón de Leg hop (22, el "hop lateral" es el mismo leg hop), ataque al cajón lateral como patrón de Step-up unilateral (15) y la sentadilla explosiva (25) solo con el link. El link está también en los circuitos 14 y 15. Faltan las descripciones de split concéntrica, salto al cajón reactivo y ataque al cajón lateral (dice "a completar"); la del hop reactivo es la tuya.
+
 ## Circuito 19: Estaciones mixtas (2026-11-06)
 
 - Renombrado de "Pelota, fuerza y coordinación" a **Estaciones mixtas** (no tiene un orden fijo por tipo; id sin cambios). Ahora son 15 ejercicios en 6 estaciones (3, 3, 2, 3, 2, 2), con lo quieto (fuerza, V push & cut, light touches, conducción en V con suela) siempre en la parte 1 y lo más dinámico al final. Lo de abajo es el historial.

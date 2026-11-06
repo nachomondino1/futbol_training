@@ -353,6 +353,20 @@
       ],
       "materiales": [
         "banco"
+      ],
+      "videos": [
+        {
+          "nombre": "Ejercicios de fuerza y potencia",
+          "descripcion": "De @md.training__. Muestra seis ejercicios: split concéntrica, sentadilla explosiva, salto al cajón reactivo, hop lateral (que es nuestro leg hop), hop reactivo (una variante del leg hop con una mini pesa en el piso) y ataque al cajón lateral.",
+          "url": "https://www.instagram.com/reel/De4MJVSJRQg/"
+        }
+      ],
+      "patrones": [
+        {
+          "id": "split-concentrica",
+          "nombre": "Split concéntrica",
+          "descripcion": "Variante del split squat con foco en la fase concéntrica (la subida), con mancuernas. Ver el reel para el detalle. Descripción a completar."
+        }
       ]
     },
     {
@@ -569,6 +583,20 @@
       ],
       "materiales": [
         "cajón"
+      ],
+      "videos": [
+        {
+          "nombre": "Ejercicios de fuerza y potencia",
+          "descripcion": "De @md.training__. Muestra seis ejercicios: split concéntrica, sentadilla explosiva, salto al cajón reactivo, hop lateral (que es nuestro leg hop), hop reactivo (una variante del leg hop con una mini pesa en el piso) y ataque al cajón lateral.",
+          "url": "https://www.instagram.com/reel/De4MJVSJRQg/"
+        }
+      ],
+      "patrones": [
+        {
+          "id": "ataque-cajon-lateral",
+          "nombre": "Ataque al cajón lateral",
+          "descripcion": "Variante del step-up en la que atacás el cajón de costado. Ver el reel para el detalle. Descripción a completar."
+        }
       ]
     },
     {
@@ -708,6 +736,20 @@
       ],
       "materiales": [
         "cajón"
+      ],
+      "videos": [
+        {
+          "nombre": "Ejercicios de fuerza y potencia",
+          "descripcion": "De @md.training__. Muestra seis ejercicios: split concéntrica, sentadilla explosiva, salto al cajón reactivo, hop lateral (que es nuestro leg hop), hop reactivo (una variante del leg hop con una mini pesa en el piso) y ataque al cajón lateral.",
+          "url": "https://www.instagram.com/reel/De4MJVSJRQg/"
+        }
+      ],
+      "patrones": [
+        {
+          "id": "salto-cajon-reactivo",
+          "nombre": "Salto al cajón reactivo",
+          "descripcion": "Variante reactiva del salto al cajón. Ver el reel para el detalle. Descripción a completar."
+        }
       ]
     },
     {
@@ -715,6 +757,7 @@
       "numero": 22,
       "nombre": "Leg hop",
       "alias": [
+        "Hop lateral",
         "Salto a una pierna"
       ],
       "categoria": "potencia",
@@ -742,6 +785,11 @@
           "nombre": "Variantes de leg hop hacia adelante",
           "descripcion": "Variantes del leg hop avanzando hacia adelante.",
           "url": "https://www.instagram.com/p/DTIsFzPjCx7/"
+        },
+        {
+          "nombre": "Ejercicios de fuerza y potencia",
+          "descripcion": "De @md.training__. Muestra seis ejercicios: split concéntrica, sentadilla explosiva, salto al cajón reactivo, hop lateral (que es nuestro leg hop), hop reactivo (una variante del leg hop con una mini pesa en el piso) y ataque al cajón lateral.",
+          "url": "https://www.instagram.com/reel/De4MJVSJRQg/"
         }
       ],
       "patrones": [
@@ -774,6 +822,11 @@
           "nombre": "Progresión 5",
           "descripcion": "La más explosiva: salto largo con el cuerpo inclinado hacia adelante, cerca de un sprint.",
           "imagen": "img/ejercicios/leg-hop-5.webp"
+        },
+        {
+          "id": "hop-reactivo",
+          "nombre": "Hop reactivo",
+          "descripcion": "Variante del leg hop: ponés una mini pesa de 5 o 10 kilos en el piso y, saltando a una pierna, vas pisando una vez en el pasto y otra en la pesa, alternando, rápido, muy rápido."
         }
       ]
     },
@@ -854,6 +907,13 @@
       ],
       "materiales": [
         "peso liviano"
+      ],
+      "videos": [
+        {
+          "nombre": "Ejercicios de fuerza y potencia",
+          "descripcion": "De @md.training__. Muestra seis ejercicios: split concéntrica, sentadilla explosiva, salto al cajón reactivo, hop lateral (que es nuestro leg hop), hop reactivo (una variante del leg hop con una mini pesa en el piso) y ataque al cajón lateral.",
+          "url": "https://www.instagram.com/reel/De4MJVSJRQg/"
+        }
       ]
     },
     {
@@ -2022,6 +2082,45 @@
       ],
       "materiales": [],
       "huerfano_ok": true
+    },
+    {
+      "id": "quemado-con-pelota",
+      "numero": 62,
+      "nombre": "Quemado con pelota",
+      "alias": [
+        "El quemado",
+        "Quemado"
+      ],
+      "categoria": "pelota",
+      "descripcion": "Se juega de a 2. Un jugador se queda adentro de un cuadrado muy chico, de unos 2 × 2 m, con la pelota. Su compañero, afuera del cuadrado, le va tirando conos tratando de pegarle en el cuerpo, como en un quemado. El de adentro tiene que evitar los conos y, a la vez, mantener la pelota adentro del cuadrado. Después se cambian los roles.",
+      "dosis": null,
+      "variantes": {},
+      "imagen": "img/quemado-con-pelota.svg",
+      "video": null,
+      "videos": [
+        {
+          "nombre": "Quemado con pelota",
+          "descripcion": "De @fernandocastillejor. Un jugador adentro de un cuadrado chico conduce la pelota mientras desde afuera le tiran conos al cuerpo; tiene que esquivarlos sin dejar que la pelota salga del cuadrado.",
+          "url": "https://www.instagram.com/reel/DexzE9doGpA/"
+        }
+      ],
+      "trabaja": {
+        "principal": "coordinacion",
+        "secundarios": []
+      },
+      "aporta": [
+        "control",
+        "coordinacion"
+      ],
+      "subcategorias": [
+        "conduccion",
+        "oposicion"
+      ],
+      "materiales": [
+        "pelota",
+        "conos"
+      ],
+      "jugadores_min": 2
     }
   ]
 }
