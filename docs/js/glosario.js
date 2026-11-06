@@ -1,5 +1,5 @@
 import { completarItems, normalizarCircuitos } from "./estructura.js";
-import { h, imagenesNodos, patronesNodos, videosNodos, variantesNodo, materialesNodo, leerMateriales, guardarMateriales, normalizar, renderHeader, cargarJSON, mostrarError } from "./common.js";
+import { h, seccion, imagenesNodos, patronesNodos, videosNodos, variantesNodo, materialesNodo, leerMateriales, guardarMateriales, normalizar, renderHeader, cargarJSON, mostrarError } from "./common.js";
 
 const app = document.getElementById("app");
 // tipo: null | "con" | "sin" (pelota); sub: subcategoría de pelota (si tipo es "con") o categoría (si es "sin")
@@ -9,6 +9,7 @@ const estado = { tipo: null, sub: null, q: "", gente: null, materiales: new Set(
 let datos = null;
 let grupos = new Map(); // id -> grupo muscular o capacidad
 let usos = new Map();   // id de ejercicio -> Map(id de sesión -> {nombre, alternativa})
+let usosCircuitos = new Map(); // id de ejercicio -> Map(id de circuito -> {numero, nombre, alternativa})
 let vista = null;       // "lista" | "detalle": qué se está mostrando
 let scrollLista = 0;    // dónde estabas en la lista, para volver al mismo lugar
 
@@ -29,6 +30,29 @@ function calcularUsos(sesiones, circuitos) {
     (c?.opciones || []).forEach((x) => marcar(x.ex, s, true));
   }
   return res;
+}
+
+// En qué circuitos aparece cada ejercicio: en la lista del circuito (directo) o como alternativa que también sirve.
+function calcularUsosCircuitos(circuitos) {
+  const res = new Map();
+  const marcar = (ex, c, alternativa) => {
+    const m = res.get(ex) || res.set(ex, new Map()).get(ex);
+    if (!m.has(c.id) || (m.get(c.id).alternativa && !alternativa)) m.set(c.id, { numero: c.numero, nombre: c.nombre, alternativa });
+  };
+  for (const c of circuitos) {
+    const propios = completarItems(c).items || [];
+    propios.forEach((it) => marcar(it.ex, c, false));
+    (c.opciones || []).forEach((x) => marcar(x.ex, c, true));
+    (c.partes || []).forEach((p) => p.opciones.forEach((x) => marcar(x.ex, c, true)));
+  }
+  return res;
+}
+
+function circuitosNodo(ej) {
+  const m = usosCircuitos.get(ej.id);
+  return h("ul", { class: "usos-lista" }, [...m].map(([id, u]) => h("li", {},
+    h("span", { class: "num-ej" }, String(u.numero)), h("a", { href: `circuitos.html#${id}` }, u.nombre),
+    u.alternativa ? h("span", { class: "alias" }, " (alternativa)") : null)));
 }
 
 function sesionesNodo(ej) {
@@ -99,17 +123,17 @@ function vistaDetalle(ej) {
       h("p", { class: "card-meta" }, h("span", { class: "cat" }, categoriaDe(ej)?.nombre || ej.categoria)),
       subcategoriasNodo(ej),
       trabajaNodo(ej),
-      medios.length ? h("div", { class: "medios" }, medios) : null,
-      h("h2", {}, "Cómo se hace"),
-      h("p", {}, ej.descripcion),
-      ej.jugadores_min > 1 ? h("p", { class: "detalle__dato" }, `Se hace de a ${ej.jugadores_min} o más.`) : null,
-      ej.patrones?.length ? [h("h2", {}, "Patrones y variantes"), h("div", { class: "patrones" }, patronesNodos(ej))] : null,
-      ej.dosis ? [h("h2", {}, "Dosis"), h("p", {}, ej.dosis)] : null,
-      h("h2", {}, "Materiales"),
-      materialesNodo(ej) || h("p", {}, "No necesita materiales."),
-      vars ? [h("h2", {}, "Variantes"), vars] : null,
-      h("h2", {}, "En qué sesiones"),
-      usos.has(ej.id) ? sesionesNodo(ej) : h("p", {}, "Ninguna sesión lo usa todavía.")));
+      medios.length ? seccion("Videos e imágenes", h("div", { class: "medios" }, medios)) : null,
+      seccion("Cómo se hace",
+        h("p", {}, ej.descripcion),
+        ej.jugadores_min > 1 ? h("p", { class: "detalle__dato" }, `Se hace de a ${ej.jugadores_min} o más.`) : null),
+      ej.patrones?.length ? seccion("Patrones y variantes", h("div", { class: "patrones" }, patronesNodos(ej))) : null,
+      seccion("Materiales", materialesNodo(ej) || h("p", {}, "No necesita materiales.")),
+      vars ? seccion("Variantes", vars) : null,
+      seccion("En qué sesiones y circuitos",
+        usos.has(ej.id) ? [h("h3", { class: "seccion__sub" }, "Sesiones"), sesionesNodo(ej)] : null,
+        usosCircuitos.has(ej.id) ? [h("h3", { class: "seccion__sub" }, "Circuitos"), circuitosNodo(ej)] : null,
+        !usos.has(ej.id) && !usosCircuitos.has(ej.id) ? h("p", {}, "Ninguna sesión ni circuito lo usa todavía.") : null)));
 }
 
 function visibles() {
@@ -319,7 +343,9 @@ try {
   const [ex, mus, ses, cir] = await Promise.all([cargarJSON("data/exercises.json"), cargarJSON("data/muscles.json"),
     cargarJSON("data/sessions.json"), cargarJSON("data/circuits.json")]);
   datos = ex;
-  usos = calcularUsos(ses.sesiones, normalizarCircuitos(cir));
+  const circuitos = normalizarCircuitos(cir);
+  usos = calcularUsos(ses.sesiones, circuitos);
+  usosCircuitos = calcularUsosCircuitos(circuitos);
   grupos = new Map(mus.grupos.map((g) => [g.id, g])); // await de nivel módulo: válido en <script type="module">
   ruta();
   window.addEventListener("hashchange", ruta);

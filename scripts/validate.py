@@ -62,10 +62,15 @@ def validar_estructura(where: str, o: dict, guias: dict, minutos: int | None) ->
             return
     n = len(o["items"])
     agrupar = o.get("agrupar")
-    if agrupar is not None and (not isinstance(agrupar, int) or agrupar < 2 or n % agrupar):
-        errors.append(f"{where}: 'agrupar' debe ser un entero >= 2 y dividir la cantidad de ejercicios ({n})")
+    if isinstance(agrupar, list):
+        if not agrupar or not all(isinstance(t, int) and t >= 1 for t in agrupar) or sum(agrupar) != n:
+            errors.append(f"{where}: 'agrupar' como lista debe tener enteros >= 1 que sumen la cantidad de ejercicios ({n})")
+            return
+        n = len(agrupar)  # cada grupo es una estación
+    elif agrupar is not None and (not isinstance(agrupar, int) or agrupar < 2 or n % agrupar):
+        errors.append(f"{where}: 'agrupar' debe ser un entero >= 2 y dividir la cantidad de ejercicios ({n}), o una lista con el tamaño de cada estación")
         return
-    if agrupar:
+    elif agrupar:
         n = n // agrupar  # cada grupo es una estación
     if modo == "circuito" and n < 2:
         errors.append(f"{where}: un circuito necesita al menos 2 estaciones")
@@ -159,6 +164,8 @@ def main() -> int:
                 if not faltan:
                     parte["opciones"] = [o for b in parte["bancos"] for o in bancos[b]["opciones"]]
     circuitos = {c["id"]: c for c in circ_data}
+    for n in dupes([str(c.get("numero")) for c in circ_data]):
+        errors.append(f"circuito: numero repetido {n}")
     for d in dupes([c["id"] for c in circ_data]):
         errors.append(f"circuito duplicado: {d}")
 
@@ -275,6 +282,8 @@ def main() -> int:
                     errors.append(f"{where}: opción sin items")
                     continue
                 validar_estructura(where, o, guias, b["min"])
+                if not o_raw.get("circuito") and not o_raw.get("estructura") and "min" not in o_raw:
+                    warnings.append(f"{where}: ejercicio suelto en la sesión (la idea es usar circuitos)")
                 for it in o["items"]:
                     usados.add(it["ex"])
                     if it["ex"] not in ids:
@@ -348,6 +357,8 @@ def main() -> int:
             if it["ex"] not in ids:
                 errors.append(f"{where}: ex inexistente '{it['ex']}'")
         validar_estructura(where, c, guias, None)
+        if not isinstance(c.get("numero"), int) or c["numero"] < 1:
+            errors.append(f"{where}: falta numero (entero >= 1)")
         if c["id"] not in usados_circ and not c.get("huerfano_ok"):
             errors.append(f"circuito huérfano: {c['id']} (ninguna sesión lo usa)")
 

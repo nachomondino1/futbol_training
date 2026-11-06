@@ -8,8 +8,7 @@ let objetivos = []; // qué se gana (docs/data/objetivos.json)
 let circuitos = new Map(); // id -> circuito (docs/data/circuits.json)
 
 // Estado de la vista de detalle. Vive en memoria mientras la página esté abierta.
-const cerrados = new Set();   // "bloque:ex" de los ítems que cerraste; por defecto está todo desplegado
-const abiertos = new Set();   // "bloque:ex" de los ítems que abriste en un circuito que arranca plegado (circuito-fuerza)
+const abiertos = new Set();   // "bloque:número:ex" de los ítems (y guías) que abriste; por defecto todo arranca plegado, para ver el bloque de un vistazo
 let elegidas = {};            // índice de bloque -> índice de opción elegida
 let somos = null;             // cuántos jugadores somos hoy (null = sin filtro)
 const MAX_SOMOS = 10;
@@ -36,14 +35,14 @@ function grilla() {
     h("div", { class: "grid-sesiones" }, datos.sesiones.map((s) =>
       h("a", { class: "card-sesion", href: `#${s.id}` },
         h("span", { class: "card-min" }, String(duracion(s)), h("small", {}, " min")),
-        h("span", { class: "card-nombre" }, s.nombre),
+        h("span", { class: "card-nombre" }, s.emoji ? h("span", { class: "card-emoji", "aria-hidden": "true" }, s.emoji) : null, s.nombre),
         h("ul", { class: "card-bloques" }, s.bloques.map((b) => h("li", {}, b.titulo, b.opcional ? " (opcional)" : ""))),
         s.cuando ? h("p", { class: "card-cuando" }, s.cuando) : null))));
 }
 
 function itemNodo(item, bi, numero = null, conEstructura = false, plegado = false) {
   const ej = ejercicios.get(item.ex);
-  const clave = `${bi}:${item.ex}`;
+  const clave = `${bi}:${numero ?? ""}:${item.ex}`;
   const vars = item.variantes || ej.variantes || {};
   const dosis = item.dosis || (conEstructura ? null : ej.dosis);
   const medios = [];
@@ -51,11 +50,8 @@ function itemNodo(item, bi, numero = null, conEstructura = false, plegado = fals
   medios.push(...videosNodos(ej));
 
   return h("details", {
-      class: "item", open: plegado ? abiertos.has(clave) : !cerrados.has(clave),
-      ontoggle: (e) => {
-        if (plegado) e.target.open ? abiertos.add(clave) : abiertos.delete(clave);
-        else e.target.open ? cerrados.delete(clave) : cerrados.add(clave);
-      } },
+      class: "item", open: abiertos.has(clave),
+      ontoggle: (e) => { e.target.open ? abiertos.add(clave) : abiertos.delete(clave); } },
     h("summary", {},
       h("span", { class: "item-nombre" },
         numero ? h("span", { class: "est-num" }, String(numero)) : null, h("span", { class: "num-ej" }, String(ej.numero)), ej.nombre,
@@ -86,8 +82,8 @@ function resumenNodo(s) {
 function guiaNodo(id, bi) {
   const clave = `${bi}:guia:${id}`;
   return guiaDetalle(datos.guias[id], {
-    abierto: !cerrados.has(clave),
-    alAlternar: (e) => { e.target.open ? cerrados.delete(clave) : cerrados.add(clave); } });
+    abierto: abiertos.has(clave),
+    alAlternar: (e) => { e.target.open ? abiertos.add(clave) : abiertos.delete(clave); } });
 }
 
 // Una opción puede referenciar un circuito de la lista de circuitos: hereda sus items, estructura y guía.
@@ -205,7 +201,7 @@ function gananciasNodo(s) {
 
 function detalle(s, conservar = false) {
   if (!conservar || sesionActual !== s) {
-    if (sesionActual !== s) { cerrados.clear(); abiertos.clear(); elegidas = {}; somos = null; }
+    if (sesionActual !== s) { abiertos.clear(); elegidas = {}; somos = null; }
   }
   sesionActual = s;
   const y = window.scrollY;

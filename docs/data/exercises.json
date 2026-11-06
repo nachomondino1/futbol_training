@@ -123,7 +123,8 @@
       ],
       "videos": [
         {
-          "nombre": "Movilidad de tobillo con banda (Instagram, @tano_coach)",
+          "nombre": "Movilidad de tobillo con banda",
+          "descripcion": "De @tano_coach. Explica por qué importa la movilidad de tobillo para la velocidad y para evitar lesiones, y muestra el ejercicio en posición de estocada, con una banda elástica en el tobillo.",
           "url": "https://www.instagram.com/reel/DcEakVVyH1l/"
         }
       ]
@@ -297,8 +298,14 @@
       ],
       "videos": [
         {
-          "nombre": "13 patrones",
+          "nombre": "13 patrones de escalera",
+          "descripcion": "Video de YouTube que muestra 13 patrones de pies en la escalera. Cada patrón de la lista de más abajo tiene marcado el minuto donde aparece.",
           "url": "https://www.youtube.com/watch?v=VE9K9w6rOmM"
+        },
+        {
+          "nombre": "Coordinación en frecuencia de pies",
+          "descripcion": "De @fernandocastillejor. Reel corto de un jugador pasando por la escalera en una cancha de pasto, con distintas formas de pies rápidos. No identifiqué cada patrón.",
+          "url": "https://www.instagram.com/reel/DeiXO3RoITP/"
         }
       ]
     },
@@ -732,7 +739,8 @@
       ],
       "videos": [
         {
-          "nombre": "variantes hacia adelante",
+          "nombre": "Variantes de leg hop hacia adelante",
+          "descripcion": "Variantes del leg hop avanzando hacia adelante.",
           "url": "https://www.instagram.com/p/DTIsFzPjCx7/"
         }
       ],

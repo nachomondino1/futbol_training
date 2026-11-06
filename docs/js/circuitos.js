@@ -1,5 +1,5 @@
-import { h, renderHeader, cargarJSON, mostrarError } from "./common.js";
-import { agruparEstaciones, completarItems, estructuraNodo, guiaDetalle, masGanado, normalizarCircuitos, repartirMinutos } from "./estructura.js";
+import { h, renderHeader, cargarJSON, mostrarError, videoNodo, subseccion, normalizar } from "./common.js";
+import { agruparEstaciones, completarItems, estructuraNodo, guiaDetalle, masGanado, minutosEstructura, normalizarCircuitos, repartirMinutos } from "./estructura.js";
 
 const app = document.getElementById("app");
 renderHeader("circuitos");
@@ -27,15 +27,21 @@ function usadoEn(c) {
       : "Ninguna sesión lo usa todavía.");
 }
 
-function indice(lista) {
-  const detalle = (c) => c.partes ? `${c.partes.length} partes` : c.opciones ? `${c.opciones.length} ejercicios posibles` : `${c.items.length} ejercicios`;
-  return h("nav", { class: "resumen", "aria-label": "Circuitos" },
-    h("p", { class: "resumen-tit" }, `${lista.length} ${lista.length === 1 ? "circuito" : "circuitos"}`),
-    h("ol", {}, lista.map((c, i) => h("li", {}, h("button", { type: "button", class: "resumen-fila",
-      onclick: () => document.getElementById(c.id).scrollIntoView({ block: "start" }) },
-      h("span", { class: "bloque-n" }, String(i + 1)),
-      h("span", { class: "resumen-nombre" }, c.nombre),
-      h("span", { class: "resumen-min" }, detalle(c)))))));
+// Resumen de una línea para la tarjeta: cuántos ejercicios y, si tiene estructura, cuánto dura.
+function resumen(c) {
+  const ef = completarItems(c);
+  const cuantos = c.partes ? `${c.partes.length} partes` : c.opciones ? `${c.opciones.length} ejercicios posibles` : `${ef.items.length} ejercicios`;
+  const min = ef.estructura && ef.items ? ` · unos ${minutosEstructura(ef)} min` : "";
+  return cuantos + min;
+}
+
+function tarjetaResumen(c) {
+  const ef = completarItems(c);
+  return h("a", { class: "card-sesion card-circuito", href: `#${c.id}` },
+    h("span", { class: "card-min" }, String(c.numero)),
+    h("span", { class: "card-nombre" }, c.nombre),
+    ef.items ? etiquetas(ef.items) : null,
+    h("p", { class: "card-cuando" }, resumen(c)));
 }
 
 // Lista numerada de ejercicios, con su tipo (fuerza, coordinación...) y la nota si la hay.
@@ -67,12 +73,11 @@ function tarjetaPool(c) {
   const items = c.propuesta.map((p) => ({ ex: p.ex, nota: p.nota ?? c.opciones.find((o) => o.ex === p.ex)?.nota, nombre: c.opciones.find((o) => o.ex === p.ex)?.nombre }));
   const guia = c.guia ? guiaDetalle(guias[c.guia]) : null;
   return h("section", { class: "musculo circuito", id: c.id },
-    h("h2", {}, c.nombre),
+    h("h2", {}, h("span", { class: "num-ej" }, String(c.numero)), c.nombre),
     etiquetas(items),
     h("p", { class: "musculo-para" }, c.descripcion),
     c.estructura ? estructuraNodo({ ...c, items }, guia) : guia,
-    h("h3", {}, `Propuesta: ${items.length} ejercicios`),
-    listaEjercicios(items, (it, ej) => categorias.get(ej.categoria)),
+    subseccion(`Propuesta: ${items.length} ejercicios`, listaEjercicios(items, (it, ej) => categorias.get(ej.categoria))),
     alternativasNodo("Otros ejercicios que podés usar", c.opciones.filter((o) => !propuesta.includes(o.ex))),
     usadoEn(c));
 }
@@ -81,15 +86,14 @@ function tarjetaPool(c) {
 function tarjetaPlantilla(c) {
   const items = c.partes.map((p) => p.opciones[0]);
   return h("section", { class: "musculo circuito", id: c.id },
-    h("h2", {}, c.nombre),
+    h("h2", {}, h("span", { class: "num-ej" }, String(c.numero)), c.nombre),
     etiquetas(items),
     h("p", { class: "musculo-para" }, c.descripcion),
-    h("h3", {}, "Propuesta"),
-    h("ol", { class: "circuito-lista" }, c.partes.map((p, pi) => h("li", {},
+    subseccion("Propuesta", h("ol", { class: "circuito-lista" }, c.partes.map((p, pi) => h("li", {},
       h("span", { class: "est-num" }, String(pi + 1)),
       h("a", { href: `glosario.html#${items[pi].ex}` }, nombreDe(items[pi])),
       h("span", { class: "etiqueta" }, p.nombre),
-      items[pi].nota ? h("span", { class: "item-dosis" }, items[pi].nota) : null))),
+      items[pi].nota ? h("span", { class: "item-dosis" }, items[pi].nota) : null)))),
     c.partes.map((p) => alternativasNodo(`Alternativas de ${p.nombre.toLowerCase()}`, p.opciones.slice(1))),
     usadoEn(c));
 }
@@ -97,8 +101,7 @@ function tarjetaPlantilla(c) {
 // Tabla de cuánto hacer según el tiempo (campo "progresion" del circuito).
 function progresionNodo(p) {
   if (!p) return null;
-  return h("div", { class: "progresion" },
-    h("h3", {}, p.titulo),
+  return subseccion(p.titulo,
     p.nota ? h("p", { class: "nota" }, p.nota) : null,
     h("table", { class: "tabla" },
       h("thead", {}, h("tr", {}, h("th", {}, "Tiempo"), h("th", {}, "Bloques"), h("th", {}, "Qué hacer"))),
@@ -108,12 +111,18 @@ function progresionNodo(p) {
 // Todos los patrones que se pueden usar (campo "patrones" del circuito); los "extra" son los que se suman al subir el tiempo.
 function patronesNodo(p) {
   if (!p) return null;
-  return h("div", {},
-    h("h3", {}, p.titulo),
+  return subseccion(p.titulo,
     h("ul", { class: "musculo-lista" }, p.lista.map((x) => h("li", {},
       h("a", { href: "glosario.html#escalera" }, x.nombre),
       h("span", { class: "etiqueta" }, x.extra ? "se suma al subir" : "base"),
       x.nota ? h("span", { class: "item-dosis" }, x.nota) : null))));
+}
+
+// "6 estaciones, 3 ejercicios en cada una" o, si no todas son iguales, "6 estaciones, de 2 o 3 ejercicios".
+function tituloEstaciones(ef) {
+  const tams = agruparEstaciones(ef.items, ef.agrupar).map((g) => g.length);
+  const min = Math.min(...tams), max = Math.max(...tams);
+  return `${tams.length} estaciones, ${min === max ? `${max} ejercicios en cada una` : `de ${min} a ${max} ejercicios`}`;
 }
 
 // Circuito de ejercicios fijos, en orden. Con "agrupar", cada grupo de ejercicios es una estación.
@@ -123,17 +132,17 @@ function tarjetaSimple(c) {
   const usados = new Set(ef.items.map((it) => it.ex));
   const etiqueta = (it, ej) => categorias.get(ej.categoria);
   return h("section", { class: "musculo circuito", id: c.id },
-    h("h2", {}, c.nombre),
+    h("h2", {}, h("span", { class: "num-ej" }, String(c.numero)), c.nombre),
     etiquetas(ef.items),
     h("p", { class: "musculo-para" }, c.descripcion),
-    c.videos ? h("p", {}, c.videos.map((v) => h("a", { class: "btn", href: v.url, target: "_blank", rel: "noopener" }, `▶ ${v.nombre}`))) : null,
+    c.videos?.length ? subseccion("Videos e imágenes", h("div", { class: "medios" }, c.videos.map(videoNodo))) : null,
     ef.estructura ? estructuraNodo(ef, guia) : guia,
     ef.agrupar
-      ? [h("h3", {}, `${Math.ceil(ef.items.length / ef.agrupar)} estaciones, ${ef.agrupar} ejercicios en cada una`),
-         ...agruparEstaciones(ef.items, ef.agrupar).map((grupo, k) => h("div", { class: "estacion-lista" },
-           h("h4", {}, `Estación ${k + 1}`), listaEjercicios(grupo, etiqueta)))]
+      ? subseccion(tituloEstaciones(ef),
+          ...agruparEstaciones(ef.items, ef.agrupar).map((grupo, k) => h("div", { class: "estacion-lista" },
+            h("h4", {}, `Estación ${k + 1}`), listaEjercicios(grupo, etiqueta))))
       : [progresionNodo(c.progresion), patronesNodo(c.patrones),
-         h("h3", {}, c.lista_titulo || `${ef.items.length} ejercicios, en este orden`), listaEjercicios(ef.items, etiqueta)],
+         subseccion(c.lista_titulo || `${ef.items.length} ejercicios, en este orden`, listaEjercicios(ef.items, etiqueta))],
     c.opciones ? alternativasNodo("Otros ejercicios que podés usar", c.opciones.filter((o) => !usados.has(o.ex))) : null,
     usadoEn(c));
 }
@@ -144,12 +153,90 @@ function tarjeta(c) {
   return tarjetaSimple(c);
 }
 
-function pintar() {
+// Filtros de la grilla (se conservan al abrir un circuito y volver).
+const TIPOS = [["calentamiento", "Entrada en calor"], ["fuerza", "Fuerza"], ["potencia", "Potencia"], ["coordinacion", "Coordinación"],
+  ["velocidad", "Velocidad"], ["aerobico", "Aeróbico"], ["pelota", "Con pelota"]];
+const filtros = { q: "", tipos: new Set(), sinPelota: false, gente: null }; // gente: null | "solo" | "grupo"
+
+const itemsDe = (c) => completarItems(c).items || [];
+const categoriasDe = (c) => new Set(itemsDe(c).map((it) => ejercicios.get(it.ex).categoria));
+const individual = (c) => itemsDe(c).every((it) => (ejercicios.get(it.ex).jugadores_min || 1) === 1);
+const textoDe = (c) => normalizar([c.nombre, c.descripcion, ...itemsDe(c).map((it) => it.nombre || ejercicios.get(it.ex).nombre)].join(" "));
+
+function visibles() {
+  const q = normalizar(filtros.q.trim());
+  return circuitos.filter((c) => {
+    const cats = categoriasDe(c);
+    if ([...filtros.tipos].some((t) => !cats.has(t))) return false;
+    if (filtros.sinPelota && cats.has("pelota")) return false;
+    if (filtros.gente === "solo" && !individual(c)) return false;
+    if (filtros.gente === "grupo" && individual(c)) return false;
+    return !q || textoDe(c).includes(q);
+  });
+}
+
+const hayFiltros = () => filtros.q.trim() || filtros.tipos.size || filtros.sinPelota || filtros.gente;
+
+function limpiarFiltros() {
+  filtros.q = ""; filtros.tipos.clear(); filtros.sinPelota = false; filtros.gente = null;
+  grilla();
+}
+
+function chipFiltro(texto, activo, alClick) {
+  return h("button", { type: "button", class: "chip", "aria-pressed": String(activo), onclick: alClick }, texto);
+}
+
+function pintarGrilla() {
+  const lista = visibles();
+  const conteo = document.getElementById("conteo");
+  conteo.replaceChildren(`${lista.length} ${lista.length === 1 ? "circuito" : "circuitos"}`);
+  if (hayFiltros()) conteo.append(h("button", { type: "button", class: "limpiar-filtros", onclick: limpiarFiltros }, "✕ Limpiar filtros"));
+  document.getElementById("chips-tipo").replaceChildren(
+    ...TIPOS.map(([id, nombre]) => chipFiltro(nombre, filtros.tipos.has(id), () => {
+      if (filtros.tipos.has(id)) filtros.tipos.delete(id); else filtros.tipos.add(id);
+      if (id === "pelota" && filtros.tipos.has(id)) filtros.sinPelota = false;
+      pintarGrilla();
+    })),
+    chipFiltro("Sin pelota", filtros.sinPelota, () => {
+      filtros.sinPelota = !filtros.sinPelota;
+      if (filtros.sinPelota) filtros.tipos.delete("pelota");
+      pintarGrilla();
+    }));
+  document.getElementById("chips-gente").replaceChildren(
+    chipFiltro("Se hace solo", filtros.gente === "solo", () => { filtros.gente = filtros.gente === "solo" ? null : "solo"; pintarGrilla(); }),
+    chipFiltro("Hace falta alguien más", filtros.gente === "grupo", () => { filtros.gente = filtros.gente === "grupo" ? null : "grupo"; pintarGrilla(); }));
+  document.getElementById("grilla").replaceChildren(lista.length
+    ? h("div", { class: "grid-sesiones" }, lista.map(tarjetaResumen))
+    : h("p", { class: "vacio" }, "No hay circuitos con esos filtros."));
+}
+
+function grilla() {
+  document.title = "Circuitos";
+  const buscar = h("input", { class: "buscar", type: "search", placeholder: "Buscar circuito", "aria-label": "Buscar circuito", autocomplete: "off",
+    oninput: (e) => { filtros.q = e.target.value; pintarGrilla(); } });
+  buscar.value = filtros.q;
   app.replaceChildren(
     h("h1", {}, "Circuitos"),
-    h("p", { class: "intro" }, "Un circuito es un conjunto de ejercicios hechos en orden. Cada uno trae una propuesta y, aparte, las alternativas que también sirven."),
-    indice(circuitos),
-    ...circuitos.map(tarjeta));
+    h("p", { class: "intro" }, "Un circuito es un conjunto de ejercicios hechos en orden. Filtrá para encontrar uno rápido y tocalo para ver el detalle: la propuesta y, aparte, las alternativas que también sirven."),
+    h("div", { class: "controles" }, buscar,
+      h("div", { class: "chips", id: "chips-tipo", role: "group", "aria-label": "Tipo de circuito" }),
+      h("div", { class: "chips", id: "chips-gente", role: "group", "aria-label": "Cuánta gente hace falta" })),
+    h("p", { class: "conteo", id: "conteo", "aria-live": "polite" }),
+    h("div", { id: "grilla" }));
+  pintarGrilla();
+  window.scrollTo(0, 0);
+}
+
+function detalle(c) {
+  document.title = c.nombre;
+  app.replaceChildren(h("a", { class: "volver", href: "#" }, "← Todos los circuitos"), tarjeta(c));
+  window.scrollTo(0, 0);
+}
+
+function ruta() {
+  const id = decodeURIComponent(location.hash.slice(1));
+  const c = circuitos.find((x) => x.id === id);
+  if (c) detalle(c); else grilla();
 }
 
 try {
@@ -161,9 +248,8 @@ try {
   circuitos = normalizarCircuitos(cir);
   sesiones = ses.sesiones;
   guias = ses.guias;
-  pintar();
-  const id = decodeURIComponent(location.hash.slice(1));
-  if (id) document.getElementById(id)?.scrollIntoView({ block: "start" });
+  ruta();
+  window.addEventListener("hashchange", ruta);
 } catch (err) {
   mostrarError(app, err);
 }

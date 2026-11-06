@@ -248,6 +248,28 @@ El Doc solo decía el grupo muscular de sentadilla y estocada (cuádriceps, glú
 
 - **Escalera (cambio de criterio):** los patrones que vienen del video de YouTube ahora tienen un botón "▶ Ver cómo se hace en YouTube (desde m:ss)" que abre el video justo en su sección. Saqué los diagramas de los 7 de los que no estaba segura (cruzado, carioca, ciempiés, ickey shuffle, river dance, atrás y adelante, shuffle a una pierna): quedan con texto y video. Conservé los 9 diagramas más claros. Los patrones que no están en el video (dos pies, zig-zag, salto con un pie, shuffle a una pierna) no tienen link.
 
+## Circuito 19: Estaciones mixtas (2026-11-06)
+
+- Renombrado de "Pelota, fuerza y coordinación" a **Estaciones mixtas** (no tiene un orden fijo por tipo; id sin cambios). Ahora son 15 ejercicios en 6 estaciones (3, 3, 2, 3, 2, 2), con lo quieto (fuerza, V push & cut, light touches, conducción en V con suela) siempre en la parte 1 y lo más dinámico al final. Lo de abajo es el historial.
+
+- Análogo al 2 (Fuerza, coordinación y cierre) pero mezclando pelota, fuerza y coordinación o velocidad: 6 estaciones de 2 o 3 partes (3, 2, 3, 3, 2, 3), ordenadas de más quieto a más movimiento dentro de cada estación, sea del tipo que sea (la pelota en el lugar al principio, la pelota en velocidad al final). Misma estructura que el 2 (3 vueltas de 100 s de trabajo y 30 s de descanso, unos 45 min). Los ejercicios de cada estación los elegí yo. Para esto se agregó que `agrupar` pueda ser una lista con el tamaño de cada estación.
+
+## Todas las sesiones con circuitos (2026-11-06)
+
+- Velocidad y agilidad, Fuerza y potencia y Aeróbico (bloque final) pasaron a circuitos. **Circuitos nuevos 9 a 18** (armados con ejercicios que ya existían): 9 Pies rápidos, 10 Sprints (cuesta opcional), 11 Agilidad con conos, 12 Agilidad reactiva, 13 Pelota y aceleraciones, 14 Potencia: saltos, 15 Potencia con carga, 16 Fuerza pesada, 17 Cierre con pelota (tranqui), 18 Duelos. Los tiempos y el orden de cada uno los propuse yo: validar.
+- Los circuitos 6 y 7 ahora dicen "3-5 min" por ejercicio, para usarlos en bloques de 15 o de 25 min. En Velocidad, el bloque Pies con Todo coordinación dura 6 min (la sesión suma 56 en vez de 60 con esa opción).
+- Quedan 2 ejercicios sueltos (WARNING del validador) en el bloque de Aeróbico: HIIT 15/15 y Posesión reducida. Son formatos de una sola cosa; no les cargué estructura porque no tengo los números.
+- En la sesión, ejercicios y guías arrancan plegados, para ver cada bloque de un vistazo.
+
+## Sesión Pelota con circuitos (2026-11-06)
+
+- La sesión Pelota usa ahora 4 circuitos nuevos en vez de ejercicios sueltos: **5 Posesión** (Loco 6 min, Cuadrado con uno en el medio 4, Posesión reducida 10), **6 Control de balón** y **7 Pase y control orientado** (5 ejercicios de 5 min cada uno; son las dos opciones del bloque 2) y **8 Definición y tiro al arco** (Pase-control-definición 6, Pivote de 9 6, Uno defiende otro ataca 7, Centro al vértice 6). Los tiempos y el orden de cada circuito los propuse yo: validar.
+- Con "Hoy somos 2" el circuito 7 queda excluido porque "Pared y control orientado" pide 3.
+
+## Reel de coordinación en la escalera (2026-11-06)
+
+- Link al reel de @fernandocastillejor ("Ejercicios de coordinación en frecuencia de pies") agregado a **Escalera** (nº 4) (en el circuito Todo coordinación no va: las variantes nuevas se listan en Ejercicios). Lo vi sin sonido y no pude identificar qué patrones hace, así que no agregué patrones nuevos: si querés alguno de ahí, decime cuál.
+
 ## Movilidad de tobillo (2026-11-06)
 
 - Se sumó como variante de **Movilidad articular** (nº 2), no como ejercicio aparte: estocada con una rodilla en el piso y banda elástica en el tobillo, rodilla hacia adelante y a los costados. Con link al reel de @tano_coach. La descripción la armé mirando el video sin sonido; faltan repeticiones, tiempo y para qué lado tira la banda.

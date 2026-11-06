@@ -163,6 +163,7 @@
   "circuitos": [
     {
       "id": "circuito-fuerza",
+      "numero": 1,
       "nombre": "Circuito de fuerza",
       "descripcion": "Una lista de ejercicios de fuerza posibles: cada día elegís 6 (o los que quieras). Abajo hay un orden propuesto, el que se hace hoy, por si no querés pensarlo.",
       "banco": "fuerza",
@@ -202,6 +203,7 @@
     },
     {
       "id": "fuerza-coordinacion-cierre",
+      "numero": 2,
       "nombre": "Fuerza, coordinación y cierre",
       "descripcion": "Seis estaciones y, en cada una, tres partes seguidas que hace la misma persona: primero fuerza, después coordinación y para terminar velocidad o pelota. Cada estación la ocupa una persona y todos rotan cuando se cumple el tiempo. Abajo hay una propuesta y los otros ejercicios que también sirven en cada parte.",
       "bancos": [
@@ -283,6 +285,7 @@
     },
     {
       "id": "entrada-en-calor",
+      "numero": 3,
       "nombre": "Entrada en calor antes del partido",
       "descripcion": "Para el día del partido, antes de jugar (unos 22 min): trote suave, activación dinámica, aceleración y velocidad, y para terminar con pelota (posesión reducida y, si hay arco, tiro).",
       "huerfano_ok": true,
@@ -320,6 +323,7 @@
     },
     {
       "id": "todo-coordinacion",
+      "numero": 4,
       "nombre": "Todo coordinación",
       "descripcion": "Siempre con la escalera de coordinación, cambiando de patrón: cada bloque son 20 s de trabajo y 10 s de descanso (20/10), seguidos y sin pausa. Versión principiante: 6 min. Con el tiempo se sube hasta 12 min continuos. Abajo está la tabla de cuánto hacer según el tiempo y la lista de patrones.",
       "huerfano_ok": true,
@@ -475,9 +479,378 @@
       "lista_titulo": "Versión de 6 min: 12 bloques, en este orden",
       "videos": [
         {
-          "nombre": "Ver el reel del HIIT 20/10 en Instagram (@md.training__)",
+          "nombre": "HIIT 20/10",
+          "descripcion": "De @md.training__. Explica el método de resistencia con 20 s de trabajo y 10 s de descanso, con un jugador desplazándose sobre una fila de conos. Sirve de referencia del formato 20/10; no usa la escalera.",
           "url": "https://www.instagram.com/reel/DfUg-JZp_Rt/"
         }
+      ]
+    },
+    {
+      "id": "circuito-posesion",
+      "numero": 5,
+      "nombre": "Posesión",
+      "descripcion": "Tres juegos de posesión seguidos, de menos a más intensidad: el Loco para entrar, el cuadrado con uno en el medio y para terminar la posesión reducida. Unos 20 min en total.",
+      "items": [
+        {
+          "ex": "rondo",
+          "dosis": "6 min"
+        },
+        {
+          "ex": "cuadrado-uno-al-medio",
+          "dosis": "4 min"
+        },
+        {
+          "ex": "reducido",
+          "dosis": "10 min"
+        }
+      ]
+    },
+    {
+      "id": "circuito-control-balon",
+      "numero": 6,
+      "nombre": "Control de balón",
+      "descripcion": "Cinco ejercicios individuales de conducción y control, uno atrás del otro, cada uno de 3 a 5 min. Se puede hacer cada uno por su lado, con conos y una pelota. Si el bloque dura menos (15 min), hacé 3 de los 5 ejercicios.",
+      "items": [
+        {
+          "ex": "zigzag",
+          "dosis": "3-5 min"
+        },
+        {
+          "ex": "light-touches",
+          "dosis": "3-5 min"
+        },
+        {
+          "ex": "conduccion-v-suela",
+          "dosis": "3-5 min"
+        },
+        {
+          "ex": "v-push-cut",
+          "dosis": "3-5 min"
+        },
+        {
+          "ex": "conduccion-ritmo-variable",
+          "dosis": "3-5 min"
+        }
+      ]
+    },
+    {
+      "id": "circuito-pase-control-orientado",
+      "numero": 7,
+      "nombre": "Pase y control orientado",
+      "descripcion": "Cinco ejercicios de pase y control orientado, de a 2 o 3, uno atrás del otro, cada uno de 3 a 5 min. Se rota quién pasa y quién controla. Si el bloque dura menos (15 min), hacé 3 de los 5 ejercicios.",
+      "items": [
+        {
+          "ex": "pases-control-orientado",
+          "dosis": "3-5 min"
+        },
+        {
+          "ex": "pase-cono-lateral-control",
+          "dosis": "3-5 min"
+        },
+        {
+          "ex": "un-toque-cono-central",
+          "dosis": "3-5 min"
+        },
+        {
+          "ex": "pared-control-orientado-conos",
+          "dosis": "3-5 min"
+        },
+        {
+          "ex": "pase-presion-arcos-l",
+          "dosis": "3-5 min"
+        }
+      ]
+    },
+    {
+      "id": "circuito-definicion",
+      "numero": 8,
+      "nombre": "Definición y tiro al arco",
+      "descripcion": "Cuatro ejercicios de finalización, uno atrás del otro, de menos a más oposición. Unos 25 min en total, así no se repite el mismo ejercicio todo el bloque.",
+      "items": [
+        {
+          "ex": "pase-control-definicion",
+          "dosis": "6 min"
+        },
+        {
+          "ex": "pivote-9-definicion",
+          "dosis": "6 min"
+        },
+        {
+          "ex": "uno-contra-uno-tiro",
+          "dosis": "7 min"
+        },
+        {
+          "ex": "centro-vertice-area",
+          "dosis": "6 min"
+        }
+      ]
+    },
+    {
+      "id": "circuito-pies-rapidos",
+      "numero": 9,
+      "nombre": "Pies rápidos",
+      "descripcion": "Escalera de coordinación y skipping bajo, seguidos. Unos 10 min.",
+      "items": [
+        {
+          "ex": "escalera",
+          "dosis": "6 min · 2 pasadas por patrón"
+        },
+        {
+          "ex": "tecnica-carrera",
+          "dosis": "4 min · 15-20 m por serie"
+        }
+      ]
+    },
+    {
+      "id": "circuito-sprints",
+      "numero": 10,
+      "nombre": "Sprints",
+      "descripcion": "Sprints en orden, de menos a más velocidad, con descanso completo entre repeticiones. La cuesta es opcional, solo si hay una a mano. Unos 20 min.",
+      "items": [
+        {
+          "ex": "progresion-aceleracion",
+          "dosis": "6 min"
+        },
+        {
+          "ex": "flying-sprint",
+          "dosis": "8 min · 4-6 reps"
+        },
+        {
+          "ex": "hill-sprint",
+          "dosis": "6 min · 6-8 reps con recuperación total",
+          "opcional": true
+        }
+      ]
+    },
+    {
+      "id": "circuito-agilidad-conos",
+      "numero": 11,
+      "nombre": "Agilidad con conos",
+      "descripcion": "Cuatro ejercicios de agilidad con conos, de a uno, con descanso entre repeticiones. Unos 15 min.",
+      "items": [
+        {
+          "ex": "cambios-ritmo-conos",
+          "dosis": "4 min"
+        },
+        {
+          "ex": "aceleracion-conos-zigzag",
+          "dosis": "4 min"
+        },
+        {
+          "ex": "t-drill",
+          "dosis": "4 min · 4-6 reps con recuperación total"
+        },
+        {
+          "ex": "sprint-5-10-5",
+          "dosis": "3 min · 4 series, 30 s de descanso"
+        }
+      ]
+    },
+    {
+      "id": "circuito-agilidad-reactiva",
+      "numero": 12,
+      "nombre": "Agilidad reactiva",
+      "descripcion": "Ejercicios de agilidad con señal y cambios de dirección, de a 2: uno da la señal. Unos 15 min.",
+      "items": [
+        {
+          "ex": "reactive-sprint",
+          "dosis": "5 min · 3 series × 8 reps"
+        },
+        {
+          "ex": "sprint-5-10-5",
+          "dosis": "5 min · 4 series, 30 s de descanso"
+        },
+        {
+          "ex": "t-drill",
+          "dosis": "5 min · 4-6 reps con recuperación total"
+        }
+      ]
+    },
+    {
+      "id": "circuito-pelota-aceleraciones",
+      "numero": 13,
+      "nombre": "Pelota y aceleraciones",
+      "descripcion": "Sprint con control y pase, y para terminar un juego con aceleraciones cortas. Unos 15 min.",
+      "items": [
+        {
+          "ex": "sprint-control-pase",
+          "dosis": "5 min · 5 repeticiones"
+        },
+        {
+          "ex": "pelota-al-campo-rival",
+          "dosis": "10 min · a 10 puntos"
+        }
+      ]
+    },
+    {
+      "id": "circuito-potencia-saltos",
+      "numero": 14,
+      "nombre": "Potencia: saltos",
+      "descripcion": "Saltos en orden, con recuperación entre series. Unos 20 min.",
+      "items": [
+        {
+          "ex": "box-jump",
+          "dosis": "5 min · 4 series × 5 reps"
+        },
+        {
+          "ex": "broad-jump",
+          "dosis": "5 min · 4 × 5 reps"
+        },
+        {
+          "ex": "leg-hop",
+          "dosis": "5 min"
+        },
+        {
+          "ex": "bounding",
+          "dosis": "5 min · 4 × 20 m"
+        }
+      ]
+    },
+    {
+      "id": "circuito-potencia-carga",
+      "numero": 15,
+      "nombre": "Potencia con carga",
+      "descripcion": "Potencia con peso: sentadilla explosiva y med ball slam. Unos 20 min.",
+      "items": [
+        {
+          "ex": "sentadilla-explosiva",
+          "dosis": "10 min · 4 series × 5 reps"
+        },
+        {
+          "ex": "med-ball-slam",
+          "dosis": "10 min · 3 × 8 reps"
+        }
+      ]
+    },
+    {
+      "id": "circuito-fuerza-pesada",
+      "numero": 16,
+      "nombre": "Fuerza pesada",
+      "descripcion": "Series pesadas con descanso largo entre series. Unos 35 min.",
+      "items": [
+        {
+          "ex": "trap-bar-deadlift",
+          "dosis": "15 min · 4-5 series × 6-8 reps"
+        },
+        {
+          "ex": "bulgarian-split-squat",
+          "dosis": "10 min · 3 series × 8 reps por pierna"
+        },
+        {
+          "ex": "step-up-unilateral",
+          "dosis": "10 min · 3 series × 10 reps"
+        }
+      ]
+    },
+    {
+      "id": "circuito-cierre-tranqui",
+      "numero": 17,
+      "nombre": "Cierre con pelota (tranqui)",
+      "descripcion": "Para terminar la sesión con pelota, sin apuro: tiros libres y pases largos. Unos 10 min.",
+      "items": [
+        {
+          "ex": "tiros-libres",
+          "dosis": "5 min · sin apuro"
+        },
+        {
+          "ex": "pases-control-orientado",
+          "dosis": "5 min",
+          "nota": "Con pase largo de 20-25 m, tranqui."
+        }
+      ]
+    },
+    {
+      "id": "circuito-duelos",
+      "numero": 18,
+      "nombre": "Duelos",
+      "descripcion": "Situaciones de partido para cerrar: uno contra uno y dos contra uno. Unos 10 min.",
+      "items": [
+        {
+          "ex": "uno-contra-uno-tiro",
+          "dosis": "5 min"
+        },
+        {
+          "ex": "dos-contra-uno",
+          "dosis": "5 min"
+        }
+      ]
+    },
+    {
+      "id": "pelota-fuerza-coordinacion",
+      "numero": 19,
+      "nombre": "Estaciones mixtas",
+      "descripcion": "Como Fuerza, coordinación y cierre, pero mezclando fuerza, pelota, coordinación y velocidad sin un orden fijo por tipo: seis estaciones y, en cada una, dos o tres partes seguidas que hace la misma persona. Dentro de cada estación se va de más quieto a más movimiento: primero algo en el lugar (fuerza, V push & cut, light touches, conducción en V con suela), después algo con un poco más de movimiento (escalera, skipping, zigzag con pelota) y al final lo que más se corre (conducción en velocidad, sprints, T-drill). Cada estación la ocupa una persona y todos rotan cuando se cumple el tiempo. Abajo hay una propuesta y los otros ejercicios que también sirven.",
+      "bancos": [
+        "pelota",
+        "fuerza",
+        "coordinacion",
+        "velocidad"
+      ],
+      "guia": "circuito-estaciones",
+      "estructura": {
+        "modo": "circuito",
+        "vueltas": 3,
+        "trabajo_s": 100,
+        "descanso_s": 30,
+        "pausa_vuelta_s": 180
+      },
+      "plegado": true,
+      "items": [
+        {
+          "ex": "bulgarian-split-squat"
+        },
+        {
+          "ex": "zigzag"
+        },
+        {
+          "ex": "conduccion-ritmo-variable"
+        },
+        {
+          "ex": "v-push-cut"
+        },
+        {
+          "ex": "escalera",
+          "nota": "Un pie por cuadrado."
+        },
+        {
+          "ex": "sprint-control-pase"
+        },
+        {
+          "ex": "light-touches"
+        },
+        {
+          "ex": "sprint-5-10-5"
+        },
+        {
+          "ex": "wall-sit"
+        },
+        {
+          "ex": "tecnica-carrera",
+          "nota": "Skipping bajo."
+        },
+        {
+          "ex": "aceleracion-conos-zigzag"
+        },
+        {
+          "ex": "step-up-unilateral"
+        },
+        {
+          "ex": "t-drill"
+        },
+        {
+          "ex": "conduccion-v-suela"
+        },
+        {
+          "ex": "flying-sprint"
+        }
+      ],
+      "agrupar": [
+        3,
+        3,
+        2,
+        3,
+        2,
+        2
       ]
     }
   ]

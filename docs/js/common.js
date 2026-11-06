@@ -59,10 +59,28 @@ export function imagenesNodos(ej) {
 }
 
 // Botones de video: el principal ("video") y los extra (lista "videos" de {nombre, url}).
+// Una sección con título discreto y su propio panel: separa visualmente las partes de un ejercicio o de un circuito.
+export function seccion(titulo, ...hijos) {
+  return h("section", { class: "seccion" }, h("h2", { class: "seccion__titulo" }, titulo), ...hijos.filter(Boolean));
+}
+
+// Igual, con un h3: para las secciones dentro de la tarjeta de un circuito (cuyo título ya es un h2).
+export function subseccion(titulo, ...hijos) {
+  return h("section", { class: "seccion" }, h("h3", { class: "seccion__titulo" }, titulo), ...hijos.filter(Boolean));
+}
+
+// Cada video se muestra con su título y, si la hay, una descripción de lo que contiene, antes del botón.
+export function videoNodo(v) {
+  const sitio = /youtu/.test(v.url) ? "YouTube" : /instagram/.test(v.url) ? "Instagram" : "el sitio";
+  return h("article", { class: "video-card" },
+    h("h3", { class: "video-card__titulo" }, v.nombre),
+    v.descripcion ? h("p", { class: "video-card__texto" }, v.descripcion) : null,
+    h("a", { class: "btn", href: v.url, target: "_blank", rel: "noopener" }, `▶ Ver en ${sitio}`));
+}
+
 export function videosNodos(ej) {
-  const boton = (url, texto) => h("a", { class: "btn", href: url, target: "_blank", rel: "noopener" }, texto);
-  return [ej.video ? boton(ej.video, "Ver video") : null,
-    ...(ej.videos || []).map((v) => boton(v.url, `Ver video: ${v.nombre}`))].filter(Boolean);
+  return [ej.video ? { nombre: ej.video_nombre || `Video de ${ej.nombre}`, descripcion: ej.video_descripcion, url: ej.video } : null,
+    ...(ej.videos || [])].filter(Boolean).map(videoNodo);
 }
 
 // Patrones de un ejercicio (por ejemplo, los de la escalera): el nombre, cómo se hace con palabras y debajo la imagen.

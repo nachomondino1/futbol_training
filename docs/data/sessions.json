@@ -2,6 +2,7 @@
   "sesiones": [
     {
       "id": "velocidad-agilidad",
+      "emoji": "⚡",
       "nombre": "Velocidad y agilidad",
       "objetivo": "Correr rápido y cambiar de dirección: aceleración, velocidad máxima, agilidad y pies rápidos, con descanso completo entre repeticiones.",
       "bloques": [
@@ -10,20 +11,13 @@
           "min": 10,
           "opciones": [
             {
-              "label": "Escalera de coordinación",
-              "items": [
-                {
-                  "ex": "escalera"
-                }
-              ]
+              "label": "Todo coordinación",
+              "circuito": "todo-coordinacion",
+              "min": 6
             },
             {
-              "label": "Skipping bajo",
-              "items": [
-                {
-                  "ex": "tecnica-carrera"
-                }
-              ]
+              "label": "Pies rápidos",
+              "circuito": "circuito-pies-rapidos"
             }
           ]
         },
@@ -32,28 +26,8 @@
           "min": 20,
           "opciones": [
             {
-              "label": "Aceleración",
-              "items": [
-                {
-                  "ex": "progresion-aceleracion"
-                }
-              ]
-            },
-            {
-              "label": "Velocidad máxima",
-              "items": [
-                {
-                  "ex": "flying-sprint"
-                }
-              ]
-            },
-            {
-              "label": "Cuesta",
-              "items": [
-                {
-                  "ex": "hill-sprint"
-                }
-              ]
+              "label": "Sprints",
+              "circuito": "circuito-sprints"
             }
           ]
         },
@@ -62,44 +36,12 @@
           "min": 15,
           "opciones": [
             {
-              "label": "Ritmo con conos",
-              "items": [
-                {
-                  "ex": "cambios-ritmo-conos"
-                }
-              ]
+              "label": "Agilidad con conos",
+              "circuito": "circuito-agilidad-conos"
             },
             {
-              "label": "Sprint corto con cono (5-10-5)",
-              "items": [
-                {
-                  "ex": "sprint-5-10-5"
-                }
-              ]
-            },
-            {
-              "label": "Reactive sprint (señal visual)",
-              "items": [
-                {
-                  "ex": "reactive-sprint"
-                }
-              ]
-            },
-            {
-              "label": "T-drill (conos en T)",
-              "items": [
-                {
-                  "ex": "t-drill"
-                }
-              ]
-            },
-            {
-              "label": "Aceleración a cada cono en zigzag",
-              "items": [
-                {
-                  "ex": "aceleracion-conos-zigzag"
-                }
-              ]
+              "label": "Agilidad reactiva",
+              "circuito": "circuito-agilidad-reactiva"
             }
           ]
         },
@@ -108,52 +50,12 @@
           "min": 15,
           "opciones": [
             {
-              "label": "Sprint + control + pase",
-              "items": [
-                {
-                  "ex": "sprint-control-pase"
-                }
-              ]
+              "label": "Control de balón (individual)",
+              "circuito": "circuito-control-balon"
             },
             {
-              "label": "Conducción de pelota a ritmo variable",
-              "items": [
-                {
-                  "ex": "conduccion-ritmo-variable"
-                }
-              ]
-            },
-            {
-              "label": "Zigzag con pelota",
-              "items": [
-                {
-                  "ex": "zigzag"
-                }
-              ]
-            },
-            {
-              "label": "V push & cut",
-              "items": [
-                {
-                  "ex": "v-push-cut"
-                }
-              ]
-            },
-            {
-              "label": "Un toque desde el cono central",
-              "items": [
-                {
-                  "ex": "un-toque-cono-central"
-                }
-              ]
-            },
-            {
-              "label": "Pelota al campo rival",
-              "items": [
-                {
-                  "ex": "pelota-al-campo-rival"
-                }
-              ]
+              "label": "Pelota y aceleraciones",
+              "circuito": "circuito-pelota-aceleraciones"
             }
           ]
         }
@@ -162,6 +64,7 @@
     },
     {
       "id": "fuerza-potencia",
+      "emoji": "💪",
       "nombre": "Fuerza y potencia",
       "objetivo": "Fuerza de piernas y core con técnica controlada, y un bloque de potencia (saltos y reactividad).",
       "bloques": [
@@ -170,42 +73,12 @@
           "min": 20,
           "opciones": [
             {
-              "label": "Cajón y horizontal",
-              "items": [
-                {
-                  "ex": "box-jump"
-                },
-                {
-                  "ex": "broad-jump"
-                }
-              ]
+              "label": "Saltos",
+              "circuito": "circuito-potencia-saltos"
             },
             {
               "label": "Con carga",
-              "items": [
-                {
-                  "ex": "sentadilla-explosiva"
-                },
-                {
-                  "ex": "med-ball-slam"
-                }
-              ]
-            },
-            {
-              "label": "Leg hop",
-              "items": [
-                {
-                  "ex": "leg-hop"
-                }
-              ]
-            },
-            {
-              "label": "Bounding (zancadas exageradas)",
-              "items": [
-                {
-                  "ex": "bounding"
-                }
-              ]
+              "circuito": "circuito-potencia-carga"
             }
           ]
         },
@@ -215,25 +88,11 @@
           "opciones": [
             {
               "label": "Circuito de fuerza",
-              "circuito": "circuito-fuerza",
-              "estructura": {
-                "descanso_s": 30
-              }
+              "circuito": "circuito-fuerza"
             },
             {
-              "label": "Series pesadas",
-              "items": [
-                {
-                  "ex": "trap-bar-deadlift"
-                },
-                {
-                  "ex": "bulgarian-split-squat"
-                },
-                {
-                  "ex": "step-up-unilateral"
-                }
-              ],
-              "nota": "Propuesta: 3-5 series de 6-10 repeticiones con descanso largo. Necesita barra, banco y cajón."
+              "label": "Fuerza pesada",
+              "circuito": "circuito-fuerza-pesada"
             }
           ]
         },
@@ -242,12 +101,8 @@
           "min": 15,
           "opciones": [
             {
-              "label": "Pases con control orientado",
-              "items": [
-                {
-                  "ex": "pases-control-orientado"
-                }
-              ]
+              "label": "Pase y control orientado",
+              "circuito": "circuito-pase-control-orientado"
             }
           ]
         }
@@ -256,6 +111,7 @@
     },
     {
       "id": "aerobico",
+      "emoji": "🫀",
       "nombre": "Aeróbico",
       "objetivo": "Capacidad aeróbica: volumen o intervalos, con pelota o sin ella, y un circuito para activar las piernas.",
       "bloques": [
@@ -340,6 +196,10 @@
               "circuito": "fuerza-coordinacion-cierre"
             },
             {
+              "label": "Estaciones mixtas",
+              "circuito": "pelota-fuerza-coordinacion"
+            },
+            {
               "label": "Solo fuerza",
               "circuito": "circuito-fuerza",
               "min": 25
@@ -352,37 +212,12 @@
           "opcional": true,
           "opciones": [
             {
-              "label": "Tiros libres",
-              "items": [
-                {
-                  "ex": "tiros-libres"
-                }
-              ]
+              "label": "Cierre con pelota (tranqui)",
+              "circuito": "circuito-cierre-tranqui"
             },
             {
-              "label": "Pases largos",
-              "items": [
-                {
-                  "ex": "pases-control-orientado",
-                  "nota": "Con pase largo de 20-25 m, tranqui."
-                }
-              ]
-            },
-            {
-              "label": "Uno contra uno",
-              "items": [
-                {
-                  "ex": "uno-contra-uno-tiro"
-                }
-              ]
-            },
-            {
-              "label": "Dos contra uno",
-              "items": [
-                {
-                  "ex": "dos-contra-uno"
-                }
-              ]
+              "label": "Duelos",
+              "circuito": "circuito-duelos"
             }
           ]
         }
@@ -391,122 +226,31 @@
     },
     {
       "id": "pelota",
+      "emoji": "⚽",
       "nombre": "Pelota",
       "objetivo": "Técnica con pelota: conducción, pase, control y definición, con poca carga física.",
       "bloques": [
         {
-          "titulo": "Rondos, pases y conducción",
+          "titulo": "Posesión",
           "min": 20,
           "opciones": [
             {
-              "label": "Loco",
-              "items": [
-                {
-                  "ex": "rondo"
-                }
-              ]
-            },
-            {
-              "label": "Pase, control y definición",
-              "items": [
-                {
-                  "ex": "pase-control-definicion"
-                }
-              ]
-            },
-            {
-              "label": "Conducción a ritmo variable",
-              "items": [
-                {
-                  "ex": "conduccion-ritmo-variable"
-                }
-              ]
-            },
-            {
-              "label": "Cuadrado con uno en el medio",
-              "items": [
-                {
-                  "ex": "cuadrado-uno-al-medio"
-                }
-              ]
-            },
-            {
-              "label": "Posesión reducida",
-              "items": [
-                {
-                  "ex": "reducido"
-                }
-              ]
+              "label": "Posesión",
+              "circuito": "circuito-posesion"
             }
           ]
         },
         {
-          "titulo": "Conducción y pases con conos",
+          "titulo": "Control, conducción y pases",
           "min": 25,
           "opciones": [
             {
-              "label": "Conducción en V con suela",
-              "items": [
-                {
-                  "ex": "conduccion-v-suela"
-                }
-              ]
+              "label": "Control de balón (individual)",
+              "circuito": "circuito-control-balon"
             },
             {
-              "label": "Zigzag con pelota",
-              "items": [
-                {
-                  "ex": "zigzag"
-                }
-              ]
-            },
-            {
-              "label": "Light touches (toques suaves)",
-              "items": [
-                {
-                  "ex": "light-touches"
-                }
-              ]
-            },
-            {
-              "label": "Pases con control orientado",
-              "items": [
-                {
-                  "ex": "pases-control-orientado"
-                }
-              ]
-            },
-            {
-              "label": "Pase al cono lateral y control a máxima velocidad",
-              "items": [
-                {
-                  "ex": "pase-cono-lateral-control"
-                }
-              ]
-            },
-            {
-              "label": "Un toque desde el cono central",
-              "items": [
-                {
-                  "ex": "un-toque-cono-central"
-                }
-              ]
-            },
-            {
-              "label": "Pase con presión inmediata y arcos en L",
-              "items": [
-                {
-                  "ex": "pase-presion-arcos-l"
-                }
-              ]
-            },
-            {
-              "label": "Pared y control orientado entre conos",
-              "items": [
-                {
-                  "ex": "pared-control-orientado-conos"
-                }
-              ]
+              "label": "Pase y control orientado",
+              "circuito": "circuito-pase-control-orientado"
             }
           ]
         },
@@ -515,36 +259,8 @@
           "min": 25,
           "opciones": [
             {
-              "label": "Pase, control y definición",
-              "items": [
-                {
-                  "ex": "pase-control-definicion"
-                }
-              ]
-            },
-            {
-              "label": "Pivote de 9 y definición",
-              "items": [
-                {
-                  "ex": "pivote-9-definicion"
-                }
-              ]
-            },
-            {
-              "label": "Uno defiende, otro ataca",
-              "items": [
-                {
-                  "ex": "uno-contra-uno-tiro"
-                }
-              ]
-            },
-            {
-              "label": "Centro al vértice del área grande y tiro",
-              "items": [
-                {
-                  "ex": "centro-vertice-area"
-                }
-              ]
+              "label": "Definición y tiro al arco",
+              "circuito": "circuito-definicion"
             }
           ]
         }

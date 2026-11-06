@@ -9,13 +9,19 @@ export function tiempo(seg) {
 }
 
 // Un circuito con "agrupar: 3" junta los ejercicios de a 3: cada grupo es una estación (la persona que está ahí hace los 3 seguidos).
+// "agrupar" también puede ser una lista con el tamaño de cada estación ([3, 2, 3]) si no todas tienen la misma cantidad de partes.
 export function agruparEstaciones(items, n) {
   const grupos = [];
+  if (Array.isArray(n)) {
+    let i = 0;
+    for (const tam of n) { grupos.push(items.slice(i, i + tam)); i += tam; }
+    return grupos;
+  }
   for (let i = 0; i < items.length; i += n) grupos.push(items.slice(i, i + n));
   return grupos;
 }
 const unidadesDe = (op) => op.estructura.modo === "circuito"
-  ? (op.agrupar ? Math.ceil(op.items.length / op.agrupar) : op.items.length)
+  ? (op.agrupar ? agruparEstaciones(op.items, op.agrupar).length : op.items.length)
   : (op.estructura.sets || 1);
 
 // Minutos que dura una opción con estructura (series o circuito), redondeados.

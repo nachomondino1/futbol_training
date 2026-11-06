@@ -53,6 +53,7 @@ En `docs/data/exercises.json`, dentro de `ejercicios`:
 - `aporta`: qué se gana con el ejercicio, con ids de `docs/data/objetivos.json` (velocidad, aeróbico, fuerza, potencia, control, precisión de tiro, coordinación, movilidad). Obligatorio. La sesión usa esto para armar "Qué vas a ganar".
 - `trabaja`: `{ "principal": "cuadriceps", "secundarios": ["gluteo-mayor"] }`, con ids de `docs/data/muscles.json` (ahí se escribe para qué sirve cada músculo). Es obligatorio.
 - `numero`: número fijo del ejercicio, único; se muestra como "12" en Ejercicios y en Sesiones para poder referirse a él. No se reusa ni se renumera: si se borra o se une uno, su número queda libre; un ejercicio nuevo toma el siguiente al más alto.
+- `dosis`: ya no se muestra en la página de Ejercicios; solo sirve como valor por defecto dentro de una sesión (que puede pisarlo con su propia `dosis` en cada item). Las repeticiones, vueltas y tiempos se definen en circuitos y sesiones.
 - `jugadores_min`: cuántos jugadores como mínimo necesita (sin dato = 1). Lo usan el filtro "Jugadores" y los colores de las tarjetas en Ejercicios.
 - `jugadores_max`: tope de jugadores (sin dato = sin tope). Junto con `jugadores_min`, lo usa el selector "Hoy somos" de cada sesión: al elegir una cantidad, deja solo las opciones cuyos ejercicios aceptan esa cantidad.
 - Si depende de cuántos son, poné `"requiere_variantes": true` y cargá `"2"`, `"3"`, `"4"` y `"8"` en `variantes`.
@@ -96,6 +97,14 @@ En `docs/data/sessions.json`, dentro de `sesiones`:
 
 Las explicaciones que no son un ejercicio (por ejemplo cómo rotar las estaciones de un circuito) van en `sessions.json` > `guias` y se enlazan con `"guia"` en la opción.
 
+## Cómo se arma todo
+
+La idea es ir de ejercicios a circuitos y de circuitos a sesiones: un **ejercicio** es una sola cosa que se hace; un **circuito** es un conjunto de ejercicios en cierto orden (con su tiempo cada uno); una **sesión** es una lista de bloques y en cada bloque se elige entre uno o dos circuitos, no entre ejercicios sueltos. Por eso el validador avisa (WARNING) cuando una opción de una sesión es un ejercicio suelto. Las series de un solo ejercicio con su estructura (HIIT, trote, intervalos) son la excepción.
+
+## Cómo ordenar un circuito de estaciones
+
+Dentro de cada estación, las partes van de **más quieto a más movimiento**, para ir subiendo la intensidad, **sin importar el tipo de ejercicio**: la fuerza suele quedar al principio y la velocidad al final, pero la pelota va donde corresponda según el ejercicio (en el lugar, como V push & cut o light touches, al principio; con desplazamiento, como zigzag o conducción en velocidad, al final). Una estación puede tener 2 o 3 partes.
+
 ## Agregar un circuito
 
 Un circuito es un conjunto de ejercicios, en orden. Se define una vez en `docs/data/circuits.json` y las sesiones lo referencian:
@@ -111,8 +120,9 @@ Un circuito es un conjunto de ejercicios, en orden. Se define una vez en `docs/d
 }
 ```
 
+- `numero`: número fijo del circuito, único; se muestra junto al nombre en Circuitos para poder referirse a él ("circuito 4"). Como en los ejercicios, no se reusa ni se renumera: uno nuevo toma el siguiente al más alto.
 - `estructura` y `guia` son opcionales: un circuito puede ser solo la lista de ejercicios, sin tiempos (ver "Vueltas, trabajo y descanso" más abajo).
-- Un circuito de **estaciones con varias partes** lleva `items` en orden y `"agrupar": 3`: cada grupo de 3 ejercicios es una estación (la persona que está ahí hace los 3 seguidos) y `estructura` cuenta las estaciones, no los ejercicios. Con `bancos` (lista de bancos) se muestran, aparte, los otros ejercicios que también sirven. Ejemplo: `fuerza-coordinacion-cierre`.
+- Un circuito de **estaciones con varias partes** lleva `items` en orden y `"agrupar": 3`: cada grupo de 3 ejercicios es una estación (si las estaciones no tienen todas la misma cantidad de partes, `agrupar` puede ser una lista con el tamaño de cada una, por ejemplo `[3, 2, 3, 3, 2, 3]`) (la persona que está ahí hace los 3 seguidos) y `estructura` cuenta las estaciones, no los ejercicios. Con `bancos` (lista de bancos) se muestran, aparte, los otros ejercicios que también sirven. Ejemplo: `fuerza-coordinacion-cierre`.
 - Si lo que importa es **qué ejercicios se pueden meter** y no un orden fijo (el circuito de fuerza), usá un banco y una propuesta en lugar de `items`: `banco` es la lista de ejercicios posibles, `elegir` cuántos se hacen y `propuesta` el orden que se sugiere. En Circuitos y en la sesión se ve la propuesta y el resto como "otros ejercicios que podés usar" (no se eligen):
 
 ```json
