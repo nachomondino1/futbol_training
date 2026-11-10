@@ -54,6 +54,8 @@ En `docs/data/exercises.json`, dentro de `ejercicios`:
 - `trabaja`: `{ "principal": "cuadriceps", "secundarios": ["gluteo-mayor"] }`, con ids de `docs/data/muscles.json` (ahí se escribe para qué sirve cada músculo). Es obligatorio.
 - `numero`: número fijo del ejercicio, único; se muestra como "12" en Ejercicios y en Sesiones para poder referirse a él. No se reusa ni se renumera: si se borra o se une uno, su número queda libre; un ejercicio nuevo toma el siguiente al más alto.
 - `dosis`: ya no se muestra en la página de Ejercicios; solo sirve como valor por defecto dentro de una sesión (que puede pisarlo con su propia `dosis` en cada item). Las repeticiones, vueltas y tiempos se definen en circuitos y sesiones.
+- `imagenes_extra`: lista de `{ "src": "img/...svg", "titulo": "..." }` con imágenes adicionales del ejercicio (por ejemplo un diagrama de una forma de hacerlo). Se muestran en "Videos e imágenes", con su título.
+- `evidencia`: lista de `{ "texto", "solidez" (alta, media o baja), "fuente", "url" }` con lo que dice la investigación sobre ese ejercicio o su tipo de entrenamiento. Se muestra en la sección "Evidencia científica" del ejercicio. Resumen general en `EVIDENCIA.md`.
 - `jugadores_min`: cuántos jugadores como mínimo necesita (sin dato = 1). Lo usan el filtro "Jugadores" y los colores de las tarjetas en Ejercicios.
 - `jugadores_max`: tope de jugadores (sin dato = sin tope). Junto con `jugadores_min`, lo usa el selector "Hoy somos" de cada sesión: al elegir una cantidad, deja solo las opciones cuyos ejercicios aceptan esa cantidad.
 - Si depende de cuántos son, poné `"requiere_variantes": true` y cargá `"2"`, `"3"`, `"4"` y `"8"` en `variantes`.

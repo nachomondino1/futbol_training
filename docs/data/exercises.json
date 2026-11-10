@@ -89,6 +89,14 @@
       ],
       "materiales": [
         "pelota"
+      ],
+      "evidencia": [
+        {
+          "texto": "Evidencia sobre el programa FIFA 11+ (calentamiento con carrera, fuerza, equilibrio y pliométricos), no sobre esta rutina en particular. En fútbol amateur redujo las lesiones alrededor de 30-40 %, y las de tobillo cerca de 33 %. El efecto está mejor documentado en varones y hay mucha variación entre estudios.",
+          "solidez": "media",
+          "fuente": "Revisión 2017, British Journal of Sports Medicine; meta-análisis de lesiones de tobillo 2025",
+          "url": "https://bjsm.bmj.com/content/51/7/562"
+        }
       ]
     },
     {
@@ -307,6 +315,14 @@
           "descripcion": "De @fernandocastillejor. Reel corto de un jugador pasando por la escalera en una cancha de pasto, con distintas formas de pies rápidos. No identifiqué cada patrón.",
           "url": "https://www.instagram.com/reel/DeiXO3RoITP/"
         }
+      ],
+      "evidencia": [
+        {
+          "texto": "La evidencia de que la escalera mejore el sprint es débil e inconsistente. En un ensayo con 18 jugadores sub-13, 6 semanas de escalera no mejoraron la condición física ni el dribling más que el grupo de control. Una revisión pequeña en juveniles sí encontró mejoras de agilidad, pero con evidencia débil. Sirve como coordinación y entrada en calor; no la cuentes como entrenamiento de velocidad.",
+          "solidez": "baja",
+          "fuente": "Padrón-Cabo et al., ensayo en sub-13; revisión sobre escaleras de agilidad",
+          "url": "https://lida.sport-iat.de/ta/Record/4066537"
+        }
       ]
     },
     {
@@ -366,6 +382,20 @@
           "id": "split-concentrica",
           "nombre": "Split concéntrica",
           "descripcion": "Variante del split squat con foco en la fase concéntrica (la subida), con mancuernas. Ver el reel para el detalle. Descripción a completar."
+        }
+      ],
+      "evidencia": [
+        {
+          "texto": "Evidencia sobre el tipo de entrenamiento, no sobre este ejercicio en particular. Un meta-análisis de red de 2026 recomienda priorizar la fuerza si el objetivo es la aceleración de 5 a 20 m y el salto vertical, con certeza variable. Otro de 2022 en profesionales no pudo confirmar que la fuerza sola mejore sprint y salto en jugadores de élite.",
+          "solidez": "media",
+          "fuente": "Wang et al. 2026, Journal of Sports Science and Medicine; Núñez-Sánchez et al. 2022, Int J Sports Med",
+          "url": "https://jssm.org/jssm-25-405.xml-Fulltext"
+        },
+        {
+          "texto": "En profesionales, una sesión de fuerza por semana mantuvo la fuerza, el sprint y el salto durante 12 semanas; una sesión cada dos semanas los perdió. Eran 7 jugadores por grupo.",
+          "solidez": "media",
+          "fuente": "Rønnestad et al. 2011, Journal of Strength and Conditioning Research",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/21873897/"
         }
       ]
     },
@@ -441,6 +471,20 @@
       "materiales": [
         "compañero para sostener los tobillos",
         "colchoneta"
+      ],
+      "evidencia": [
+        {
+          "texto": "Meta-análisis de 15 estudios, la mayoría en fútbol: agregar el Nordic a los programas de prevención bajó el riesgo de lesión de isquios a casi la mitad (0,49; IC 95 % 0,32-0,74). Solo con ensayos aleatorizados: 0,52 (0,32-0,85).",
+          "solidez": "alta",
+          "fuente": "van Dyk, Behan y Whiteley 2019, British Journal of Sports Medicine",
+          "url": "https://bjsm.bmj.com/content/53/21/1362"
+        },
+        {
+          "texto": "Una relectura posterior sostiene que el efecto fue exagerado, porque algunos estudios combinaban el Nordic con otros ejercicios, y lo considera no concluyente. Un meta-análisis de 2023 solo en fútbol sí encontró una reducción significativa. La dosis mínima no está establecida y la adherencia importa.",
+          "solidez": "media",
+          "fuente": "Resumen de Physio-Network sobre la relectura del meta-análisis",
+          "url": "https://www.physio-network.com/research-reviews/thigh/why-methods-matter-in-a-meta-analysis-a-reappraisal-showed-inconclusive-injury-preventive-effect-of-nordic-hamstring-exercise/"
+        }
       ]
     },
     {
@@ -471,6 +515,20 @@
       "materiales": [
         "barra hexagonal",
         "discos"
+      ],
+      "evidencia": [
+        {
+          "texto": "Evidencia sobre el tipo de entrenamiento, no sobre este ejercicio en particular. Un meta-análisis de red de 2026 recomienda priorizar la fuerza si el objetivo es la aceleración de 5 a 20 m y el salto vertical, con certeza variable. Otro de 2022 en profesionales no pudo confirmar que la fuerza sola mejore sprint y salto en jugadores de élite.",
+          "solidez": "media",
+          "fuente": "Wang et al. 2026, Journal of Sports Science and Medicine; Núñez-Sánchez et al. 2022, Int J Sports Med",
+          "url": "https://jssm.org/jssm-25-405.xml-Fulltext"
+        },
+        {
+          "texto": "En profesionales, una sesión de fuerza por semana mantuvo la fuerza, el sprint y el salto durante 12 semanas; una sesión cada dos semanas los perdió. Eran 7 jugadores por grupo.",
+          "solidez": "media",
+          "fuente": "Rønnestad et al. 2011, Journal of Strength and Conditioning Research",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/21873897/"
+        }
       ]
     },
     {
@@ -497,7 +555,9 @@
       "id": "plancha-lateral",
       "numero": 12,
       "nombre": "Plancha lateral",
-      "alias": [],
+      "alias": [
+        "Copenhagen"
+      ],
       "categoria": "fuerza",
       "descripcion": "Apoyado en un antebrazo, cuerpo de costado en línea recta y cadera levantada del piso. Sostenés y después cambiás de lado.",
       "dosis": null,
@@ -513,7 +573,22 @@
       "aporta": [
         "fuerza"
       ],
-      "materiales": []
+      "materiales": [],
+      "patrones": [
+        {
+          "id": "copenhagen",
+          "nombre": "Copenhagen (aductores)",
+          "descripcion": "Plancha lateral con la pierna de arriba apoyada en un banco o cajón y la de abajo colgando. Levantás la cadera, subís la pierna de abajo hasta juntarla con la de arriba y bajás controlado. Empezá con la rodilla de arriba apoyada en el banco (palanca corta) y pasá a apoyar el pie cuando te salga fácil. En el ensayo se hizo una serie de 12-15 repeticiones por lado, una vez por semana en temporada. Descripción de la técnica armada por mí: validar."
+        }
+      ],
+      "evidencia": [
+        {
+          "texto": "En 35 equipos semiprofesionales (652 jugadores), hacer el Copenhagen adduction redujo un 41 % los problemas de ingle (OR 0,59; IC 95 % 0,40-0,86). Se usó 2-3 veces por semana en pretemporada y 1 vez por semana en temporada, una serie de 12-15 repeticiones por lado. Varones noruegos semiprofesionales.",
+          "solidez": "alta",
+          "fuente": "Harøy et al. 2019, British Journal of Sports Medicine",
+          "url": "https://www.ovid.com/journals/bjsme/pdf/10.1136/bjsports-2017-098937~the-adductor-strengthening-programme-prevents-groin-problems"
+        }
+      ]
     },
     {
       "id": "puente-gluteo",
@@ -558,7 +633,21 @@
       "aporta": [
         "fuerza"
       ],
-      "materiales": []
+      "materiales": [],
+      "evidencia": [
+        {
+          "texto": "Evidencia sobre el tipo de entrenamiento, no sobre este ejercicio en particular. Un meta-análisis de red de 2026 recomienda priorizar la fuerza si el objetivo es la aceleración de 5 a 20 m y el salto vertical, con certeza variable. Otro de 2022 en profesionales no pudo confirmar que la fuerza sola mejore sprint y salto en jugadores de élite.",
+          "solidez": "media",
+          "fuente": "Wang et al. 2026, Journal of Sports Science and Medicine; Núñez-Sánchez et al. 2022, Int J Sports Med",
+          "url": "https://jssm.org/jssm-25-405.xml-Fulltext"
+        },
+        {
+          "texto": "En profesionales, una sesión de fuerza por semana mantuvo la fuerza, el sprint y el salto durante 12 semanas; una sesión cada dos semanas los perdió. Eran 7 jugadores por grupo.",
+          "solidez": "media",
+          "fuente": "Rønnestad et al. 2011, Journal of Strength and Conditioning Research",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/21873897/"
+        }
+      ]
     },
     {
       "id": "step-up-unilateral",
@@ -597,6 +686,20 @@
           "nombre": "Ataque al cajón lateral",
           "descripcion": "Variante del step-up en la que atacás el cajón de costado. Ver el reel para el detalle. Descripción a completar."
         }
+      ],
+      "evidencia": [
+        {
+          "texto": "Evidencia sobre el tipo de entrenamiento, no sobre este ejercicio en particular. Un meta-análisis de red de 2026 recomienda priorizar la fuerza si el objetivo es la aceleración de 5 a 20 m y el salto vertical, con certeza variable. Otro de 2022 en profesionales no pudo confirmar que la fuerza sola mejore sprint y salto en jugadores de élite.",
+          "solidez": "media",
+          "fuente": "Wang et al. 2026, Journal of Sports Science and Medicine; Núñez-Sánchez et al. 2022, Int J Sports Med",
+          "url": "https://jssm.org/jssm-25-405.xml-Fulltext"
+        },
+        {
+          "texto": "En profesionales, una sesión de fuerza por semana mantuvo la fuerza, el sprint y el salto durante 12 semanas; una sesión cada dos semanas los perdió. Eran 7 jugadores por grupo.",
+          "solidez": "media",
+          "fuente": "Rønnestad et al. 2011, Journal of Strength and Conditioning Research",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/21873897/"
+        }
       ]
     },
     {
@@ -633,7 +736,7 @@
         "HIIT 10/10"
       ],
       "categoria": "aerobico",
-      "descripcion": "Corrés fuerte 10 segundos y descansás 10: eso es un set. Hacés 15 sets seguidos, descansás 2 minutos y repetís los 15 sets. Con la app Interval Timer: preparación 10 s, 15 sets de 10 s de trabajo y 10 s de descanso, y cool down de 30 s (5:30 en total).",
+      "descripcion": "Corrés fuerte 10 segundos y descansás 10: eso es un set. Hacés 15 sets seguidos, descansás 2 minutos y repetís los 15 sets. Con la app Interval Timer: preparación 10 s, 15 sets de 10 s de trabajo y 10 s de descanso, y cool down de 30 s (5:30 en total). Respecto del HIIT 15/15: los esfuerzos son más cortos (10 s en vez de 15), así que podés correr más cerca del máximo, y por eso son 15 sets por vuelta y no 10.",
       "dosis": "15 sets de 10 s / 10 s, 3 vueltas",
       "variantes": {},
       "imagen": "img/ejercicios/hiit-10-10.jpg",
@@ -645,7 +748,21 @@
       "aporta": [
         "aerobico"
       ],
-      "materiales": []
+      "materiales": [],
+      "evidencia": [
+        {
+          "texto": "No encontré estudios del protocolo 10/10 en particular. Lo que hay es evidencia del HIIT en general: mejora el VO2max en futbolistas y los distintos tipos de HIIT no se diferencian significativamente entre sí.",
+          "solidez": "media",
+          "fuente": "Ramirez-Campillo et al. 2021, Journal of Sports Sciences",
+          "url": "https://informahealthcare.com/doi/epub/10.1080/02640414.2020.1863644"
+        },
+        {
+          "texto": "Entre el HIIT corriendo y los juegos reducidos hay efectos parecidos sobre la resistencia en futbolistas; los autores califican la certeza de la evidencia como muy baja.",
+          "solidez": "baja",
+          "fuente": "Clemente et al. 2024, International Journal of Sports Medicine",
+          "url": "https://lida.sport-iat.de/ta/Record/4085388"
+        }
+      ]
     },
     {
       "id": "hiit-15-15",
@@ -653,8 +770,8 @@
       "nombre": "HIIT 15/15",
       "alias": [],
       "categoria": "aerobico",
-      "descripcion": "15 segundos de carrera intensa y 15 de recuperación, en series de 4-6 minutos. Es el más validado para fútbol amateur.",
-      "dosis": "varias series de 4-6 min",
+      "descripcion": "15 segundos de carrera intensa y 15 de recuperación: eso es un set. Hacés 10 sets seguidos (5 min), descansás 2 minutos y repetís: 3 vueltas en total. Es el más validado para fútbol amateur. Qué cambia respecto del HIIT 10/10: los esfuerzos son más largos (15 s en vez de 10), así que el ritmo es fuerte pero algo más controlado y no tan cerca del máximo; cada set dura 30 s en vez de 20, por eso son 10 sets por vuelta y no 15 (la vuelta dura 5 min en los dos); y como el esfuerzo se sostiene más, trabajás más la resistencia aeróbica y menos la explosividad.",
+      "dosis": "10 sets de 15 s / 15 s, 3 vueltas",
       "variantes": {},
       "imagen": "img/ejercicios/hiit-15-15.png",
       "video": null,
@@ -666,7 +783,27 @@
       "aporta": [
         "aerobico"
       ],
-      "materiales": []
+      "materiales": [],
+      "pendiente_dosis": "Sets y vueltas propuestos por mí (10 sets, 3 vueltas, 2 min entre vueltas), para que dure lo mismo que el 10/10",
+      "evidencia": [
+        {
+          "texto": "En corredores, intervalos de 15 s / 15 s cerca de la velocidad crítica permitieron pasar unos 14 min cerca del VO2max, el doble que en otra sesión comparada. No son futbolistas y es un solo estudio.",
+          "solidez": "baja",
+          "fuente": "Billat et al. 2001",
+          "url": "https://researchportal.lih.lu/en/publications/very-short-15s-15s-interval-training-around-the-critical-velocity/"
+        },
+        {
+          "texto": "En jugadores de nivel nacional, sesiones de 6 a 12 min de intervalos 15/15 y 30/30 dos veces por semana durante 8 semanas mejoraron la condición aeróbica. Fue un estudio de un solo grupo, sin comparación.",
+          "solidez": "baja",
+          "fuente": "Belegišanin 2017"
+        },
+        {
+          "texto": "Un meta-análisis en futbolistas varones encontró que el HIIT mejora el VO2max frente a no hacer nada, y que no hay diferencias significativas entre los tipos de HIIT (intervalos cortos, largos, sprints repetidos o sprints intervalados). Por eso alternar formatos no te hace perder efecto.",
+          "solidez": "alta",
+          "fuente": "Ramirez-Campillo et al. 2021, Journal of Sports Sciences",
+          "url": "https://informahealthcare.com/doi/epub/10.1080/02640414.2020.1863644"
+        }
+      ]
     },
     {
       "id": "intervalo-4x4",
@@ -687,7 +824,33 @@
       "aporta": [
         "aerobico"
       ],
-      "materiales": []
+      "materiales": [],
+      "evidencia": [
+        {
+          "texto": "En juveniles de élite, 8 semanas de 4 × 4 min al 90-95 % de la FC máx. (3 min de trote entre series) subieron el VO2max 10,7 %, el umbral de lactato 15,9 % y la distancia recorrida en el partido un 20 %. Solo 9 jugadores en el grupo que entrenó.",
+          "solidez": "media",
+          "fuente": "Helgerud et al. 2001, Medicine & Science in Sports & Exercise",
+          "url": "https://coachsci.sdsu.edu/csa/vol101/helgeru1.htm"
+        },
+        {
+          "texto": "Un meta-análisis en adultos sanos (723 personas) encontró que tanto el HIIT como el entrenamiento de resistencia continuo mejoran mucho el VO2max; el HIIT rinde algo más, aunque esa diferencia es chica. No son futbolistas.",
+          "solidez": "alta",
+          "fuente": "Milanović, Sporiš y Weston 2015, Sports Medicine",
+          "url": "https://research.tees.ac.uk/en/publications/effectiveness-of-high-intensity-interval-training-hit-and-continu-3/"
+        },
+        {
+          "texto": "Un meta-análisis en futbolistas varones encontró que el HIIT mejora el VO2max frente a no hacer nada, y que no hay diferencias significativas entre los tipos de HIIT (intervalos cortos, largos, sprints repetidos o sprints intervalados). Por eso alternar formatos no te hace perder efecto.",
+          "solidez": "alta",
+          "fuente": "Ramirez-Campillo et al. 2021, Journal of Sports Sciences",
+          "url": "https://informahealthcare.com/doi/epub/10.1080/02640414.2020.1863644"
+        },
+        {
+          "texto": "Entre el HIIT corriendo y los juegos reducidos hay efectos parecidos sobre la resistencia en futbolistas; los autores califican la certeza de la evidencia como muy baja.",
+          "solidez": "baja",
+          "fuente": "Clemente et al. 2024, International Journal of Sports Medicine",
+          "url": "https://lida.sport-iat.de/ta/Record/4085388"
+        }
+      ]
     },
     {
       "id": "trote-continuo",
@@ -710,7 +873,15 @@
       "aporta": [
         "aerobico"
       ],
-      "materiales": []
+      "materiales": [],
+      "evidencia": [
+        {
+          "texto": "El entrenamiento de resistencia continuo también mejora mucho el VO2max en adultos sanos: algo menos que el HIIT (diferencia chica), pero es una opción válida, sobre todo para variar o cuando hay que cuidar el cuerpo.",
+          "solidez": "alta",
+          "fuente": "Milanović, Sporiš y Weston 2015, Sports Medicine",
+          "url": "https://research.tees.ac.uk/en/publications/effectiveness-of-high-intensity-interval-training-hit-and-continu-3/"
+        }
+      ]
     },
     {
       "id": "box-jump",
@@ -749,6 +920,14 @@
           "id": "salto-cajon-reactivo",
           "nombre": "Salto al cajón reactivo",
           "descripcion": "Variante reactiva del salto al cajón. Ver el reel para el detalle. Descripción a completar."
+        }
+      ],
+      "evidencia": [
+        {
+          "texto": "Los pliométricos mejoran el salto (efecto moderado) y algo el sprint y el cambio de dirección, comparado con entrenar fútbol solo. Meta-análisis de 20 estudios en jugadores adolescentes; en adultos amateurs el efecto puede ser distinto.",
+          "solidez": "media",
+          "fuente": "Meta-análisis en adolescentes, 2025",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12040276/"
         }
       ]
     },
@@ -827,6 +1006,25 @@
           "id": "hop-reactivo",
           "nombre": "Hop reactivo",
           "descripcion": "Variante del leg hop: ponés una mini pesa de 5 o 10 kilos en el piso y, saltando a una pierna, vas pisando una vez en el pasto y otra en la pesa, alternando, rápido, muy rápido."
+        },
+        {
+          "id": "equilibrio",
+          "nombre": "Equilibrio a una pierna (caer y sostener)",
+          "descripcion": "Saltás, caés en una sola pierna y te quedás quieto 3 segundos sin apoyar la otra, con la rodilla un poco flexionada y la cadera estable. Para empezar, parado en una pierna 30 segundos. Cuando te salga fácil, hacelo con los ojos cerrados o sobre algo inestable. Trabaja la estabilidad del tobillo y de la rodilla. Descripción armada por mí: validar."
+        }
+      ],
+      "evidencia": [
+        {
+          "texto": "Los pliométricos mejoran el salto (efecto moderado) y algo el sprint y el cambio de dirección, comparado con entrenar fútbol solo. Meta-análisis de 20 estudios en jugadores adolescentes; en adultos amateurs el efecto puede ser distinto.",
+          "solidez": "media",
+          "fuente": "Meta-análisis en adolescentes, 2025",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12040276/"
+        },
+        {
+          "texto": "Los programas que incluyen entrenamiento de equilibrio reducen los esguinces de tobillo en futbolistas (tasa 0,64 en 9 ensayos, según un resumen de la revisión de 2022) y en deportistas en general (riesgo relativo 0,62 a 0,65), con más respaldo en quien ya tuvo un esguince. Evidencia sobre el tipo de entrenamiento, no sobre este salto en particular.",
+          "solidez": "media",
+          "fuente": "Resumen de Physio-Network de la revisión de 2022; revisiones de 2015 y 2018",
+          "url": "https://www.physio-network.com/review/injury-prevention-programs-that-include-balance-training-exercises-reduce-ankle-injury-rates-among-soccer-players-a-systematic-review"
         }
       ]
     },
@@ -880,7 +1078,15 @@
         "potencia",
         "velocidad"
       ],
-      "materiales": []
+      "materiales": [],
+      "evidencia": [
+        {
+          "texto": "Los pliométricos mejoran el salto (efecto moderado) y algo el sprint y el cambio de dirección, comparado con entrenar fútbol solo. Meta-análisis de 20 estudios en jugadores adolescentes; en adultos amateurs el efecto puede ser distinto.",
+          "solidez": "media",
+          "fuente": "Meta-análisis en adolescentes, 2025",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12040276/"
+        }
+      ]
     },
     {
       "id": "sentadilla-explosiva",
@@ -913,6 +1119,25 @@
           "nombre": "Ejercicios de fuerza y potencia",
           "descripcion": "De @md.training__. Muestra seis ejercicios: split concéntrica, sentadilla explosiva, salto al cajón reactivo, hop lateral (que es nuestro leg hop), hop reactivo (una variante del leg hop con una mini pesa en el piso) y ataque al cajón lateral.",
           "url": "https://www.instagram.com/reel/De4MJVSJRQg/"
+        }
+      ],
+      "evidencia": [
+        {
+          "texto": "Evidencia sobre el tipo de entrenamiento, no sobre este ejercicio en particular. Un meta-análisis de red de 2026 recomienda priorizar la fuerza si el objetivo es la aceleración de 5 a 20 m y el salto vertical, con certeza variable. Otro de 2022 en profesionales no pudo confirmar que la fuerza sola mejore sprint y salto en jugadores de élite.",
+          "solidez": "media",
+          "fuente": "Wang et al. 2026, Journal of Sports Science and Medicine; Núñez-Sánchez et al. 2022, Int J Sports Med",
+          "url": "https://jssm.org/jssm-25-405.xml-Fulltext"
+        },
+        {
+          "texto": "Una revisión indica que el entrenamiento de fuerza mejora más los saltos que las acciones de carrera, y que la fuerza de alta intensidad rinde más que la moderada, de tipo hipertrofia.",
+          "solidez": "media",
+          "fuente": "Silva, Nassis y Rebelo 2015, Sports Medicine - Open"
+        },
+        {
+          "texto": "Los pliométricos mejoran el salto (efecto moderado) y algo el sprint y el cambio de dirección, comparado con entrenar fútbol solo. Meta-análisis de 20 estudios en jugadores adolescentes; en adultos amateurs el efecto puede ser distinto.",
+          "solidez": "media",
+          "fuente": "Meta-análisis en adolescentes, 2025",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12040276/"
         }
       ]
     },
@@ -965,31 +1190,14 @@
         "potencia",
         "velocidad"
       ],
-      "materiales": []
-    },
-    {
-      "id": "cambios-ritmo-conos",
-      "numero": 28,
-      "nombre": "Cambios de ritmo con conos",
-      "alias": [],
-      "categoria": "velocidad",
-      "descripcion": "Recorrido marcado con conos, alternando tramos de trote suave y tramos de aceleración corta. Sin cortes de dirección de 90°.",
-      "dosis": null,
-      "variantes": {},
-      "imagen": "img/cambios-ritmo-conos.svg",
-      "video": null,
-      "trabaja": {
-        "principal": "cuadriceps",
-        "secundarios": [
-          "gluteo-mayor",
-          "gemelos"
-        ]
-      },
-      "aporta": [
-        "velocidad"
-      ],
-      "materiales": [
-        "conos"
+      "materiales": [],
+      "evidencia": [
+        {
+          "texto": "Los pliométricos mejoran el salto (efecto moderado) y algo el sprint y el cambio de dirección, comparado con entrenar fútbol solo. Meta-análisis de 20 estudios en jugadores adolescentes; en adultos amateurs el efecto puede ser distinto.",
+          "solidez": "media",
+          "fuente": "Meta-análisis en adolescentes, 2025",
+          "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12040276/"
+        }
       ]
     },
     {
@@ -1017,17 +1225,26 @@
       ],
       "materiales": [
         "trineo (o bandas elásticas)"
+      ],
+      "evidencia": [
+        {
+          "texto": "Los sprints con resistencia (trineo o chaleco) en jugadores menores de 20 años mejoraron algo el tiempo de sprint, sobre todo en la aceleración, pero no más que sprintar sin resistencia. La cuesta es una forma de resistencia.",
+          "solidez": "media",
+          "fuente": "Fernández-Galván et al. 2022, Journal of Strength and Conditioning Research"
+        }
       ]
     },
     {
       "id": "flying-sprint",
       "numero": 30,
-      "nombre": "Flying sprint (30 m)",
+      "nombre": "Flying sprint",
       "alias": [
+        "Cambios de ritmo",
+        "Cambios de ritmo con conos",
         "Velocidad máxima hasta el cono"
       ],
       "categoria": "velocidad",
-      "descripcion": "Tomás velocidad en 15 m y \"volás\" los siguientes 15 m a máxima intensidad, sin pelota. Desarrolla la velocidad máxima y la mecánica de sprint. Podés marcar el tramo con conos hasta el último cono. La vuelta puede ser también a máxima velocidad o caminando.",
+      "descripcion": "Carrera en línea recta, sin pelota, para desarrollar la velocidad máxima y la mecánica de sprint. Tomás velocidad y después \"volás\": mantenés la velocidad sin forzar. Podés marcar el recorrido con conos: acelerás hasta el primer cono, flotás, volvés a acelerar, volvés a flotar, y así. Por ejemplo, 30 m: tomás velocidad en 15 m y volás los siguientes 15 m a máxima intensidad. Cambian los metros de cada tramo, pero la idea es la misma. La vuelta puede ser también a máxima velocidad o caminando.",
       "dosis": "4-6 reps",
       "variantes": {},
       "imagen": "img/ejercicios/flying-sprint.png",
@@ -1045,6 +1262,26 @@
       ],
       "materiales": [
         "conos"
+      ],
+      "imagenes_extra": [
+        {
+          "src": "img/cambios-ritmo-conos.svg",
+          "titulo": "Con conos: acelerar y flotar"
+        }
+      ],
+      "evidencia": [
+        {
+          "texto": "En fútbol australiano, subir de golpe el volumen de carrera a alta velocidad, en comparación con lo habitual de ese jugador, aumentó la probabilidad de lesión de isquios; el volumen absoluto no. Lectura práctica: sprintar con regularidad y de forma progresiva, no solo de vez en cuando.",
+          "solidez": "media",
+          "fuente": "Duhig et al. 2016, British Journal of Sports Medicine",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/27288515/"
+        },
+        {
+          "texto": "Para el sprint lineal, el HIIT corriendo fue mejor que los juegos reducidos.",
+          "solidez": "media",
+          "fuente": "Clemente et al. 2021, Frontiers in Physiology",
+          "url": "https://www.frontiersin.org/articles/10.3389/fphys.2021.642703"
+        }
       ]
     },
     {
@@ -1072,6 +1309,13 @@
       ],
       "materiales": [
         "subida leve"
+      ],
+      "evidencia": [
+        {
+          "texto": "Los sprints con resistencia (trineo o chaleco) en jugadores menores de 20 años mejoraron algo el tiempo de sprint, sobre todo en la aceleración, pero no más que sprintar sin resistencia. La cuesta es una forma de resistencia.",
+          "solidez": "media",
+          "fuente": "Fernández-Galván et al. 2022, Journal of Strength and Conditioning Research"
+        }
       ]
     },
     {
@@ -1109,7 +1353,15 @@
       "aporta": [
         "velocidad"
       ],
-      "materiales": []
+      "materiales": [],
+      "evidencia": [
+        {
+          "texto": "En fútbol australiano, subir de golpe el volumen de carrera a alta velocidad, en comparación con lo habitual de ese jugador, aumentó la probabilidad de lesión de isquios; el volumen absoluto no. Lectura práctica: sprintar con regularidad y de forma progresiva, no solo de vez en cuando.",
+          "solidez": "media",
+          "fuente": "Duhig et al. 2016, British Journal of Sports Medicine",
+          "url": "https://pubmed.ncbi.nlm.nih.gov/27288515/"
+        }
+      ]
     },
     {
       "id": "reactive-sprint",
@@ -1855,6 +2107,26 @@
           "nombre": "Con dos arquitos",
           "descripcion": "Se agrega un arquito en cada punta de la zona y se juega con gol: cada equipo ataca un arquito y defiende el otro (por ejemplo 4v4 o 5v5).",
           "imagen": "img/posesion-reducida-arquitos.svg"
+        }
+      ],
+      "evidencia": [
+        {
+          "texto": "Entre el HIIT corriendo y los juegos reducidos hay efectos parecidos sobre la resistencia en futbolistas; los autores califican la certeza de la evidencia como muy baja.",
+          "solidez": "baja",
+          "fuente": "Clemente et al. 2024, International Journal of Sports Medicine",
+          "url": "https://lida.sport-iat.de/ta/Record/4085388"
+        },
+        {
+          "texto": "En 36 hombres sin entrenamiento, 12 semanas de fútbol recreativo subieron el VO2max 13 % (8 % en el grupo que corría) y bajaron la presión arterial.",
+          "solidez": "media",
+          "fuente": "Krustrup et al. 2009, British Journal of Sports Medicine",
+          "url": "https://bjsm.bmj.com/content/43/11/825"
+        },
+        {
+          "texto": "Para el sprint lineal, el HIIT corriendo fue mejor que los juegos reducidos; para el cambio de dirección y el salto no hubo diferencias. Por eso conviene combinar los dos.",
+          "solidez": "media",
+          "fuente": "Clemente et al. 2021, Frontiers in Physiology",
+          "url": "https://www.frontiersin.org/articles/10.3389/fphys.2021.642703"
         }
       ]
     },

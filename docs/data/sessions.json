@@ -57,7 +57,15 @@
                 {
                   "ex": "hiit-15-15"
                 }
-              ]
+              ],
+              "estructura": {
+                "modo": "series",
+                "sets": 10,
+                "vueltas": 3,
+                "trabajo_s": 15,
+                "descanso_s": 15,
+                "pausa_vuelta_s": 120
+              }
             },
             {
               "label": "Intervalo 4×4 minutos",

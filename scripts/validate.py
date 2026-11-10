@@ -208,6 +208,16 @@ def main() -> int:
             if k not in PERSONAS:
                 errors.append(f"{eid}: imagenes con clave inválida '{k}'")
             rutas.append(ruta)
+        for ev_ in e.get("evidencia", []):
+            if not (ev_.get("texto") and ev_.get("fuente")) or ev_.get("solidez") not in ("alta", "media", "baja"):
+                errors.append(f"{eid}: cada evidencia necesita texto, fuente y solidez (alta, media o baja)")
+            if ev_.get("url") and not str(ev_["url"]).startswith("https://"):
+                errors.append(f"{eid}: la url de una evidencia debe empezar con https://")
+        for x in e.get("imagenes_extra", []):
+            if not (x.get("src") and x.get("titulo")):
+                errors.append(f"{eid}: cada imagen de imagenes_extra necesita src y titulo")
+            else:
+                rutas.append(x["src"])
         for pat in e.get("patrones", []):
             if not (pat.get("nombre") and pat.get("descripcion")):
                 errors.append(f"{eid}: cada patrón necesita nombre y descripcion")

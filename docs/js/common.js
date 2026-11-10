@@ -53,9 +53,12 @@ export function imagenesNodos(ej) {
   const porCantidad = ej.imagenes || {};
   const claves = PERSONAS.filter((p) => porCantidad[String(p)]);
   const foto = ej.imagen ? [marcoImagen(ej.imagen, ej.nombre)] : [];
+  const extra = (ej.imagenes_extra || []).map((x) => h("figure", { class: "fig" },
+    marcoImagen(x.src, `${ej.nombre}: ${x.titulo}`),
+    h("figcaption", {}, x.titulo)));
   return foto.concat(claves.map((p) => h("figure", { class: "fig" },
     marcoImagen(porCantidad[String(p)], `${ej.nombre}, con ${p}`),
-    h("figcaption", {}, `Con ${p}`))));
+    h("figcaption", {}, `Con ${p}`))), extra);
 }
 
 // Botones de video: el principal ("video") y los extra (lista "videos" de {nombre, url}).

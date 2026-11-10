@@ -180,15 +180,16 @@
           "nota": "Salto a una pierna."
         },
         {
-          "ex": "plancha-frontal"
+          "ex": "plancha-lateral",
+          "nota": "Cuando te sea fácil, con la pierna de arriba en un banco (Copenhagen)."
         },
         {
           "ex": "puente-gluteo",
           "nota": "Glúteo."
         },
         {
-          "ex": "elevacion-talones",
-          "nota": "Elevación de gemelo."
+          "ex": "nordic-hamstring",
+          "nota": "Con los pies anclados o un compañero que te sostenga los tobillos. Pocas repeticiones, bajando lento."
         }
       ],
       "guia": "circuito-estaciones",
@@ -244,7 +245,8 @@
           "ex": "sprint-5-10-5"
         },
         {
-          "ex": "puente-gluteo"
+          "ex": "nordic-hamstring",
+          "nota": "Con los pies anclados o un compañero que te sostenga los tobillos. Pocas repeticiones, bajando lento."
         },
         {
           "ex": "aceleracion-conos-zigzag"
@@ -271,7 +273,8 @@
           "ex": "v-push-cut"
         },
         {
-          "ex": "plancha-lateral"
+          "ex": "plancha-lateral",
+          "nota": "Cuando te sea fácil, con la pierna de arriba en un banco (Copenhagen)."
         },
         {
           "ex": "sprint-control-pase"
@@ -741,7 +744,8 @@
           "ex": "sprint-5-10-5"
         },
         {
-          "ex": "wall-sit"
+          "ex": "plancha-lateral",
+          "nota": "Cuando te sea fácil, con la pierna de arriba en un banco (Copenhagen)."
         },
         {
           "ex": "tecnica-carrera",
@@ -751,7 +755,8 @@
           "ex": "aceleracion-conos-zigzag"
         },
         {
-          "ex": "step-up-unilateral"
+          "ex": "nordic-hamstring",
+          "nota": "Con los pies anclados o un compañero que te sostenga los tobillos. Pocas repeticiones, bajando lento."
         },
         {
           "ex": "t-drill"
@@ -808,11 +813,7 @@
         },
         {
           "ex": "flying-sprint",
-          "dosis": "8 min · 4-6 reps"
-        },
-        {
-          "ex": "cambios-ritmo-conos",
-          "dosis": "6 min"
+          "dosis": "14 min · 4-6 reps, acelerar y flotar con conos"
         },
         {
           "ex": "aceleracion-conos-zigzag",
@@ -828,6 +829,41 @@
           "opcional": true
         }
       ]
+    },
+    {
+      "id": "circuito-calentamiento",
+      "numero": 22,
+      "nombre": "Entrada en calor tipo FIFA 11+",
+      "descripcion": "Inspirada en el FIFA 11+, un calentamiento con respaldo para bajar las lesiones (carrera, fuerza, equilibrio y velocidad progresiva). No es el programa oficial, que dura unos 20 min: esta es una versión de unos 10 min. No está dentro de las sesiones: se usa antes de entrenar, como la entrada en calor de siempre. El Nordic hamstring no va acá sino en la fuerza del martes, para no quedar con dolor muscular a 48 h del partido.",
+      "items": [
+        {
+          "ex": "trote-suave",
+          "dosis": "2 min"
+        },
+        {
+          "ex": "activacion-dinamica",
+          "dosis": "3 min"
+        },
+        {
+          "ex": "plancha-frontal",
+          "dosis": "30 s"
+        },
+        {
+          "ex": "plancha-lateral",
+          "dosis": "30 s por lado"
+        },
+        {
+          "ex": "leg-hop",
+          "dosis": "2 min",
+          "nota": "Equilibrio a una pierna: caer y sostener 3 segundos."
+        },
+        {
+          "ex": "progresion-aceleracion",
+          "dosis": "3 pasadas, 2 min",
+          "nota": "Cada pasada un poco más rápida, sin llegar al máximo."
+        }
+      ],
+      "huerfano_ok": true
     }
   ]
 }

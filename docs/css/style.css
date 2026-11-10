@@ -474,3 +474,13 @@ h1 { font-size: 1.9rem; line-height: 1.15; margin: 8px 0 16px; }
 .selector__cambiar::after { content: "▾"; font-size: 1.1rem; }
 .selector[open] .selector__cambiar::after { content: "▴"; }
 .selector .opciones { margin: 0; padding: 4px 12px 12px; border-top: 1px solid var(--line); padding-top: 12px; }
+
+/* Evidencia científica de un ejercicio */
+.nota-evidencia { margin: 0 0 12px; color: var(--ink-soft); font-size: .9rem; }
+.evidencia { padding: 12px 0; border-top: 1px solid var(--line); }
+.evidencia:first-of-type { border-top: 0; padding-top: 0; }
+.evidencia__texto { margin: 8px 0 4px; line-height: 1.5; }
+.evidencia__fuente { margin: 0; font-size: .9rem; color: var(--ink-soft); }
+.solidez { display: inline-block; font-size: .75rem; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; padding: 2px 10px; border-radius: 999px; border: 1.5px solid var(--ink-soft); color: var(--ink-soft); }
+.solidez--alta { border-color: var(--ink); background: var(--ink); color: var(--bg); }
+.solidez--media { border-color: var(--acento); background: var(--resalte); color: var(--ink); }

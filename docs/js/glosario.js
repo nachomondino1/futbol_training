@@ -55,6 +55,17 @@ function circuitosNodo(ej) {
     u.alternativa ? h("span", { class: "alias" }, " (alternativa)") : null)));
 }
 
+// Evidencia científica del ejercicio (campo "evidencia"): qué encontró la investigación, con su fuente y qué tan sólida es.
+const SOLIDEZ = { alta: "Solidez alta", media: "Solidez media", baja: "Solidez baja" };
+function evidenciaSeccion(ej) {
+  return seccion("Evidencia científica",
+    h("p", { class: "nota-evidencia" }, "Casi todos los estudios son de jugadores juveniles o profesionales; en adultos amateurs el efecto puede ser distinto."),
+    ej.evidencia.map((x) => h("article", { class: "evidencia" },
+      h("span", { class: `solidez solidez--${x.solidez}` }, SOLIDEZ[x.solidez]),
+      h("p", { class: "evidencia__texto" }, x.texto),
+      h("p", { class: "evidencia__fuente" }, x.url ? h("a", { href: x.url, target: "_blank", rel: "noopener" }, x.fuente) : x.fuente))));
+}
+
 function sesionesNodo(ej) {
   const m = usos.get(ej.id);
   if (!m) return "—";
@@ -127,6 +138,7 @@ function vistaDetalle(ej) {
       seccion("Cómo se hace",
         h("p", {}, ej.descripcion),
         ej.jugadores_min > 1 ? h("p", { class: "detalle__dato" }, `Se hace de a ${ej.jugadores_min} o más.`) : null),
+      ej.evidencia?.length ? evidenciaSeccion(ej) : null,
       ej.patrones?.length ? seccion("Patrones y variantes", h("div", { class: "patrones" }, patronesNodos(ej))) : null,
       seccion("Materiales", materialesNodo(ej) || h("p", {}, "No necesita materiales.")),
       vars ? seccion("Variantes", vars) : null,

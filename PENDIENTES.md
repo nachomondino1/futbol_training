@@ -2,12 +2,21 @@
 
 Lo de acá lo propuse yo y todavía no lo validaste. Cuando lo valides, borrá la línea (y, si tiene, la clave `pendiente_validar` del JSON). El historial largo de decisiones de antes (versión de 48 KB) está en git: `git show 3f52d1b:PENDIENTES.md`.
 
-Las variantes y dosis marcadas en el JSON se ven con `python3 scripts/validate.py --por-validar` (hoy son 14).
+Las variantes y dosis marcadas en el JSON se ven con `python3 scripts/validate.py --por-validar` (hoy son 15).
+
+## Cambios basados en la evidencia (2026-11-10)
+
+- **Entrada en calor tipo FIFA 11+** (circuito 22, 10 min): queda en Circuitos, **fuera de las sesiones** (decidiste no ponerla en las sesiones porque hacés siempre la misma entrada en calor). Las dosis (2, 3, 0,5, 1, 2 y 2 min) y el orden los puse yo. Hoy hay dos circuitos de entrada en calor, el 3 y el 22: se pueden unir si querés.
+- **Nordic hamstring** en el circuito de fuerza (1) y en los de estaciones 2 y 19: la nota dice cómo hacerlo con pocas repeticiones; la dosis ideal no está establecida. En estaciones necesita los pies anclados o alguien que sostenga los tobillos.
+- **Copenhagen** como patrón de Plancha lateral (12), en vez de un ejercicio nuevo; la técnica la armé yo. Está en los mismos circuitos.
+- **Equilibrio a una pierna** como patrón de Leg hop (22), dentro de la entrada en calor. Descripción armada por mí.
+- **Jueves:** la velocidad liviana (3 pasadas de progresión de aceleración) estaba en esa entrada en calor y por ahora no está en ninguna sesión.
 
 ## Descripciones que faltan
 
 - **Split concéntrica** (patrón de Bulgarian split squat, 6), **Salto al cajón reactivo** (patrón de Box jump, 21) y **Ataque al cajón lateral** (patrón de Step-up unilateral, 15): dicen "Descripción a completar". Vienen del reel de @md.training__.
 - **Movilidad de tobillo** (patrón de Movilidad articular, 2): faltan repeticiones, tiempo y hacia dónde tira la banda. La armé mirando el reel sin sonido.
+- **HIIT 15/15** (18): los 10 sets, 3 vueltas y 2 min entre vueltas los propuse yo (misma duración que el 10/10).
 - **Estiramiento estático** (61): cuánto sostener cada uno. **Nordic hamstring** (9): la dosis es propuesta mía.
 - **Leg hop (22), progresiones 1 a 5:** las descripciones las inferí de los fotogramas; faltan los nombres reales y cómo se hace cada una.
 
