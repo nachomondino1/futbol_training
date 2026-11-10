@@ -182,9 +182,9 @@ Una opción puede traer `estructura` para que la sesión diga cuántas vueltas h
 
 La web se puede instalar (Android/Chrome: menú ⋮ → "Instalar aplicación"; iPhone/Safari: Compartir → "Añadir a pantalla de inicio") y abrir sin señal. Abrila una vez con conexión para que se guarde todo (unos 4 MB, imágenes incluidas). En el iPhone, la app instalada puede tener su propia copia: la primera vez que la abras desde el ícono, también con señal.
 
-- `docs/sw.js` es el service worker. Responde con lo guardado y en paralelo baja la versión nueva, así que **un cambio publicado se ve la segunda vez que se abre la web**.
+- `docs/sw.js` es el service worker. Para páginas, scripts, estilos y datos va **primero la red**: con señal se ve siempre lo último publicado (a la primera vez que abrís la web), y sin señal, o si la red tarda más de 3 s, se usa lo guardado. Las imágenes van primero lo guardado, porque no cambian y pesan.
 - `BASICOS` (en `sw.js`) lista las páginas, scripts, estilos y JSON que se guardan al instalar. **Si agregás una página, un script o un JSON, sumalo ahí**: `validate.py` falla si falta (o si apunta a un archivo que no existe). Las imágenes no hay que listarlas: salen de `exercises.json`.
-- Subí `CACHE` (`entrenamiento-v1` → `v2`) si borrás o renombrás un archivo, para que el celu no guarde de más.
+- Subí `CACHE` (hoy `entrenamiento-v3`) solo si borrás o renombrás un archivo, para que el celu no guarde de más. **No hace falta subirlo para ver cambios**.
 - **En local no se registra** (mostraría versiones viejas mientras editás, y limpia el que haya quedado de una prueba). Para probarlo: abrir cualquier página con `?sw` (por ejemplo `http://localhost:8000/?sw`) y, para simular sin señal, apagar el servidor y recargar.
 - Los videos (Instagram, YouTube) son links a otros sitios: siguen necesitando señal.
 - Los íconos (`img/icon-*.png`) se regeneran con `python3 scripts/gen_iconos.py`.

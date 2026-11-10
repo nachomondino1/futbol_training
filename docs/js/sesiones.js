@@ -152,10 +152,15 @@ function bloqueNodo(b, bi) {
       ? h("p", { class: "nota" }, `Ninguna opción de este bloque sirve para ${somos} jugadores: salteá el bloque o elegí otra cantidad.`)
       : null,
     varias && !sinOpciones
-      ? h("div", { class: "opciones", role: "group", "aria-label": `Opciones de ${b.titulo}` },
-          validos.map((oi) => h("button", {
-            type: "button", class: `chip${esIndividual(b.opciones[oi]) ? " chip--individual" : ""}`, "aria-pressed": String(oi === idx),
-            onclick: () => { elegidas[bi] = oi; detalle(sesionActual, true); } }, b.opciones[oi].label)))
+      ? h("details", { class: "selector" },
+          h("summary", {},
+            h("span", { class: "selector__etiqueta" }, "Elegido"),
+            h("span", { class: "selector__actual" }, b.opciones[idx].label),
+            h("span", { class: "selector__cambiar" }, `${validos.length - 1 > 0 ? `${validos.length - 1} más` : "sin más opciones"}`)),
+          h("div", { class: "opciones", role: "group", "aria-label": `Opciones de ${b.titulo}` },
+            validos.map((oi) => h("button", {
+              type: "button", class: `chip${esIndividual(b.opciones[oi]) ? " chip--individual" : ""}`, "aria-pressed": String(oi === idx),
+              onclick: () => { elegidas[bi] = oi; detalle(sesionActual, true); } }, b.opciones[oi].label))))
       : null,
     sinOpciones ? null : h("div", { class: "bloque-contenido" },
     opcion.nota ? h("p", { class: "nota" }, opcion.nota) : null,

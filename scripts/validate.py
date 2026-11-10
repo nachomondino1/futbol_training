@@ -2,7 +2,8 @@
 
 ERROR (exit 1): referencias rotas, ids duplicados, huérfanos, categorías o
 variantes inválidas, archivos de sw.js o del manifest que no existen.
-WARNING (no corta): variantes sin validar, dosis pendientes.
+WARNING (no corta): cosas a revisar (ejercicios sueltos en sesiones, estaciones con ejercicios repetidos).
+POR VALIDAR (no son warnings): variantes y dosis que propuse yo. Salen en una sola línea; con --por-validar se listan.
 
 Correr desde la raíz del repo: python scripts/validate.py
 """
@@ -18,6 +19,7 @@ PERSONAS = ["2", "3", "4", "8"]
 
 errors: list[str] = []
 warnings: list[str] = []
+por_validar: list[str] = []  # lo que propuse yo y todavía no validaste: se cuenta aparte, no ensucia los warnings
 
 
 def dupes(ids: list[str]) -> list[str]:
@@ -123,6 +125,7 @@ def main() -> int:
     usadas_sub: set[str] = set()
     ejercicios = ex_data["ejercicios"]
     ids = [e["id"] for e in ejercicios]
+    ex_dosis = {e["id"]: e.get("dosis") for e in ejercicios}
     sesion_ids = [s["id"] for s in ses_data["sesiones"]]
 
     grupos = json.loads((DATA / "muscles.json").read_text(encoding="utf-8"))["grupos"]
@@ -175,7 +178,7 @@ def main() -> int:
             if not g.get("variantes", {}).get(p):
                 errors.append(f"guía {gid}: falta variante para {p} personas")
         for p in g.get("pendiente_validar", []):
-            warnings.append(f"guía {gid}: variante de {p} personas propuesta, sin validar")
+            por_validar.append(f"guía {gid}: variante de {p} personas")
 
     for d in dupes(cats):
         errors.append(f"categoría duplicada: {d}")
@@ -185,6 +188,7 @@ def main() -> int:
         errors.append(f"sesión duplicada: {d}")
 
     principales: set[str] = set()
+    secundarios_usados: set[str] = set()
     for e in ejercicios:
         eid = e["id"]
         if e["categoria"] not in cats:
@@ -198,7 +202,7 @@ def main() -> int:
                 if not vars_.get(p):
                     errors.append(f"{eid}: falta variante para {p} personas")
         for p in e.get("pendiente_validar", []):
-            warnings.append(f"{eid}: variante de {p} personas propuesta, sin validar")
+            por_validar.append(f"{eid}: variante de {p} personas")
         rutas = [e["imagen"]] if e.get("imagen") else []
         for k, ruta in e.get("imagenes", {}).items():
             if k not in PERSONAS:
@@ -242,15 +246,16 @@ def main() -> int:
             if t.get("principal") in t.get("secundarios", []):
                 errors.append(f"{eid}: el principal no puede estar también en secundarios")
             principales.add(t.get("principal"))
+            secundarios_usados.update(t.get("secundarios", []))
         if e.get("pendiente_dosis"):
-            warnings.append(f"{eid}: dosis pendiente ({e['pendiente_dosis']})")
+            por_validar.append(f"{eid}: dosis ({e['pendiente_dosis']})")
 
     for k in subcats:
         if k not in usadas_sub:
             warnings.append(f"subcategoría '{k}': ningún ejercicio la usa")
     for g in grupo_ids:
-        if g not in principales:
-            warnings.append(f"grupo '{g}': ningún ejercicio lo tiene como principal")
+        if g not in principales and g not in secundarios_usados:
+            warnings.append(f"grupo '{g}': ningún ejercicio lo trabaja")
 
     for o in objetivo_ids:
         if o not in aportados:
@@ -282,7 +287,8 @@ def main() -> int:
                     errors.append(f"{where}: opción sin items")
                     continue
                 validar_estructura(where, o, guias, b["min"])
-                if not o_raw.get("circuito") and not o_raw.get("estructura") and "min" not in o_raw:
+                formato = o_raw.get("estructura") or "min" in o_raw or any(it.get("dosis") or ex_dosis.get(it["ex"]) for it in o["items"])
+                if not o_raw.get("circuito") and not formato:
                     warnings.append(f"{where}: ejercicio suelto en la sesión (la idea es usar circuitos)")
                 for it in o["items"]:
                     usados.add(it["ex"])
@@ -292,7 +298,7 @@ def main() -> int:
                         if k not in PERSONAS:
                             errors.append(f"{s['id']}/{it['ex']}: variante con clave inválida '{k}'")
                     for p in it.get("pendiente_validar", []):
-                        warnings.append(f"{s['id']}/{it['ex']}: variante de {p} personas propuesta, sin validar")
+                        por_validar.append(f"{s['id']}/{it['ex']}: variante de {p} personas")
 
     # Jugadores: jugadores_min válido (lo usan el filtro y los colores de Ejercicios)
     ex_por_id = {e["id"]: e for e in ejercicios}
@@ -368,6 +374,11 @@ def main() -> int:
 
     for w in warnings:
         print(f"WARNING {w}")
+    if por_validar:
+        print(f"POR VALIDAR: {len(por_validar)} cosas que propuse yo (variantes y dosis); ver PENDIENTES.md" + ("" if "--por-validar" in sys.argv else " o correr con --por-validar"))
+        if "--por-validar" in sys.argv:
+            for pv in por_validar:
+                print(f"  - {pv}")
     for err in errors:
         print(f"ERROR   {err}")
     print(f"\n{len(ejercicios)} ejercicios, {len(circ_data)} circuitos, {len(sesion_ids)} sesiones, "

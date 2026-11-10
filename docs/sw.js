@@ -1,9 +1,11 @@
 // Service worker: guarda la web en el celu para poder instalarla y abrirla sin señal.
-// Estrategia "stale-while-revalidate": responde al toque con lo guardado y, en paralelo, baja la
-// versión nueva para la próxima vez. Un cambio en los datos se ve la segunda vez que se abre.
+// Estrategia: el código y los datos (páginas, js, css, json) van "primero la red": con señal se ve siempre lo
+// último publicado, y sin señal (o si la red tarda más de 3 s) se usa lo guardado. Las imágenes van "primero lo
+// guardado": no cambian y pesan. Así un cambio se ve la primera vez que se abre, sin subir ninguna versión.
 // Solo toca archivos de este mismo sitio: los videos (Instagram, YouTube) siguen pidiendo señal.
 
-const CACHE = "entrenamiento-v2"; // subirlo si se borra o renombra un archivo, para limpiar lo viejo
+const CACHE = "entrenamiento-v3"; // subirlo solo si se borra o renombra un archivo, para limpiar lo viejo
+const ESPERA_RED_MS = 3000;
 const BASICOS = [
   "./", "index.html", "glosario.html", "circuitos.html", "sesiones.html",
   "css/style.css", "css/pages/inicio.css", "js/common.js", "js/glosario.js", "js/sesiones.js", "js/circuitos.js", "js/estructura.js", "js/inicio.js",
@@ -34,22 +36,26 @@ self.addEventListener("activate", (e) => {
 });
 
 // Baja el archivo de la red y lo guarda. cache: "no-cache" pregunta al servidor si cambió (304 si no).
-async function bajar(e, cache, clave) {
-  const r = await fetch(e.request, { cache: "no-cache" });
-  if (r.ok) e.waitUntil(cache.put(clave, r.clone()));
-  return r;
+function bajar(e, cache, clave) {
+  return fetch(e.request, { cache: "no-cache" }).then((r) => {
+    if (r.ok) e.waitUntil(cache.put(clave, r.clone()));
+    return r;
+  });
 }
 
 self.addEventListener("fetch", (e) => {
   const url = new URL(e.request.url);
   if (e.request.method !== "GET" || url.origin !== self.location.origin) return;
   const clave = url.origin + url.pathname; // sin ?query ni #hash: una sola copia por archivo
+  const esImagen = /\/img\//.test(url.pathname);
   e.respondWith((async () => {
     const cache = await caches.open(CACHE);
     const guardado = await cache.match(clave);
-    const nueva = bajar(e, cache, clave);
-    if (!guardado) return nueva; // primera vez: hay que esperar a la red
-    e.waitUntil(nueva.catch(() => {})); // sin señal falla en silencio: ya se respondió con lo guardado
-    return guardado;
+    if (esImagen) return guardado || bajar(e, cache, clave); // las imágenes no cambian: lo guardado manda
+    if (!guardado) return bajar(e, cache, clave); // primera vez: hay que esperar a la red
+    // Hay algo guardado: gana la red si responde bien y rápido; si no (sin señal, lenta o con error), lo guardado.
+    const red = bajar(e, cache, clave).then((r) => (r.ok ? r : guardado));
+    e.waitUntil(red.catch(() => {})); // la bajada sigue en segundo plano aunque se haya respondido con lo guardado
+    return Promise.race([red.catch(() => guardado), new Promise((ok) => setTimeout(() => ok(guardado), ESPERA_RED_MS))]);
   })());
 });
