@@ -28,7 +28,8 @@ const unidadesDe = (op) => op.estructura.modo === "circuito"
 export function minutosEstructura(op) {
   const e = op.estructura;
   const unidades = unidadesDe(op);
-  return Math.round((e.vueltas * unidades * (e.trabajo_s + e.descanso_s) + (e.vueltas - 1) * (e.pausa_vuelta_s || 0)) / 60);
+  const ultimoDescanso = e.descanso_final === false ? e.descanso_s : 0; // en los intervalos no se descansa después de la última repetición
+  return Math.round((e.vueltas * unidades * (e.trabajo_s + e.descanso_s) - ultimoDescanso + (e.vueltas - 1) * (e.pausa_vuelta_s || 0)) / 60);
 }
 
 // Ficha con los números de una opción: vueltas, estaciones o sets, trabajo, descanso, pausa.

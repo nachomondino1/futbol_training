@@ -248,6 +248,12 @@ El Doc solo decía el grupo muscular de sentadilla y estocada (cuádriceps, glú
 
 - **Escalera (cambio de criterio):** los patrones que vienen del video de YouTube ahora tienen un botón "▶ Ver cómo se hace en YouTube (desde m:ss)" que abre el video justo en su sección. Saqué los diagramas de los 7 de los que no estaba segura (cruzado, carioca, ciempiés, ickey shuffle, river dance, atrás y adelante, shuffle a una pierna): quedan con texto y video. Conservé los 9 diagramas más claros. Los patrones que no están en el video (dos pies, zig-zag, salto con un pie, shuffle a una pierna) no tienen link.
 
+## Solo dos sesiones: Aeróbico (martes) y Pelota (jueves) (2026-11-10)
+
+- Se sacaron las sesiones **Velocidad y agilidad** y **Fuerza y potencia** (no se usaban). Quedan Aeróbico y Pelota.
+- Un solo **circuito 21, Velocidad y agilidad** (aceleración, flying sprint, cambios de ritmo, aceleración en zigzag y T-drill, unos 35 min; hill sprint opcional), como opción del bloque 1 de Aeróbico (junto a los formatos aeróbicos, para correr con las piernas frescas; el bloque se llama ahora "Aeróbico o velocidad"), acortado a unos 35 min: sin el sprint 5-10-5. Reemplaza a los circuitos 9 a 13 (Pies rápidos, Sprints, Agilidad con conos, Agilidad reactiva y Pelota y aceleraciones), que se borraron; esos números quedan retirados. Tiempos y orden propuestos por mí.
+- Los circuitos 14 (Potencia: saltos), 15 (Potencia con carga) y 16 (Fuerza pesada) y el 4 (Todo coordinación) ya no están en ninguna sesión pero siguen en Circuitos, para consultar o elegir una variante.
+
 ## Circuito 20: Pelota de a dos (2026-11-06)
 
 - Quemado con pelota (62), Carrera en V con devolución, Uno defiende otro ataca y Pelota al campo rival, unos 6 min cada uno (25 min). Es la tercera opción del bloque 2 de Pelota, junto a Control de balón (6) y Pase y control orientado (7): son tres, si querés dejar dos, decime cuál sacar. Tiempos y orden propuestos por mí.

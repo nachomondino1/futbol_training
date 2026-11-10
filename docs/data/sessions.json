@@ -1,122 +1,13 @@
 {
   "sesiones": [
     {
-      "id": "velocidad-agilidad",
-      "emoji": "⚡",
-      "nombre": "Velocidad y agilidad",
-      "objetivo": "Correr rápido y cambiar de dirección: aceleración, velocidad máxima, agilidad y pies rápidos, con descanso completo entre repeticiones.",
-      "bloques": [
-        {
-          "titulo": "Pies",
-          "min": 10,
-          "opciones": [
-            {
-              "label": "Todo coordinación",
-              "circuito": "todo-coordinacion",
-              "min": 6
-            },
-            {
-              "label": "Pies rápidos",
-              "circuito": "circuito-pies-rapidos"
-            }
-          ]
-        },
-        {
-          "titulo": "Sprints",
-          "min": 20,
-          "opciones": [
-            {
-              "label": "Sprints",
-              "circuito": "circuito-sprints"
-            }
-          ]
-        },
-        {
-          "titulo": "Agilidad",
-          "min": 15,
-          "opciones": [
-            {
-              "label": "Agilidad con conos",
-              "circuito": "circuito-agilidad-conos"
-            },
-            {
-              "label": "Agilidad reactiva",
-              "circuito": "circuito-agilidad-reactiva"
-            }
-          ]
-        },
-        {
-          "titulo": "Pelota con aceleraciones y cambios de ritmo",
-          "min": 15,
-          "opciones": [
-            {
-              "label": "Control de balón (individual)",
-              "circuito": "circuito-control-balon"
-            },
-            {
-              "label": "Pelota y aceleraciones",
-              "circuito": "circuito-pelota-aceleraciones"
-            }
-          ]
-        }
-      ],
-      "cuando": "Mejor dos días antes del partido, con pocos sprints cerca del máximo."
-    },
-    {
-      "id": "fuerza-potencia",
-      "emoji": "💪",
-      "nombre": "Fuerza y potencia",
-      "objetivo": "Fuerza de piernas y core con técnica controlada, y un bloque de potencia (saltos y reactividad).",
-      "bloques": [
-        {
-          "titulo": "Potencia",
-          "min": 20,
-          "opciones": [
-            {
-              "label": "Saltos",
-              "circuito": "circuito-potencia-saltos"
-            },
-            {
-              "label": "Con carga",
-              "circuito": "circuito-potencia-carga"
-            }
-          ]
-        },
-        {
-          "titulo": "Fuerza",
-          "min": 35,
-          "opciones": [
-            {
-              "label": "Circuito de fuerza",
-              "circuito": "circuito-fuerza"
-            },
-            {
-              "label": "Fuerza pesada",
-              "circuito": "circuito-fuerza-pesada"
-            }
-          ]
-        },
-        {
-          "titulo": "Pases y control orientado",
-          "min": 15,
-          "opciones": [
-            {
-              "label": "Pase y control orientado",
-              "circuito": "circuito-pase-control-orientado"
-            }
-          ]
-        }
-      ],
-      "cuando": "Al principio de la semana, lejos del partido."
-    },
-    {
       "id": "aerobico",
       "emoji": "🫀",
       "nombre": "Aeróbico",
       "objetivo": "Capacidad aeróbica: volumen o intervalos, con pelota o sin ella, y un circuito para activar las piernas.",
       "bloques": [
         {
-          "titulo": "Aeróbico",
+          "titulo": "Aeróbico o velocidad",
           "min": 35,
           "opciones": [
             {
@@ -175,7 +66,14 @@
                   "ex": "intervalo-4x4"
                 }
               ],
-              "min": 25
+              "estructura": {
+                "modo": "series",
+                "vueltas": 4,
+                "trabajo_s": 240,
+                "descanso_s": 180,
+                "descanso_nombre": "trote suave",
+                "descanso_final": false
+              }
             },
             {
               "label": "Posesión reducida",
@@ -184,6 +82,10 @@
                   "ex": "reducido"
                 }
               ]
+            },
+            {
+              "label": "Velocidad y agilidad",
+              "circuito": "circuito-velocidad"
             }
           ]
         },
